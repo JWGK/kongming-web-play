@@ -12,12 +12,12 @@
 <body>
   <header class="site-header">
     <a class="brand" href="./index.html" aria-label="三國志孔明傳"><span class="seal" aria-hidden="true">孔<br>明</span><span>三國志孔明傳</span></a>
-    <span class="build-label">開機流程 · 第一階段</span>
+    <span class="build-label">雙開場 · 六段內容</span>
   </header>
   <main>
     <section class="intro" aria-label="版本範圍">
-      <p>開機 → 主選單 → 開始遊戲 → 故事入口</p>
-      <p class="muted">以指定的 v117 網頁為介面參考。原作圖像、音樂與完整戰役尚未接入。</p>
+      <p>開機 → 主選單 → 立即開始 / 觀看序章</p>
+      <p class="muted">以指定的 v117 網頁為介面參考。兩條開場共六段繁體中文內容已接通；原作圖像、音樂與完整戰役尚未接入。</p>
       <div class="toolbar"><button id="reset-button" type="button">回到開機畫面</button><a class="secondary-link" href="./training.html">獨立訓練場 ↗</a></div>
       <p id="storage-status" class="muted small"></p>
     </section>
@@ -31,13 +31,13 @@
       <p class="control-help">點按下方按鈕，或使用 ↑ ↓ 選擇、A / Enter 確定、B / Esc 返回。未接入的選項不會執行。</p>
       <details id="pack-panel" hidden>
         <summary>本機參考片段</summary>
-        <p class="muted small">可選擇已核實的五行開場片段檔。檔案只在本頁記憶體讀取，不會上傳或寫入存檔；重新整理後須再選取。</p>
+        <p class="muted small">選擇目前開場的核實片段檔，依原始文字段落逐段瀏覽。檔案只在本頁記憶體讀取，不會上傳或寫入存檔；重新整理後須再選取。</p>
         <label class="file-label" for="pack-input">載入本機片段（JSON，最多 96 KiB）</label>
         <input id="pack-input" type="file" accept=".json,application/json">
         <p id="pack-status" class="muted small" role="status" aria-live="polite"></p>
       </details>
     </section>
-    <details class="about"><summary>關於這次重建</summary><p>目前完成的是可操作的入口流程，不是完整原作移植。場景框與控制方式參考指定網頁；此版以文字與 CSS 呈現，沒有冒充已重建原作圖像。中文選項依介面參考顯示，日文原文另存為來源註記。</p><p>「故事入口」是有界的展示檢查點，不會虛構後續對白或跳到訓練戰鬥。獨立訓練場保留原來的引擎及存檔。</p><p><a href="https://kongming-tactics-lab.gavinkiang.chatgpt.site/" target="_blank" rel="noopener noreferrer">查看指定的介面參考</a></p></details>
+    <details class="about"><summary>關於這次重建</summary><p>目前完成的是可操作的入口流程，不是完整原作移植。場景框與控制方式參考指定網頁；此版以文字與 CSS 呈現，沒有冒充已重建原作圖像。中文選項依介面參考顯示，日文原文另存為來源註記。</p><p>兩條開場分開展示六段核實內容的繁體中文版本，並停在各自尚未重建的後續場景；不會合併分支或跳到訓練戰鬥。獨立訓練場保留原來的引擎及存檔。</p><p><a href="https://kongming-tactics-lab.gavinkiang.chatgpt.site/" target="_blank" rel="noopener noreferrer">查看指定的介面參考</a></p></details>
   </main>
   <footer>非官方重建 · 開機流程驗證版<span>原作權利屬各權利人所有。</span></footer>
   <noscript>請開啟 JavaScript 以使用開機流程。原有訓練場位於 training.html。</noscript>

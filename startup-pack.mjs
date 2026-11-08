@@ -1,31 +1,31 @@
-import {OPENING_EVIDENCE as evidence} from './startup-content.mjs';
+import {OPENING_ROUTES, isRouteId} from './startup-sequences.mjs';
 export const MAX_PACK_BYTES = 96 * 1024;
+const exactKeys = (object,required,optional = []) => object && !Array.isArray(object) && typeof object === 'object'
+  && required.every(key => Object.hasOwn(object,key)) && Object.keys(object).every(key => [...required,...optional].includes(key));
 export async function sha256(bytes) {
-  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
-  return Array.from(new Uint8Array(digest), value => value.toString(16).padStart(2, '0')).join('');
+  const digest = await globalThis.crypto.subtle.digest('SHA-256',bytes);
+  return Array.from(new Uint8Array(digest),value => value.toString(16).padStart(2,'0')).join('');
 }
-// A local presentation fixture, never a save format, script, or upload endpoint.
-export async function parseOpeningPack(raw) {
+/** The imported file cannot define routes, order, labels, source spans or URLs.
+ * All route/page identifiers and content hashes must match checked-in evidence.
+ * V1's common prefix is intentionally not assigned to either complete route.
+ */
+export async function parseOpeningPack(raw,expectedRouteId) {
   if (typeof raw !== 'string' || new TextEncoder().encode(raw).byteLength > MAX_PACK_BYTES) throw Error('片段檔過大或格式不符。');
-  let data;
-  try { data = JSON.parse(raw); } catch { throw Error('無法讀取 JSON 片段檔。'); }
-  const keys = ['schema','version','checkpointId','sourcePrefixSha256','lines','framePngBase64'];
-  if (!data || Array.isArray(data) || typeof data !== 'object' || Object.keys(data).some(key => !keys.includes(key)) ||
-      data.schema !== 'kongming-opening-pack' || data.version !== 1 || data.checkpointId !== evidence.checkpointId ||
-      data.sourcePrefixSha256 !== evidence.sourcePrefixSha256 || !Array.isArray(data.lines) || data.lines.length !== evidence.lineCount ||
-      data.lines.some(line => typeof line !== 'string' || /[\r\n\u0000-\u001f]/u.test(line)) || data.lines.join('').length !== evidence.glyphCount) {
-    throw Error('只接受已核實的五行開場片段，不接受完整劇情或其他資料。');
+  let data; try { data = JSON.parse(raw); } catch { throw Error('無法讀取 JSON 片段檔。'); }
+  if (!isRouteId(expectedRouteId) || !exactKeys(data,['schema','version','routeId','sequenceId','pages'])
+    || data.schema !== 'kongming-opening-route-pack' || data.version !== 2 || data.routeId !== expectedRouteId) throw Error('只接受目前開場分支已核實的片段檔。');
+  const route = OPENING_ROUTES[expectedRouteId];
+  if (!route.pages.length) throw Error('目前分支的片段邊界尚未核實，未載入任何內容。');
+  if (data.sequenceId !== route.sequenceId || !Array.isArray(data.pages) || data.pages.length !== route.pages.length) throw Error('片段版本或頁面範圍與目前分支不符。');
+  const pages = [];
+  for (let index = 0; index < route.pages.length; index++) {
+    const page = data.pages[index], evidence = route.pages[index];
+    if (!exactKeys(page,['id','lines']) || page.id !== evidence.id || !Array.isArray(page.lines)
+      || page.lines.length !== evidence.lineCount || page.lines.some(line => typeof line !== 'string' || /[\r\n\u0000-\u001f\u007f]/u.test(line))
+      || Array.from(page.lines.join('')).length !== evidence.glyphCount) throw Error('片段頁面與已核實的分支範圍不符。');
+    if (await sha256(new TextEncoder().encode(page.lines.join('\n'))) !== evidence.textSha256) throw Error('片段文字與已核實的來源不符。');
+    pages.push(Object.freeze({id:page.id,lines:Object.freeze([...page.lines])}));
   }
-  if (await sha256(new TextEncoder().encode(data.lines.join('\n'))) !== evidence.textSha256) throw Error('片段文字與已核實的來源不符。');
-  let frameDataUrl = null;
-  if (data.framePngBase64 !== undefined) {
-    if (typeof data.framePngBase64 !== 'string' || data.framePngBase64.length > 90 * 1024 || !/^[A-Za-z0-9+/]+={0,2}$/u.test(data.framePngBase64)) throw Error('參考影格格式不符。');
-    let bytes;
-    try { bytes = Uint8Array.from(atob(data.framePngBase64), char => char.charCodeAt(0)); } catch { throw Error('參考影格格式不符。'); }
-    if (bytes.length < 24 || ![137,80,78,71,13,10,26,10].every((byte,index) => bytes[index] === byte)) throw Error('參考影格必須為 PNG。');
-    const view = new DataView(bytes.buffer);
-    if (view.getUint32(16) !== evidence.frameWidth || view.getUint32(20) !== evidence.frameHeight || await sha256(bytes) !== evidence.frameSha256) throw Error('參考影格與已核實的檢查點不符。');
-    frameDataUrl = `data:image/png;base64,${data.framePngBase64}`;
-  }
-  return Object.freeze({checkpointId:evidence.checkpointId, lines:Object.freeze([...data.lines]), frameDataUrl});
+  return Object.freeze({routeId:route.id,sequenceId:route.sequenceId,language:'ja',pages:Object.freeze(pages)});
 }
