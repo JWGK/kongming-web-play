@@ -1,25 +1,45 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#152b29"><meta name="description" content="孔明傳重製工程試玩。原創訓練場，用於驗證回合、操作與存檔流程，並非原作戰役還原。">
-<title>孔明傳 · 重製工程試玩</title><link rel="stylesheet" href="./styles.css"><script type="module" src="./ui.mjs"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171b1a">
+  <meta name="description" content="孔明傳開機、主選單與故事入口重建，以指定 v117 網頁為介面參考。">
+  <title>三國志孔明傳 · 開機流程</title>
+  <link rel="stylesheet" href="./startup.css">
+  <script type="module" src="./startup-ui.mjs"></script>
 </head>
 <body>
-<header><a class="brand" href="#"><span class="seal">孔明</span><span>孔明傳<small>重製工程 · 流程試玩</small></span></a><button id="menu-button" class="icon-button" aria-label="開啟選單">☰</button></header>
-<main>
-<section class="heading"><div><p class="eyebrow">REBUILD / 01</p><h1>演武場</h1><p class="subtitle">先走好每一步，再進入真正的戰場。</p></div><span class="build-tag">工程試玩</span></section>
-<p class="scope">工程試玩：流程與存檔測試；地圖、數值及敵軍 AI 暫定，並非原作還原。</p>
-<section class="battle-layout" aria-label="演武場戰鬥">
-<div class="field-panel"><div class="field-header"><span id="round-label">第 1 回合</span><span id="phase-label" class="phase">我軍行動</span></div><div class="goal"><span>勝利目標</span>擊破全部敵軍 <small>／ 我軍全滅則敗北</small></div><div class="map-scroll"><div id="board" role="group" aria-label="戰場方格"></div></div><div class="map-legend"><span><i class="ally"></i>我軍</span><span><i class="enemy"></i>敵軍</span><span><i class="reach"></i>可移動</span><span>林地消耗較高 · 水域不可通行</span></div></div>
-<aside class="command-panel"><div class="panel-top"><p class="eyebrow">部隊指令</p><span id="remaining-label"></span></div><div id="unit-detail"></div><p id="instruction" class="instruction"></p><div id="commands" class="commands"></div><button id="end-turn" class="primary">結束我軍回合 <span>→</span></button><p id="save-status" class="save-status">進度儲存在這個瀏覽器</p></aside>
-</section>
-<section id="result" class="result" hidden aria-live="polite"></section>
-<section class="journal"><div><p class="eyebrow">戰場紀錄</p><h2>每一步，都有跡可循</h2></div><ol id="event-list"></ol></section>
-<footer>第一階段：移動 · 攻擊 · 回合 · 存檔<br><span>原作地圖、劇情、計策與完整兵種系統仍待重建與驗證。</span></footer>
-</main>
-<div id="notice" role="status" aria-live="polite"></div>
-<dialog id="menu-dialog" aria-labelledby="menu-title"><form method="dialog"><button class="close" aria-label="關閉選單">×</button></form><p class="eyebrow">孔明傳 · REBUILD</p><h2 id="menu-title">從演武場出發</h2><p class="dialog-copy">這是一個獨立的原創測試關卡。先驗證可玩的戰鬥流程，再逐步重建原作內容。</p><div class="menu-actions"><button id="resume-button" class="primary">繼續演武</button><button id="new-button">重新開始</button><button id="save-button">儲存目前進度</button><button id="load-button">讀取瀏覽器存檔</button></div><p class="save-status">存檔僅保留於目前裝置與瀏覽器；清除網站資料會一併移除。</p></dialog>
-<dialog id="confirm-dialog" aria-labelledby="confirm-title"><h2 id="confirm-title">確認操作</h2><p id="confirm-copy" class="dialog-copy"></p><div class="confirm-actions"><button id="confirm-no">返回戰場</button><button id="confirm-yes" class="primary">確定</button></div></dialog>
-<noscript>請開啟 JavaScript，才能遊玩此工程試玩版。</noscript>
-</body></html>
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="三國志孔明傳"><span class="seal" aria-hidden="true">孔<br>明</span><span>三國志孔明傳</span></a>
+    <span class="build-label">開機流程 · 第一階段</span>
+  </header>
+  <main>
+    <section class="intro" aria-label="版本範圍">
+      <p>開機 → 主選單 → 開始遊戲 → 故事入口</p>
+      <p class="muted">以指定的 v117 網頁為介面參考。原作圖像、音樂與完整戰役尚未接入。</p>
+      <div class="toolbar"><button id="reset-button" type="button">回到開機畫面</button><a class="secondary-link" href="./training.html">獨立訓練場 ↗</a></div>
+      <p id="storage-status" class="muted small"></p>
+    </section>
+    <section class="game-card" aria-labelledby="screen-title">
+      <h1 id="screen-title" tabindex="-1">標題畫面</h1>
+      <div id="scene-visual" class="scene-visual" aria-label="開機場景"></div>
+      <p id="screen-description" class="screen-description"></p>
+      <div id="screen-actions" class="screen-actions"></div>
+      <div id="back-controls"></div>
+      <p id="flow-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="control-help">點按下方按鈕，或使用 ↑ ↓ 選擇、A / Enter 確定、B / Esc 返回。未接入的選項不會執行。</p>
+      <details id="pack-panel" hidden>
+        <summary>本機參考片段</summary>
+        <p class="muted small">可選擇已核實的五行開場片段檔。檔案只在本頁記憶體讀取，不會上傳或寫入存檔；重新整理後須再選取。</p>
+        <label class="file-label" for="pack-input">載入本機片段（JSON，最多 96 KiB）</label>
+        <input id="pack-input" type="file" accept=".json,application/json">
+        <p id="pack-status" class="muted small" role="status" aria-live="polite"></p>
+      </details>
+    </section>
+    <details class="about"><summary>關於這次重建</summary><p>目前完成的是可操作的入口流程，不是完整原作移植。場景框與控制方式參考指定網頁；此版以文字與 CSS 呈現，沒有冒充已重建原作圖像。中文選項依介面參考顯示，日文原文另存為來源註記。</p><p>「故事入口」是有界的展示檢查點，不會虛構後續對白或跳到訓練戰鬥。獨立訓練場保留原來的引擎及存檔。</p><p><a href="https://kongming-tactics-lab.gavinkiang.chatgpt.site/" target="_blank" rel="noopener noreferrer">查看指定的介面參考</a></p></details>
+  </main>
+  <footer>非官方重建 · 開機流程驗證版<span>原作權利屬各權利人所有。</span></footer>
+  <noscript>請開啟 JavaScript 以使用開機流程。原有訓練場位於 training.html。</noscript>
+</body>
+</html>
