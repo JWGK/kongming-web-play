@@ -8,7 +8,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 function int(x,a,b,n){if(!Number.isInteger(x)||x<a||x>b)throw new RangeError(n);return x;}
 function guard(x,n){if(!x)throw new UnsupportedRuleError(n);}
 export function occupancyOf(board,units){
-  int(board?.width,1,40,'width');int(board?.height,1,32,'height');if(board.width>32&&(!((board.width===40&&(board.height===24||board.height===12||board.height===20||board.height===18))||(board.width===38&&(board.height===22||board.height===24))||(board.width===36&&(board.height===14||board.height===20||board.height===24)))))throw new TypeError('Unreviewed wide battlefield');
+  int(board?.width,1,40,'width');int(board?.height,1,32,'height');if(board.width>32&&(!((board.width===40&&(board.height===24||board.height===12||board.height===20||board.height===18))||(board.width===38&&(board.height===22||board.height===24))||(board.width===36&&(board.height===14||board.height===20||board.height===24))||(board.width===34&&board.height===24))))throw new TypeError('Unreviewed wide battlefield');
   if(board.terrain?.length!==board.width*board.height)throw new TypeError('Complete terrain required');
   const out=Array(board.width*board.height).fill(255),seen=new Set();
   for(const u of units){int(u.slotIndex,0,44,'slot');if(seen.has(u.slotIndex))throw new TypeError('Duplicate slot');seen.add(u.slotIndex);

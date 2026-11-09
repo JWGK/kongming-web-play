@@ -2,6 +2,7 @@
  * a claim that a complete chapter constructor/AI/media/runtime is available.
  */
 export const REVIEWED_CAMPAIGN_SCENARIOS=Object.freeze({
+ '5:0:17':Object.freeze({blockIndex:17,count:10,hash:'3e96ee7e88da5b8d4f1209dfee378d755955e2188b98c2d4295ff0e53af77200'}),
  '5:0:12':Object.freeze({blockIndex:12,count:16,hash:'d6a6474f80ffbdff3ff12f834f51fcb22abab1736c17ba65cbeb24b046cb41b1'}),
  '5:0:6':Object.freeze({blockIndex:6,count:12,hash:'c1f3e8c34c4fcd68b9dee04990164114145e968b458dc62d5b00e98837aa2350'}),
  '5:0:7':Object.freeze({blockIndex:7,count:12,hash:'51a4933768e31ee02ad9d295244badf3d5c80a400c091f42967069f8f1522029'}),

@@ -6,20 +6,20 @@
   <meta name="theme-color" content="#171b1a">
   <meta name="description" content="依日文 GBA 原作資料重製的繁體中文瀏覽器戰棋遊戲。保留劇情路線與手動存檔，內容持續更新。">
   <title>三國志孔明傳 — 繁體中文網頁版</title>
-  <link rel="stylesheet" href="./style.css?v=0.69.15-kongming-return1-transfer1-gh-lifecycle3">
-  <script type="module" src="./site.bundle.mjs?v=0.69.15-kongming-return1-transfer1-gh-lifecycle3"></script>
+  <link rel="stylesheet" href="./style.css?v=0.70.0-kongming-chengdu-defense1">
+  <script type="module" src="./site.bundle.mjs?v=0.70.0-kongming-chengdu-defense1"></script>
 <style>.save-transfer{margin:1rem 0;padding:1rem;border:1px solid #7d725a;border-radius:.5rem}.save-transfer summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.save-transfer button,.save-transfer select,.save-transfer input[type=file]{min-height:44px;max-width:100%;margin:.35rem}.save-transfer p{white-space:pre-wrap;overflow-wrap:anywhere}.save-transfer section{padding:1rem;border:1px solid #7d725a}.save-transfer label{display:block}.save-transfer input[type=checkbox]{width:24px;height:24px;vertical-align:middle}</style>
 </head>
 <body>
   <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
     <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
-    <span class="version">開發版 <strong>0.69.15</strong></span>
+    <span class="version">開發版 <strong>0.70.0</strong></span>
   </header>
   <main>
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow"><span></span>逐步收錄原作戰役</p><h1 id="page-title">孔明傳戰役<span class="playtest-label">遊玩測試</span></h1><p class="intro-copy">從博望坡出發，保留原作劇情與路線選擇。<br class="desktop-break">延續部隊、裝備及手動記錄，逐步推進完整戰役。</p></div>
-      <div class="scope-note"><span class="small-label">收錄劇情</span><p>主線收錄長安攻城戰Ⅰ的兩階段戰役、郿城留守六將，並延續「孔明歸還」洛陽劇情及兩條戰前路線；九個原作記錄點可手動保存與讀取，不自動存檔。成都攻防戰、巴西之戰、稱帝路線及五丈原另一結局尚未開放</p><span>含條件路線・單人遊玩</span></div>
+      <div class="scope-note"><span class="small-label">收錄劇情</span><p>主線保留既有關卡，並接續「孔明歸還」後孟獲未歸順路線的成都防衛戰，至戰後首個原作手動記錄點。早期巴西之戰（入蜀・嚴顏）維持原有內容；終章巴西之戰（陸遜）、稱帝路線、五丈原另一結局及本段之後的劇情仍未開放。不自動存檔。</p><span>含條件路線・單人遊玩</span></div>
     </section>
     <noscript><p class="alert">此瀏覽器版需要 JavaScript，請檢查瀏覽器設定。</p></noscript>
     <div id="app-error" class="alert" role="alert" hidden></div>
@@ -58,9 +58,9 @@
         </section>
         <aside class="inspection-panel" aria-labelledby="inspection-title"><p class="eyebrow">部隊資訊</p><div class="inspection-identity"><img id="unit-portrait" width="64" height="64" alt="" hidden><h3 id="inspection-title">選擇格子</h3></div><p id="inspection-action-state" class="inspection-action-state"></p><p id="inspection-position" class="inspection-position"></p><dl class="inspection-fields"><div><dt>地形</dt><dd id="inspection-terrain">—</dd></div><div><dt>兵種</dt><dd id="inspection-class">—</dd></div><div><dt>等級</dt><dd id="inspection-level">—</dd></div><div><dt>兵力</dt><dd id="inspection-troops">—</dd></div><div><dt>策略值</dt><dd id="inspection-sp">—</dd></div><div><dt>經驗值</dt><dd id="inspection-exp">—</dd></div></dl><section class="unit-status-details" aria-label="部隊狀態"><h4>部隊狀態</h4><div id="inspection-status"></div></section><div class="inspection-stats"><h4>能力（套用地形與相剋修正前）</h4><div id="inspection-values"></div></div><p id="map-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p><details class="battle-log"><summary>最近進度</summary><ol id="game-log"></ol></details></aside>
       </div>
-      <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版由博望坡延續至漢中退卻戰，以及街亭戰後另一條分支，保留既有條件路線、姜維加入劇情與四項諸葛瞻培育選擇。保留西平關之戰的誘敵落穴與出關迎戰兩條路線、最多12名部隊出陣、原作多階段戰場及戰後記錄提示。本次接續街亭的一般分支，新增漢中退卻戰：諸葛亮、趙雲固定出陣，另可選最多9名部隊；保留原作撤離條件、伏兵、單挑及寶物。戰後接續原作軍議、漢中城內設施與城外大地圖、準備確認及原作手動記錄；目前已接續原作馬謖處刑／赦免選擇，以及第四章魏、吳、石亭與漢中招募劇情，並接續諸葛瞻四項教育選擇、軍議、行軍與陳倉營地。營地可與原作登場武將對話、查看情報、管理道具及使用原作存讀檔選單；保留姜維的準備確認與原作手動記錄，並接續陳倉之戰兩條進軍路線、原作戰前劇情與戰後記錄提示。長安手動記錄可接續洛陽、長安軍議、祁山抵達與營帳軍議，並可反覆與目前登場武將對話；選擇對象後，角色會依原作方式走近並交談。本段現已接續姜維的出發確認、伏兵包圍／正面迎敵選擇、魏軍軍議與出戰人員選擇及確認，並已接上祁山追擊戰兩條策略路線及原作戰場事件，勝利後接續回營軍議、成都與諸葛瞻培育，再進入第四章第二幕「祁山爭奪戰」的斜谷／箕谷兩條路線；本戰勝利後接續陳倉、洛陽、司馬懿挑戰與祁山軍營，再進入同幕下一場與司馬懿的決戰，保留原作兩階段戰鬥。決戰勝利後進入原作條件分支，再接續正式第四章第三幕「五丈原之戰」，開放渭水北岸／分兵兩條策略路線。符合原作條件者可親自選擇拒絕稱帝後繼續；稱帝選項及該分支尚未開放，不會自動替玩家作選擇。既有稱帝旗標而需要未完成分支的記錄會保留現狀並提示。渭水戰後停在下一段劇情入口。新段落及祁山爭奪戰暫無新手動／中斷記錄，請保留追擊戰中斷以便重玩。戰前本段暫不提供新的手動記錄；遇到存檔提示時，須自行選擇「不存檔」才繼續。祁山追擊戰可在我方穩定操作階段使用「中斷」，再從標題繼續。返回標題或重新載入仍會失去未儲存進度，沒有自動保存。本段不新增自由走動、商店或其他營地設施。陳倉營地不開放城鎮移動或商店；較早的漢中自由活動範圍保持不變。街亭另一分支仍停在第四章第一幕開幕的原作記錄提示。後續戰役尚未開放。可使用道具管理、手動存讀檔及戰中中斷記錄。情報選單的歷史及勢力分佈畫面尚未製作；後續劇情與戰役仍在製作中。舊記錄若缺少分支或培育所需的歷史資料，會保留原有狀態並提示讀取較早的相容記錄，不會猜測或重設進度。按已核對的原作資料與處理方式重新製作瀏覽器版，並非透過模擬器執行原作程式。畫面配置、觸控操作與文字顯示速度屬於瀏覽器版設計。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
+      <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版沿用既有主線、條件分支、武將資料、道具與已支援的記錄。0.70.0 新接終章「孔明歸還」後的成都防衛戰：諸葛亮、諸葛瞻等五人固定出陣，另可選最多七人，依原作擊敗孟獲或守住二十回合後結算；接續成都場景及首個原作手動記錄點，保存或略過後暫停於本段終點。早期巴西之戰（入蜀・對嚴顏）與終章巴西之戰（對陸遜）是不同章節及事件，雖共用地形，也不會共用戰役或記錄識別；終章巴西尚未開放。稱帝接受路線、五丈原另一結局及後續劇情仍在製作中。新成都戰鬥不提供戰中自動保存或中斷記錄，請保留戰前相容記錄；其他段落依各自已支援的原作記錄提示操作。返回標題或重新載入會失去未保存進度。存檔只在玩家明確選格及需要時確認覆寫後儲存，不會因讀取而改寫舊記錄。若舊記錄缺少所需資料，會提示並保留原有狀態，不猜測或重設進度。本版按已核對的原作資料重製，並非以模擬器執行原作；觸控操作和文字顯示速度屬瀏覽器版設計。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
     </section>
-    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・終章第二幕「孔明歸還」洛陽劇情與兩路戰前・九個原作手動記錄點</p></footer>
+    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・0.70.0 成都防衛戰主線增量・原作選兵、勝敗及戰後手動記錄</p></footer>
   </main>
 </body>
 </html>

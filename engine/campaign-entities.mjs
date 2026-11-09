@@ -1,0 +1,12 @@
+/** Sparse persistent non-owned entities. Absence means unobserved, never zero. */
+import {normalizePersistentParty} from './campaign-persistence.mjs';
+const clone=structuredClone,stable=x=>x&&typeof x==='object'?(Array.isArray(x)?x.map(stable):Object.fromEntries(Object.keys(x).sort().map(k=>[k,stable(x[k])]))):x;
+export function persistentEntityFields(u){return{definitionIndex:u.definitionIndex,nameJa:u.nameJa,classIndex:u.classIndex,level:u.level,experience:u.experience,lastLearnedStrategyMarker:u.lastLearnedStrategyMarker,entityControlClass:u.entityControlClass,itemSlots:clone(u.itemSlots),baseFields:clone(u.statsSource?.baseFields??u.baseFields)};}
+export function emptyEntityOverrides(){return{version:2,unobserved:'unknown',entries:[],origins:{}};}
+export function mergeObservedEntities(overrides,units,ownedDefinitions,origin,{onlyDefinitions=null}={}){const out=clone(overrides),entries=new Map(out.entries.map(e=>[e.definitionIndex,e]));for(const u of units){if(u.definitionIndex===null||ownedDefinitions.includes(u.definitionIndex)||(onlyDefinitions&&!onlyDefinitions.includes(u.definitionIndex)))continue;entries.set(u.definitionIndex,persistentEntityFields(u));out.origins[u.definitionIndex]=origin;}out.entries=[...entries.values()].sort((a,b)=>a.definitionIndex-b.definitionIndex);return out;}
+export function validateEntityOverrides(value,persistent,data){
+ if(value?.version!==2||value.unobserved!=='unknown'||Object.keys(value).sort().join(',')!=='entries,origins,unobserved,version'||!Array.isArray(value.entries)||!value.origins||typeof value.origins!=='object')throw new TypeError('Explicit sparse entity provenance required');
+ const ids=value.entries.map(e=>e?.definitionIndex);if(new Set(ids).size!==ids.length||ids.some((d,i)=>!Number.isInteger(d)||d<0||d>511||data.playerDefinitionPool.includes(d)||(i&&ids[i-1]>=d))||Object.keys(value.origins).sort().join(',')!==ids.map(String).sort().join(','))throw new TypeError('Invalid non-owned entity identity');
+ if(ids.some(d=>!['source-initial-supported-prefix','observed-prior-battle','observed-current-battle'].includes(value.origins[d])))throw new TypeError('Unknown entity origin');
+ const p=normalizePersistentParty({...clone(persistent),party:value.entries},{...data,ownedDefinitionPool:data.playerDefinitionPool,playerDefinitionPool:ids});if(JSON.stringify(stable(p.party))!==JSON.stringify(stable(value.entries)))throw new TypeError('Invalid non-owned entity fields');return clone(value);
+}
