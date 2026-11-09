@@ -2,44 +2,65 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171b1a">
-  <meta name="description" content="孔明傳開機、主選單與故事入口重建，以指定 v117 網頁為介面參考。">
-  <title>三國志孔明傳 · 開機流程</title>
-  <link rel="stylesheet" href="./startup.css">
-  <script type="module" src="./startup-ui.mjs"></script>
+  <meta name="description" content="依日文 GBA 原作資料重製的繁體中文瀏覽器戰棋遊戲。保留劇情路線與手動存檔，內容持續更新。">
+  <title>三國志孔明傳 — 繁體中文網頁版</title>
+  <link rel="stylesheet" href="./style.css?v=0.69.15-kongming-return1-transfer1-gh">
+  <script type="module" src="./site.bundle.mjs?v=0.69.15-kongming-return1-transfer1-gh"></script>
+<style>.save-transfer{margin:1rem 0;padding:1rem;border:1px solid #7d725a;border-radius:.5rem}.save-transfer summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.save-transfer button,.save-transfer select,.save-transfer input[type=file]{min-height:44px;max-width:100%;margin:.35rem}.save-transfer p{white-space:pre-wrap;overflow-wrap:anywhere}.save-transfer section{padding:1rem;border:1px solid #7d725a}.save-transfer label{display:block}.save-transfer input[type=checkbox]{width:24px;height:24px;vertical-align:middle}</style>
 </head>
 <body>
+  <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="三國志孔明傳"><span class="seal" aria-hidden="true">孔<br>明</span><span>三國志孔明傳</span></a>
-    <span class="build-label">雙開場 · 六段內容</span>
+    <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
+    <span class="version">開發版 <strong>0.69.15</strong></span>
   </header>
   <main>
-    <section class="intro" aria-label="版本範圍">
-      <p>開機 → 主選單 → 立即開始 / 觀看序章</p>
-      <p class="muted">以指定的 v117 網頁為介面參考。兩條開場共六段繁體中文內容已接通；原作圖像、音樂與完整戰役尚未接入。</p>
-      <div class="toolbar"><button id="reset-button" type="button">回到開機畫面</button><a class="secondary-link" href="./training.html">獨立訓練場 ↗</a></div>
-      <p id="storage-status" class="muted small"></p>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span></span>逐步收錄原作戰役</p><h1 id="page-title">孔明傳戰役<span class="playtest-label">遊玩測試</span></h1><p class="intro-copy">從博望坡出發，保留原作劇情與路線選擇。<br class="desktop-break">延續部隊、裝備及手動記錄，逐步推進完整戰役。</p></div>
+      <div class="scope-note"><span class="small-label">收錄劇情</span><p>主線收錄長安攻城戰Ⅰ的兩階段戰役、郿城留守六將，並延續「孔明歸還」洛陽劇情及兩條戰前路線；九個原作記錄點可手動保存與讀取，不自動存檔。成都攻防戰、巴西之戰、稱帝路線及五丈原另一結局尚未開放</p><span>含條件路線・單人遊玩</span></div>
     </section>
-    <section class="game-card" aria-labelledby="screen-title">
-      <h1 id="screen-title" tabindex="-1">標題畫面</h1>
-      <div id="scene-visual" class="scene-visual" aria-label="開機場景"></div>
-      <p id="screen-description" class="screen-description"></p>
-      <div id="screen-actions" class="screen-actions"></div>
-      <div id="back-controls"></div>
-      <p id="flow-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
-      <p class="control-help">點按下方按鈕，或使用 ↑ ↓ 選擇、A / Enter 確定、B / Esc 返回。未接入的選項不會執行。</p>
-      <details id="pack-panel" hidden>
-        <summary>本機參考片段</summary>
-        <p class="muted small">選擇目前開場的核實片段檔，依原始文字段落逐段瀏覽。檔案只在本頁記憶體讀取，不會上傳或寫入存檔；重新整理後須再選取。</p>
-        <label class="file-label" for="pack-input">載入本機片段（JSON，最多 96 KiB）</label>
-        <input id="pack-input" type="file" accept=".json,application/json">
-        <p id="pack-status" class="muted small" role="status" aria-live="polite"></p>
-      </details>
+    <noscript><p class="alert">此瀏覽器版需要 JavaScript，請檢查瀏覽器設定。</p></noscript>
+    <div id="app-error" class="alert" role="alert" hidden></div>
+    <section id="battle-view" aria-labelledby="battle-title" tabindex="-1">
+      <div class="battle-header"><div><p class="eyebrow">戰場</p><p id="battle-chapter-act" class="eyebrow" hidden></p><h2 id="battle-title">博望坡之戰</h2></div><div class="battle-conditions"><span id="game-phase">尚未開始</span><span>天氣 <strong id="battle-weather">—</strong></span><span>本戰回合 <strong id="battle-turn">— / 30</strong></span><span id="battle-cumulative">累計回合：未記錄</span></div></div>
+      <div class="battle-goal"><span>勝利條件</span><strong id="battle-victory">擊敗夏侯惇</strong><small id="battle-hint">依原作戰場條件判定勝敗。</small></div>
+      <div id="battle-error" class="alert" role="alert" hidden></div>
+      <p class="battle-animation-setting"><label for="battle-animation-mode">戰鬥動畫：</label><select id="battle-animation-mode" disabled aria-describedby="battle-animation-note"><option value="0" selected>不看</option><option value="32" disabled>觀看（日後加入）</option></select><small id="battle-animation-note">本版使用「不看」。詳細戰鬥及策略演出會於日後加入。</small></p>
+      <section class="game-toolbar" aria-label="遊戲與記錄"><button id="game-new" type="button" disabled>重新開始</button><button id="game-save" type="button" disabled hidden>記錄</button><button id="game-load" type="button" disabled hidden>讀取記錄</button><button id="game-settings" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="game-settings-panel" disabled>設定</button><button id="game-suspend" type="button" disabled>中斷</button><button id="game-retreat" type="button" disabled>撤退</button><button id="game-pause" type="button" disabled>暫停</button><button id="game-audio" type="button" aria-pressed="false">開啟聲音</button><p id="game-audio-status" role="status" hidden></p><p id="game-save-status" role="status">正在載入遊戲資料。</p></section>
+      <section id="game-settings-panel" class="game-confirmation game-settings" role="dialog" aria-modal="true" aria-labelledby="game-settings-title" hidden><h3 id="game-settings-title">設定</h3><div id="game-settings-fields"></div><p>詳細戰鬥動畫會於日後加入。修改後按「確定」套用，按「取消」則放棄修改。設定只會隨明確儲存的記錄保留，遊戲進度不會自動儲存。</p><button id="game-settings-apply" type="button">確定</button><button id="game-settings-close" type="button">取消</button></section>
+      <div id="game-confirmation" class="game-confirmation" role="alertdialog" aria-modal="true" aria-labelledby="game-confirmation-title" aria-describedby="game-confirmation-message" hidden><h3 id="game-confirmation-title">確認</h3><p id="game-confirmation-message"></p><div><button id="game-confirm-yes" type="button">執行</button><button id="game-confirm-no" type="button">返回</button></div></div>
+      <section id="presentation-loading" class="field-note" aria-label="章節場景載入" hidden><p id="presentation-loading-status" role="status" aria-live="polite"></p><button id="presentation-loading-cancel" type="button">取消載入</button><button id="presentation-loading-retry" type="button" hidden>重試載入</button></section>
+      <section id="entry-shell" class="entry-shell" aria-label="啟動、劇情與記錄"><div id="entry-gate" class="entry-gate"><p>三國志孔明傳</p><button id="entry-begin" type="button" disabled>正在載入…</button><p id="entry-loading-status" role="status" aria-live="polite">正在載入遊戲資料，首次開啟可能需要較長時間。</p><small>開始瀏覽器操作。可使用上方按鈕切換聲音。</small></div><div id="entry-content" hidden><div class="entry-status"><p id="entry-stage" class="eyebrow"></p><p id="entry-currency" hidden></p></div><h3 id="entry-chapter-heading" class="entry-chapter-heading" hidden></h3><p id="entry-announcement" class="sr-only" role="status" aria-live="polite"></p><div class="entry-viewport"><img id="entry-image" width="240" height="160" alt="原作場景"><canvas id="entry-field-canvas" width="240" height="160" aria-label="目前戰場，劇情期間不能操作" hidden></canvas><div id="entry-image-overlay" aria-hidden="true"></div></div><section id="entry-dialogue" class="game-scene story-dialogue" aria-label="劇情對話" hidden><div class="scene-identity"><img id="entry-dialogue-portrait" width="64" height="64" alt="" hidden><strong id="entry-dialogue-speaker"></strong></div><p id="entry-dialogue-text"></p></section><p id="entry-prompt" class="field-note" hidden></p><section id="entry-preparation" class="entry-preparation" aria-label="出陣準備" hidden></section><section id="entry-item-description" class="entry-item-description" aria-label="道具說明" hidden></section><section id="entry-information" class="entry-information" aria-label="資訊" hidden></section><div id="entry-options" class="entry-options"></div><details id="entry-text-details" hidden><summary>閱讀全文</summary><p id="entry-text"></p></details><section id="entry-compatibility" class="field-note" aria-label="舊記錄相容性" hidden><p id="entry-compatibility-notice" role="status" aria-live="polite"></p><button id="entry-compatibility-load" type="button">讀取記錄</button><button id="entry-compatibility-title" type="button">返回標題</button></section><p id="entry-complete" class="game-result" hidden>目前已收錄的劇情到此為止。請保留手動記錄，後續內容將繼續加入。</p><div class="entry-controls"><button id="entry-menu" type="button" hidden>選單</button><button id="entry-next" type="button">下一步</button><button id="entry-back" type="button">返回</button><button id="entry-skip" type="button">返回標題</button><button id="entry-resume" type="button" hidden>繼續劇情</button></div><p class="field-note">使用場景下方按鈕操作。對話保留原作內容，並以繁體中文顯示。文字顯示期間按「下一步」可顯示全文，再按一次才會繼續。</p></div><p id="entry-error" class="alert" role="alert" hidden></p></section>
+      <section id="save-slots" class="save-slots" aria-labelledby="save-slots-title" hidden><h3 id="save-slots-title">記錄</h3><p>這是此瀏覽器專用的記錄，與 GBA 存檔不相容，亦與中斷記錄分開管理。遊戲進度不會自動儲存。</p><div id="save-slots-list"></div><button id="save-slots-close" type="button">返回</button><button id="save-slots-delete" type="button">刪除記錄</button></section>
+      <section id="game-suspend-notice" class="game-confirmation" role="dialog" aria-label="中斷記錄" hidden><p>已儲存</p><button id="game-suspend-ack" type="button">返回</button></section>
+      <div id="game-lobby" class="game-lobby"><span class="seal" aria-hidden="true">博望</span><h3>進軍博望坡</h3><p>選擇「重新開始」，從開場劇情開始遊戲。<br>可將進度儲存在此瀏覽器。</p></div>
+      <section id="game-preparation" class="game-preparation" aria-labelledby="preparation-title" hidden><p class="eyebrow">出陣準備</p><h3 id="preparation-title">選擇出陣武將</h3><p id="preparation-count" role="status"></p><div id="preparation-units"></div><p class="field-note">必須出陣的武將不能取消。選擇規則及出陣資格均由原作資料處理。</p><button id="preparation-confirm" type="button">出陣</button></section>
+      <section id="game-scene" class="game-scene" aria-label="對話與演出" hidden><img id="scene-image" class="scene-source-image" width="240" height="160" alt="原作行軍場景" hidden><h3 id="scene-heading" hidden>升級！</h3><div class="scene-identity"><img id="scene-portrait" width="64" height="64" alt="" hidden><strong id="scene-speaker"></strong><span id="scene-counter"></span></div><p id="scene-text"></p><p id="scene-announcement" class="sr-only" role="status" aria-live="polite"></p><button id="scene-next" type="button">下一步</button></section>
+      <section id="game-source-choice" class="game-confirmation source-choice" aria-labelledby="source-choice-heading" hidden><h3 id="source-choice-heading" tabindex="-1">請選擇</h3><div id="source-choice-options"></div></section>
+      <section id="game-source-confirmation" class="game-confirmation source-confirmation" aria-labelledby="source-confirmation-text" hidden><div class="scene-identity"><img id="source-confirmation-portrait" width="64" height="64" alt="" hidden><strong id="source-confirmation-speaker"></strong></div><p id="source-confirmation-text"></p><div id="source-confirmation-options"></div></section>
+      <div id="game-result" class="game-result" role="status" hidden><p class="eyebrow">戰鬥結束</p><h3 id="game-result-title"></h3><p id="game-result-summary"></p></div>
+      <div id="battle-workspace" class="battle-workspace" hidden>
+        <section class="map-panel" aria-labelledby="map-heading">
+          <div class="map-tools"><h3 id="map-heading">戰場 <span>15 × 24</span></h3><div class="zoom-controls"><button type="button" id="zoom-out" aria-label="縮小地圖">−</button><output id="zoom-value" aria-label="格子大小">44px</output><button type="button" id="zoom-in" aria-label="放大地圖">＋</button></div></div>
+          <div class="map-navigation"><label for="unit-jump">查看部隊</label><select id="unit-jump"><option value="">選擇部隊</option></select><button type="button" id="map-reset">還原顯示</button></div>
+
+          <p id="map-help" class="map-help">點按可操作部隊，再點目的地預覽路線；再點同一格即確認移動，但不會自動待機。攻擊與策略可點地圖上的目標，最後按「確認目標」。可拖動地圖，操作列會留在戰場內。</p>
+          <div id="map-viewport" class="map-viewport" aria-label="戰場操作區">
+            <div class="map-hud-header"><p id="map-unit-summary" role="status"></p><button id="map-inspect-toggle" type="button" aria-expanded="false" disabled>部隊／裝備</button><button id="map-menu-toggle" type="button" aria-expanded="false">選單</button></div>
+          <div id="map-scroll" class="map-scroll" tabindex="0" role="region" aria-label="可捲動的戰場地圖" aria-describedby="map-help"><div id="map-stage" class="map-stage"><canvas id="game-canvas" width="240" height="384" aria-hidden="true"></canvas><div id="battle-grid" class="battle-grid original-map-grid" role="grid" aria-label="博望坡戰場，24 列、15 欄" aria-rowcount="24" aria-colcount="15"></div></div></div>
+          <section id="map-action-dock" class="action-panel map-action-dock" aria-labelledby="action-heading"><div class="action-heading"><h4 id="action-heading">行動</h4><button id="map-action-back" type="button" hidden>返回列表</button><button id="map-target-list" type="button" hidden aria-expanded="false">目標列表</button><span id="action-stage">選擇部隊</span></div><p id="action-status" role="status" aria-live="polite"></p><div id="game-options" class="game-options" hidden></div><p id="game-target-status" hidden></p><div id="game-action-buttons" class="action-buttons"><button id="action-stay" type="button">原地行動</button><button id="action-select" type="button">操作此部隊</button><button id="action-confirm" type="button">確認移動</button><button id="action-attack" type="button">攻擊</button><button id="action-strategy" type="button">策略</button><button id="action-item" type="button">道具</button><button id="action-wait" type="button">待機</button><button id="action-cancel" type="button">取消</button><button id="game-target-confirm" type="button" hidden>確認目標</button></div><button id="game-end-phase" type="button" class="action-reset">結束我軍行動</button><p id="movement-path" class="movement-path sr-only" hidden></p></section>
+            <section id="map-unit-panel" class="map-sheet" aria-label="部隊與持有物" hidden><div class="map-sheet-heading"><h4>部隊與持有物</h4><button id="map-inspect-close" type="button">返回地圖</button></div><div id="map-unit-details"></div></section>
+            <section id="map-utility-panel" class="map-sheet map-utility-panel" aria-label="戰場選單" hidden><div class="map-sheet-heading"><h4>戰場選單</h4><button id="map-menu-close" type="button">返回地圖</button></div><div class="map-utility-buttons"><button id="map-settings" type="button">設定</button><button id="map-suspend" type="button">中斷</button><button id="map-retreat" type="button">撤退</button><button id="map-pause" type="button">暫停</button><button id="map-audio" type="button">開啟聲音</button><button id="map-title" type="button">返回標題</button></div><p id="map-retreat-note" role="status" hidden>這份舊戰中記錄沒有重開起點；可繼續遊玩或載入其他記錄。</p><p>遊戲進度不會自動儲存。</p></section>
+          </div>
+          <div class="movement-legend" aria-label="地圖標示"><span><i class="legend-destination" aria-hidden="true">□</i>可移動</span><span><i class="legend-path" aria-hidden="true">◎</i>預覽路線</span><span><i class="legend-attack" aria-hidden="true">×</i>攻擊目標</span><span><i class="legend-strategy" aria-hidden="true">◇</i>策略目標</span><span><i class="legend-item" aria-hidden="true">＋</i>道具目標</span></div><p class="map-footnote">部隊右上角顯示狀態符號；＋數字代表其他狀態，可點「部隊／裝備」查看全部。狀態符號與選取框屬於瀏覽器版設計，並非原作圖示。左上角座標為（0, 0）。</p>
+        </section>
+        <aside class="inspection-panel" aria-labelledby="inspection-title"><p class="eyebrow">部隊資訊</p><div class="inspection-identity"><img id="unit-portrait" width="64" height="64" alt="" hidden><h3 id="inspection-title">選擇格子</h3></div><p id="inspection-action-state" class="inspection-action-state"></p><p id="inspection-position" class="inspection-position"></p><dl class="inspection-fields"><div><dt>地形</dt><dd id="inspection-terrain">—</dd></div><div><dt>兵種</dt><dd id="inspection-class">—</dd></div><div><dt>等級</dt><dd id="inspection-level">—</dd></div><div><dt>兵力</dt><dd id="inspection-troops">—</dd></div><div><dt>策略值</dt><dd id="inspection-sp">—</dd></div><div><dt>經驗值</dt><dd id="inspection-exp">—</dd></div></dl><section class="unit-status-details" aria-label="部隊狀態"><h4>部隊狀態</h4><div id="inspection-status"></div></section><div class="inspection-stats"><h4>能力（套用地形與相剋修正前）</h4><div id="inspection-values"></div></div><p id="map-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p><details class="battle-log"><summary>最近進度</summary><ol id="game-log"></ol></details></aside>
+      </div>
+      <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版由博望坡延續至漢中退卻戰，以及街亭戰後另一條分支，保留既有條件路線、姜維加入劇情與四項諸葛瞻培育選擇。保留西平關之戰的誘敵落穴與出關迎戰兩條路線、最多12名部隊出陣、原作多階段戰場及戰後記錄提示。本次接續街亭的一般分支，新增漢中退卻戰：諸葛亮、趙雲固定出陣，另可選最多9名部隊；保留原作撤離條件、伏兵、單挑及寶物。戰後接續原作軍議、漢中城內設施與城外大地圖、準備確認及原作手動記錄；目前已接續原作馬謖處刑／赦免選擇，以及第四章魏、吳、石亭與漢中招募劇情，並接續諸葛瞻四項教育選擇、軍議、行軍與陳倉營地。營地可與原作登場武將對話、查看情報、管理道具及使用原作存讀檔選單；保留姜維的準備確認與原作手動記錄，並接續陳倉之戰兩條進軍路線、原作戰前劇情與戰後記錄提示。長安手動記錄可接續洛陽、長安軍議、祁山抵達與營帳軍議，並可反覆與目前登場武將對話；選擇對象後，角色會依原作方式走近並交談。本段現已接續姜維的出發確認、伏兵包圍／正面迎敵選擇、魏軍軍議與出戰人員選擇及確認，並已接上祁山追擊戰兩條策略路線及原作戰場事件，勝利後接續回營軍議、成都與諸葛瞻培育，再進入第四章第二幕「祁山爭奪戰」的斜谷／箕谷兩條路線；本戰勝利後接續陳倉、洛陽、司馬懿挑戰與祁山軍營，再進入同幕下一場與司馬懿的決戰，保留原作兩階段戰鬥。決戰勝利後進入原作條件分支，再接續正式第四章第三幕「五丈原之戰」，開放渭水北岸／分兵兩條策略路線。符合原作條件者可親自選擇拒絕稱帝後繼續；稱帝選項及該分支尚未開放，不會自動替玩家作選擇。既有稱帝旗標而需要未完成分支的記錄會保留現狀並提示。渭水戰後停在下一段劇情入口。新段落及祁山爭奪戰暫無新手動／中斷記錄，請保留追擊戰中斷以便重玩。戰前本段暫不提供新的手動記錄；遇到存檔提示時，須自行選擇「不存檔」才繼續。祁山追擊戰可在我方穩定操作階段使用「中斷」，再從標題繼續。返回標題或重新載入仍會失去未儲存進度，沒有自動保存。本段不新增自由走動、商店或其他營地設施。陳倉營地不開放城鎮移動或商店；較早的漢中自由活動範圍保持不變。街亭另一分支仍停在第四章第一幕開幕的原作記錄提示。後續戰役尚未開放。可使用道具管理、手動存讀檔及戰中中斷記錄。情報選單的歷史及勢力分佈畫面尚未製作；後續劇情與戰役仍在製作中。舊記錄若缺少分支或培育所需的歷史資料，會保留原有狀態並提示讀取較早的相容記錄，不會猜測或重設進度。按已核對的原作資料與處理方式重新製作瀏覽器版，並非透過模擬器執行原作程式。畫面配置、觸控操作與文字顯示速度屬於瀏覽器版設計。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
     </section>
-    <details class="about"><summary>關於這次重建</summary><p>目前完成的是可操作的入口流程，不是完整原作移植。場景框與控制方式參考指定網頁；此版以文字與 CSS 呈現，沒有冒充已重建原作圖像。中文選項依介面參考顯示，日文原文另存為來源註記。</p><p>兩條開場分開展示六段核實內容的繁體中文版本，並停在各自尚未重建的後續場景；不會合併分支或跳到訓練戰鬥。獨立訓練場保留原來的引擎及存檔。</p><p><a href="https://kongming-tactics-lab.gavinkiang.chatgpt.site/" target="_blank" rel="noopener noreferrer">查看指定的介面參考</a></p></details>
+    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・終章第二幕「孔明歸還」洛陽劇情與兩路戰前・九個原作手動記錄點</p></footer>
   </main>
-  <footer>非官方重建 · 開機流程驗證版<span>原作權利屬各權利人所有。</span></footer>
-  <noscript>請開啟 JavaScript 以使用開機流程。原有訓練場位於 training.html。</noscript>
 </body>
 </html>

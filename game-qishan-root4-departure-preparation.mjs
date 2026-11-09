@@ -1,0 +1,34 @@
+/** Root4 friendly03 / native16F8C observed-current roster projection only.
+ * No battle engine, enemy22, healing, RNG, history reconstruction or authority. */
+const need=(v,m)=>{if(!v)throw new RangeError(m);},clone=structuredClone;
+export const departureUint=(n,max=0xffffffff)=>Number.isSafeInteger(n)&&!Object.is(n,-0)&&n>=0&&n<=max;
+export const freezeDeparture=x=>{if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.values(x).forEach(freezeDeparture);Object.freeze(x);}return x;};
+export function departureOwn(x,keys){need(x&&Object.getPrototypeOf(x)===Object.prototype,'Plain own departure data');const d=Object.getOwnPropertyDescriptors(x),ks=Reflect.ownKeys(d);need(ks.every(k=>typeof k==='string'&&d[k].enumerable&&Object.hasOwn(d[k],'value')),'No departure accessor/symbol');if(keys){const want=keys.split(',');need(ks.length===want.length&&ks.every(k=>want.includes(k)),'Exact departure fields '+keys);}}
+export function departureTree(value){let n=0;function visit(x,depth){need(++n<=1000000&&depth<=64,'Bounded plain departure tree');if(x===null||typeof x==='boolean')return;if(typeof x==='number'){need(Number.isFinite(x)&&!Object.is(x,-0),'Finite exact data number');return;}if(typeof x==='string'){need(x.length<=2000000,'Bounded retained string');return;}if(Array.isArray(x)){need(Object.getPrototypeOf(x)===Array.prototype&&x.length<=1000000&&Reflect.ownKeys(x).length===x.length+1,'Dense own array');for(let i=0;i<x.length;i++){const d=Object.getOwnPropertyDescriptor(x,''+i);need(d&&d.enumerable&&Object.hasOwn(d,'value'),'Own array element');visit(d.value,depth+1);}return;}departureOwn(x);for(const d of Object.values(Object.getOwnPropertyDescriptors(x)))visit(d.value,depth+1);}visit(value,0);return value;}
+const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+function currentEntities(campaign){
+ const party=campaign.persistentState?.party,overrides=campaign.campaignEntityOverrides;
+ need(Array.isArray(party)&&party.length>0&&party.length<=512&&overrides?.version===2&&overrides.unobserved==='unknown'&&Array.isArray(overrides.entries)&&overrides.entries.length<=512,'Actual known current entity partition');
+ const all=[...party,...overrides.entries],seen=new Set();need(all.length<=512,'Finite current observed partition');
+ for(const e of all){need(departureUint(e.definitionIndex,511)&&!seen.has(e.definitionIndex)&&departureUint(e.entityControlClass,31),'Distinct observed identity/current control');seen.add(e.definitionIndex);}
+ // Preserve supported sparse absolute retirements, but never create missing actor resources.
+ if(Object.hasOwn(campaign,'sourceSparseEntityControls')){const sparse=campaign.sourceSparseEntityControls;departureOwn(sparse,'version,entries');need(sparse.version===1&&Array.isArray(sparse.entries)&&sparse.entries.length<=4,'Supported sparse retirement domain');let previous=-1;
+  for(const e of sparse.entries){departureOwn(e,'definitionIndex,control,sourceCursor,flag191,flag195');const c=e.sourceCursor;departureOwn(c,'root,section,block,record,commandIndex');const ids={75:2,76:3,77:47,78:58,103:58};need(c.root===3&&c.section===1&&c.block===0&&c.record===2&&ids[c.commandIndex]===e.definitionIndex&&e.control===4&&typeof e.flag191==='boolean'&&typeof e.flag195==='boolean'&&(c.commandIndex===103?e.flag191&&!e.flag195:e.flag195)&&e.definitionIndex>previous,'Exact supported sparse control source');previous=e.definitionIndex;const known=all.find(a=>a.definitionIndex===e.definitionIndex);need(!known||known.entityControlClass===e.control,'Sparse known control correlation');}
+ }
+ return all;
+}
+/** Argument is fixed captured source data, never a caller catalog in the production path. */
+export function departurePreparationSpec(campaign,profile,block){
+ need([3,4].includes(block)&&same(profile.header,[0,30,0,0,1,96,0,0,1,0,0])&&profile.rows.length===30,'Exact root4 friendly header/30 source rows');
+ const expected=block===3?[0,4,20]:[0],capacity=block===3?9:13,rows=profile.rows;
+ need(same(profile.fixedDefinitions,expected)&&profile.optionalDescriptorCount===capacity&&same(rows.filter(r=>r.definition<512).map(r=>r.definition),expected)&&rows.filter(r=>r.definition===1024).length===capacity,'Exact source fixed/optional definitions');
+ const known=currentEntities(campaign),eligible=e=>[0,6].includes(e.entityControlClass),fixed=expected.map(d=>{const e=known.find(e=>e.definitionIndex===d);need(e,'Required fixed actor must be currently observed');return e;});
+ const optional=known.filter(e=>eligible(e)&&!expected.includes(e.definitionIndex)).sort((a,b)=>a.definitionIndex-b.definitionIndex).slice(0,128);
+ need(fixed.some(e=>e.definitionIndex===0&&eligible(e)),'Observed available leader0');
+ const descriptors=Array(45).fill(null);let descriptorIndex=0;for(const r of rows){if(r.definition===65535)continue;need(r.allocationSelector===1&&r.conditionEnabledRaw===0,'Exact unconditional friendly row');descriptors[descriptorIndex]={descriptorIndex,sourceRow:r.row,definitionIndex:r.definition,sourceX:r.x,sourceY:r.y,directionSource:r.directionSource,hidden:r.hiddenRaw===1};descriptorIndex++;}
+ return freezeDeparture({block,sourceConstructorCursor:[4,0,block,0,0],sourceSelectionCursor:[4,0,block,0,1],header:clone(profile.header),sourceRows:clone(rows),resetDescriptorCount:45,fixedDefinitions:clone(expected),requiredDefinitions:fixed.filter(eligible).map(e=>e.definitionIndex),optionalDefinitions:optional.map(e=>e.definitionIndex),optionalEntities:clone(optional),capacity,maxParticipants:fixed.filter(eligible).length+capacity,selectionSlots:Array(capacity).fill(null),confirmed:false,descriptorProjection:descriptors,enemyConstructed:false,gameplayResourcesMutated:false});
+}
+export function toggleDeparturePreparation(spec,definitionIndex){need(!spec.confirmed&&departureUint(definitionIndex,511)&&spec.optionalDefinitions.includes(definitionIndex),'Only current optional eligible actor');const out={...spec,selectionSlots:[...spec.selectionSlots]},at=out.selectionSlots.indexOf(definitionIndex);if(at>=0)out.selectionSlots[at]=null;else{const empty=out.selectionSlots.indexOf(null);need(empty>=0,'Original optional roster capacity');out.selectionSlots[empty]=definitionIndex;}return freezeDeparture(out);}
+export function confirmDeparturePreparation(spec){need(!spec.confirmed,'One explicit roster confirmation');const remaining=spec.selectionSlots.filter(d=>d!==null);need(remaining.length<=spec.capacity&&new Set(remaining).size===remaining.length&&remaining.every(d=>spec.optionalDefinitions.includes(d)),'Exact current optional slots');const descriptors=spec.descriptorProjection.map(d=>d===null?null:({...d,definitionIndex:d.definitionIndex===1024?(remaining.shift()??65535):d.definitionIndex}));need(remaining.length===0,'All selected IDs consumed by optional descriptors');
+ return freezeDeparture({...spec,confirmed:true,descriptorProjection:descriptors});
+}

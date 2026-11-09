@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "kind": "private_second_chencang_stats_additions",
+  "sourceRomSha256": "acf307942c7dc645cbf66ae13127437de146a2c3ce89d68a55003509f2e97511",
+  "contexts": [
+    "3:3:9",
+    "3:3:10"
+  ],
+  "append": {
+    "scopeItemDefinitionIds": [
+      59,
+      40,
+      103,
+      108
+    ],
+    "itemDefinitions": [
+      {
+        "definitionId": 59,
+        "nameJa": "黄帝の弩",
+        "family": 8,
+        "primaryEffectType": 1,
+        "primaryMagnitude": 28,
+        "secondaryEffectType": 0,
+        "secondaryMagnitude": 0,
+        "buyPrice": 2550,
+        "sellPrice": 1912
+      },
+      {
+        "definitionId": 40,
+        "nameJa": "鉄琵琶",
+        "family": 5,
+        "primaryEffectType": 1,
+        "primaryMagnitude": 22,
+        "secondaryEffectType": 0,
+        "secondaryMagnitude": 0,
+        "buyPrice": 1000,
+        "sellPrice": 750
+      },
+      {
+        "definitionId": 103,
+        "nameJa": "白銀造り鎧",
+        "family": 18,
+        "primaryEffectType": 6,
+        "primaryMagnitude": 31,
+        "secondaryEffectType": 0,
+        "secondaryMagnitude": 0,
+        "buyPrice": 1250,
+        "sellPrice": 937
+      },
+      {
+        "definitionId": 108,
+        "nameJa": "大盾",
+        "family": 19,
+        "primaryEffectType": 6,
+        "primaryMagnitude": 22,
+        "secondaryEffectType": 0,
+        "secondaryMagnitude": 0,
+        "buyPrice": 1100,
+        "sellPrice": 825
+      }
+    ]
+  }
+}

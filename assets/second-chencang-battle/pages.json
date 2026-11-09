@@ -1,0 +1,1449 @@
+{
+  "pages": [
+    {
+      "id": "3:3:18777:0:0",
+      "sourcePageId": "3:3:18777:0:0",
+      "textJa": "「城門の方が騒がしい\n　が…いったい、\n　どうした？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「城門の方が騒がしい\n　が…いったい、\n　どうした？"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:18777:1:0",
+      "sourcePageId": "3:3:18777:1:0",
+      "textJa": "「大変でございます！\n　\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「大変でございます！\n　\n　"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:18777:1:1",
+      "sourcePageId": "3:3:18777:1:1",
+      "textJa": "「蜀軍の間者に城門が\n　開けられてしまいま\n　した！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「蜀軍の間者に城門が\n　開けられてしまいま\n　した！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:18777:1:2",
+      "sourcePageId": "3:3:18777:1:2",
+      "textJa": "「その上、蜀の軍勢が\n　城外に殺到しており\n　ます！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「その上、蜀の軍勢が\n　城外に殺到しており\n　ます！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:18777:2:0",
+      "sourcePageId": "3:3:18777:2:0",
+      "textJa": "「何だと！\n　\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「何だと！\n　\n　"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:18777:2:1",
+      "sourcePageId": "3:3:18777:2:1",
+      "textJa": "「蜀軍の到着は\n　二、三日後のはずで\n　はなかったのか！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「蜀軍の到着は\n　二、三日後のはずで\n　はなかったのか！？"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:18970:0:0",
+      "sourcePageId": "3:3:18970:0:0",
+      "textJa": "「よし、全軍陳倉城へ\n　突入せよ\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「よし、全軍"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ\n　突入せよ\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:18970:0:1",
+      "sourcePageId": "3:3:18970:0:1",
+      "textJa": "「敵将・昭を\n　捕らえるのだ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「敵将・"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　捕らえるのだ！"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:19053:0:0",
+      "sourcePageId": "3:3:19053:0:0",
+      "textJa": "「ごほっ、ごほっ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ごほっ、ごほっ！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19053:1:0",
+      "sourcePageId": "3:3:19053:1:0",
+      "textJa": "「昭様！\n　大丈夫ですか！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！\n　大丈夫ですか！？"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19053:2:0",
+      "sourcePageId": "3:3:19053:2:0",
+      "textJa": "「う、うむ……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「う、うむ……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19111:0:0",
+      "sourcePageId": "3:3:19111:0:0",
+      "textJa": "「……ごほっ、\n　ごほっ！\n　ぐっ、げほッ！！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……ごほっ、\n　ごほっ！\n　ぐっ、げほッ！！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19111:1:0",
+      "sourcePageId": "3:3:19111:1:0",
+      "textJa": "「昭様！\n　大丈夫ですか！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！\n　大丈夫ですか！？"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19111:2:0",
+      "sourcePageId": "3:3:19111:2:0",
+      "textJa": "「むぅ……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「むぅ……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19186:0:0",
+      "sourcePageId": "3:3:19186:0:0",
+      "textJa": "「ま……まだだ\n　まだ……\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ま……まだだ\n　まだ……\n　"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19186:0:1",
+      "sourcePageId": "3:3:19186:0:1",
+      "textJa": "「倒れるわけには\n　…いかぬ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「倒れるわけには\n　…いかぬ！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19233:0:0",
+      "sourcePageId": "3:3:19233:0:0",
+      "textJa": "「…さすが…孔明\n　こちらの隙を\n　見逃さずに",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…さすが…"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　こちらの隙を\n　見逃さずに"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19233:0:1",
+      "sourcePageId": "3:3:19233:0:1",
+      "textJa": "「急戦に\n　持ち込むとは……\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「急戦に\n　持ち込むとは……\n　"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19233:0:2",
+      "sourcePageId": "3:3:19233:0:2",
+      "textJa": "「ぬ……グフッ！\n　……もはや、\n　これまで…か……",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ぬ……グフッ！\n　……もはや、\n　これまで…か……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19233:1:0",
+      "sourcePageId": "3:3:19233:1:0",
+      "textJa": "「か、昭様！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「か、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19233:2:0",
+      "sourcePageId": "3:3:19233:2:0",
+      "textJa": "「…………",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…………"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19233:3:0",
+      "sourcePageId": "3:3:19233:3:0",
+      "textJa": "「……ああ\n　すでに息を……\n　引き取られている",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……ああ\n　すでに息を……\n　引き取られている"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19409:0:0",
+      "sourcePageId": "3:3:19409:0:0",
+      "textJa": "「……さすがは孔明\n　こちらの隙を\n　見逃さずに、",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……さすがは"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　こちらの隙を\n　見逃さずに、"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19409:0:1",
+      "sourcePageId": "3:3:19409:0:1",
+      "textJa": "「急戦に\n　持ち込むとは……\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「急戦に\n　持ち込むとは……\n　"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19409:0:2",
+      "sourcePageId": "3:3:19409:0:2",
+      "textJa": "「我が武運も……\n　これまでのようだ\n　グホッ！！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「我が武運も……\n　これまでのようだ\n　グホッ！！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19409:1:0",
+      "sourcePageId": "3:3:19409:1:0",
+      "textJa": "「昭様！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19409:2:0",
+      "sourcePageId": "3:3:19409:2:0",
+      "textJa": "「…………",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…………"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:19409:3:0",
+      "sourcePageId": "3:3:19409:3:0",
+      "textJa": "「……ああ\n　すでに息絶えて……\n　おられる",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……ああ\n　すでに息絶えて……\n　おられる"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:19579:0:0",
+      "sourcePageId": "3:3:19579:0:0",
+      "textJa": "「しまった！\n　陳倉はすでに\n　落ちたか…",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「しまった！\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "はすでに\n　落ちたか…"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:19579:0:1",
+      "sourcePageId": "3:3:19579:0:1",
+      "textJa": "「この寡兵で、陳倉を\n　取り戻すのは\n　難しいな…",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「この寡兵で、"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　取り戻すのは\n　難しいな…"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:19579:0:2",
+      "sourcePageId": "3:3:19579:0:2",
+      "textJa": "「引き返せ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「引き返せ！"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:19667:0:0",
+      "sourcePageId": "3:3:19667:0:0",
+      "textJa": "「陳倉の様子が\n　おかしいですな\n　……あれは？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "の様子が\n　おかしいですな\n　……あれは？"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:19667:1:0",
+      "sourcePageId": "3:3:19667:1:0",
+      "textJa": "「なんと！　\n　陳倉城はすでに\n　落城しておるぞ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「なんと！　\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "はすでに\n　落城しておるぞ！"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:19667:2:0",
+      "sourcePageId": "3:3:19667:2:0",
+      "textJa": "「な、なんと……\n　電光石火とは\n　まさにこのこと",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「な、なんと……\n　電光石火とは\n　まさにこのこと"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:19667:3:0",
+      "sourcePageId": "3:3:19667:3:0",
+      "textJa": "「……丞相は、\n　いかなる手を\n　使われたのだ！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……丞相は、\n　いかなる手を\n　使われたのだ！？"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:19667:4:0",
+      "sourcePageId": "3:3:19667:4:0",
+      "textJa": "「やっと到着したか\n　魏延も姜維も\n　来るのが遅いぞ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「やっと到着したか\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "も"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "も\n　来るのが遅いぞ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:19872:0:0",
+      "sourcePageId": "3:3:19872:0:0",
+      "textJa": "「……そうか、\n　昭は死んだか\n　敵将とはいえ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……そうか、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は死んだか\n　敵将とはいえ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:19872:0:1",
+      "sourcePageId": "3:3:19872:0:1",
+      "textJa": "「その忠義と智勇は\n　見事なもので\n　あった",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「その忠義と智勇は\n　見事なもので\n　あった"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:19872:0:2",
+      "sourcePageId": "3:3:19872:0:2",
+      "textJa": "「昭を手厚く\n　葬るように",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を手厚く\n　葬るように"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:19872:1:0",
+      "sourcePageId": "3:3:19872:1:0",
+      "textJa": "「ははっ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ははっ"
+        }
+      ],
+      "speakerDefinition": 33
+    },
+    {
+      "id": "3:3:20001:0:0",
+      "sourcePageId": "3:3:20001:0:0",
+      "textJa": "「申し上げます\n　\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「申し上げます\n　\n　"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20001:0:1",
+      "sourcePageId": "3:3:20001:0:1",
+      "textJa": "「蜀の大軍がこの\n　陳倉へと向かって\n　来ております",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「蜀の大軍がこの\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へと向かって\n　来ております"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20001:1:0",
+      "sourcePageId": "3:3:20001:1:0",
+      "textJa": "「孔明め……\n　わしが重病だという\n　ことを知ったか",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "め……\n　わしが重病だという\n　ことを知ったか"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20001:1:1",
+      "sourcePageId": "3:3:20001:1:1",
+      "textJa": "「ここがわしの死に\n　場所だ。絶対に守り\n　通してやるわ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ここがわしの死に\n　場所だ。絶対に守り\n　通してやるわ！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20163:0:0",
+      "sourcePageId": "3:3:20163:0:0",
+      "textJa": "「まだ陳倉城は\n　落ちてないか……\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「まだ"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は\n　落ちてないか……\n　"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20163:0:1",
+      "sourcePageId": "3:3:20163:0:1",
+      "textJa": "「どうやら間に合った\n　ようだな\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「どうやら間に合った\n　ようだな\n　"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20163:0:2",
+      "sourcePageId": "3:3:20163:0:2",
+      "textJa": "「しかし、\n　あのままでは\n　落城必至だな",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「しかし、\n　あのままでは\n　落城必至だな"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20163:0:3",
+      "sourcePageId": "3:3:20163:0:3",
+      "textJa": "「続け！　蜀軍を\n　追い返すのだ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「続け！　蜀軍を\n　追い返すのだ！"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20163:1:0",
+      "sourcePageId": "3:3:20163:1:0",
+      "textJa": "「あれは……、\n　張の軍勢か\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「あれは……、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "張"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "の軍勢か\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20163:1:1",
+      "sourcePageId": "3:3:20163:1:1",
+      "textJa": "「魏もなかなか\n　打つ手が速い",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「魏もなかなか\n　打つ手が速い"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20334:0:0",
+      "sourcePageId": "3:3:20334:0:0",
+      "textJa": "「さすがは魏延、\n　なかなかやるわ\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「さすがは"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、\n　なかなかやるわ\n　"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20334:0:1",
+      "sourcePageId": "3:3:20334:0:1",
+      "textJa": "「いったん\n　退却するとしよう",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「いったん\n　退却するとしよう"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:20334:1:0",
+      "sourcePageId": "3:3:20334:1:0",
+      "textJa": "「おのれっ！　\n　逃げるかっ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「おのれっ！　\n　逃げるかっ！"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:20428:0:0",
+      "sourcePageId": "3:3:20428:0:0",
+      "textJa": "「……さすがは孔明\n　このわしが病と知\n　るや、",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……さすがは"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　このわしが病と知\n　るや、"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20428:0:1",
+      "sourcePageId": "3:3:20428:0:1",
+      "textJa": "「すかさず攻め込んで\n　くるとは\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「すかさず攻め込んで\n　くるとは\n　"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20428:0:2",
+      "sourcePageId": "3:3:20428:0:2",
+      "textJa": "「ぐふっ！　\n　もはや……\n　これまで…か……",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ぐふっ！　\n　もはや……\n　これまで…か……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20428:0:3",
+      "sourcePageId": "3:3:20428:0:3",
+      "textJa": "「ゴフッ！！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ゴフッ！！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20428:1:0",
+      "sourcePageId": "3:3:20428:1:0",
+      "textJa": "「昭様！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20428:2:0",
+      "sourcePageId": "3:3:20428:2:0",
+      "textJa": "「…………",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…………"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20428:3:0",
+      "sourcePageId": "3:3:20428:3:0",
+      "textJa": "「……ああ\n　すでに息絶えて……\n　おられる",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……ああ\n　すでに息絶えて……\n　おられる"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20601:0:0",
+      "sourcePageId": "3:3:20601:0:0",
+      "textJa": "「…さすがは孔明\n　このわしが\n　病と知るや、",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…さすがは"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　このわしが\n　病と知るや、"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20601:0:1",
+      "sourcePageId": "3:3:20601:0:1",
+      "textJa": "「すかさず\n　攻め込んで\n　くるとは……",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「すかさず\n　攻め込んで\n　くるとは……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20601:0:2",
+      "sourcePageId": "3:3:20601:0:2",
+      "textJa": "「ぐふっ！　\n　……もはや…\n　これまで…か……",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ぐふっ！　\n　……もはや…\n　これまで…か……"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20601:0:3",
+      "sourcePageId": "3:3:20601:0:3",
+      "textJa": "「ゴホッ！！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「ゴホッ！！"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20601:1:0",
+      "sourcePageId": "3:3:20601:1:0",
+      "textJa": "「か、昭様！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「か、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様！"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20601:2:0",
+      "sourcePageId": "3:3:20601:2:0",
+      "textJa": "「…………",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「…………"
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    {
+      "id": "3:3:20601:3:0",
+      "sourcePageId": "3:3:20601:3:0",
+      "textJa": "「……だめだ\n　すでに息絶えて……\n　おられる",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……だめだ\n　すでに息絶えて……\n　おられる"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:20781:0:0",
+      "sourcePageId": "3:3:20781:0:0",
+      "textJa": "「これで陳倉城は\n　我らのものです",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「これで"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は\n　我らのものです"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:20781:1:0",
+      "sourcePageId": "3:3:20781:1:0",
+      "textJa": "「うむ\n　ようやく\n　落とせたか…",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ\n　ようやく\n　落とせたか…"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20838:0:0",
+      "sourcePageId": "3:3:20838:0:0",
+      "textJa": "「そうか、\n　昭は死んだか\n　敵将とはいえ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「そうか、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は死んだか\n　敵将とはいえ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20838:0:1",
+      "sourcePageId": "3:3:20838:0:1",
+      "textJa": "「その忠義と智勇は\n　見事なもので\n　あった",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「その忠義と智勇は\n　見事なもので\n　あった"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20838:0:2",
+      "sourcePageId": "3:3:20838:0:2",
+      "textJa": "「昭を手厚く\n　葬るように",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "昭"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を手厚く\n　葬るように"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:20838:1:0",
+      "sourcePageId": "3:3:20838:1:0",
+      "textJa": "「ははっ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ははっ"
+        }
+      ],
+      "speakerDefinition": 33
+    }
+  ],
+  "systems": {
+    "19981": {
+      "textJa": "金１０００を手に入れた！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "金１０００を手に入れた！"
+        }
+      ]
+    },
+    "20409": {
+      "textJa": "魏延はレベルが上がった！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "魏延はレベルが上がった！"
+        }
+      ]
+    },
+    "20943": {
+      "textJa": "金１０００を手に入れた！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "金１０００を手に入れた！"
+        }
+      ]
+    }
+  }
+}

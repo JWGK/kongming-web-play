@@ -1,0 +1,2400 @@
+{
+  "version": 1,
+  "chapterId": "chapter4-second-chencang-departure-high",
+  "graphId": "root3-chapter4-second-chencang-departure-high-v1",
+  "sourceContext": {
+    "root": 3,
+    "section": 3,
+    "block": 6
+  },
+  "sourceEntryCursor": {
+    "root": 3,
+    "section": 3,
+    "block": 8,
+    "record": 15,
+    "commandIndex": 0
+  },
+  "entry": "strategy",
+  "initialBgmId": 17,
+  "saveLabelJa": "祁山",
+  "nodes": {
+    "strategy": {
+      "type": "choice",
+      "phase": "base",
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 15,
+        "commandIndex": 0
+      },
+      "sourceTextId": "3:3:17953",
+      "promptJa": "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう",
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          15,
+          0
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "sourceTrace": [
+        {
+          "commandIndex": 0,
+          "offset": 1726668,
+          "opcode": 37,
+          "argumentBytes": [
+            33,
+            70
+          ],
+          "sourceHex": "252146",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 15,
+            "commandIndex": 0
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "approach:9",
+          "labelJa": "①少数精鋭で急襲する",
+          "next": "r16-c1"
+        },
+        {
+          "id": "approach:10",
+          "labelJa": "②大軍を率いて攻略に向かう",
+          "next": "r17-c1"
+        }
+      ]
+    },
+    "r16-c1": {
+      "type": "pages",
+      "phase": "base9",
+      "sourceReference": 17993,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 16,
+        "commandIndex": 1
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          16,
+          1
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「わかりました\n　少数精鋭で\n　急襲するのですね",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「わかりました\n　少数精鋭で\n　急襲するのですね"
+            }
+          ],
+          "speakerDefinition": 4,
+          "sourcePageId": "3:3:17993:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              1
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「うむ",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「うむ"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:17993:1:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              1
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 0,
+          "offset": 1726671,
+          "opcode": 23,
+          "argumentBytes": [
+            1
+          ],
+          "sourceHex": "1701",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 0
+          }
+        },
+        {
+          "commandIndex": 1,
+          "offset": 1726673,
+          "opcode": 0,
+          "argumentBytes": [
+            73,
+            70
+          ],
+          "sourceHex": "004946",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 1
+          }
+        }
+      ],
+      "next": "r16-c4"
+    },
+    "r16-c4": {
+      "type": "pages",
+      "phase": "base9",
+      "sourceReference": 18038,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 16,
+        "commandIndex": 4
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          16,
+          4
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「魏延！　姜維！\n　そなたらは\n　",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "魏延"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "！　"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "姜維"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "！\n　そなたらは\n　"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18038:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              4
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「三日以内に\n　準備を整えて\n　陳倉城へ向かえ",
+          "runs": [
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "「三日以内に\n　準備を整えて\n　"
+            },
+            {
+              "kind": "control",
+              "value": 3
+            },
+            {
+              "kind": "text",
+              "text": "陳倉城"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "へ向かえ"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18038:0:1",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              4
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「直ちに\n　準備にかかれ！\n　よいな",
+          "runs": [
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "「直ちに\n　準備にかかれ！\n　よいな"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18038:0:2",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              4
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 2,
+          "offset": 1726676,
+          "opcode": 1,
+          "argumentBytes": [
+            0,
+            0,
+            78,
+            55,
+            3
+          ],
+          "sourceHex": "0100004e3703",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 2
+          }
+        },
+        {
+          "commandIndex": 3,
+          "offset": 1726682,
+          "opcode": 52,
+          "argumentBytes": [
+            0,
+            0,
+            2
+          ],
+          "sourceHex": "34000002",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 3
+          }
+        },
+        {
+          "commandIndex": 4,
+          "offset": 1726686,
+          "opcode": 0,
+          "argumentBytes": [
+            118,
+            70
+          ],
+          "sourceHex": "007646",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 4
+          }
+        }
+      ],
+      "next": "r16-c7"
+    },
+    "r16-c7": {
+      "type": "pages",
+      "phase": "base9",
+      "sourceReference": 18143,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 16,
+        "commandIndex": 7
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          16,
+          7
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「ははっ！",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「ははっ！"
+            }
+          ],
+          "speakerDefinition": 4,
+          "sourcePageId": "3:3:18143:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「では、準備に\n　とりかかります",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「では、準備に\n　とりかかります"
+            }
+          ],
+          "speakerDefinition": 7,
+          "sourcePageId": "3:3:18143:1:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 5,
+          "offset": 1726689,
+          "opcode": 55,
+          "argumentBytes": [
+            4,
+            0,
+            6,
+            1
+          ],
+          "sourceHex": "3704000601",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 5
+          }
+        },
+        {
+          "commandIndex": 6,
+          "offset": 1726694,
+          "opcode": 55,
+          "argumentBytes": [
+            7,
+            0,
+            6,
+            1
+          ],
+          "sourceHex": "3707000601",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 6
+          }
+        },
+        {
+          "commandIndex": 7,
+          "offset": 1726699,
+          "opcode": 0,
+          "argumentBytes": [
+            223,
+            70
+          ],
+          "sourceHex": "00df46",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 7
+          }
+        }
+      ],
+      "next": "r16-c15"
+    },
+    "r16-c15": {
+      "type": "pages",
+      "phase": "base9",
+      "sourceReference": 18177,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 16,
+        "commandIndex": 15
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          16,
+          15
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「さて……\n　我らは直ちに\n　出発する！",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「さて……\n　我らは直ちに\n　出発する！"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18177:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「なんと！？\n　魏延殿と姜維殿が\n　先鋒なのでは！？",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「なんと！？\n　"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "魏延"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "殿と"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "姜維"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "殿が\n　先鋒なのでは！？"
+            }
+          ],
+          "speakerDefinition": 8,
+          "sourcePageId": "3:3:18177:1:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18177:2:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「三日以内と刻限を\n　きったのも\n　そのためなのだ",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「三日以内と刻限を\n　きったのも\n　そのためなのだ"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18177:2:1",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「な、なるほど……\n　まさに電撃の戦法",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「な、なるほど……\n　まさに電撃の戦法"
+            }
+          ],
+          "speakerDefinition": 9,
+          "sourcePageId": "3:3:18177:3:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「それでは\n　直ちに出発\n　しましょう",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「それでは\n　直ちに出発\n　しましょう"
+            }
+          ],
+          "speakerDefinition": 10,
+          "sourcePageId": "3:3:18177:4:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              16,
+              15
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 8,
+          "offset": 1726702,
+          "opcode": 52,
+          "argumentBytes": [
+            0,
+            0,
+            0
+          ],
+          "sourceHex": "34000000",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 8
+          }
+        },
+        {
+          "commandIndex": 9,
+          "offset": 1726706,
+          "opcode": 52,
+          "argumentBytes": [
+            4,
+            0,
+            0
+          ],
+          "sourceHex": "34040000",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 9
+          }
+        },
+        {
+          "commandIndex": 10,
+          "offset": 1726710,
+          "opcode": 52,
+          "argumentBytes": [
+            7,
+            0,
+            0
+          ],
+          "sourceHex": "34070000",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 10
+          }
+        },
+        {
+          "commandIndex": 11,
+          "offset": 1726714,
+          "opcode": 1,
+          "argumentBytes": [
+            4,
+            0,
+            14,
+            53,
+            3
+          ],
+          "sourceHex": "0104000e3503",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 11
+          }
+        },
+        {
+          "commandIndex": 12,
+          "offset": 1726720,
+          "opcode": 1,
+          "argumentBytes": [
+            7,
+            0,
+            14,
+            53,
+            3
+          ],
+          "sourceHex": "0107000e3503",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 12
+          }
+        },
+        {
+          "commandIndex": 13,
+          "offset": 1726726,
+          "opcode": 24,
+          "argumentBytes": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "sourceHex": "1804000000000000ff",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 13
+          }
+        },
+        {
+          "commandIndex": 14,
+          "offset": 1726735,
+          "opcode": 24,
+          "argumentBytes": [
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "sourceHex": "1807000000000000ff",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 14
+          }
+        },
+        {
+          "commandIndex": 15,
+          "offset": 1726744,
+          "opcode": 0,
+          "argumentBytes": [
+            1,
+            71
+          ],
+          "sourceHex": "000147",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 15
+          }
+        }
+      ],
+      "next": "world9-mask"
+    },
+    "world9-mask": {
+      "type": "effect",
+      "phase": "base9",
+      "effect": {
+        "kind": "cityAvailability",
+        "cityIds": [
+          8,
+          9,
+          17,
+          19
+        ]
+      },
+      "next": "world9-text",
+      "sourceTrace": [
+        {
+          "commandIndex": 16,
+          "offset": 1726747,
+          "opcode": 6,
+          "argumentBytes": [],
+          "sourceHex": "06",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 16
+          }
+        },
+        {
+          "commandIndex": 17,
+          "offset": 1726748,
+          "opcode": 19,
+          "argumentBytes": [],
+          "sourceHex": "13",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 16,
+            "commandIndex": 17
+          }
+        },
+        {
+          "commandIndex": 0,
+          "offset": 1726777,
+          "opcode": 23,
+          "argumentBytes": [
+            1
+          ],
+          "sourceHex": "1701",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 0
+          }
+        },
+        {
+          "commandIndex": 1,
+          "offset": 1726779,
+          "opcode": 32,
+          "argumentBytes": [
+            188,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "sourceHex": "20bc00010203040506070a0b0c0d0e0f10121415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 1
+          }
+        }
+      ]
+    },
+    "world9-text": {
+      "type": "pages",
+      "phase": "world9",
+      "sourceReference": 18503,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 18,
+        "commandIndex": 7
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          18,
+          7
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「魏延と姜維が\n　攻めて来ただと？\n　",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "魏延"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "と"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "姜維"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "が\n　攻めて来ただと？\n　"
+            }
+          ],
+          "speakerDefinition": 111,
+          "sourcePageId": "3:3:18503:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「武将はその\n　二人だけか？\n　孔明はどうした？",
+          "runs": [
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "「武将はその\n　二人だけか？\n　"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "孔明"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "はどうした？"
+            }
+          ],
+          "speakerDefinition": 111,
+          "sourcePageId": "3:3:18503:0:1",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「いまだ漢中に駐屯中\n　とのこと\n　",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「いまだ"
+            },
+            {
+              "kind": "control",
+              "value": 3
+            },
+            {
+              "kind": "text",
+              "text": "漢中"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "に駐屯中\n　とのこと\n　"
+            }
+          ],
+          "speakerDefinition": 489,
+          "sourcePageId": "3:3:18503:1:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「魏延、姜維らの到着\n　も二、三日後と思わ\n　れます",
+          "runs": [
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "「"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "魏延"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "、"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "姜維"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "らの到着\n　も二、三日後と思わ\n　れます"
+            }
+          ],
+          "speakerDefinition": 489,
+          "sourcePageId": "3:3:18503:1:1",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「孔明め、わしを病人\n　と思って甘く見てい\n　るな…",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「"
+            },
+            {
+              "kind": "control",
+              "value": 2
+            },
+            {
+              "kind": "text",
+              "text": "孔明"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "め、わしを病人\n　と思って甘く見てい\n　るな…"
+            }
+          ],
+          "speakerDefinition": 111,
+          "sourcePageId": "3:3:18503:2:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        },
+        {
+          "textJa": "「まあよい\n　目にもの\n　見せてくれるわ",
+          "runs": [
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "「まあよい\n　目にもの\n　見せてくれるわ"
+            }
+          ],
+          "speakerDefinition": 111,
+          "sourcePageId": "3:3:18503:2:1",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              7
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 2,
+          "offset": 1726841,
+          "opcode": 46,
+          "argumentBytes": [
+            17,
+            0,
+            0,
+            0,
+            255
+          ],
+          "sourceHex": "2e11000000ff",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 2
+          }
+        },
+        {
+          "commandIndex": 3,
+          "offset": 1726847,
+          "opcode": 9,
+          "argumentBytes": [
+            0,
+            16
+          ],
+          "sourceHex": "090010",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 3
+          }
+        },
+        {
+          "commandIndex": 4,
+          "offset": 1726850,
+          "opcode": 56,
+          "argumentBytes": [
+            11
+          ],
+          "sourceHex": "380b",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 4
+          }
+        },
+        {
+          "commandIndex": 5,
+          "offset": 1726852,
+          "opcode": 53,
+          "argumentBytes": [
+            17,
+            19,
+            0,
+            1
+          ],
+          "sourceHex": "3511130001",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 5
+          }
+        },
+        {
+          "commandIndex": 6,
+          "offset": 1726857,
+          "opcode": 33,
+          "argumentBytes": [
+            2,
+            0,
+            1,
+            0
+          ],
+          "sourceHex": "2102000100",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 6
+          }
+        },
+        {
+          "commandIndex": 7,
+          "offset": 1726862,
+          "opcode": 0,
+          "argumentBytes": [
+            71,
+            72
+          ],
+          "sourceHex": "004748",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 7
+          }
+        }
+      ],
+      "next": "hold9",
+      "scriptedMarch": {
+        "sourceCity": 17,
+        "destinationCity": 19,
+        "operands": [
+          17,
+          19,
+          0,
+          1
+        ],
+        "sourceOffset": 1726852
+      }
+    },
+    "hold9": {
+      "type": "boundary",
+      "phase": "hold9",
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 9
+      },
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 18,
+        "commandIndex": 8
+      },
+      "pendingStoryCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 9,
+        "record": 0,
+        "commandIndex": 0
+      },
+      "pendingSourceOffset": 1726988,
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          18,
+          7
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "sourceTrace": [
+        {
+          "commandIndex": 8,
+          "offset": 1726865,
+          "opcode": 15,
+          "argumentBytes": [
+            9
+          ],
+          "sourceHex": "0f09",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 8
+          }
+        }
+      ],
+      "projectionRole": "held-before-unexecuted-map30-constructor"
+    },
+    "r17-c1": {
+      "type": "pages",
+      "phase": "base10",
+      "sourceReference": 18388,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 17,
+        "commandIndex": 1
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          17,
+          1
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「わかりました\n　大軍を率いて、陳倉\n　へ向かうのですね",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「わかりました\n　大軍を率いて、"
+            },
+            {
+              "kind": "control",
+              "value": 3
+            },
+            {
+              "kind": "text",
+              "text": "陳倉"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "\n　へ向かうのですね"
+            }
+          ],
+          "speakerDefinition": 4,
+          "sourcePageId": "3:3:18388:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              17,
+              1
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 0,
+          "offset": 1726750,
+          "opcode": 23,
+          "argumentBytes": [
+            1
+          ],
+          "sourceHex": "1701",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 0
+          }
+        },
+        {
+          "commandIndex": 1,
+          "offset": 1726752,
+          "opcode": 0,
+          "argumentBytes": [
+            212,
+            71
+          ],
+          "sourceHex": "00d447",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 1
+          }
+        }
+      ],
+      "next": "r17-c3"
+    },
+    "r17-c3": {
+      "type": "pages",
+      "phase": "base10",
+      "sourceReference": 18434,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 17,
+        "commandIndex": 3
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          17,
+          3
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「うむ。今度こそは\n　陳倉を落としてみ\n　せる",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「うむ。今度こそは\n　"
+            },
+            {
+              "kind": "control",
+              "value": 3
+            },
+            {
+              "kind": "text",
+              "text": "陳倉"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "を落としてみ\n　せる"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18434:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              17,
+              3
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 2,
+          "offset": 1726755,
+          "opcode": 1,
+          "argumentBytes": [
+            0,
+            0,
+            78,
+            55,
+            3
+          ],
+          "sourceHex": "0100004e3703",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 2
+          }
+        },
+        {
+          "commandIndex": 3,
+          "offset": 1726761,
+          "opcode": 0,
+          "argumentBytes": [
+            2,
+            72
+          ],
+          "sourceHex": "000248",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 3
+          }
+        }
+      ],
+      "next": "r17-c5"
+    },
+    "r17-c5": {
+      "type": "pages",
+      "phase": "base10",
+      "sourceReference": 18474,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 17,
+        "commandIndex": 5
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          17,
+          5
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「各自、出撃の\n　準備にかかれ！",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「各自、出撃の\n　準備にかかれ！"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18474:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              17,
+              5
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 4,
+          "offset": 1726764,
+          "opcode": 52,
+          "argumentBytes": [
+            0,
+            0,
+            2
+          ],
+          "sourceHex": "34000002",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 4
+          }
+        },
+        {
+          "commandIndex": 5,
+          "offset": 1726768,
+          "opcode": 0,
+          "argumentBytes": [
+            42,
+            72
+          ],
+          "sourceHex": "002a48",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 5
+          }
+        }
+      ],
+      "next": "set0"
+    },
+    "set0": {
+      "type": "effect",
+      "phase": "base10",
+      "effect": {
+        "kind": "sceneFlags",
+        "set": [
+          0
+        ]
+      },
+      "next": "world10-mask",
+      "sourceTrace": [
+        {
+          "commandIndex": 6,
+          "offset": 1726771,
+          "opcode": 20,
+          "argumentBytes": [
+            0,
+            0
+          ],
+          "sourceHex": "140000",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 6
+          }
+        }
+      ]
+    },
+    "world10-mask": {
+      "type": "effect",
+      "phase": "set0",
+      "effect": {
+        "kind": "cityAvailability",
+        "cityIds": [
+          8,
+          9,
+          17,
+          19
+        ]
+      },
+      "next": "world10-text",
+      "sourceTrace": [
+        {
+          "commandIndex": 7,
+          "offset": 1726774,
+          "opcode": 6,
+          "argumentBytes": [],
+          "sourceHex": "06",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 7
+          }
+        },
+        {
+          "commandIndex": 8,
+          "offset": 1726775,
+          "opcode": 19,
+          "argumentBytes": [],
+          "sourceHex": "13",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 17,
+            "commandIndex": 8
+          }
+        },
+        {
+          "commandIndex": 0,
+          "offset": 1726777,
+          "opcode": 23,
+          "argumentBytes": [
+            1
+          ],
+          "sourceHex": "1701",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 0
+          }
+        },
+        {
+          "commandIndex": 1,
+          "offset": 1726779,
+          "opcode": 32,
+          "argumentBytes": [
+            188,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "sourceHex": "20bc00010203040506070a0b0c0d0e0f10121415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 1
+          }
+        }
+      ]
+    },
+    "world10-text": {
+      "type": "pages",
+      "phase": "world10",
+      "sourceReference": 18734,
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 18,
+        "commandIndex": 10
+      },
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          18,
+          10
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "pages": [
+        {
+          "textJa": "「全軍出撃！\n　今度こそ陳倉を\n　落とすぞ！",
+          "runs": [
+            {
+              "kind": "text",
+              "text": "「全軍出撃！\n　今度こそ"
+            },
+            {
+              "kind": "control",
+              "value": 3
+            },
+            {
+              "kind": "text",
+              "text": "陳倉"
+            },
+            {
+              "kind": "control",
+              "value": 1
+            },
+            {
+              "kind": "text",
+              "text": "を\n　落とすぞ！"
+            }
+          ],
+          "speakerDefinition": 0,
+          "sourcePageId": "3:3:18734:0:0",
+          "screen": {
+            "sourceSceneCursor": [
+              3,
+              3,
+              8,
+              18,
+              10
+            ],
+            "cleanScene": true,
+            "sourceMotionRequired": true
+          }
+        }
+      ],
+      "sourceTrace": [
+        {
+          "commandIndex": 2,
+          "offset": 1726841,
+          "opcode": 46,
+          "argumentBytes": [
+            17,
+            0,
+            0,
+            0,
+            255
+          ],
+          "sourceHex": "2e11000000ff",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 2
+          }
+        },
+        {
+          "commandIndex": 3,
+          "offset": 1726847,
+          "opcode": 9,
+          "argumentBytes": [
+            0,
+            16
+          ],
+          "sourceHex": "090010",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 3
+          }
+        },
+        {
+          "commandIndex": 4,
+          "offset": 1726850,
+          "opcode": 56,
+          "argumentBytes": [
+            11
+          ],
+          "sourceHex": "380b",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 4
+          }
+        },
+        {
+          "commandIndex": 5,
+          "offset": 1726852,
+          "opcode": 53,
+          "argumentBytes": [
+            17,
+            19,
+            0,
+            1
+          ],
+          "sourceHex": "3511130001",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 5
+          }
+        },
+        {
+          "commandIndex": 6,
+          "offset": 1726857,
+          "opcode": 33,
+          "argumentBytes": [
+            2,
+            0,
+            1,
+            0
+          ],
+          "sourceHex": "2102000100",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 6
+          }
+        },
+        {
+          "commandIndex": 9,
+          "offset": 1726867,
+          "opcode": 33,
+          "argumentBytes": [
+            2,
+            1,
+            0,
+            0
+          ],
+          "sourceHex": "2102010000",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 9
+          }
+        },
+        {
+          "commandIndex": 10,
+          "offset": 1726872,
+          "opcode": 0,
+          "argumentBytes": [
+            46,
+            73
+          ],
+          "sourceHex": "002e49",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 10
+          }
+        }
+      ],
+      "next": "hold10",
+      "scriptedMarch": {
+        "sourceCity": 17,
+        "destinationCity": 19,
+        "operands": [
+          17,
+          19,
+          0,
+          1
+        ],
+        "sourceOffset": 1726852
+      }
+    },
+    "hold10": {
+      "type": "boundary",
+      "phase": "hold10",
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 10
+      },
+      "sourceCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 8,
+        "record": 18,
+        "commandIndex": 11
+      },
+      "pendingStoryCursor": {
+        "root": 3,
+        "section": 3,
+        "block": 10,
+        "record": 0,
+        "commandIndex": 0
+      },
+      "pendingSourceOffset": 1728194,
+      "screen": {
+        "sourceSceneCursor": [
+          3,
+          3,
+          8,
+          18,
+          10
+        ],
+        "cleanScene": true,
+        "sourceMotionRequired": true
+      },
+      "sourceTrace": [
+        {
+          "commandIndex": 11,
+          "offset": 1726875,
+          "opcode": 15,
+          "argumentBytes": [
+            10
+          ],
+          "sourceHex": "0f0a",
+          "sourceCursor": {
+            "root": 3,
+            "section": 3,
+            "block": 8,
+            "record": 18,
+            "commandIndex": 11
+          }
+        }
+      ],
+      "projectionRole": "held-before-unexecuted-map30-constructor"
+    }
+  },
+  "phases": {
+    "base": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 17,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "newApproachBlock": null
+    },
+    "base9": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 17,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "newApproachBlock": 9
+    },
+    "base10": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 17,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "newApproachBlock": 10
+    },
+    "set0": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 17,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [
+        {
+          "set": [
+            0
+          ]
+        }
+      ],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "newApproachBlock": 10
+    },
+    "world9": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 11,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "cityIds": [
+        8,
+        9,
+        17,
+        19
+      ],
+      "newApproachBlock": 9
+    },
+    "hold9": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 9
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 11,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "cityIds": [
+        8,
+        9,
+        17,
+        19
+      ],
+      "newApproachBlock": 9
+    },
+    "world10": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 8
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 11,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [
+        {
+          "set": [
+            0
+          ]
+        }
+      ],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "cityIds": [
+        8,
+        9,
+        17,
+        19
+      ],
+      "newApproachBlock": 10
+    },
+    "hold10": {
+      "context": {
+        "root": 3,
+        "section": 3,
+        "block": 10
+      },
+      "mutableFlags": false,
+      "requiredSetFlags": [
+        197
+      ],
+      "requiredClearFlags": [],
+      "currentCity": 17,
+      "saveLabelJa": "祁山",
+      "locationNameJa": "祁山",
+      "bgmId": 11,
+      "sourceEntityOperations": [],
+      "sourceCampaignOperations": [],
+      "sourceFlagOperations": [
+        {
+          "set": [
+            0
+          ]
+        }
+      ],
+      "completedRecordIds": [],
+      "grantedItemInstanceIds": [],
+      "cityIds": [
+        8,
+        9,
+        17,
+        19
+      ],
+      "newApproachBlock": 10
+    }
+  },
+  "townProfiles": {},
+  "menuProfiles": {},
+  "mutableSceneFlags": [],
+  "grants": [],
+  "sourceWorldMarches": [
+    {
+      "sourceCity": 17,
+      "destinationCity": 19,
+      "commandOffset": 1726852
+    }
+  ],
+  "sourceActivityId": "second-chencang-departure",
+  "browserCompletionLabelJa": ""
+}
