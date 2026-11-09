@@ -1,0 +1,1451 @@
+{
+  "pages": [
+    {
+      "id": "3:3:10374:0:0",
+      "textJa": "「蜀軍の動きは\n　どうだ？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「蜀軍の動きは\n　どうだ？"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:10374:1:0",
+      "textJa": "「蜀軍は撤退していま\n　す。漢中へ引き上げ\n　るようです",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「蜀軍は撤退していま\n　す。"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ引き上げ\n　るようです"
+        }
+      ],
+      "speakerDefinition": 112
+    },
+    {
+      "id": "3:3:10374:2:0",
+      "textJa": "「漢中への退却を装う\n　ために南の砦へ向か\n　う",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "への退却を装う\n　ために南の砦へ向か\n　う"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10374:3:0",
+      "textJa": "「丞相、南に砦は二つ\n　ありますが\n　どちらでしょうか？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「丞相、南に砦は二つ\n　ありますが\n　どちらでしょうか？"
+        }
+      ],
+      "speakerDefinition": 10
+    },
+    {
+      "id": "3:3:10374:4:0",
+      "textJa": "「東寄りの方だ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「東寄りの方だ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11143:0:0",
+      "textJa": "「どうにか\n　片づいたようだな\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「どうにか\n　片づいたようだな\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11143:0:1",
+      "textJa": "「ひとまず、\n　引き上げるとしよう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ひとまず、\n　引き上げるとしよう"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11023:0:0",
+      "textJa": "「魏も援軍が\n　来てるようだ\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「魏も援軍が\n　来てるようだ\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11023:0:1",
+      "textJa": "「ひとまず、\n　引き上げるとしよう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ひとまず、\n　引き上げるとしよう"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10896:0:0",
+      "textJa": "「うわぁぁっ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うわぁぁっ！"
+        }
+      ],
+      "speakerDefinition": 113
+    },
+    {
+      "id": "3:3:10896:1:0",
+      "textJa": "「まいったか！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「まいったか！"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:8851:0:0",
+      "textJa": "「漢中へ撤退すると、\n　見せかけるのでござ\n　いますね",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ撤退すると、\n　見せかけるのでござ\n　いますね"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:8851:1:0",
+      "textJa": "「うむ。全軍、\n　漢中に向け\n　転進せよ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ。全軍、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "に向け\n　転進せよ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:8851:2:0",
+      "textJa": "「わかりました",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:12063:0:0",
+      "textJa": "「曹真は\n　撃退できたが、\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は\n　撃退できたが、\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:12063:0:1",
+      "textJa": "「我が軍の兵糧が持\n　たぬ。いったん\n　祁山まで退く…",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「我が軍の兵糧が持\n　たぬ。いったん\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "祁山"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "まで退く…"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10789:0:0",
+      "textJa": "「うん……？\n　お、お前は……、\n　姜維！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うん……？\n　お、お前は……、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！"
+        }
+      ],
+      "speakerDefinition": 113
+    },
+    {
+      "id": "3:3:10789:1:0",
+      "textJa": "「貴様が来る\n　ことぐらい\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「貴様が来る\n　ことぐらい\n　"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:10789:1:1",
+      "textJa": "「すでに丞相は\n　お見通しだ！\n　費燿ﾋﾖｳ、覚悟っ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「すでに丞相は\n　お見通しだ！\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "費燿ﾋﾖｳ"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、覚悟っ！"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:10538:0:0",
+      "textJa": "「いずれ魏軍は追撃\n　してくる。そこを\n　各個撃破するのだ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「いずれ魏軍は追撃\n　してくる。そこを\n　各個撃破するのだ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11568:0:0",
+      "textJa": "「うわっははは！\n　どうした、\n　どうした！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うわっははは！\n　どうした、\n　どうした！"
+        }
+      ],
+      "speakerDefinition": 112
+    },
+    {
+      "id": "3:3:11568:1:0",
+      "textJa": "「こ、これは\n　かなわん！\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「こ、これは\n　かなわん！\n　"
+        }
+      ],
+      "speakerDefinition": 27
+    },
+    {
+      "id": "3:3:11568:1:1",
+      "textJa": "「引き上げると\n　しよう……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「引き上げると\n　しよう……"
+        }
+      ],
+      "speakerDefinition": 27
+    },
+    {
+      "id": "3:3:11191:0:0",
+      "textJa": "「いずれ……\n　陳倉を落とす機会も\n　あろう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「いずれ……\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を落とす機会も\n　あろう"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10939:0:0",
+      "textJa": "「うおおっ……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うおおっ……"
+        }
+      ],
+      "speakerDefinition": 112
+    },
+    {
+      "id": "3:3:10939:1:0",
+      "textJa": "「ふん！\n　この魏延に\n　かなう武将など",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ふん！\n　この"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "に\n　かなう武将など"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:10939:1:1",
+      "textJa": "「どこにも\n　おらぬのだ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「どこにも\n　おらぬのだ！"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:11965:0:0",
+      "textJa": "「……孔明は\n　捕らえたか？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「……"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は\n　捕らえたか？"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11965:1:0",
+      "textJa": "「い、いえ\n　まだでございます",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「い、いえ\n　まだでございます"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:11965:2:0",
+      "textJa": "（これだけの\n　大軍をもってしても\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "（これだけの\n　大軍をもってしても\n　"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11965:2:1",
+      "textJa": "（捕らえることが\n　できぬのか…",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "（捕らえることが\n　できぬのか…"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11073:0:0",
+      "textJa": "「曹真は撃退できたが\n　我が軍の兵糧が\n　持たぬ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は撃退できたが\n　我が軍の兵糧が\n　持たぬ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11073:0:1",
+      "textJa": "「いったん\n　祁山まで退く…",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「いったん\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "祁山"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "まで退く…"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11469:0:0",
+      "textJa": "「丞相、\n　敵の援軍が\n　現れました",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「丞相、\n　敵の援軍が\n　現れました"
+        }
+      ],
+      "speakerDefinition": 232
+    },
+    {
+      "id": "3:3:11469:0:1",
+      "textJa": "「旗印には\n　『張』とあります",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「旗印には\n　『"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "張"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "』とあります"
+        }
+      ],
+      "speakerDefinition": 232
+    },
+    {
+      "id": "3:3:11469:1:0",
+      "textJa": "「進め！\n　蜀軍を漢中へ\n　追い返すのだ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「進め！\n　蜀軍を"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ\n　追い返すのだ！"
+        }
+      ],
+      "speakerDefinition": 91
+    },
+    {
+      "id": "3:3:11726:0:0",
+      "textJa": "「おのれ孔明め……\n　転進を装い、攻撃を\n　しかけるとは",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「おのれ"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "め……\n　転進を装い、攻撃を\n　しかけるとは"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11726:1:0",
+      "textJa": "「曹真様、危険です\n　急いで撤退して\n　下さいませ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "様、危険です\n　急いで撤退して\n　下さいませ"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:11726:2:0",
+      "textJa": "「またしても、\n　孔明にしてやられた\n　のか……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「またしても、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "にしてやられた\n　のか……"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11857:0:0",
+      "textJa": "「ええぃ、まだ孔明を\n　捕らえることが\n　できぬのか！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ええぃ、まだ"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　捕らえることが\n　できぬのか！"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11857:1:0",
+      "textJa": "「は、はあ……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「は、はあ……"
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    {
+      "id": "3:3:11857:2:0",
+      "textJa": "「奴さえいなければ、\n　蜀軍など烏合の衆に\n　すぎぬ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「奴さえいなければ、\n　蜀軍など烏合の衆に\n　すぎぬ！"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:11857:2:1",
+      "textJa": "「必ず捕らえるのだ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「必ず捕らえるのだ！"
+        }
+      ],
+      "speakerDefinition": 99
+    },
+    {
+      "id": "3:3:10323:0:0",
+      "textJa": "「あれが曹真の\n　軍勢か？\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「あれが"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "の\n　軍勢か？\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10323:0:1",
+      "textJa": "「なかなか数が\n　多いようだな",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「なかなか数が\n　多いようだな"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:10717:0:0",
+      "textJa": "「うわっははは！\n　どうした、\n　どうした！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うわっははは！\n　どうした、\n　どうした！"
+        }
+      ],
+      "speakerDefinition": 112
+    },
+    {
+      "id": "3:3:10717:1:0",
+      "textJa": "「こ、これは\n　かなわん！\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「こ、これは\n　かなわん！\n　"
+        }
+      ],
+      "speakerDefinition": 27
+    },
+    {
+      "id": "3:3:10717:1:1",
+      "textJa": "「引き上げると\n　しよう……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「引き上げると\n　しよう……"
+        }
+      ],
+      "speakerDefinition": 27
+    },
+    {
+      "id": "3:3:12138:0:0",
+      "textJa": "「いずれ……\n　陳倉を落とす機会も\n　あろう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「いずれ……\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を落とす機会も\n　あろう"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:8943:0:0",
+      "textJa": "「わかりました\n　祁山へ転進すると\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "祁山"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ転進すると\n　"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:8943:0:1",
+      "textJa": "「見せかけるので\n　ございますね",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「見せかけるので\n　ございますね"
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    {
+      "id": "3:3:8943:1:0",
+      "textJa": "「そうだ。そして、\n　曹真を狙い撃ち\n　にする",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「そうだ。そして、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を狙い撃ち\n　にする"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:8943:1:1",
+      "textJa": "「魏延、\n　そなたに殿軍を\n　任せる。頼むぞ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、\n　そなたに殿軍を\n　任せる。頼むぞ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:8943:2:0",
+      "textJa": "「ご安心下さい\n　王双とやらを討ち\n　取ってみせます",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ご安心下さい\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "王双"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "とやらを討ち\n　取ってみせます"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:8943:3:0",
+      "textJa": "「祁山へ転進する！\n　全軍、準備せよ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "祁山"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ転進する！\n　全軍、準備せよ！"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:0:0",
+      "textJa": "「箕谷の間道を抜けて\n　祁山へ出る\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "箕谷"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "の間道を抜けて\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "祁山"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ出る\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:0:1",
+      "textJa": "「曹真は、我らが\n　軍を転進させるとは\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "は、我らが\n　軍を転進させるとは\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:0:2",
+      "textJa": "「思っても\n　いないだろう\n　",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「思っても\n　いないだろう\n　"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:0:3",
+      "textJa": "「魏延よ、\n　王双らの追撃を\n　防いでくれ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "よ、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "王双"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "らの追撃を\n　防いでくれ"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:0:4",
+      "textJa": "「我らが曹真を\n　倒すまでな",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「我らが"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　倒すまでな"
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    {
+      "id": "3:3:11250:1:0",
+      "textJa": "「王双はそれがしが\n　防いでみせます\n　お任せあれ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "王双"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "はそれがしが\n　防いでみせます\n　お任せあれ"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:11640:0:0",
+      "textJa": "「うおおっ……",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うおおっ……"
+        }
+      ],
+      "speakerDefinition": 112
+    },
+    {
+      "id": "3:3:11640:1:0",
+      "textJa": "「ふん！　この魏延に\n　かなう武将など\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ふん！　この"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "に\n　かなう武将など\n　"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:11640:1:1",
+      "textJa": "「どこにも\n　おらぬのだ！",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「どこにも\n　おらぬのだ！"
+        }
+      ],
+      "speakerDefinition": 7
+    },
+    {
+      "id": "3:3:10621:0:0",
+      "textJa": "「この間道を\n　抜ければ、\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「この間道を\n　抜ければ、\n　"
+        }
+      ],
+      "speakerDefinition": 113
+    },
+    {
+      "id": "3:3:10621:0:1",
+      "textJa": "「撤退中の\n　蜀軍の側面を\n　つくことができる！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「撤退中の\n　蜀軍の側面を\n　つくことができる！"
+        }
+      ],
+      "speakerDefinition": 113
+    },
+    {
+      "id": "3:3:10621:1:0",
+      "textJa": "「やはり……\n　間道を抜けてくる\n　兵がいたか",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「やはり……\n　間道を抜けてくる\n　兵がいたか"
+        }
+      ],
+      "speakerDefinition": 0
+    }
+  ],
+  "systems": {
+    "11232": {
+      "textJa": "金５００を手に入れた！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "金５００を手に入れた！"
+        }
+      ],
+      "romOffset": 1740448,
+      "sourceHex": "8be08254824f824f718ee84a93fc6b3e7600"
+    },
+    "11004": {
+      "textJa": "魏延のレベルが上がった！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "魏延のレベルが上がった！"
+        }
+      ],
+      "romOffset": 1740220,
+      "sourceHex": "e9b089844d838c8378838b2b8fe32b423e7600"
+    },
+    "12197": {
+      "textJa": "陳倉",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "陳倉"
+        }
+      ],
+      "romOffset": 1741413,
+      "sourceHex": "92c2917100"
+    },
+    "10920": {
+      "textJa": "姜維のレベルが上がった！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "姜維のレベルが上がった！"
+        }
+      ],
+      "romOffset": 1740136,
+      "sourceHex": "9b4988db4d838c8378838b2b8fe32b423e7600"
+    },
+    "12179": {
+      "textJa": "金５００を手に入れた！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "金５００を手に入れた！"
+        }
+      ],
+      "romOffset": 1741395,
+      "sourceHex": "8be08254824f824f718ee84a93fc6b3e7600"
+    },
+    "10583": {
+      "textJa": "一、孔明が南の砦に入る\r\n二、敵部隊の全滅",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "一、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "が南の砦に入る\r\n二、敵部隊の全滅"
+        }
+      ],
+      "romOffset": 1739799,
+      "sourceHex": "88ea73f9f08d4596bef9f12b93ec4d8dd44a93fc6a0d0a93f1739347959491e04d915396c500"
+    },
+    "11707": {
+      "textJa": "魏延はレベルが上がった！",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "魏延はレベルが上がった！"
+        }
+      ],
+      "romOffset": 1740923,
+      "sourceHex": "e9b089844e838c8378838b2b8fe32b423e7600"
+    },
+    "11452": {
+      "textJa": "一、曹真の撃破",
+      "runs": [
+        {
+          "kind": "text",
+          "text": "一、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "曹真"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "の撃破"
+        }
+      ],
+      "romOffset": 1740668,
+      "sourceHex": "88ea73f9f09182905ef9f14d8c82946a00"
+    }
+  }
+}

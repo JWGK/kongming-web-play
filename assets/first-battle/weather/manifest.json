@@ -1,0 +1,1 @@
+{"schemaVersion":1,"scope":"first-battle-only","type":"weather-rain","width":64,"height":96,"frameWidth":64,"frameHeight":16,"frameCount":6,"path":"rain.png","animation":{"gameTicksPerFrame":16,"initialPhase":5,"initialSubcounter":11}}

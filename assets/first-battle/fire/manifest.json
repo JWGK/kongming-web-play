@@ -1,0 +1,1 @@
+{"schemaVersion":1,"scope":"first-battle-only","type":"terrain-fire","path":"fire.png","width":48,"height":16,"frameWidth":16,"frameHeight":16,"frameCount":3,"animation":{"gameTicksPerFrame":16,"cycleTicks":48,"initialCounterWhenFirstFrameVisible":1},"composition":{"cellPixels":16,"drawOrder":"after terrain before units and rain","flipX":"((floor(viewportY / 8) & 1) === 0)"}}
