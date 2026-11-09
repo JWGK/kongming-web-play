@@ -1,1 +1,1 @@
-import "./site.bundle.mjs?v=0.70.0-kongming-chengdu-defense1";
+import "./site.bundle.mjs?v=0.70.1-kongming-chengdu-ui1";

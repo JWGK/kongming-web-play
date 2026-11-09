@@ -6,15 +6,15 @@
   <meta name="theme-color" content="#171b1a">
   <meta name="description" content="依日文 GBA 原作資料重製的繁體中文瀏覽器戰棋遊戲。保留劇情路線與手動存檔，內容持續更新。">
   <title>三國志孔明傳 — 繁體中文網頁版</title>
-  <link rel="stylesheet" href="./style.css?v=0.70.0-kongming-chengdu-defense1">
-  <script type="module" src="./site.bundle.mjs?v=0.70.0-kongming-chengdu-defense1"></script>
+  <link rel="stylesheet" href="./style.css?v=0.70.1-kongming-chengdu-ui1">
+  <script type="module" src="./site.bundle.mjs?v=0.70.1-kongming-chengdu-ui1"></script>
 <style>.save-transfer{margin:1rem 0;padding:1rem;border:1px solid #7d725a;border-radius:.5rem}.save-transfer summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.save-transfer button,.save-transfer select,.save-transfer input[type=file]{min-height:44px;max-width:100%;margin:.35rem}.save-transfer p{white-space:pre-wrap;overflow-wrap:anywhere}.save-transfer section{padding:1rem;border:1px solid #7d725a}.save-transfer label{display:block}.save-transfer input[type=checkbox]{width:24px;height:24px;vertical-align:middle}</style>
 </head>
 <body>
   <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
     <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
-    <span class="version">開發版 <strong>0.70.0</strong></span>
+    <span class="version">開發版 <strong>0.70.1</strong></span>
   </header>
   <main>
     <section class="intro" aria-labelledby="page-title">
@@ -58,9 +58,9 @@
         </section>
         <aside class="inspection-panel" aria-labelledby="inspection-title"><p class="eyebrow">部隊資訊</p><div class="inspection-identity"><img id="unit-portrait" width="64" height="64" alt="" hidden><h3 id="inspection-title">選擇格子</h3></div><p id="inspection-action-state" class="inspection-action-state"></p><p id="inspection-position" class="inspection-position"></p><dl class="inspection-fields"><div><dt>地形</dt><dd id="inspection-terrain">—</dd></div><div><dt>兵種</dt><dd id="inspection-class">—</dd></div><div><dt>等級</dt><dd id="inspection-level">—</dd></div><div><dt>兵力</dt><dd id="inspection-troops">—</dd></div><div><dt>策略值</dt><dd id="inspection-sp">—</dd></div><div><dt>經驗值</dt><dd id="inspection-exp">—</dd></div></dl><section class="unit-status-details" aria-label="部隊狀態"><h4>部隊狀態</h4><div id="inspection-status"></div></section><div class="inspection-stats"><h4>能力（套用地形與相剋修正前）</h4><div id="inspection-values"></div></div><p id="map-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p><details class="battle-log"><summary>最近進度</summary><ol id="game-log"></ol></details></aside>
       </div>
-      <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版沿用既有主線、條件分支、武將資料、道具與已支援的記錄。0.70.0 新接終章「孔明歸還」後的成都防衛戰：諸葛亮、諸葛瞻等五人固定出陣，另可選最多七人，依原作擊敗孟獲或守住二十回合後結算；接續成都場景及首個原作手動記錄點，保存或略過後暫停於本段終點。早期巴西之戰（入蜀・對嚴顏）與終章巴西之戰（對陸遜）是不同章節及事件，雖共用地形，也不會共用戰役或記錄識別；終章巴西尚未開放。稱帝接受路線、五丈原另一結局及後續劇情仍在製作中。新成都戰鬥不提供戰中自動保存或中斷記錄，請保留戰前相容記錄；其他段落依各自已支援的原作記錄提示操作。返回標題或重新載入會失去未保存進度。存檔只在玩家明確選格及需要時確認覆寫後儲存，不會因讀取而改寫舊記錄。若舊記錄缺少所需資料，會提示並保留原有狀態，不猜測或重設進度。本版按已核對的原作資料重製，並非以模擬器執行原作；觸控操作和文字顯示速度屬瀏覽器版設計。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
+      <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版沿用既有主線、條件分支、武將資料、道具與已支援的記錄。0.70.1 修正成都防衛戰初次顯示的章幕標籤及既有成都戰後記錄匯入，並將尚未支援的戰中中斷按鈕設為不可用。0.70.0 新接終章「孔明歸還」後的成都防衛戰：諸葛亮、諸葛瞻等五人固定出陣，另可選最多七人，依原作擊敗孟獲或守住二十回合後結算；接續成都場景及首個原作手動記錄點，保存或略過後暫停於本段終點。早期巴西之戰（入蜀・對嚴顏）與終章巴西之戰（對陸遜）是不同章節及事件，雖共用地形，也不會共用戰役或記錄識別；終章巴西尚未開放。稱帝接受路線、五丈原另一結局及後續劇情仍在製作中。新成都戰鬥不提供戰中自動保存或中斷記錄，請保留戰前相容記錄；其他段落依各自已支援的原作記錄提示操作。返回標題或重新載入會失去未保存進度。存檔只在玩家明確選格及需要時確認覆寫後儲存，不會因讀取而改寫舊記錄。若舊記錄缺少所需資料，會提示並保留原有狀態，不猜測或重設進度。本版按已核對的原作資料重製，並非以模擬器執行原作；觸控操作和文字顯示速度屬瀏覽器版設計。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
     </section>
-    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・0.70.0 成都防衛戰主線增量・原作選兵、勝敗及戰後手動記錄</p></footer>
+    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・0.70.1 成都顯示與記錄匯入修正・戰中中斷功能仍未支援</p></footer>
   </main>
 </body>
 </html>
