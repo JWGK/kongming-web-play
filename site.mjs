@@ -1,1 +1,1 @@
-import "./site.bundle.mjs?v=0.70.1-kongming-chengdu-ui1";
+import "./site.bundle.mjs?v=0.71.0-kongming-baxi-suspend2";
