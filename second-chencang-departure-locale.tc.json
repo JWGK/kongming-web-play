@@ -1,0 +1,3042 @@
+{
+  "locale": "zh-Hant",
+  "chapterId": "chapter4-second-chencang-departure",
+  "byPageId": {
+    "3:3:15406:0:0": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？",
+    "3:3:15406:1:0": "「嗯。",
+    "3:3:15451:0:0": "「魏延！　姜維！\n　你們兩人，\n　",
+    "3:3:15451:0:1": "「三日之內整備完畢，\n　前往陳倉城。",
+    "3:3:15451:0:2": "「立刻著手準備！\n　明白了嗎？",
+    "3:3:15556:0:0": "「遵命！",
+    "3:3:15556:1:0": "「那麼，我們這就\n　著手準備。",
+    "3:3:15590:0:0": "「好了……\n　我們立刻出發！",
+    "3:3:15590:1:0": "「什麼！？\n　不是由魏延大人和\n　姜維大人擔任先鋒嗎？",
+    "3:3:15590:2:0": "「他們是讓敵人\n　掉以輕心的誘餌。",
+    "3:3:15590:2:1": "「限定三日之內，\n　也是為了這個目的。",
+    "3:3:15590:3:0": "「原、原來如此……\n　真是閃電般的戰法。",
+    "3:3:15590:4:0": "「那我們就立刻\n　出發吧。",
+    "3:3:15798:0:0": "「明白了。\n　\n　",
+    "3:3:15798:0:1": "「是要率領大軍，\n　前往陳倉吧？",
+    "3:3:15853:0:0": "「嗯，這次一定要\n　攻下陳倉。",
+    "3:3:15892:0:0": "「各自著手\n　準備出擊！",
+    "3:3:15924:0:0": "「你說魏延和姜維\n　攻過來了？\n　",
+    "3:3:15924:0:1": "「武將只有那兩人嗎？\n　孔明呢？",
+    "3:3:15924:1:0": "「據說仍駐紮在漢中。\n　\n　",
+    "3:3:15924:1:1": "「魏延、姜維等人，\n　預計也要兩三日後\n　才會抵達。",
+    "3:3:15924:2:0": "「孔明這傢伙，\n　以為老夫病了，\n　就小看我嗎……",
+    "3:3:15924:2:1": "「也罷，\n　就讓他們\n　見識老夫的厲害！",
+    "3:3:16155:0:0": "「全軍出擊！\n　這次一定要\n　攻下陳倉！",
+    "3:3:17993:0:0": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？",
+    "3:3:17993:1:0": "「嗯。",
+    "3:3:18038:0:0": "「魏延！　姜維！\n　你們兩人，\n　",
+    "3:3:18038:0:1": "「三日之內整備完畢，\n　前往陳倉城。",
+    "3:3:18038:0:2": "「立刻著手準備！\n　明白了嗎？",
+    "3:3:18143:0:0": "「遵命！",
+    "3:3:18143:1:0": "「那麼，我們這就\n　著手準備。",
+    "3:3:18177:0:0": "「好了……\n　我們立刻出發！",
+    "3:3:18177:1:0": "「什麼！？\n　不是由魏延大人和\n　姜維大人擔任先鋒嗎？",
+    "3:3:18177:2:0": "「他們是讓敵人\n　掉以輕心的誘餌。",
+    "3:3:18177:2:1": "「限定三日之內，\n　也是為了這個目的。",
+    "3:3:18177:3:0": "「原、原來如此……\n　真是閃電般的戰法。",
+    "3:3:18177:4:0": "「那我們就立刻\n　出發吧。",
+    "3:3:18388:0:0": "「明白了。\n　是要率領大軍，\n　前往陳倉吧？",
+    "3:3:18434:0:0": "「嗯，這次一定要\n　攻下陳倉。",
+    "3:3:18474:0:0": "「各自著手\n　準備出擊！",
+    "3:3:18503:0:0": "「你說魏延和姜維\n　攻過來了？\n　",
+    "3:3:18503:0:1": "「武將只有那兩人嗎？\n　孔明呢？",
+    "3:3:18503:1:0": "「據說仍駐紮在漢中。\n　\n　",
+    "3:3:18503:1:1": "「魏延、姜維等人，\n　預計也要兩三日後\n　才會抵達。",
+    "3:3:18503:2:0": "「孔明這傢伙，\n　以為老夫病了，\n　就小看我嗎……",
+    "3:3:18503:2:1": "「也罷，\n　就讓他們\n　見識老夫的厲害！",
+    "3:3:18734:0:0": "「全軍出擊！\n　這次一定要\n　攻下陳倉！"
+  },
+  "bySystemId": {
+    "3:3:15366": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略",
+    "3:3:17953": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略"
+  },
+  "pageProofs": {
+    "3:3:15406:0:0": {
+      "textJa": "「わかりました\n　少数精鋭で\n　急襲するのですね",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました\n　少数精鋭で\n　急襲するのですね"
+        }
+      ],
+      "textTc": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 4
+    },
+    "3:3:15406:1:0": {
+      "textJa": "「うむ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ"
+        }
+      ],
+      "textTc": "「嗯。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「嗯。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:15451:0:0": {
+      "textJa": "「魏延！　姜維！\n　そなたらは\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！\n　そなたらは\n　"
+        }
+      ],
+      "textTc": "「魏延！　姜維！\n　你們兩人，\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！\n　你們兩人，\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 3,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 5,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 7,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:15451:0:1": {
+      "textJa": "「三日以内に準備を\n　整えて陳倉城へ\n　向かえ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「三日以内に準備を\n　整えて"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ\n　向かえ"
+        }
+      ],
+      "textTc": "「三日之內整備完畢，\n　前往陳倉城。",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「三日之內整備完畢，\n　前往"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 14,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 17,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:15451:0:2": {
+      "textJa": "「直ちに\n　準備にかかれ！\n　よいな",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「直ちに\n　準備にかかれ！\n　よいな"
+        }
+      ],
+      "textTc": "「立刻著手準備！\n　明白了嗎？",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「立刻著手準備！\n　明白了嗎？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:15556:0:0": {
+      "textJa": "「ははっ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ははっ！"
+        }
+      ],
+      "textTc": "「遵命！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「遵命！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 4
+    },
+    "3:3:15556:1:0": {
+      "textJa": "「では、準備に\n　とりかかります",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「では、準備に\n　とりかかります"
+        }
+      ],
+      "textTc": "「那麼，我們這就\n　著手準備。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「那麼，我們這就\n　著手準備。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 7
+    },
+    "3:3:15590:0:0": {
+      "textJa": "「さて……\n　我らは直ちに\n　出発する！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「さて……\n　我らは直ちに\n　出発する！"
+        }
+      ],
+      "textTc": "「好了……\n　我們立刻出發！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「好了……\n　我們立刻出發！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:15590:1:0": {
+      "textJa": "「なんと！？\n　魏延殿と姜維殿が\n　先鋒なのでは！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「なんと！？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "殿と"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "殿が\n　先鋒なのでは！？"
+        }
+      ],
+      "textTc": "「什麼！？\n　不是由魏延大人和\n　姜維大人擔任先鋒嗎？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「什麼！？\n　不是由"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "大人和\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "大人擔任先鋒嗎？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 10,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 12,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 17,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 19,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 8
+    },
+    "3:3:15590:2:0": {
+      "textJa": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ"
+        }
+      ],
+      "textTc": "「他們是讓敵人\n　掉以輕心的誘餌。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「他們是讓敵人\n　掉以輕心的誘餌。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:15590:2:1": {
+      "textJa": "「三日以内と刻限を\n　きったのも\n　そのためなのだ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「三日以内と刻限を\n　きったのも\n　そのためなのだ"
+        }
+      ],
+      "textTc": "「限定三日之內，\n　也是為了這個目的。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「限定三日之內，\n　也是為了這個目的。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:15590:3:0": {
+      "textJa": "「な、なるほど……\n　まさに電撃の戦法",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「な、なるほど……\n　まさに電撃の戦法"
+        }
+      ],
+      "textTc": "「原、原來如此……\n　真是閃電般的戰法。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「原、原來如此……\n　真是閃電般的戰法。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 9
+    },
+    "3:3:15590:4:0": {
+      "textJa": "「それでは直ちに\n　出発しましょう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「それでは直ちに\n　出発しましょう"
+        }
+      ],
+      "textTc": "「那我們就立刻\n　出發吧。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「那我們就立刻\n　出發吧。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 10
+    },
+    "3:3:15798:0:0": {
+      "textJa": "「わかりました\n　\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました\n　\n　"
+        }
+      ],
+      "textTc": "「明白了。\n　\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「明白了。\n　\n　"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 4
+    },
+    "3:3:15798:0:1": {
+      "textJa": "「大軍を率いて、\n　陳倉へ向かうの\n　ですね",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「大軍を率いて、\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ向かうの\n　ですね"
+        }
+      ],
+      "textTc": "「是要率領大軍，\n　前往陳倉吧？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「是要率領大軍，\n　前往"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "吧？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 12,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 14,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    "3:3:15853:0:0": {
+      "textJa": "「うむ\n　今度こそは陳倉を\n　落としてみせる",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ\n　今度こそは"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　落としてみせる"
+        }
+      ],
+      "textTc": "「嗯，這次一定要\n　攻下陳倉。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「嗯，這次一定要\n　攻下"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 12,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 14,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:15892:0:0": {
+      "textJa": "「各自、\n　出撃の準備に\n　かかれ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「各自、\n　出撃の準備に\n　かかれ！"
+        }
+      ],
+      "textTc": "「各自著手\n　準備出擊！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「各自著手\n　準備出擊！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:15924:0:0": {
+      "textJa": "「魏延と姜維が攻めて\n　来ただと？\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "と"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "が攻めて\n　来ただと？\n　"
+        }
+      ],
+      "textTc": "「你說魏延和姜維\n　攻過來了？\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「你說"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "和"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　攻過來了？\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 3,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 5,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 6,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 8,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:15924:0:1": {
+      "textJa": "「武将はその\n　二人だけか？\n　孔明はどうした？",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「武将はその\n　二人だけか？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "はどうした？"
+        }
+      ],
+      "textTc": "「武將只有那兩人嗎？\n　孔明呢？",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「武將只有那兩人嗎？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "呢？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 12,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 14,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:15924:1:0": {
+      "textJa": "「いまだ漢中に\n　駐屯中とのこと\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「いまだ"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "に\n　駐屯中とのこと\n　"
+        }
+      ],
+      "textTc": "「據說仍駐紮在漢中。\n　\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「據說仍駐紮在"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。\n　\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 7,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 9,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    "3:3:15924:1:1": {
+      "textJa": "「魏延、姜維らの到着\n　も二、三日後と思わ\n　れます",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "らの到着\n　も二、三日後と思わ\n　れます"
+        }
+      ],
+      "textTc": "「魏延、姜維等人，\n　預計也要兩三日後\n　才會抵達。",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "等人，\n　預計也要兩三日後\n　才會抵達。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 3,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 6,
+          "renderedRunIndex": 6,
+          "textOffset": 4,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 8,
+          "renderedRunIndex": 8,
+          "textOffset": 6,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    "3:3:15924:2:0": {
+      "textJa": "「孔明め、わしを病人\n　と思って甘く見てい\n　るな…",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "め、わしを病人\n　と思って甘く見てい\n　るな…"
+        }
+      ],
+      "textTc": "「孔明這傢伙，\n　以為老夫病了，\n　就小看我嗎……",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "這傢伙，\n　以為老夫病了，\n　就小看我嗎……"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 3,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:15924:2:1": {
+      "textJa": "「まあよい\n　目にもの\n　見せてくれるわ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「まあよい\n　目にもの\n　見せてくれるわ"
+        }
+      ],
+      "textTc": "「也罷，\n　就讓他們\n　見識老夫的厲害！",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「也罷，\n　就讓他們\n　見識老夫的厲害！"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:16155:0:0": {
+      "textJa": "「全軍出撃！\n　今度こそ\n　陳倉を落とすぞ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「全軍出撃！\n　今度こそ\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を落とすぞ！"
+        }
+      ],
+      "textTc": "「全軍出擊！\n　這次一定要\n　攻下陳倉！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「全軍出擊！\n　這次一定要\n　攻下"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 17,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 19,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:17993:0:0": {
+      "textJa": "「わかりました\n　少数精鋭で\n　急襲するのですね",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました\n　少数精鋭で\n　急襲するのですね"
+        }
+      ],
+      "textTc": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 4
+    },
+    "3:3:17993:1:0": {
+      "textJa": "「うむ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ"
+        }
+      ],
+      "textTc": "「嗯。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「嗯。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:18038:0:0": {
+      "textJa": "「魏延！　姜維！\n　そなたらは\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！\n　そなたらは\n　"
+        }
+      ],
+      "textTc": "「魏延！　姜維！\n　你們兩人，\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！\n　你們兩人，\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 3,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 5,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 7,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:18038:0:1": {
+      "textJa": "「三日以内に\n　準備を整えて\n　陳倉城へ向かえ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「三日以内に\n　準備を整えて\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "へ向かえ"
+        }
+      ],
+      "textTc": "「三日之內整備完畢，\n　前往陳倉城。",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「三日之內整備完畢，\n　前往"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉城"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 14,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 17,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:18038:0:2": {
+      "textJa": "「直ちに\n　準備にかかれ！\n　よいな",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「直ちに\n　準備にかかれ！\n　よいな"
+        }
+      ],
+      "textTc": "「立刻著手準備！\n　明白了嗎？",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「立刻著手準備！\n　明白了嗎？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:18143:0:0": {
+      "textJa": "「ははっ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「ははっ！"
+        }
+      ],
+      "textTc": "「遵命！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「遵命！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 4
+    },
+    "3:3:18143:1:0": {
+      "textJa": "「では、準備に\n　とりかかります",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「では、準備に\n　とりかかります"
+        }
+      ],
+      "textTc": "「那麼，我們這就\n　著手準備。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「那麼，我們這就\n　著手準備。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 7
+    },
+    "3:3:18177:0:0": {
+      "textJa": "「さて……\n　我らは直ちに\n　出発する！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「さて……\n　我らは直ちに\n　出発する！"
+        }
+      ],
+      "textTc": "「好了……\n　我們立刻出發！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「好了……\n　我們立刻出發！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:18177:1:0": {
+      "textJa": "「なんと！？\n　魏延殿と姜維殿が\n　先鋒なのでは！？",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「なんと！？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "殿と"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "殿が\n　先鋒なのでは！？"
+        }
+      ],
+      "textTc": "「什麼！？\n　不是由魏延大人和\n　姜維大人擔任先鋒嗎？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「什麼！？\n　不是由"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "大人和\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "大人擔任先鋒嗎？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 10,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 12,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 17,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 19,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 8
+    },
+    "3:3:18177:2:0": {
+      "textJa": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「彼らは、いわば敵を\n　油断させるための\n　おとりだ"
+        }
+      ],
+      "textTc": "「他們是讓敵人\n　掉以輕心的誘餌。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「他們是讓敵人\n　掉以輕心的誘餌。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:18177:2:1": {
+      "textJa": "「三日以内と刻限を\n　きったのも\n　そのためなのだ",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「三日以内と刻限を\n　きったのも\n　そのためなのだ"
+        }
+      ],
+      "textTc": "「限定三日之內，\n　也是為了這個目的。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「限定三日之內，\n　也是為了這個目的。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:18177:3:0": {
+      "textJa": "「な、なるほど……\n　まさに電撃の戦法",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「な、なるほど……\n　まさに電撃の戦法"
+        }
+      ],
+      "textTc": "「原、原來如此……\n　真是閃電般的戰法。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「原、原來如此……\n　真是閃電般的戰法。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 9
+    },
+    "3:3:18177:4:0": {
+      "textJa": "「それでは\n　直ちに出発\n　しましょう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「それでは\n　直ちに出発\n　しましょう"
+        }
+      ],
+      "textTc": "「那我們就立刻\n　出發吧。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「那我們就立刻\n　出發吧。"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 10
+    },
+    "3:3:18388:0:0": {
+      "textJa": "「わかりました\n　大軍を率いて、陳倉\n　へ向かうのですね",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「わかりました\n　大軍を率いて、"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　へ向かうのですね"
+        }
+      ],
+      "textTc": "「明白了。\n　是要率領大軍，\n　前往陳倉吧？",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「明白了。\n　是要率領大軍，\n　前往"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "吧？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 18,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 20,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 4
+    },
+    "3:3:18434:0:0": {
+      "textJa": "「うむ。今度こそは\n　陳倉を落としてみ\n　せる",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「うむ。今度こそは\n　"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を落としてみ\n　せる"
+        }
+      ],
+      "textTc": "「嗯，這次一定要\n　攻下陳倉。",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「嗯，這次一定要\n　攻下"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 12,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 14,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    },
+    "3:3:18474:0:0": {
+      "textJa": "「各自、出撃の\n　準備にかかれ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「各自、出撃の\n　準備にかかれ！"
+        }
+      ],
+      "textTc": "「各自著手\n　準備出擊！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「各自著手\n　準備出擊！"
+        }
+      ],
+      "controlRunMapping": [],
+      "speakerDefinition": 0
+    },
+    "3:3:18503:0:0": {
+      "textJa": "「魏延と姜維が\n　攻めて来ただと？\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "と"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "が\n　攻めて来ただと？\n　"
+        }
+      ],
+      "textTc": "「你說魏延和姜維\n　攻過來了？\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「你說"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "和"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "\n　攻過來了？\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 3,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 5,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 5,
+          "renderedRunIndex": 5,
+          "textOffset": 6,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 7,
+          "renderedRunIndex": 7,
+          "textOffset": 8,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:18503:0:1": {
+      "textJa": "「武将はその\n　二人だけか？\n　孔明はどうした？",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「武将はその\n　二人だけか？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "はどうした？"
+        }
+      ],
+      "textTc": "「武將只有那兩人嗎？\n　孔明呢？",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「武將只有那兩人嗎？\n　"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "呢？"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 12,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 14,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:18503:1:0": {
+      "textJa": "「いまだ漢中に駐屯中\n　とのこと\n　",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「いまだ"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "に駐屯中\n　とのこと\n　"
+        }
+      ],
+      "textTc": "「據說仍駐紮在漢中。\n　\n　",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「據說仍駐紮在"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "漢中"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "。\n　\n　"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 7,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 9,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    "3:3:18503:1:1": {
+      "textJa": "「魏延、姜維らの到着\n　も二、三日後と思わ\n　れます",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "らの到着\n　も二、三日後と思わ\n　れます"
+        }
+      ],
+      "textTc": "「魏延、姜維等人，\n　預計也要兩三日後\n　才會抵達。",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "魏延"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "、"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "姜維"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "等人，\n　預計也要兩三日後\n　才會抵達。"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 2,
+          "renderedRunIndex": 2,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 4,
+          "renderedRunIndex": 4,
+          "textOffset": 3,
+          "value": 1
+        },
+        {
+          "sourceRunIndex": 6,
+          "renderedRunIndex": 6,
+          "textOffset": 4,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 8,
+          "renderedRunIndex": 8,
+          "textOffset": 6,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 489
+    },
+    "3:3:18503:2:0": {
+      "textJa": "「孔明め、わしを病人\n　と思って甘く見てい\n　るな…",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "め、わしを病人\n　と思って甘く見てい\n　るな…"
+        }
+      ],
+      "textTc": "「孔明這傢伙，\n　以為老夫病了，\n　就小看我嗎……",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「"
+        },
+        {
+          "kind": "control",
+          "value": 2
+        },
+        {
+          "kind": "text",
+          "text": "孔明"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "這傢伙，\n　以為老夫病了，\n　就小看我嗎……"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 1,
+          "value": 2
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 3,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:18503:2:1": {
+      "textJa": "「まあよい\n　目にもの\n　見せてくれるわ",
+      "sourceRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「まあよい\n　目にもの\n　見せてくれるわ"
+        }
+      ],
+      "textTc": "「也罷，\n　就讓他們\n　見識老夫的厲害！",
+      "renderedRuns": [
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "「也罷，\n　就讓他們\n　見識老夫的厲害！"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 0,
+          "renderedRunIndex": 0,
+          "textOffset": 0,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 111
+    },
+    "3:3:18734:0:0": {
+      "textJa": "「全軍出撃！\n　今度こそ陳倉を\n　落とすぞ！",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "「全軍出撃！\n　今度こそ"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "を\n　落とすぞ！"
+        }
+      ],
+      "textTc": "「全軍出擊！\n　這次一定要\n　攻下陳倉！",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "「全軍出擊！\n　這次一定要\n　攻下"
+        },
+        {
+          "kind": "control",
+          "value": 3
+        },
+        {
+          "kind": "text",
+          "text": "陳倉"
+        },
+        {
+          "kind": "control",
+          "value": 1
+        },
+        {
+          "kind": "text",
+          "text": "！"
+        }
+      ],
+      "controlRunMapping": [
+        {
+          "sourceRunIndex": 1,
+          "renderedRunIndex": 1,
+          "textOffset": 17,
+          "value": 3
+        },
+        {
+          "sourceRunIndex": 3,
+          "renderedRunIndex": 3,
+          "textOffset": 19,
+          "value": 1
+        }
+      ],
+      "speakerDefinition": 0
+    }
+  },
+  "systemProofs": {
+    "3:3:15366": {
+      "textJa": "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう"
+        }
+      ],
+      "textTc": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略"
+        }
+      ]
+    },
+    "3:3:17953": {
+      "textJa": "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう",
+      "sourceRuns": [
+        {
+          "kind": "text",
+          "text": "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう"
+        }
+      ],
+      "textTc": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略",
+      "renderedRuns": [
+        {
+          "kind": "text",
+          "text": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略"
+        }
+      ]
+    }
+  },
+  "bySource": {
+    "「わかりました\n　少数精鋭で\n　急襲するのですね": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？",
+    "「うむ": "「嗯。",
+    "「魏延！　姜維！\n　そなたらは\n　": "「魏延！　姜維！\n　你們兩人，\n　",
+    "「三日以内に準備を\n　整えて陳倉城へ\n　向かえ": "「三日之內整備完畢，\n　前往陳倉城。",
+    "「直ちに\n　準備にかかれ！\n　よいな": "「立刻著手準備！\n　明白了嗎？",
+    "「ははっ！": "「遵命！",
+    "「では、準備に\n　とりかかります": "「那麼，我們這就\n　著手準備。",
+    "「さて……\n　我らは直ちに\n　出発する！": "「好了……\n　我們立刻出發！",
+    "「なんと！？\n　魏延殿と姜維殿が\n　先鋒なのでは！？": "「什麼！？\n　不是由魏延大人和\n　姜維大人擔任先鋒嗎？",
+    "「彼らは、いわば敵を\n　油断させるための\n　おとりだ": "「他們是讓敵人\n　掉以輕心的誘餌。",
+    "「三日以内と刻限を\n　きったのも\n　そのためなのだ": "「限定三日之內，\n　也是為了這個目的。",
+    "「な、なるほど……\n　まさに電撃の戦法": "「原、原來如此……\n　真是閃電般的戰法。",
+    "「それでは直ちに\n　出発しましょう": "「那我們就立刻\n　出發吧。",
+    "「わかりました\n　\n　": "「明白了。\n　\n　",
+    "「大軍を率いて、\n　陳倉へ向かうの\n　ですね": "「是要率領大軍，\n　前往陳倉吧？",
+    "「うむ\n　今度こそは陳倉を\n　落としてみせる": "「嗯，這次一定要\n　攻下陳倉。",
+    "「各自、\n　出撃の準備に\n　かかれ！": "「各自著手\n　準備出擊！",
+    "「魏延と姜維が攻めて\n　来ただと？\n　": "「你說魏延和姜維\n　攻過來了？\n　",
+    "「武将はその\n　二人だけか？\n　孔明はどうした？": "「武將只有那兩人嗎？\n　孔明呢？",
+    "「いまだ漢中に\n　駐屯中とのこと\n　": "「據說仍駐紮在漢中。\n　\n　",
+    "「魏延、姜維らの到着\n　も二、三日後と思わ\n　れます": "「魏延、姜維等人，\n　預計也要兩三日後\n　才會抵達。",
+    "「孔明め、わしを病人\n　と思って甘く見てい\n　るな…": "「孔明這傢伙，\n　以為老夫病了，\n　就小看我嗎……",
+    "「まあよい\n　目にもの\n　見せてくれるわ": "「也罷，\n　就讓他們\n　見識老夫的厲害！",
+    "「全軍出撃！\n　今度こそ\n　陳倉を落とすぞ！": "「全軍出擊！\n　這次一定要\n　攻下陳倉！",
+    "「三日以内に\n　準備を整えて\n　陳倉城へ向かえ": "「三日之內整備完畢，\n　前往陳倉城。",
+    "「それでは\n　直ちに出発\n　しましょう": "「那我們就立刻\n　出發吧。",
+    "「わかりました\n　大軍を率いて、陳倉\n　へ向かうのですね": "「明白了。\n　是要率領大軍，\n　前往陳倉吧？",
+    "「うむ。今度こそは\n　陳倉を落としてみ\n　せる": "「嗯，這次一定要\n　攻下陳倉。",
+    "「各自、出撃の\n　準備にかかれ！": "「各自著手\n　準備出擊！",
+    "「魏延と姜維が\n　攻めて来ただと？\n　": "「你說魏延和姜維\n　攻過來了？\n　",
+    "「いまだ漢中に駐屯中\n　とのこと\n　": "「據說仍駐紮在漢中。\n　\n　",
+    "「全軍出撃！\n　今度こそ陳倉を\n　落とすぞ！": "「全軍出擊！\n　這次一定要\n　攻下陳倉！",
+    "①少数精鋭で急襲する\r\n②大軍を率いて攻略に向かう": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略",
+    "①少数精鋭で急襲する": "①以少數精銳發動奇襲",
+    "②大軍を率いて攻略に向かう": "②率領大軍前往攻略",
+    "陳倉": "陳倉",
+    "漢中": "漢中",
+    "祁山": "祁山"
+  },
+  "runVariants": {
+    "[{\"kind\":\"text\",\"text\":\"「わかりました\\n　少数精鋭で\\n　急襲するのですね\"}]": [
+      {
+        "kind": "text",
+        "text": "「明白了。\n　是要以少數精銳\n　發動奇襲吧？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「うむ\"}]": [
+      {
+        "kind": "text",
+        "text": "「嗯。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"魏延\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"！　\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"姜維\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"！\\n　そなたらは\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "魏延"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "！　"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "姜維"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "！\n　你們兩人，\n　"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「三日以内に準備を\\n　整えて\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉城\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"へ\\n　向かえ\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「三日之內整備完畢，\n　前往"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉城"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「直ちに\\n　準備にかかれ！\\n　よいな\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「立刻著手準備！\n　明白了嗎？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「ははっ！\"}]": [
+      {
+        "kind": "text",
+        "text": "「遵命！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「では、準備に\\n　とりかかります\"}]": [
+      {
+        "kind": "text",
+        "text": "「那麼，我們這就\n　著手準備。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「さて……\\n　我らは直ちに\\n　出発する！\"}]": [
+      {
+        "kind": "text",
+        "text": "「好了……\n　我們立刻出發！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「なんと！？\\n　\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"魏延\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"殿と\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"姜維\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"殿が\\n　先鋒なのでは！？\"}]": [
+      {
+        "kind": "text",
+        "text": "「什麼！？\n　不是由"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "魏延"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "大人和\n　"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "姜維"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "大人擔任先鋒嗎？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「彼らは、いわば敵を\\n　油断させるための\\n　おとりだ\"}]": [
+      {
+        "kind": "text",
+        "text": "「他們是讓敵人\n　掉以輕心的誘餌。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「三日以内と刻限を\\n　きったのも\\n　そのためなのだ\"}]": [
+      {
+        "kind": "text",
+        "text": "「限定三日之內，\n　也是為了這個目的。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「な、なるほど……\\n　まさに電撃の戦法\"}]": [
+      {
+        "kind": "text",
+        "text": "「原、原來如此……\n　真是閃電般的戰法。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「それでは直ちに\\n　出発しましょう\"}]": [
+      {
+        "kind": "text",
+        "text": "「那我們就立刻\n　出發吧。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「わかりました\\n　\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「明白了。\n　\n　"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「大軍を率いて、\\n　\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"へ向かうの\\n　ですね\"}]": [
+      {
+        "kind": "text",
+        "text": "「是要率領大軍，\n　前往"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "吧？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「うむ\\n　今度こそは\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"を\\n　落としてみせる\"}]": [
+      {
+        "kind": "text",
+        "text": "「嗯，這次一定要\n　攻下"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「各自、\\n　出撃の準備に\\n　かかれ！\"}]": [
+      {
+        "kind": "text",
+        "text": "「各自著手\n　準備出擊！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"魏延\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"と\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"姜維\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"が攻めて\\n　来ただと？\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「你說"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "魏延"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "和"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "姜維"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "\n　攻過來了？\n　"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「武将はその\\n　二人だけか？\\n　\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"孔明\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"はどうした？\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「武將只有那兩人嗎？\n　"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "孔明"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "呢？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「いまだ\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"漢中\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"に\\n　駐屯中とのこと\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「據說仍駐紮在"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "漢中"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。\n　\n　"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"魏延\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"、\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"姜維\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"らの到着\\n　も二、三日後と思わ\\n　れます\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "魏延"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "、"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "姜維"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "等人，\n　預計也要兩三日後\n　才會抵達。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"孔明\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"め、わしを病人\\n　と思って甘く見てい\\n　るな…\"}]": [
+      {
+        "kind": "text",
+        "text": "「"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "孔明"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "這傢伙，\n　以為老夫病了，\n　就小看我嗎……"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「まあよい\\n　目にもの\\n　見せてくれるわ\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「也罷，\n　就讓他們\n　見識老夫的厲害！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「全軍出撃！\\n　今度こそ\\n　\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"を落とすぞ！\"}]": [
+      {
+        "kind": "text",
+        "text": "「全軍出擊！\n　這次一定要\n　攻下"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "！"
+      }
+    ],
+    "[{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"「三日以内に\\n　準備を整えて\\n　\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉城\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"へ向かえ\"}]": [
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "「三日之內整備完畢，\n　前往"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉城"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「それでは\\n　直ちに出発\\n　しましょう\"}]": [
+      {
+        "kind": "text",
+        "text": "「那我們就立刻\n　出發吧。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「わかりました\\n　大軍を率いて、\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"\\n　へ向かうのですね\"}]": [
+      {
+        "kind": "text",
+        "text": "「明白了。\n　是要率領大軍，\n　前往"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "吧？"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「うむ。今度こそは\\n　\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"を落としてみ\\n　せる\"}]": [
+      {
+        "kind": "text",
+        "text": "「嗯，這次一定要\n　攻下"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「各自、出撃の\\n　準備にかかれ！\"}]": [
+      {
+        "kind": "text",
+        "text": "「各自著手\n　準備出擊！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"魏延\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"と\"},{\"kind\":\"control\",\"value\":2},{\"kind\":\"text\",\"text\":\"姜維\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"が\\n　攻めて来ただと？\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「你說"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "魏延"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "和"
+      },
+      {
+        "kind": "control",
+        "value": 2
+      },
+      {
+        "kind": "text",
+        "text": "姜維"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "\n　攻過來了？\n　"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「いまだ\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"漢中\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"に駐屯中\\n　とのこと\\n　\"}]": [
+      {
+        "kind": "text",
+        "text": "「據說仍駐紮在"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "漢中"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "。\n　\n　"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"「全軍出撃！\\n　今度こそ\"},{\"kind\":\"control\",\"value\":3},{\"kind\":\"text\",\"text\":\"陳倉\"},{\"kind\":\"control\",\"value\":1},{\"kind\":\"text\",\"text\":\"を\\n　落とすぞ！\"}]": [
+      {
+        "kind": "text",
+        "text": "「全軍出擊！\n　這次一定要\n　攻下"
+      },
+      {
+        "kind": "control",
+        "value": 3
+      },
+      {
+        "kind": "text",
+        "text": "陳倉"
+      },
+      {
+        "kind": "control",
+        "value": 1
+      },
+      {
+        "kind": "text",
+        "text": "！"
+      }
+    ],
+    "[{\"kind\":\"text\",\"text\":\"①少数精鋭で急襲する\\r\\n②大軍を率いて攻略に向かう\"}]": [
+      {
+        "kind": "text",
+        "text": "①以少數精銳發動奇襲\r\n②率領大軍前往攻略"
+      }
+    ]
+  },
+  "admission": "Explicit departure scope only; newly reconstructed TC, not recovered prior seal"
+}

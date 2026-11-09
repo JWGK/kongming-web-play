@@ -1,0 +1,2452 @@
+{
+  "version": "qishan-root4-departure-media-data/1",
+  "policyVersion": "web-qishan-root4-departure-display/1",
+  "displayProfile": {
+    "identity": "qishan-root4-departure-web-display-v1",
+    "origin": [
+      0,
+      0
+    ],
+    "inheritedHardwareWindowClip": false,
+    "inheritedPreviousForeground": false,
+    "foregroundPriority": 1,
+    "actorPriority": 2,
+    "backgroundPriority": 3,
+    "claim": "declared-source-derived-WEB-composite-not-native-full-frame"
+  },
+  "captionLocalization": {
+    "text": "祁山　魏軍營帳",
+    "sourceTextJa": "祁山　魏軍幕舎",
+    "kind": "WEB-existing-system-font-title-only-not-native-glyph-pixels"
+  },
+  "rooms": {
+    "8": {
+      "backgroundAssetId": "camp-background8",
+      "foregroundAssetId": "camp-foreground0",
+      "headerX": 200,
+      "camera": [
+        60,
+        25
+      ]
+    },
+    "9": {
+      "backgroundAssetId": "departure-background9",
+      "foregroundAssetId": null,
+      "headerX": 200,
+      "camera": [
+        60,
+        25
+      ]
+    }
+  },
+  "layout9": {
+    "index": 9,
+    "width": 100,
+    "height": 100,
+    "expandedSha256": "e786c98e3d8cc786b8e96a36cf76db250c4d9d7741b50800625a3cce66d0c456",
+    "passableFootprint": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111111000000000000000000000000000000000000000000000000000000001000000111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000001110000011111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000001000001111111111111111111111111111111111111111111111110000000000000000000000000000000000000000000000011000011111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000110000111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000001100001111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000011000111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000000111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000011111110011111111111111111111111111111111111111111111111111111111100000000000000000000000000000000001111110001111111111111111110000011111111111111111111111111111111110000000000000000000000000000000000111110000011111111111111111000000111111111111111111111111111111111000000000000000000000000000000000011111000000111111111111111100000001111111111111111111111111111111100000000000000000000000000000000001111100000011111111111111110000000111111111111111111111111111111110000000000000000000000000000000000111110000001111111111111111000000011111111111111111111111111111111000000000000000000000000000000000011111100000111111111111111100000001111111111111111111111111111111100000000000000000000000000000000001111110000011111111111111110000000111111111111111111111111111111110000000000000000000000000000000000111111100000111111111111111000000011111111111111111111111111111111000000000000000000000000000000000011111111000011111111111111100000001111111111111111111111111111111100000000000000000000000000000000001111111110001111111111111111000000111111111111111111111111111111110000000000000000000000000000000000111111111111111111111111111110000011111111111111111111111111111111000000000000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000001111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000000111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000001111111111111111111111111111111111111111111111111110000000000000000000000000000000000000000000010000011111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000001100000111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000111000001111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000011110000111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000001111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000011111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000011111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000111111111111111111111001111111111111111111100000000000000000000000000000000000000000000000000000000000000000000011111111100000011111001111111100000000000000000000000000000000000000000000000000000000000000000000000111111110000000111000000111100000000000000000000000000000000000000000000000000000000000000000000000001111000100000001100000001100000000000000000000000000000000000000000000000000000000000000000000000000011100001000000011000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000010000000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000100000000000000000000000000000000000000000000000000000000000000000000000000000000001110000000011000011000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111110001110000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "headerX": 200,
+    "camera": [
+      60,
+      25
+    ]
+  },
+  "resourceManifest": {
+    "version": "second-chencang-prelude-resources/1",
+    "assets": [
+      {
+        "id": "camp-actor-0-0-3",
+        "path": "assets/second-chencang-departure/source-c8512b8851746ea2cfa7c1a7557d77e5bff883673cedaf9986abf71bad2dbfff.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1035,
+        "sha256": "d0706805e81852032132dec589a4a9582e6f3a5c2a920d934fbb21de6930e13b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-0-4",
+        "path": "assets/second-chencang-departure/source-5e5b9c3b49fb42eacb428349de96bc3a86e069d6d54fe915b894c795f376984a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1049,
+        "sha256": "f8e252a3c34e0428757aa430e2ea5f132a8e05683b9891c4b9b51d3fb6484223",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-1-0",
+        "path": "assets/second-chencang-departure/source-13937bbb2accc88669cd72eda5d511e53e7324f282f65481ede6b8d1e5c78659.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1069,
+        "sha256": "0a2d59b763029191b565c3c1f0816856131c6b42d1c221b132434e67b8baa703",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-1-1",
+        "path": "assets/second-chencang-departure/source-a7e8b5d3fff73b5f20b7764715697eacdd3b770784c84197432f5159f4411849.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1070,
+        "sha256": "9bbb156246503cdbbfdc69a90ffb1a9713dce0d25285c00ecf231905fe787395",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-2-0",
+        "path": "assets/second-chencang-departure/source-5ede54534a6a1320800db1edf32c0bb4410b6336bd34d2e9044859d68bead2cc.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1072,
+        "sha256": "db667f67c4a32cbaa7226e75b324b8b1841e71b5acb8eb0703033016dc537139",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-2-1",
+        "path": "assets/second-chencang-departure/source-84fa1748df970702c29013f284e595972b37b5cb7dd5ee461f3fd43ef310bcb5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1068,
+        "sha256": "d625297c93ae64f8dfadc3d23671dc5a8278b300418a5be58fb3890b36dc0461",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-3-3",
+        "path": "assets/second-chencang-departure/source-9d6aea0962393b5e156088e40d9d6134bdf7e04babdf8573d00676e04f2c36a6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1039,
+        "sha256": "5b87683900ac6cdf4bdacc600d2afd6d25e805ae02d9c1605e701b5c48ec127b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-0-3-4",
+        "path": "assets/second-chencang-departure/source-591d18e5a286627b78171481643df499fe460cfac7533bca8af8dca8ea9910b5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1045,
+        "sha256": "1d97d40c0102e68e2db9f0133dc4537163ebaac6ff24303c52f0717076df3c10",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-0-3",
+        "path": "assets/second-chencang-departure/source-8897099c24c71a4f90f36a6e25c9faf8da55283ec68b5320ece648fa3648e626.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1062,
+        "sha256": "5c033955ea754ab134b734d3c9ef5284d716d565ba207702507f1db99ccb2fb4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-0-4",
+        "path": "assets/second-chencang-departure/source-7dd0b0fbdeb2c94df29431093e088ccb910f16b0aa8c070e766347197956a42f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1081,
+        "sha256": "8edb18a9d0af9c61de514aba7854b88b24adb7cce666b17cf9288bfa608c01fa",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-1-0",
+        "path": "assets/second-chencang-departure/source-2cfe9f5420b36914315e38800a4c6055436b473619d6fbb72a94754298e33a1a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1092,
+        "sha256": "91e6488307caf9f3d2b95649e84208aba2176f188f0f2394e5f45a1359b5dd92",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-1-1",
+        "path": "assets/second-chencang-departure/source-f7eff0f5505a1603d0af40e13d712c01bb7858d7ae478034acf16d0c3b6e5d9d.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1070,
+        "sha256": "26d90745f0f5437918dc84f371f100a15f845799c8fd087a0b61f2fb408a3733",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-2-0",
+        "path": "assets/second-chencang-departure/source-1fb738c544e29910780e587a12d0fead96632fb419503049d7b1da3303433002.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1084,
+        "sha256": "e0fbd1b00e0eb7947fa2f3fce0fa33cea63a3a251c4844585075f6fe77922934",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-2-1",
+        "path": "assets/second-chencang-departure/source-7738169e26f7e069c226a8197448398218dea70450ca47dc295dcaed6a9dc70a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1071,
+        "sha256": "d5818518d9de10e4d9dcd74f50b23d81abc9bb0146304e9dbd3e1caad9c2bd1a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-3-3",
+        "path": "assets/second-chencang-departure/source-6f5448d536797218ac5c93ede26507793ff1929bd3fa27f691b9da47b99f6fd0.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1065,
+        "sha256": "9393e744531c8097f9b9cc68d0d74bfe5e9c269c9d74d12a666fc7db638480c1",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-4-3-4",
+        "path": "assets/second-chencang-departure/source-579ec45dcf86c1b07be85ce1a047c5a523b232b49e846ae875c4793ca7c305c0.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "dcc1b7a39d3a057c295ba6f978f9e66925abe005b8affb64e7d4bf8149c25072",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-0-3",
+        "path": "assets/second-chencang-departure/source-380e771bf09456bbc1d0f2bb5304d2b8fb725337a441b52750b5c51703331f57.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1071,
+        "sha256": "a16a07cd081990a49b0a9b49b1b4dd4d1761e8bf90c3f7f34b2fda390fd8f0ec",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-0-4",
+        "path": "assets/second-chencang-departure/source-67e6edef924ce6745264244626e9d62cb4dcb2c4178d69a26a9ab47681ff946f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1071,
+        "sha256": "ac274fed44b869f5d20eb16cd90fa9e1aa9dea7de948b6da699250bd22e19719",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-1-0",
+        "path": "assets/second-chencang-departure/source-cd1c4965859b1c37cf72d5c33206df53e02e022ea2036e57746d9e509f4721b7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "61a42f3c1179a0a05c19b58c5fad2207a2741c845366ec060912caebeaf4cd59",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-1-1",
+        "path": "assets/second-chencang-departure/source-61c93dc6e98972dd1926eb1649c668663a1fef5fb85316078c981a301fe6afc5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "c376f67c6f1b247f7353082dae5b740d464f893b86649c7c691126441c301e5a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-2-0",
+        "path": "assets/second-chencang-departure/source-c28bca30af89118a67b2b9f86fd128ecddda4c271e690c1c956dc631a10736ab.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "92c0bebf8f5ab6a1b242420b7154c4cf7443216142d4900c49977abe90eb9526",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-2-1",
+        "path": "assets/second-chencang-departure/source-6f4cb6a40c8f892f84720d1eb59830f616d5b5c52aa9d14493b09814e47593a7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1090,
+        "sha256": "c8ff7655adfae43f79e34df95d18198ded9808fb106c90427d2150779e2e2091",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-3-3",
+        "path": "assets/second-chencang-departure/source-b5f77f4dd83b6fe355e4040ae40098dc187f95327286d3bbd9dcad27cc438de9.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1076,
+        "sha256": "1ac899f0661d9701894d79b7d9a8ca66b2ebcef06cb307db40494cc45259b501",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-5-3-4",
+        "path": "assets/second-chencang-departure/source-cb552efc2a694a49f10554189a3404ca2b00c2273636fb55ab5ab604eb080a74.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1070,
+        "sha256": "64ca15a2c3232ae7dede336077f9e954b3ce41b589d9f3a94d27e73e2c46573a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-0-3",
+        "path": "assets/second-chencang-departure/source-8422afd8dcb9dcb3c7c07a93097ee2a4d74066b372806b0becda1effbade5375.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1054,
+        "sha256": "6f28bf625081e375d173f464ecde4da906b80f4a376e8de1352cf3fb6ce74674",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-0-4",
+        "path": "assets/second-chencang-departure/source-2d642d0f576075a34ecf96900e78109f45c6631813df0198e19606085a2859d4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1076,
+        "sha256": "d6a7aa2cd7902a62a36be526fb67ef2f5d9f9bb9873a0c535bbf573cb669a11e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-1-0",
+        "path": "assets/second-chencang-departure/source-ea16f16b0ba7a0a3205f436c4e2c5d8997918802a65c47ed6611384b2b48b130.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1099,
+        "sha256": "63d9d5f35600608cc53b7ce25fb7acdbd9ecfce9dd2df5ff364bb06d9b6b81f6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-1-1",
+        "path": "assets/second-chencang-departure/source-0305e486502bbd2a6382aa8ad20b241c16ee9ab7c8b250ed04e213798b2ef244.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1092,
+        "sha256": "8f5910d9fa39bc349ace716bc8173a87d4a198bb9a1d971e0d31deb0035e9280",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-2-0",
+        "path": "assets/second-chencang-departure/source-eb2c2f53c27fde7ba4a393c46811fe0da62079acfecf585889d52bb58879dd86.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1096,
+        "sha256": "caa4c74af751c4271dfb40695fc48014650f5a5ace4ea7c9c70af391027df28e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-2-1",
+        "path": "assets/second-chencang-departure/source-f24d9cb92bf4f891ac524cf792abf3c5250e6f8991e4bb2d9dde7a2571163f37.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1091,
+        "sha256": "a6b2cbd62ff33d194b30a8020f6d474a6f34e23f689f2cf482c7c0606cdf67a2",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-3-3",
+        "path": "assets/second-chencang-departure/source-e919c3759719a5c1aaa6159d0c8fb566163595ad8bcac850ae59bf12eda76f8c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1055,
+        "sha256": "e16575d25a9cd5892960df0799684c884dc53e9a48c9ef369e90a1810a3b9384",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-6-3-4",
+        "path": "assets/second-chencang-departure/source-a38df22c05d7bda25b111823b1cd7a160fd506c39ac4a642bed622e13df1a74c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1071,
+        "sha256": "d0f655e19a024d2ba7333feeb1a2b7b64b84655ab38755349557fe21dece5fe8",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-0-3",
+        "path": "assets/second-chencang-departure/source-2c9ce59702f971cf3e2a6c1563f6c801ce99022bcf0d595f320ca9f29c6a2ed1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "95c8eb02c8b14d7c4d4d280626f220e02ccb909c452638a94b5d3a7f4aa7fd48",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-0-4",
+        "path": "assets/second-chencang-departure/source-1ec4a175c5f6ed5ae9d83a417fa872a75677fd94690bd43c830943c6ce26cd2a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "468fce0d85e48fa13d1595f331fa8834ec908708474803f5eebd962289fc82b6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-1-0",
+        "path": "assets/second-chencang-departure/source-9506ff91ddd1d5a6cd63d2d9decce6f8dd819d8270769704db15dd354e6446af.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1111,
+        "sha256": "0b91ea80c8718379b1bdf29d5ef5b11ee9fc2837f651140a26503935b3d85fc7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-1-1",
+        "path": "assets/second-chencang-departure/source-f2787df95dee285350df3b9fbbbcf5eb81998e188ad28a2e147ea38e3d041d7a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1118,
+        "sha256": "b253170482b12494e0027a85ef05758281bd49f7adfe4cb94e4b1e6a507e23a7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-2-0",
+        "path": "assets/second-chencang-departure/source-26db30c83b4ff048fedcc64150361eda724b41399fba1d3de539295c76403d78.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1113,
+        "sha256": "87024662f890f6f513336e6bfe9f5750e087f96545b5fe90fadb3b87ef6d816f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-2-1",
+        "path": "assets/second-chencang-departure/source-c2d9953d9b5c18cbb76b96649301e304600da24ba99df31749e03e68cf66fe47.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1120,
+        "sha256": "c2cbefbc96693154519758eef904059a4d701820dd3452442b2034246fbfa82f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-3-3",
+        "path": "assets/second-chencang-departure/source-bd7ad6bfbe3d719323a5bb957224fc904c2c37842ed0b478c77d9e060fa46391.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1083,
+        "sha256": "7d54b1c21dcb97e7db86f09bdaa12cc1ea545679bc128256e141f1cc53299407",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-7-3-4",
+        "path": "assets/second-chencang-departure/source-39711394f2a3fb4cd4b15cca81c283dbec5cf7e4e2238529e7562d8af9c5a316.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1099,
+        "sha256": "c710cd33e931bb560993a6a5274717f5587d3b739a23479049867dc4f269b5fe",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-0-3",
+        "path": "assets/second-chencang-departure/source-b856be530f16277f2cd58cf7619884ccfa560afb0e203381936b6d7dc86bbeec.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "6c79cd7190b4251e13ad10b89d15319859657ba1d6241b5eb04c54e4e251801d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-0-4",
+        "path": "assets/second-chencang-departure/source-57d74be47d7fe27a4f9c346f03143f89ba1b68436e3ac6ad1ffd6cc43aa61982.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "8ef62d5f268c0124737f3603d222a14151a42d6ed0f1d32e23f3bedf6b51141e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-1-0",
+        "path": "assets/second-chencang-departure/source-eabb3d79120adb030201cfc6497bb74f5ce7529d56cc9aad1a5de91a66236fd5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "3ec71d20f3e13f57b90aae80d867a50495405c0d1c9d1c4c257172119964f43a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-1-1",
+        "path": "assets/second-chencang-departure/source-35fef95b59ea9953a4734eba852a0761ec829a2decec56f2c9ce8fe1bd6c80e0.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1096,
+        "sha256": "d6ac465ed19efd96787253ae8bc6b24d3e6c670e40068ca7f1866e4bbbc63347",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-2-0",
+        "path": "assets/second-chencang-departure/source-ed9242eab14c59edbc4bf607f5834c9eb32dfedc94c045450b23e2d976c16aae.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "3eb8a1357f64b7ca8e901763beee3f47bc715c46e02f85b7aecac63a2e2bda31",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-2-1",
+        "path": "assets/second-chencang-departure/source-8953673811955403ef22806334024d292cf76198f6c0c703d3499a4afc0b581c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1094,
+        "sha256": "7ae96f72e327b7fe2b51e1d0cb174f376f69dc63803ae899fffb0cfed9456dbc",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-3-3",
+        "path": "assets/second-chencang-departure/source-e84dbc927b45460f37408ec47beb6b336c4a482b45ffa24d58384669c847d79f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1086,
+        "sha256": "693e5bbb06a757edb6f205b67226bc63e7cf5823a9a1ab2fef5a50a75f852df5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-8-3-4",
+        "path": "assets/second-chencang-departure/source-30d34e9b19e94bc98727e3b26316fb9e22d51ba61ab4191c8b09773c279f572b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "de96625107677f91e0854eeb1e3c6ff6f2e7b53fd514d195016ef66116a15eb1",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-0-3",
+        "path": "assets/second-chencang-departure/source-5181780f27473f6db2805082ecd353bbe360d4d18ff440ffd9c6a41812c3edd6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1076,
+        "sha256": "5a7c34d2bb04369bd07372a377b1a877b9daf457347ca8ca0ac46a62c0e60c16",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-0-4",
+        "path": "assets/second-chencang-departure/source-fb2978626bdefa64f9855a30c6b59c022f80d9dff8ba6939e41756d8b5fe727f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1096,
+        "sha256": "03d658a2e0d3d7459cf200e02f1e7c085f0865d8ff17b8cae9bccd23041695b5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-1-0",
+        "path": "assets/second-chencang-departure/source-8af7c575365ddbc95686e7cc9683e5b28088b2bb621b4d4caa18e2232554672a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1094,
+        "sha256": "c00e36a211132db23a17add4aa2bae4ca0f1422e7c82fae8d886e4498637a33c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-1-1",
+        "path": "assets/second-chencang-departure/source-3fdffcc1ef793138c038d3fbb1b10f4b645a697122a4373f9fff79dcf038ed60.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1112,
+        "sha256": "7b5ffc1a9acf4f05e86f00b5bfc1ff52fdc61bad696fed6980e77119e0bfae3a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-2-0",
+        "path": "assets/second-chencang-departure/source-f040af29f989a1586d6a6b893dd97d2f2f9e274d59f444e88c0b38da467d7595.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1093,
+        "sha256": "6f48a9a78cf1fdb6e0b90bd962c516929b7b26c1c07ac9f64db125ed9e06d605",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-2-1",
+        "path": "assets/second-chencang-departure/source-4c71e6b2251bb15f768a9c11564fa6a95392055981177ff5014bcc3b902e6fb3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1113,
+        "sha256": "794d1b99ce1855989e1792b25b400c91c09988f3a52f2a0330c3ed437434728e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-3-3",
+        "path": "assets/second-chencang-departure/source-489f45ef01fb1a845e8e7dae96e7b63bd669508e3d1c5dd9f2d237e5f49ce84b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1075,
+        "sha256": "26ab151192eb9b86d1b91ff50bfc600f59d5dc2bacdfe57136a834c57f89216f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-9-3-4",
+        "path": "assets/second-chencang-departure/source-d39d55ddabf30776a0be04348dcbb014934e953742c7df644384fbed2be93501.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1100,
+        "sha256": "d63ba39c66adf345ea775080cd31ffb74acb8e8e1ea0a53f1d8970cafe1693db",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-0-3",
+        "path": "assets/second-chencang-departure/source-23dab0e97eb77eeda115ad19dfd7dc4cd1c810d1b2907f35beda6d8b9c4754d7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1073,
+        "sha256": "1f9952dac19cf2069f35f7276bf22c8f7aa4dab83e581ee3d2f5499c7e7754ba",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-0-4",
+        "path": "assets/second-chencang-departure/source-3f001ce6d425cd968c234e4d8e19c6de0d071a1d9235999195082b8fa607198c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1090,
+        "sha256": "2eb8bbc5cfaa1b71c328b8263c346a988641169c125cfa274ffc61a8f348d512",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-1-0",
+        "path": "assets/second-chencang-departure/source-28db1557c2e723ddc7a3e0a6054f87ef1d2d98d0ffd885c86101b2ec48850c1b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1101,
+        "sha256": "0a35d9cbc27d35a237d4e910616ebab6c8525830265614db55155527f4ade9ea",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-1-1",
+        "path": "assets/second-chencang-departure/source-e776d26ca73644237dc0520861c29d47fc87c2bb5cbcfd754862133bd38cad01.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1099,
+        "sha256": "7a290d46dc94aaef9cf1088055a646838594a1f9b4b7b306b915518582a9d2a6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-1-16",
+        "path": "assets/qishan-root4-camp/1d79917385a3c5fad7489e29606731b9ea20f01c2e25e30cdd58244491c1af64.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 698,
+        "sha256": "35eab095810109772d9ac48938ad97f3eeccb55673657cfd779d215d09d83b29",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-2-0",
+        "path": "assets/second-chencang-departure/source-b2510916f80d9ed6ddcf8c54ce1594b1bd0ddfa4afe6af5c257bc5705ad74488.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "729798e620c7527591ad6eb6423ad61e9712c291c7ac0e036d2147af40d91b0b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-2-1",
+        "path": "assets/second-chencang-departure/source-6cc4b86755f89f347583e1ac7b0126d2a136e301388a40e183dab3a07c9a50d2.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1101,
+        "sha256": "e3fbf21cba7234012a765e627c55ac8f81705c3231e174226c61e405c6c0320b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-3-3",
+        "path": "assets/second-chencang-departure/source-6e37512340dba8e6aed40a0f781611954a11325048890ecf9b1bdeb3b0948f11.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1074,
+        "sha256": "47c889bbce33ec8c68597f89e330576ed6572fc9d2c0a3376318c793980e83a4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-10-3-4",
+        "path": "assets/second-chencang-departure/source-b20e824c89c3d2cdf2ce0c2873298d685d40c09d85d2704959145273f061675c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "9303887aaca88b517920e9290ea5bd3b168e8fdb1d2c7619fef12ae0feb6c1e4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-0-3",
+        "path": "assets/qishan-root4-camp/ebb280c294b28d6bac915ab00af0a16b429e0f0525053be1ee2320b145140ed7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 690,
+        "sha256": "c58f37a321efe2936827b38c8f32be9613fb8a43147fed468847faf09d57eac7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-0-4",
+        "path": "assets/qishan-root4-camp/c47032621b4a6d0f6d590fe98927b616a518a84c6e142e3f1b5ce79623fab958.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 702,
+        "sha256": "a6d5ff463bf83e17a9318f60f4d4cd0fe13f1ff62b43c4697f3ac4090eae544d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-1-0",
+        "path": "assets/qishan-root4-camp/0a4519a5b75cd16ac2bf7f81cf6f761221a35a6cf31063791bbdb0c2a6c1bce8.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 782,
+        "sha256": "8ab4f5eccef6f24a71280e0053817a876ee1dced16a6300ff0dee67c8a4c67ae",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-1-1",
+        "path": "assets/qishan-root4-camp/d10201f159bde3c1c99edcb6a441abefb21028cd29c46b2ea8c1c95dd7127f1a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 783,
+        "sha256": "0bb99d97f834ca6c9f4b407bd770d2fee3d20f70ce2d36e5834d66563929d12e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-2-0",
+        "path": "assets/qishan-root4-camp/7996e78b4657a5c0510b797493e03002fbaf50d7cb4a0d6e9b700d976411460f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 783,
+        "sha256": "2f984cf980c59b52d2bd9efc981cc0bda89f7ce88408fecde69a254bd1ff81d7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-2-1",
+        "path": "assets/qishan-root4-camp/773de7bace3dc20f288a3b923d3d7bc152fc8b91eccf790b71f305fb7a1e2604.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 773,
+        "sha256": "03f5665e4176e92e9661a93760f76a993e3339e9d5f684229273134f5b6ab784",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-3-3",
+        "path": "assets/qishan-root4-camp/38d1296bd601c9753cc3189bf0582fef51a26df994b2f15586b82a69bce5cc47.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 694,
+        "sha256": "5872882ec52ff61e1f183e7a435da1d14b2c0f9ba51bdc9b306f34983825f137",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-11-3-4",
+        "path": "assets/qishan-root4-camp/3e1dcc5394ee233b1030e0a6d3e5559e2e949886adc17b78875fe7dfb522f5cf.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 725,
+        "sha256": "e1a3942b8745a464a1ff430722e90b09ef632462ec3b66659b5756dc57e41afd",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-0-3",
+        "path": "assets/second-chencang-departure/source-4870ca42004e447a7a097adcfb1dd33384f0a6ff3a71e5930a23d78146b20a47.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "a3b4ba95f37f40c54b77f86d456c9267b1d401c165e37f72b295d5c8a01cef58",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-0-4",
+        "path": "assets/second-chencang-departure/source-bb2964dd53303c7bbc5ac3f6cd8629ebf18c988c77d89675aa6918b2f9883be6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "7e75734c9b5734af8a5281538ea6a273b051b9188d7a06f495d842deac139f27",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-1-0",
+        "path": "assets/second-chencang-departure/source-674bf17e02f996e7cffad749004a3da3ab080e0eaa976ec9dcc9458934d607f6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1095,
+        "sha256": "20d44baf4dac1e0b7c6c5fd48a4da2943ec4ae8c73bc42cddc7f6e2d8224714e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-1-1",
+        "path": "assets/second-chencang-departure/source-008f1079e11b9b8237ba45ecb1e5728cb8ad241b694a57d7f75be2ad8b713eb3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1115,
+        "sha256": "997f0a0214960edf6d4c1731fa47b5851ff931d6944685dcf3f24caee7017d1c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-2-0",
+        "path": "assets/second-chencang-departure/source-c9109036f64212a5be19c9a32026e36dd7f6e4ea607f761f14c7e9c79d576af7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1092,
+        "sha256": "c84f945f3ab69c5942b2830e4b8cc617561e47ba452345ef4ae3c07627c6f433",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-2-1",
+        "path": "assets/second-chencang-departure/source-9cb4d2aa3a48de8930137bfe3c5855c3e8fcb92b6052bfc9ab320ac25ec01523.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1105,
+        "sha256": "d3bbc0f19c7f55173d1df98fd2991561540841e488d409074f83276d2ee74d43",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-3-3",
+        "path": "assets/second-chencang-departure/source-7da3634a067ca5bb3a59cb2616885869567472da73218f1e9a011d382739f2ce.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1077,
+        "sha256": "23456815c04ed64581cbfcf76f8be182b99c8db765976623563d03211c1c0b39",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-14-3-4",
+        "path": "assets/second-chencang-departure/source-afb0ffe8434b26c9110224300fd388a376e718edef86164c8ef35a63be9a3f60.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1086,
+        "sha256": "5ce0dc97b26acc77c46784693baee423f11bbe05bf0280131e23addb79742f7c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-0-3",
+        "path": "assets/second-chencang-departure/source-4ce9538a913919d3020e314b141df0c9ad047529781db12e6edb876c5f32cf66.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "b1412012d8529b402280d17a8ae21d14c9984fc1b7f81e9980cae6c3a242e53d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-0-4",
+        "path": "assets/second-chencang-departure/source-e338a1be6139272d2e139b31ecccf8ef3904a0742162b4ea61ae87cb8577ecd1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1060,
+        "sha256": "6b9bd842a4eb0389f80eb97e2fef42c45ee4b9dbabf1f3d5a66d0ef4b45f2931",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-1-0",
+        "path": "assets/second-chencang-battle/root4-actor-81.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 581,
+        "sha256": "c10491ba2350bc77d0658b6b2b01e80f193d0850da105dbf2806e7fec16dd276",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-1-1",
+        "path": "assets/second-chencang-departure/source-34a67a4a02634c6b34a5963907bb407af85920dff5f1223c85eea97617aee0a4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1049,
+        "sha256": "c99b4348a9fcb13ad228cf084f777e8e1881586fa91888711636df3d334af64d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-2-0",
+        "path": "assets/second-chencang-departure/source-42c1bf03e1ececfee744ae23c1510785bd7ebf0d7f5b294499e4c7a69f9e5b34.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1061,
+        "sha256": "3f5db3660fae3147b90dfb91833ca3de87ef5f29bbe62b70ec0b59232db7d940",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-2-1",
+        "path": "assets/second-chencang-departure/source-769c8b2026a041a8aa13afeb9d0baf1977e96334f96a929ffe5f0c2748c8bfd3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1048,
+        "sha256": "933d4aa219e515b7395f805420866ce5998a0c5f80f5f6316e01de9906502282",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-3-3",
+        "path": "assets/second-chencang-departure/source-213322a6796679c860fa49f889b207e50d848eea45ddc016862b5051683f2163.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "e03551040dee88dea4e837fb159e85c5b875c0dbb00e32923f5af338ec486a3a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-15-3-4",
+        "path": "assets/second-chencang-departure/source-5d5fab7260dbeafc02f23a1a2a1c4acbdde35ee726f59832efd9728684c72d9f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1054,
+        "sha256": "558c67067c876a499d40ec42548687bb27b476eac59afc06cd250be08668764d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-0-3",
+        "path": "assets/second-chencang-departure/source-144e1ad206b2ca74784162123f07c2511f82282068cc9e172d6d79a402f6c89c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "cb7b9baea84dacc80e2dc78f74071eea4c595d15ae0ef61a443d8017bc901995",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-0-4",
+        "path": "assets/second-chencang-departure/source-72536d61cdb627da15486078efa4dbd351b5ca4806cc52bb05b9911361615a74.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1055,
+        "sha256": "80bcb55ae6831935a2b1e4aa62d82b163478561b7cfe1396d506a6f43d1b863b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-1-0",
+        "path": "assets/second-chencang-departure/source-363a49955ccbc3f9ff9c2a36863327dfe9987521172cb5a09d8706a51010d8b2.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1073,
+        "sha256": "8d2c446fb061a573896801c2ceaa72961c556f65b7c137fed7385de21b30d009",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-1-1",
+        "path": "assets/second-chencang-departure/source-b361e958f7f8e00d86d8b551c6b8f66d71b0c3b34f9c226418d1e5aadac8c832.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1090,
+        "sha256": "8a01f7f4b5632591bf52d098a0d4acc6b6faef72943773605788723395832214",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-2-0",
+        "path": "assets/second-chencang-departure/source-23c3fd27eec9b0ecd7d5da4752722c6d23be3edfc75334f26be64d467ef7e7d5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1075,
+        "sha256": "742188b0f70b1d87a6b5efa64f978590baf1292c3ad6a229bd9bfa544459a4b7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-2-1",
+        "path": "assets/second-chencang-departure/source-3dfd4b0a2daa68ba3da8a40ab4d1badc3fe9c06757efc1cffa16f56c9c268c90.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "175b180b31b4d5dfe3986cbd278ca999bda113bc3b92442159c8b85119c66c5e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-3-3",
+        "path": "assets/second-chencang-battle/root4-actor-486.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 560,
+        "sha256": "7a83ee3474abc0ee0b1953e957024753f9b2f5faba373bcd0a539ca1f31fbc16",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-16-3-4",
+        "path": "assets/second-chencang-departure/source-087f0df27648971d23aad1e98eefb2d3f8ec9164c39730f6918eb1e32171f978.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1051,
+        "sha256": "7a78e62344c6b68a86bbb5f49612154f460473edeaa029db24897c7aa492d0a6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-0-3",
+        "path": "assets/second-chencang-departure/source-144e1ad206b2ca74784162123f07c2511f82282068cc9e172d6d79a402f6c89c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "cb7b9baea84dacc80e2dc78f74071eea4c595d15ae0ef61a443d8017bc901995",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-0-4",
+        "path": "assets/second-chencang-departure/source-72536d61cdb627da15486078efa4dbd351b5ca4806cc52bb05b9911361615a74.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1055,
+        "sha256": "80bcb55ae6831935a2b1e4aa62d82b163478561b7cfe1396d506a6f43d1b863b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-1-0",
+        "path": "assets/second-chencang-departure/source-363a49955ccbc3f9ff9c2a36863327dfe9987521172cb5a09d8706a51010d8b2.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1073,
+        "sha256": "8d2c446fb061a573896801c2ceaa72961c556f65b7c137fed7385de21b30d009",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-1-1",
+        "path": "assets/second-chencang-departure/source-b361e958f7f8e00d86d8b551c6b8f66d71b0c3b34f9c226418d1e5aadac8c832.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1090,
+        "sha256": "8a01f7f4b5632591bf52d098a0d4acc6b6faef72943773605788723395832214",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-2-0",
+        "path": "assets/second-chencang-departure/source-23c3fd27eec9b0ecd7d5da4752722c6d23be3edfc75334f26be64d467ef7e7d5.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1075,
+        "sha256": "742188b0f70b1d87a6b5efa64f978590baf1292c3ad6a229bd9bfa544459a4b7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-2-1",
+        "path": "assets/second-chencang-departure/source-3dfd4b0a2daa68ba3da8a40ab4d1badc3fe9c06757efc1cffa16f56c9c268c90.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "175b180b31b4d5dfe3986cbd278ca999bda113bc3b92442159c8b85119c66c5e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-3-3",
+        "path": "assets/second-chencang-battle/root4-actor-486.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 560,
+        "sha256": "7a83ee3474abc0ee0b1953e957024753f9b2f5faba373bcd0a539ca1f31fbc16",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-18-3-4",
+        "path": "assets/second-chencang-departure/source-087f0df27648971d23aad1e98eefb2d3f8ec9164c39730f6918eb1e32171f978.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1051,
+        "sha256": "7a78e62344c6b68a86bbb5f49612154f460473edeaa029db24897c7aa492d0a6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-0-3",
+        "path": "assets/second-chencang-departure/source-4ce9538a913919d3020e314b141df0c9ad047529781db12e6edb876c5f32cf66.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "b1412012d8529b402280d17a8ae21d14c9984fc1b7f81e9980cae6c3a242e53d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-0-4",
+        "path": "assets/second-chencang-departure/source-e338a1be6139272d2e139b31ecccf8ef3904a0742162b4ea61ae87cb8577ecd1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1060,
+        "sha256": "6b9bd842a4eb0389f80eb97e2fef42c45ee4b9dbabf1f3d5a66d0ef4b45f2931",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-1-0",
+        "path": "assets/second-chencang-battle/root4-actor-81.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 581,
+        "sha256": "c10491ba2350bc77d0658b6b2b01e80f193d0850da105dbf2806e7fec16dd276",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-1-1",
+        "path": "assets/second-chencang-departure/source-34a67a4a02634c6b34a5963907bb407af85920dff5f1223c85eea97617aee0a4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1049,
+        "sha256": "c99b4348a9fcb13ad228cf084f777e8e1881586fa91888711636df3d334af64d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-2-0",
+        "path": "assets/second-chencang-departure/source-42c1bf03e1ececfee744ae23c1510785bd7ebf0d7f5b294499e4c7a69f9e5b34.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1061,
+        "sha256": "3f5db3660fae3147b90dfb91833ca3de87ef5f29bbe62b70ec0b59232db7d940",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-2-1",
+        "path": "assets/second-chencang-departure/source-769c8b2026a041a8aa13afeb9d0baf1977e96334f96a929ffe5f0c2748c8bfd3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1048,
+        "sha256": "933d4aa219e515b7395f805420866ce5998a0c5f80f5f6316e01de9906502282",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-3-3",
+        "path": "assets/second-chencang-departure/source-213322a6796679c860fa49f889b207e50d848eea45ddc016862b5051683f2163.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1043,
+        "sha256": "e03551040dee88dea4e837fb159e85c5b875c0dbb00e32923f5af338ec486a3a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-19-3-4",
+        "path": "assets/second-chencang-departure/source-5d5fab7260dbeafc02f23a1a2a1c4acbdde35ee726f59832efd9728684c72d9f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1054,
+        "sha256": "558c67067c876a499d40ec42548687bb27b476eac59afc06cd250be08668764d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-0-3",
+        "path": "assets/second-chencang-departure/source-e963279e56703c52cdeeecd1b2065f4da337cbba2e60b98905ea90267ba3a911.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1093,
+        "sha256": "1e9131c7e56ac994e9176fdf4917b1fd419e1ebcf9e85d02250ff42700968e5d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-0-4",
+        "path": "assets/second-chencang-departure/source-b405d3773ba9ceeab470918952b0029402c9c6c5306cb77e6336c9418c14f3a6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1101,
+        "sha256": "2975be070b5f0989381853503d329bbdccf85c781d8812c9869c1b8fc5022072",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-1-0",
+        "path": "assets/second-chencang-departure/source-3a5a76a4604496ebd2366f714ea7bbf15e62cf98987adaa87c4e51ee5e6d3a31.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1111,
+        "sha256": "5a717d06ac57a9e0d50f521f8531daf903d47630ee520a81aed3ca34aaa36175",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-1-1",
+        "path": "assets/second-chencang-departure/source-b7067fca346a9c67791a70e50ab9f8ec6122186d62ecd86804c0d3e2eef08926.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1118,
+        "sha256": "51ad275cce95f234fc1f587806571f805f8d56035dcc2ecaa028b2bb8a951800",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-2-0",
+        "path": "assets/second-chencang-departure/source-c4aaf57e416addf80c15eb5c793d4ad283b1061338f358ce279909b578d8e632.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1109,
+        "sha256": "9c165fbfb80a7ac5d4feb0a036ecdb17495a5f2dda169c5dd15f5726fda0d3ef",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-2-1",
+        "path": "assets/second-chencang-departure/source-018d482a573c8a511bc4b689784153b28d030cb9028755ac2a763b95675e3f01.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1117,
+        "sha256": "643f54f1945957af02f713ccf047bb510308f745b0d56ead6677e040688af236",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-3-3",
+        "path": "assets/second-chencang-battle/root4-actor-488.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 759,
+        "sha256": "c7b257f748d7e48e360fc2cdb04e118db813ac73e72afa6f570e1a7d3a712fc6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-20-3-4",
+        "path": "assets/second-chencang-departure/source-2b3fe0424d511c4e624d3829d0b8095dfe85eb3edebc615f4c4a72ed02987062.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "ca08740d4cc228701bef1f79d8647e6d7c5564d655f1c70f6ad4f1217e513282",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-0-3",
+        "path": "assets/second-chencang-departure/source-7bea793a9af2eb603108934c475420f6ea31fc5658c6a3ec1718d24af1073d86.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1061,
+        "sha256": "05ed42f669e6eaf69f3df3a6f9a92944e55ebba3ac3077ad898f40d2d3f888e3",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-0-4",
+        "path": "assets/second-chencang-departure/source-988a0a1ecfa0753928ec2be13544c747383bc9426e6cd0cd5d441e0311a1a97e.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1052,
+        "sha256": "3ea2ae49eebfcb0ae14119c31594fd5f94db0c8f74f8b6cb8f6645ffcc2e9a12",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-1-0",
+        "path": "assets/second-chencang-departure/source-e98fcc19a3bc294f1ad49378a2bf250683a7090576949ffe21d7f7cc96140242.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1083,
+        "sha256": "5129fca3766363404a6f22d7221922e5667c7720ae6fee411afae971faa29c84",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-1-1",
+        "path": "assets/second-chencang-departure/source-119cf235b3d34dd22ce05454ae2b6c2330d1932a0a23aba7fdae980f3e23d1a2.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1102,
+        "sha256": "f260d9af9638a7aee9254863ee7ea1a4d3e20ad8692bac936d1e808c6c24b52d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-2-0",
+        "path": "assets/second-chencang-departure/source-ce51cd9a47a798aa5dde4a7d94bbf93bbae52b5b6f797068edd1ab99e09077c4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "7984933145779bd020b2776b4ae65e8d5a4f119a0fbdcc0f8eb5e138d3964020",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-2-1",
+        "path": "assets/second-chencang-departure/source-5880a0c1f7a34f282d24d98cd8918e02127443d9441db437867730d709772f94.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1104,
+        "sha256": "9a95fddc9b2e01fe1563e7ee3616840146414fe5be0b9aa20150396aa001af2b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-3-3",
+        "path": "assets/second-chencang-departure/source-edf9557194c20237485fa2b6ae1f2e8691ef1370875b1f9e507e97cc8f4abb7f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1058,
+        "sha256": "b343f225e5d6be479d71d752778c8bca5e6a793e276c5a1c717662931f934ff4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-actor-21-3-4",
+        "path": "assets/second-chencang-departure/source-e690e64542474516fcb2f8150eee574c2deecfe22a2ee1dd3dee490f8942cdc7.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1052,
+        "sha256": "a3d26f291810dc4f13a90dc6dead4d7b06158bbb14371d9ef2df4f9228637613",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-speaker-marker",
+        "path": "assets/qishan-root4-camp/77715571911a42e8f3b24cf69964032b57be54ee2cf312c7a8edace6c1ff52c1.png",
+        "width": 16,
+        "height": 16,
+        "bytes": 156,
+        "sha256": "1f07df48715c9b8cfef1d8caa6e21f4b8990e1a3d1df3d387f9fd4ba6b115ca1",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-caption-window",
+        "path": "assets/qishan-root4-camp/865ad73db69406138bec775efde5e6f67d97bea777b2d3a160857fdd848e20ee.png",
+        "width": 240,
+        "height": 160,
+        "bytes": 839,
+        "sha256": "ddd8746f93daa31ba1da41b5511541937061e9a5f2eb6e0d8b5ba5d74cb324d5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-background8",
+        "path": "assets/second-chencang-departure/source-0d4c47b0e9d44fd4bd7c52f87d735e433782bfe3128c3e149aa098c5c017e35d.png",
+        "width": 240,
+        "height": 160,
+        "bytes": 22965,
+        "sha256": "04e609c51a620a33c5833ef5100a4bbdc169aed6b673c179a161d73a62a5af85",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-foreground0",
+        "path": "assets/qishan-root4-camp/foreground0-profile-v1.png",
+        "width": 240,
+        "height": 160,
+        "bytes": 994,
+        "sha256": "3cd06e79fe293b6748715437062688897d624c3f5d07fe9822e71eddff44a988",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-incoming-city17",
+        "path": "assets/fengming-story/scene-576ded2b169ced187a29.png",
+        "width": 240,
+        "height": 160,
+        "bytes": 21118,
+        "sha256": "3611fbcff5498cf2bbff80fe56181c7a5fb91a9a252c53e28702f62c57c59d4e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-0",
+        "path": "assets/baxi-field/portraits/face-4.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 3939,
+        "sha256": "e466f12c8cf5d68848ffedb533f05f16c44647d2f2c1ec5bebc4c1716e3e9dab",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-4",
+        "path": "assets/map16-field/portraits/face-153.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2286,
+        "sha256": "931e2f91c85ff4007cf44c636f4088e1f83a69b0d5b473be1f26466570cfd063",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-5",
+        "path": "assets/baxi-field/portraits/face-24.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 3768,
+        "sha256": "e783f96da38424a4d9e671e25b88f977c4e388a15aac753d72d6d2562527e7bc",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-6",
+        "path": "assets/baxi-field/portraits/face-3.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4274,
+        "sha256": "5724e61c468121bd206025da73cf8d55a31d1878d12a2dfee69318a782d228f6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-7",
+        "path": "assets/baxi-field/portraits/face-7.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 5100,
+        "sha256": "ea486239ff106b62441644b3a53828241d70171faa39aab2f5181700add4c4b7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-8",
+        "path": "assets/baxi-field/portraits/face-27.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4618,
+        "sha256": "224e4dd812786449023ebf7e7b545b61390ec86edab262b2cb7ef75504669342",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-9",
+        "path": "assets/map10-field/portraits/face-28.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 3550,
+        "sha256": "c0d413615963d2ebaeace91789d6d371d78d100155de27ddd37c89ec06492edf",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-10",
+        "path": "assets/baxi-field/portraits/face-32.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4443,
+        "sha256": "3a93abd63a530ddaae0624cbd09553cb9c72ca8bafca71712091a5d785415836",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-11",
+        "path": "assets/baxi-field/portraits/face-33.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4073,
+        "sha256": "f8c4bbcef6723962a203d11fc7eb87dc017b6a3e9456bb4a04f65ac3f60c67df",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-14",
+        "path": "assets/baxi-field/portraits/face-31.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4192,
+        "sha256": "4fa6b090eea1003a08b0bd2d0e531b8a1a6a8bef8ef60c3d61a6a2823e6c440e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-15",
+        "path": "assets/fengming-story/portraits/face-29.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2211,
+        "sha256": "4c79cc8dcf1e68c97b1d2150fd5749d84616ec0e1301de6c1db6660e18ac5900",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-16",
+        "path": "assets/fengming-story/portraits/face-30.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2214,
+        "sha256": "b757d0b4cc2d855d1173ad0c4b9044c0c7a2ef59f46a02ed2728fd418e4be261",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-18",
+        "path": "assets/map16-field/portraits/face-151.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2278,
+        "sha256": "df3e7eb99e3d49de2af9eb910437461f06847bccfb82d1626c0b8393610ed3dd",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-19",
+        "path": "assets/map10-field/portraits/face-147.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4105,
+        "sha256": "c600bda9aee7f06518d7e48c96eaa7540bf340e8054956030d82edac7b8cd7e7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-20",
+        "path": "assets/map10-field/portraits/face-16.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 3746,
+        "sha256": "9cbcbfa2fbdb4f9b5e2a97361c7033b28925b845403f6876c110bfb2c9c99988",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "camp-portrait-21",
+        "path": "assets/map10-field/portraits/face-144.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4864,
+        "sha256": "6dc06c4e6aa870b2a15102e5ac16f3d4b2c453efe6d690655e92b704131317b5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-background9",
+        "path": "assets/qishan-root4-departure/7034e26fd75e2db0ab1b2c5fa070060dd06b8ea70cd90d98b9e5b08429abed7a.png",
+        "width": 240,
+        "height": 160,
+        "bytes": 56477,
+        "sha256": "33f0c7477dfec8515cb79e737efc34d5abe44bf7649911eb444e7d4667fd4990",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-4:1:16",
+        "path": "assets/second-chencang-departure/source-8eba7418c1e7590f11adb7243f43fe3c08a7d0441e7821143bc977679e7d293c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1058,
+        "sha256": "cf31a2fa6c4b7b09df010c03bcb43d233137d3f8bbb5687af776995266a8d9e6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-20:1:16",
+        "path": "assets/qishan-root4-departure/bc392d435029ce66e8e7a171c3e74d4c4dc74faa585f4c280485cf2e59a0ba83.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 729,
+        "sha256": "14319ba22cb621627614a3df8926f10be7f1bb18c706b144873284679b3e357d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:0:3",
+        "path": "assets/qishan-root4-departure/7a2e6ae42030f6cd8004c73b0ca99ea8e5788104f25f628a442849cba45b0f04.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 741,
+        "sha256": "eac94b4779a315c525eacba44e2d5ced2a9510a344716036561a3ee9115a3671",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:0:4",
+        "path": "assets/qishan-root4-departure/c9062e100748bb5b0bf07ad873c640a9daac204a86741fde47f2c483cd13085f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 761,
+        "sha256": "bef504427c74942e5bb6a93b11358a7cadbe51f7d7ffe1a191f770a274f7b05c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:1:0",
+        "path": "assets/changan-continuation/8eee262b5d6fa2bf00f8868873bacd40d7c179c41b07fd5e5b970ffddd751d84.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "1cdd7286eddbdfac00412915c255cdec34bd5a27dcb2b2a084f9e09b90231b10",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:1:1",
+        "path": "assets/changan-continuation/f3fc3c043299d99a481ecaf5660a8273b0d5141085eeb7e4c95a51cb9190d4d6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1107,
+        "sha256": "fd15bec92216dd1022ea09f4e90946df3e0be2b339ef66f30577f34e96d11c5a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:2:0",
+        "path": "assets/changan-continuation/e9c433e76ff22467da44824602cb496dbd2e7667f4c8502106ef88f1ba0d6b2c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1093,
+        "sha256": "1954f1e8caa1b26315aadf2da741d2c0757acd6229031d00a4a53eb8cc5df5b4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:2:1",
+        "path": "assets/qishan-root4-departure/481dc88c9e2e73e36cff84d57243faaba44fd128b41f66ea1292597f02fdfa92.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 764,
+        "sha256": "038cf0c20d1c0b0773cbcb6768d2ea8d6bab697ad0b47184a863266951225431",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:3:3",
+        "path": "assets/second-chencang-battle/root4-actor-91.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 741,
+        "sha256": "027e4aeeb124f658b851cef741011d1fcaa0d2d7b324135995f15a54c9356b94",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:3:4",
+        "path": "assets/qishan-root4-departure/aeb5a22a33611458926e4a438e8d0d5afc5eef0dee6724a5cf3072864a873df6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 750,
+        "sha256": "55285249f10979d5f58abe5fcb7877d50ec4b8b37981781db1544f15925e52d7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:3:11",
+        "path": "assets/qishan-root4-departure/891eef07e64b9d8bfe24fef25635e97363fe4717082900b1fc24a1f273c1fc1f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 724,
+        "sha256": "5f71a28b4c58b0ca44aa0cbec27eac0f7827e7b5ac7f597a562f1a3e74accd0d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:3:13",
+        "path": "assets/qishan-root4-departure/b44ff4ea1470f4c182979aa9029ad27940af4f0e31b7fa1e138b0703f560a796.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 731,
+        "sha256": "4a24d6c9b9c5538f4ad0b132ca917ca158ba7918a7fecd123b274d02cca318f5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-91:3:23",
+        "path": "assets/qishan-root4-departure/94445fb5cc3b4f017fdddb8c8b4500615eb1144acdffd48b9c74e19b6d124d3b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 649,
+        "sha256": "4202afa6195db9812f388501f8fb89efc9e471f542cac5ebd9cf902afa5f8963",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:0:3",
+        "path": "assets/changan-continuation/2a4b306b9b13b514ad07fca7b322a2a013cd2e763162ec0a3ed9b9b835202f6d.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1041,
+        "sha256": "5f1229ab056f54f4a01ca87de0ad9be46f4b715de35b68cce5e31557f78b585b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:0:4",
+        "path": "assets/changan-continuation/7671878bd42d68156635a1f868b1cf75b88477d84842956316a2db520328397c.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1044,
+        "sha256": "8c33dbb4be71f23fd96d3677e2f49c70515e15de9a77364906043f12050a7f1e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:1:0",
+        "path": "assets/qishan-root4-departure/126e4147789a71bf03fabc76bb3e003ca5571a09a9eacb896cbe284c66e90be3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 607,
+        "sha256": "e52dfc66ae7855702fc5600ae47900aa7198f01d222aaad58798e9410201aef0",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:1:1",
+        "path": "assets/changan-continuation/0593ee8c0f070df8dfc0befdbcd530b86bfca4438460db234f61646f37140979.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1067,
+        "sha256": "c9bb2fe898937b15d4f957a5c0851f234f7aaee8f3c7a9099cde6190075d4411",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:2:0",
+        "path": "assets/changan-continuation/0fd0c59d5adc6e68f20d8151a6f888c802da8111773876c74c121c944c2d9826.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1065,
+        "sha256": "49d0069f72974ba54cc7e5342833ce1d3e330313e153bfed1693cf020d0ae952",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:2:1",
+        "path": "assets/changan-continuation/cc2808f89fbc32dda178849d50cf4fcfd52622c64ca68ba4822184bb804fee2f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1067,
+        "sha256": "e0fcc7e05a2df024b812efb91bd6fd0087c230ab328fec69108a66c917c6c0a5",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:3:3",
+        "path": "assets/changan-continuation/4507e61f599d93e603219c3ceee9d57b7e9b5c6385856de7f9c36fcc5c368c0a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1044,
+        "sha256": "9c9422a34761bc08c46d3a9582d093f2ed47d98517f2c05eef1d5a99d7dd324a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-96:3:4",
+        "path": "assets/changan-continuation/e128a68054cf2a1cc17755caaf141195a961f9be99fe430bd8027aec4b9443df.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1050,
+        "sha256": "405c53af2f2689b168983655db6ceaa39343fa9452de3c188a8065a0ded033c0",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:0:3",
+        "path": "assets/qishan-root4-departure/bf6d2a5c6abe5a417016150c17457c304f68a59566f3a460b915b819fe8ae6f4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 671,
+        "sha256": "d34c13320ff4131dde0fcd3748668e9134ce1e300ec0e5a8b2982619adacab9d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:0:4",
+        "path": "assets/qishan-root4-departure/8e13760419c9bb0b831ab411eb00ce6c240bf62f0703538025cd77db91bece7b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 734,
+        "sha256": "e0579a35bbe319f763175679849498c27d0e78264dc1d4cd6fdea5235c53781f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:1:0",
+        "path": "assets/qishan-root4-departure/8138abad679383ec6b0906b6dc0aaf45a105c8dfde73dc59bdeabf4a840351d6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 698,
+        "sha256": "ec5c4dad238d89c18c1d976a2dd5d8bff87b19f2612ea7aa3e6f8a8a770a17dd",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:1:1",
+        "path": "assets/qishan-root4-departure/b8e4c91cc54041ba6e50f248300514505f418a900a580a58ab417abb8c21da22.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 736,
+        "sha256": "148f9769267dc5d0a182a456e42acc857d191c09c3d728eb262f0e035e34af6c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:2:0",
+        "path": "assets/changan-continuation/432727ad799eee8a404ff910ecdc81de68c842c1a113a8c3f2c2ec519ab8a757.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1079,
+        "sha256": "93d4e8a37941384f71cf75a5f697c7aca5b4e0133f5aae9f51133dc29fa00265",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:2:1",
+        "path": "assets/qishan-root4-departure/2b3f2ea2c0d82e0c787ee0d02997cbd550611e6b80181440194c3458f7460675.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 748,
+        "sha256": "fbf2817ae29df33f5fa0f83af25a56ad024b01a506e9b4c1fc295f9ee4bf39b7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:3:3",
+        "path": "assets/qishan-root4-departure/3fc7838790b490239d19bd1fda917d06d14643a35c5bd8f682f703566aed958a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 673,
+        "sha256": "7f2f430cd7bd73a5af20229edd47bca1dc7c37da524e43ee1d2abd678b3ef461",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-109:3:4",
+        "path": "assets/qishan-root4-departure/6ede6bafb1cca2ac2a1cf124b4b07601f81bf7fed67819757c4f9ed79de4d7d1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 678,
+        "sha256": "cb373ca74c7bbf4b3a181f3b3d48edd7afa6525474ed5020d722c711558f0d33",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:0:3",
+        "path": "assets/qishan-root4-departure/c3a6c833513514a6f389d70ab1f60cd11955e6c52a5c102d98c9a8dadad664a3.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 701,
+        "sha256": "f10f60f73d687ce27b9703ccc2e5e86bd2201ce6fb3a6a7edb73e4a74c1cefff",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:0:4",
+        "path": "assets/qishan-root4-departure/2a1a28103bf1caddbc07b9639f98eb2398560caec5f8f44532955b550365f7e4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 681,
+        "sha256": "60b55db101f2e194ab7e51cfadf0edf79fbab272616e42bbb4376c5307d06db6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:1:0",
+        "path": "assets/qishan-root4-departure/a981fe25be27e7cb7aeba0fc04c46f8b6c1b0dfafe1e313be29320ddbf8a6e0b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 770,
+        "sha256": "ef8456c6932956c16b6509d516e246515154fbef49382c9c5135db7714cbec34",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:1:1",
+        "path": "assets/qishan-root4-departure/e8746d5b142de188c0cffbe7a7cbace07bc1121c934a3e4858b1cd58d24da538.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 790,
+        "sha256": "43fb0ee56d128ea9e032eba12bd11840793cb05e6467281e3a3db61c2f8efdf6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:2:0",
+        "path": "assets/changan-continuation/1639e6aa236f7b238ace46a9b17c804167c598865f490efa2e8760d92cbe3040.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1084,
+        "sha256": "5fd85e2a02458c1a2b40a239d0efa5fb27cd96f55c7c8b38baec6293ebdd832a",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:2:1",
+        "path": "assets/qishan-root4-departure/72b69ef46ab03ab987be2d801f3bbd4175a144893abe77fd7f5a23d1d5da8ff4.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 764,
+        "sha256": "32f4b694312b6cbb2378d7b58a4e5ad6d7ce5277bfed702688384849fbc1be74",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:3:3",
+        "path": "assets/qishan-root4-departure/7464e2dc8e3869dc61fa6409232edcde32c425c86ead7591efa8bed932f46ca1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 650,
+        "sha256": "26fd761f556e388216be49594170cf5a6b03afd55aa90eca1b83bab3e500277e",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-110:3:4",
+        "path": "assets/qishan-root4-departure/a6efb207e6359d50a24b25319148826f261174566985cb2b60c1e02e58102f88.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 686,
+        "sha256": "d9a5f0b88adf03e73786fccaf15b1e2a9eb5f9b5f9d673677a8f0c2a49317dee",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:0:3",
+        "path": "assets/second-chencang-battle/root4-actor-114.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 792,
+        "sha256": "854e29e288e0208b4ff58b50f90745685d91f7e3e93a742dd4014e088b9d220b",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:0:4",
+        "path": "assets/qishan-root4-departure/267d4092ca8415690e555aa49a8c18b928d956d75ab754e26a746837fa433d8e.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 832,
+        "sha256": "94ae1e1ea3efb2b9dba256544cadbc8ed45ebdf41ae223a60e95fc7b2c8100de",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:1:0",
+        "path": "assets/qishan-root4-departure/886201b32e646d837e35639f8e5ac3df891c93a19040613e94d27cd2d5ab1834.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 850,
+        "sha256": "3c9fb15122270b6d40838ef27baad58ec9197be072a1cd9c74aea729a1349bf6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:1:1",
+        "path": "assets/qishan-root4-departure/5245ef1ed8fad32e5d3596e4658f680d1ee98589083d8efdc7f8034ad1bf38f1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 885,
+        "sha256": "49b050143cb4d0a43470a2fe44d2a34cc88cc65d0b3c7386b03b742944b44410",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:2:0",
+        "path": "assets/changan-continuation/4de2aedfbb1ee4fa1e05717b146cbbe517412d6de7291f2a0ade993f06060c4d.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1114,
+        "sha256": "270528afd9d670354f93a2384137ceb8b7e22ad274b23b43432171ce10f78083",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:2:1",
+        "path": "assets/qishan-root4-departure/5b822057dfc7bde5228e8df502c37d0d237595ddc0e4348335a5df6216e0b681.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 899,
+        "sha256": "ecb117a965ffff8cbaa596db85fbe2b25b4bd5cba932f68807ba2f25b4216add",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:3:3",
+        "path": "assets/qishan-root4-departure/e6cc0b153c9abb4881cf8a88261ca8a2d9289f2cfd2a696d144e4dc81188237b.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 827,
+        "sha256": "f2aa8d832ef60045ae8eb0d2721b4d2f7fdd2798a9caa3c8d260097f9f2267ed",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-114:3:4",
+        "path": "assets/qishan-root4-departure/a26ceb078316b75cdd7200d87238eb894de7595c06cd22abf7c9779fa53c4e2a.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 851,
+        "sha256": "ad1584d60f68b7ccd996bd4d4f795de1c2178e7976ac7a99970a54eba43fb048",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:0:3",
+        "path": "assets/changan-continuation/082fe4d0e2c9de501a48d35524531a7602954e722d035d9c05f35a8fc978d6d0.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "8fa05f2a5f896e1b6d7b33bdaf0c6a825900622266ec9aa424234703d1f60b01",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:0:4",
+        "path": "assets/qishan-root4-departure/af2a2588e98ef2e3deee440a259a4ef32f082117567f9a2771021abcb9a35ad1.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 734,
+        "sha256": "62a3d32177ad5a21d35f2bb5277edeeb5b7b033e86b6d97ce5a21070a39c8b4f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:1:0",
+        "path": "assets/second-chencang-battle/root4-actor-115.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 703,
+        "sha256": "307c1591db133cff842379c0a39dcf49ea961f298d8b58bb4638c55c92fa5d17",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:1:1",
+        "path": "assets/changan-continuation/fe620dcff36129d4951598acda7119fe6e2cdf518baf4ae67d94a42a24a7868f.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1099,
+        "sha256": "2e65400febd2e37aaf57d0ecccb2e8a0fd26141324384d3d28602a0224eaef46",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:2:0",
+        "path": "assets/changan-continuation/0b796480a4af0c570e2ee655a7d87e06adde7f81ffe00b212e75d1d4ac0c151d.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1090,
+        "sha256": "2097657218f2650d88ab4d997489983183c2797b19a2addddb88e5a9ae941ae2",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:2:1",
+        "path": "assets/changan-continuation/35a79a81ee5a194c1381d73a26c4be4cdd32b1fbcd0f75ce686e862f778a6a05.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "ca5972d2c17c6f9f8537316e5ebaeb0b86a34d87bfc804826ddc4d289cbce806",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:3:3",
+        "path": "assets/changan-continuation/1cb458fe38e39aa9b7603dc558834d877e73241942e6425fb5a180f2b9d54c10.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1077,
+        "sha256": "d0b6516854c0b667838ed94bd2736c79209574bee422d039f4a23f33314cf50c",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-115:3:4",
+        "path": "assets/changan-continuation/495f3c623700fad233b6d552c96e28742f4708c9a80d895b5a29d262c2720134.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1089,
+        "sha256": "e5fd18a2f5a8e09f91fa0cf75c839049c4a4e7eb15268dd4c219d8806d165aef",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:0:3",
+        "path": "assets/changan-continuation/a3edcdf817cd1ce92bffec1c54afa0eb49cde25b9520ee3e11e9233c111317b8.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1087,
+        "sha256": "c1a752944c7b03c28be1a1a9d0b51dc91be0c5f3bc3f4f1e7bd7c110393d995f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:0:4",
+        "path": "assets/changan-continuation/9a4eb3f88054a89df8654de982b717479f0c0347380f8b556c542e5e952df052.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "564ee306fa906bbbf69b196d736bc934753912a631254cc080563ab5e75ceaf2",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:1:0",
+        "path": "assets/second-chencang-battle/root4-actor-489.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 752,
+        "sha256": "38b39b29e1629acaf4c94a825530cd4a2a45e80c857f5a841fe6c6a16c03c2f7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:1:1",
+        "path": "assets/qishan-root4-departure/4aeb59721d98fc677bc3ead39f285a272ee66980c13f1029aae35ae2d7757b0e.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 745,
+        "sha256": "4bd24bfa028870c1d0edf7fe24b34055cee173e925f39c150c8d8f6a11764de6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:2:0",
+        "path": "assets/changan-continuation/fb9a40cf69e0e0d0bc39e172f0a477351df5285e89e1af3496b1129b4b87a243.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1091,
+        "sha256": "99ccd881229d5aac5e75fee7ef88bc3d792c3c1f1dc533894100a07b04089c69",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:2:1",
+        "path": "assets/changan-continuation/24f5f005fdcbd1ea6b1631efd8cce620f62691127da5d130267076c52ebe57ea.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1092,
+        "sha256": "64265865991780cda5448be389a913e076a3d0a8fdc2d0ec7634fb19427629e0",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:3:3",
+        "path": "assets/changan-continuation/ca89590781542880f4a219ea47139deb8aa886c0615dfef0fc4378673215af33.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "a5c3101355997a8a403444d59bc4155b9408ec71455d3c566b1790095c1c3579",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-147:3:4",
+        "path": "assets/changan-continuation/9cdf476f47c94d78541e1e90a7aa2c9ce6c5cd2b2fb6e4cf457e245835accfdc.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1091,
+        "sha256": "2a6635b50b7018108976dcaa2c193c4455a3829064569070c3d0ff099eb662d4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:0:3",
+        "path": "assets/second-chencang-departure/source-e963279e56703c52cdeeecd1b2065f4da337cbba2e60b98905ea90267ba3a911.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1093,
+        "sha256": "1e9131c7e56ac994e9176fdf4917b1fd419e1ebcf9e85d02250ff42700968e5d",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:0:4",
+        "path": "assets/second-chencang-departure/source-b405d3773ba9ceeab470918952b0029402c9c6c5306cb77e6336c9418c14f3a6.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1101,
+        "sha256": "2975be070b5f0989381853503d329bbdccf85c781d8812c9869c1b8fc5022072",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:1:0",
+        "path": "assets/second-chencang-departure/source-3a5a76a4604496ebd2366f714ea7bbf15e62cf98987adaa87c4e51ee5e6d3a31.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1111,
+        "sha256": "5a717d06ac57a9e0d50f521f8531daf903d47630ee520a81aed3ca34aaa36175",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:1:1",
+        "path": "assets/second-chencang-departure/source-b7067fca346a9c67791a70e50ab9f8ec6122186d62ecd86804c0d3e2eef08926.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1118,
+        "sha256": "51ad275cce95f234fc1f587806571f805f8d56035dcc2ecaa028b2bb8a951800",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:2:0",
+        "path": "assets/second-chencang-departure/source-c4aaf57e416addf80c15eb5c793d4ad283b1061338f358ce279909b578d8e632.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1109,
+        "sha256": "9c165fbfb80a7ac5d4feb0a036ecdb17495a5f2dda169c5dd15f5726fda0d3ef",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:2:1",
+        "path": "assets/second-chencang-departure/source-018d482a573c8a511bc4b689784153b28d030cb9028755ac2a763b95675e3f01.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1117,
+        "sha256": "643f54f1945957af02f713ccf047bb510308f745b0d56ead6677e040688af236",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:3:3",
+        "path": "assets/second-chencang-battle/root4-actor-488.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 759,
+        "sha256": "c7b257f748d7e48e360fc2cdb04e118db813ac73e72afa6f570e1a7d3a712fc6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-488:3:4",
+        "path": "assets/second-chencang-departure/source-2b3fe0424d511c4e624d3829d0b8095dfe85eb3edebc615f4c4a72ed02987062.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1097,
+        "sha256": "ca08740d4cc228701bef1f79d8647e6d7c5564d655f1c70f6ad4f1217e513282",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:0:3",
+        "path": "assets/changan-continuation/a3edcdf817cd1ce92bffec1c54afa0eb49cde25b9520ee3e11e9233c111317b8.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1087,
+        "sha256": "c1a752944c7b03c28be1a1a9d0b51dc91be0c5f3bc3f4f1e7bd7c110393d995f",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:0:4",
+        "path": "assets/changan-continuation/9a4eb3f88054a89df8654de982b717479f0c0347380f8b556c542e5e952df052.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1088,
+        "sha256": "564ee306fa906bbbf69b196d736bc934753912a631254cc080563ab5e75ceaf2",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:1:0",
+        "path": "assets/second-chencang-battle/root4-actor-489.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 752,
+        "sha256": "38b39b29e1629acaf4c94a825530cd4a2a45e80c857f5a841fe6c6a16c03c2f7",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:1:1",
+        "path": "assets/qishan-root4-departure/4aeb59721d98fc677bc3ead39f285a272ee66980c13f1029aae35ae2d7757b0e.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 745,
+        "sha256": "4bd24bfa028870c1d0edf7fe24b34055cee173e925f39c150c8d8f6a11764de6",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:2:0",
+        "path": "assets/changan-continuation/fb9a40cf69e0e0d0bc39e172f0a477351df5285e89e1af3496b1129b4b87a243.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1091,
+        "sha256": "99ccd881229d5aac5e75fee7ef88bc3d792c3c1f1dc533894100a07b04089c69",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:2:1",
+        "path": "assets/changan-continuation/24f5f005fdcbd1ea6b1631efd8cce620f62691127da5d130267076c52ebe57ea.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1092,
+        "sha256": "64265865991780cda5448be389a913e076a3d0a8fdc2d0ec7634fb19427629e0",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:3:3",
+        "path": "assets/changan-continuation/ca89590781542880f4a219ea47139deb8aa886c0615dfef0fc4378673215af33.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1082,
+        "sha256": "a5c3101355997a8a403444d59bc4155b9408ec71455d3c566b1790095c1c3579",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:3:4",
+        "path": "assets/changan-continuation/9cdf476f47c94d78541e1e90a7aa2c9ce6c5cd2b2fb6e4cf457e245835accfdc.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 1091,
+        "sha256": "2a6635b50b7018108976dcaa2c193c4455a3829064569070c3d0ff099eb662d4",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-actor-489:3:17",
+        "path": "assets/qishan-root4-departure/53d2e3ff979cae0db5704cbb6583d3931aa7035c4dfab42c974ccda5adb443f0.png",
+        "width": 32,
+        "height": 32,
+        "bytes": 665,
+        "sha256": "8893b4030644c61435d014966a8fef4c0cc61a9c6deb3a330fb86adc6f62f4c8",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-portrait-91",
+        "path": "assets/baxi-field/portraits/face-65.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 4733,
+        "sha256": "006724e1cc9ed667b6e34e36d48e5483e78d241e58d294c24a18d24d2db46669",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-portrait-96",
+        "path": "assets/changan-continuation/89d66d4a4aa515dc326cf63f44da80c5912a5c27eeebc00062355d8eade3431d.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2258,
+        "sha256": "da3f844c86bfb92939f782e17dcf1284fe54d892f0a1bfb9b2511f6b988a0f37",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-portrait-114",
+        "path": "assets/qishan/portrait-8d8bca82c503edbce7d4.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 2318,
+        "sha256": "76fade8af7fb62559c5388da75a3142ee6faa664fba9932d8a87a4a05c7ad653",
+        "mimeType": "image/png"
+      },
+      {
+        "id": "departure-portrait-489",
+        "path": "assets/baxi-field/portraits/face-278.png",
+        "width": 64,
+        "height": 64,
+        "bytes": 3702,
+        "sha256": "d440c93eb1f7220fcb4b55857a89b7389eeb43241d646e2bcea7f087855661e8",
+        "mimeType": "image/png"
+      }
+    ]
+  },
+  "actorKeys": {
+    "0:0:3": "camp-actor-0-0-3",
+    "0:0:4": "camp-actor-0-0-4",
+    "0:1:0": "camp-actor-0-1-0",
+    "0:1:1": "camp-actor-0-1-1",
+    "0:2:0": "camp-actor-0-2-0",
+    "0:2:1": "camp-actor-0-2-1",
+    "0:3:3": "camp-actor-0-3-3",
+    "0:3:4": "camp-actor-0-3-4",
+    "4:0:3": "camp-actor-4-0-3",
+    "4:0:4": "camp-actor-4-0-4",
+    "4:1:0": "camp-actor-4-1-0",
+    "4:1:1": "camp-actor-4-1-1",
+    "4:2:0": "camp-actor-4-2-0",
+    "4:2:1": "camp-actor-4-2-1",
+    "4:3:3": "camp-actor-4-3-3",
+    "4:3:4": "camp-actor-4-3-4",
+    "5:0:3": "camp-actor-5-0-3",
+    "5:0:4": "camp-actor-5-0-4",
+    "5:1:0": "camp-actor-5-1-0",
+    "5:1:1": "camp-actor-5-1-1",
+    "5:2:0": "camp-actor-5-2-0",
+    "5:2:1": "camp-actor-5-2-1",
+    "5:3:3": "camp-actor-5-3-3",
+    "5:3:4": "camp-actor-5-3-4",
+    "6:0:3": "camp-actor-6-0-3",
+    "6:0:4": "camp-actor-6-0-4",
+    "6:1:0": "camp-actor-6-1-0",
+    "6:1:1": "camp-actor-6-1-1",
+    "6:2:0": "camp-actor-6-2-0",
+    "6:2:1": "camp-actor-6-2-1",
+    "6:3:3": "camp-actor-6-3-3",
+    "6:3:4": "camp-actor-6-3-4",
+    "7:0:3": "camp-actor-7-0-3",
+    "7:0:4": "camp-actor-7-0-4",
+    "7:1:0": "camp-actor-7-1-0",
+    "7:1:1": "camp-actor-7-1-1",
+    "7:2:0": "camp-actor-7-2-0",
+    "7:2:1": "camp-actor-7-2-1",
+    "7:3:3": "camp-actor-7-3-3",
+    "7:3:4": "camp-actor-7-3-4",
+    "8:0:3": "camp-actor-8-0-3",
+    "8:0:4": "camp-actor-8-0-4",
+    "8:1:0": "camp-actor-8-1-0",
+    "8:1:1": "camp-actor-8-1-1",
+    "8:2:0": "camp-actor-8-2-0",
+    "8:2:1": "camp-actor-8-2-1",
+    "8:3:3": "camp-actor-8-3-3",
+    "8:3:4": "camp-actor-8-3-4",
+    "9:0:3": "camp-actor-9-0-3",
+    "9:0:4": "camp-actor-9-0-4",
+    "9:1:0": "camp-actor-9-1-0",
+    "9:1:1": "camp-actor-9-1-1",
+    "9:2:0": "camp-actor-9-2-0",
+    "9:2:1": "camp-actor-9-2-1",
+    "9:3:3": "camp-actor-9-3-3",
+    "9:3:4": "camp-actor-9-3-4",
+    "10:0:3": "camp-actor-10-0-3",
+    "10:0:4": "camp-actor-10-0-4",
+    "10:1:0": "camp-actor-10-1-0",
+    "10:1:1": "camp-actor-10-1-1",
+    "10:1:16": "camp-actor-10-1-16",
+    "10:2:0": "camp-actor-10-2-0",
+    "10:2:1": "camp-actor-10-2-1",
+    "10:3:3": "camp-actor-10-3-3",
+    "10:3:4": "camp-actor-10-3-4",
+    "11:0:3": "camp-actor-11-0-3",
+    "11:0:4": "camp-actor-11-0-4",
+    "11:1:0": "camp-actor-11-1-0",
+    "11:1:1": "camp-actor-11-1-1",
+    "11:2:0": "camp-actor-11-2-0",
+    "11:2:1": "camp-actor-11-2-1",
+    "11:3:3": "camp-actor-11-3-3",
+    "11:3:4": "camp-actor-11-3-4",
+    "14:0:3": "camp-actor-14-0-3",
+    "14:0:4": "camp-actor-14-0-4",
+    "14:1:0": "camp-actor-14-1-0",
+    "14:1:1": "camp-actor-14-1-1",
+    "14:2:0": "camp-actor-14-2-0",
+    "14:2:1": "camp-actor-14-2-1",
+    "14:3:3": "camp-actor-14-3-3",
+    "14:3:4": "camp-actor-14-3-4",
+    "15:0:3": "camp-actor-15-0-3",
+    "15:0:4": "camp-actor-15-0-4",
+    "15:1:0": "camp-actor-15-1-0",
+    "15:1:1": "camp-actor-15-1-1",
+    "15:2:0": "camp-actor-15-2-0",
+    "15:2:1": "camp-actor-15-2-1",
+    "15:3:3": "camp-actor-15-3-3",
+    "15:3:4": "camp-actor-15-3-4",
+    "16:0:3": "camp-actor-16-0-3",
+    "16:0:4": "camp-actor-16-0-4",
+    "16:1:0": "camp-actor-16-1-0",
+    "16:1:1": "camp-actor-16-1-1",
+    "16:2:0": "camp-actor-16-2-0",
+    "16:2:1": "camp-actor-16-2-1",
+    "16:3:3": "camp-actor-16-3-3",
+    "16:3:4": "camp-actor-16-3-4",
+    "18:0:3": "camp-actor-18-0-3",
+    "18:0:4": "camp-actor-18-0-4",
+    "18:1:0": "camp-actor-18-1-0",
+    "18:1:1": "camp-actor-18-1-1",
+    "18:2:0": "camp-actor-18-2-0",
+    "18:2:1": "camp-actor-18-2-1",
+    "18:3:3": "camp-actor-18-3-3",
+    "18:3:4": "camp-actor-18-3-4",
+    "19:0:3": "camp-actor-19-0-3",
+    "19:0:4": "camp-actor-19-0-4",
+    "19:1:0": "camp-actor-19-1-0",
+    "19:1:1": "camp-actor-19-1-1",
+    "19:2:0": "camp-actor-19-2-0",
+    "19:2:1": "camp-actor-19-2-1",
+    "19:3:3": "camp-actor-19-3-3",
+    "19:3:4": "camp-actor-19-3-4",
+    "20:0:3": "camp-actor-20-0-3",
+    "20:0:4": "camp-actor-20-0-4",
+    "20:1:0": "camp-actor-20-1-0",
+    "20:1:1": "camp-actor-20-1-1",
+    "20:2:0": "camp-actor-20-2-0",
+    "20:2:1": "camp-actor-20-2-1",
+    "20:3:3": "camp-actor-20-3-3",
+    "20:3:4": "camp-actor-20-3-4",
+    "21:0:3": "camp-actor-21-0-3",
+    "21:0:4": "camp-actor-21-0-4",
+    "21:1:0": "camp-actor-21-1-0",
+    "21:1:1": "camp-actor-21-1-1",
+    "21:2:0": "camp-actor-21-2-0",
+    "21:2:1": "camp-actor-21-2-1",
+    "21:3:3": "camp-actor-21-3-3",
+    "21:3:4": "camp-actor-21-3-4",
+    "4:1:16": "departure-actor-4:1:16",
+    "20:1:16": "departure-actor-20:1:16",
+    "91:0:3": "departure-actor-91:0:3",
+    "91:0:4": "departure-actor-91:0:4",
+    "91:1:0": "departure-actor-91:1:0",
+    "91:1:1": "departure-actor-91:1:1",
+    "91:2:0": "departure-actor-91:2:0",
+    "91:2:1": "departure-actor-91:2:1",
+    "91:3:3": "departure-actor-91:3:3",
+    "91:3:4": "departure-actor-91:3:4",
+    "91:3:11": "departure-actor-91:3:11",
+    "91:3:13": "departure-actor-91:3:13",
+    "91:3:23": "departure-actor-91:3:23",
+    "96:0:3": "departure-actor-96:0:3",
+    "96:0:4": "departure-actor-96:0:4",
+    "96:1:0": "departure-actor-96:1:0",
+    "96:1:1": "departure-actor-96:1:1",
+    "96:2:0": "departure-actor-96:2:0",
+    "96:2:1": "departure-actor-96:2:1",
+    "96:3:3": "departure-actor-96:3:3",
+    "96:3:4": "departure-actor-96:3:4",
+    "109:0:3": "departure-actor-109:0:3",
+    "109:0:4": "departure-actor-109:0:4",
+    "109:1:0": "departure-actor-109:1:0",
+    "109:1:1": "departure-actor-109:1:1",
+    "109:2:0": "departure-actor-109:2:0",
+    "109:2:1": "departure-actor-109:2:1",
+    "109:3:3": "departure-actor-109:3:3",
+    "109:3:4": "departure-actor-109:3:4",
+    "110:0:3": "departure-actor-110:0:3",
+    "110:0:4": "departure-actor-110:0:4",
+    "110:1:0": "departure-actor-110:1:0",
+    "110:1:1": "departure-actor-110:1:1",
+    "110:2:0": "departure-actor-110:2:0",
+    "110:2:1": "departure-actor-110:2:1",
+    "110:3:3": "departure-actor-110:3:3",
+    "110:3:4": "departure-actor-110:3:4",
+    "114:0:3": "departure-actor-114:0:3",
+    "114:0:4": "departure-actor-114:0:4",
+    "114:1:0": "departure-actor-114:1:0",
+    "114:1:1": "departure-actor-114:1:1",
+    "114:2:0": "departure-actor-114:2:0",
+    "114:2:1": "departure-actor-114:2:1",
+    "114:3:3": "departure-actor-114:3:3",
+    "114:3:4": "departure-actor-114:3:4",
+    "115:0:3": "departure-actor-115:0:3",
+    "115:0:4": "departure-actor-115:0:4",
+    "115:1:0": "departure-actor-115:1:0",
+    "115:1:1": "departure-actor-115:1:1",
+    "115:2:0": "departure-actor-115:2:0",
+    "115:2:1": "departure-actor-115:2:1",
+    "115:3:3": "departure-actor-115:3:3",
+    "115:3:4": "departure-actor-115:3:4",
+    "147:0:3": "departure-actor-147:0:3",
+    "147:0:4": "departure-actor-147:0:4",
+    "147:1:0": "departure-actor-147:1:0",
+    "147:1:1": "departure-actor-147:1:1",
+    "147:2:0": "departure-actor-147:2:0",
+    "147:2:1": "departure-actor-147:2:1",
+    "147:3:3": "departure-actor-147:3:3",
+    "147:3:4": "departure-actor-147:3:4",
+    "488:0:3": "departure-actor-488:0:3",
+    "488:0:4": "departure-actor-488:0:4",
+    "488:1:0": "departure-actor-488:1:0",
+    "488:1:1": "departure-actor-488:1:1",
+    "488:2:0": "departure-actor-488:2:0",
+    "488:2:1": "departure-actor-488:2:1",
+    "488:3:3": "departure-actor-488:3:3",
+    "488:3:4": "departure-actor-488:3:4",
+    "489:0:3": "departure-actor-489:0:3",
+    "489:0:4": "departure-actor-489:0:4",
+    "489:1:0": "departure-actor-489:1:0",
+    "489:1:1": "departure-actor-489:1:1",
+    "489:2:0": "departure-actor-489:2:0",
+    "489:2:1": "departure-actor-489:2:1",
+    "489:3:3": "departure-actor-489:3:3",
+    "489:3:4": "departure-actor-489:3:4",
+    "489:3:17": "departure-actor-489:3:17"
+  },
+  "characterPresentation": {
+    "0": {
+      "nameJa": "諸葛亮",
+      "portraitAsset": "assets/baxi-field/portraits/face-4.png"
+    },
+    "4": {
+      "nameJa": "姜維",
+      "portraitAsset": "assets/map16-field/portraits/face-153.png"
+    },
+    "5": {
+      "nameJa": "馬謖",
+      "portraitAsset": "assets/baxi-field/portraits/face-24.png"
+    },
+    "6": {
+      "nameJa": "趙雲",
+      "portraitAsset": "assets/baxi-field/portraits/face-3.png"
+    },
+    "7": {
+      "nameJa": "魏延",
+      "portraitAsset": "assets/baxi-field/portraits/face-7.png"
+    },
+    "8": {
+      "nameJa": "関興",
+      "portraitAsset": "assets/baxi-field/portraits/face-27.png"
+    },
+    "9": {
+      "nameJa": "張苞",
+      "portraitAsset": "assets/map10-field/portraits/face-28.png"
+    },
+    "10": {
+      "nameJa": "馬岱",
+      "portraitAsset": "assets/baxi-field/portraits/face-32.png"
+    },
+    "11": {
+      "nameJa": "王平",
+      "portraitAsset": "assets/baxi-field/portraits/face-33.png"
+    },
+    "14": {
+      "nameJa": "馬超",
+      "portraitAsset": "assets/baxi-field/portraits/face-31.png"
+    },
+    "15": {
+      "nameJa": "蒋",
+      "portraitAsset": "assets/fengming-story/portraits/face-29.png"
+    },
+    "16": {
+      "nameJa": "費",
+      "portraitAsset": "assets/fengming-story/portraits/face-30.png"
+    },
+    "18": {
+      "nameJa": "楊儀",
+      "portraitAsset": "assets/map16-field/portraits/face-151.png"
+    },
+    "19": {
+      "nameJa": "芝",
+      "portraitAsset": "assets/map10-field/portraits/face-147.png"
+    },
+    "20": {
+      "nameJa": "廖化",
+      "portraitAsset": "assets/map10-field/portraits/face-16.png"
+    },
+    "21": {
+      "nameJa": "関索",
+      "portraitAsset": "assets/map10-field/portraits/face-144.png"
+    },
+    "91": {
+      "nameJa": "張",
+      "portraitAsset": "assets/baxi-field/portraits/face-65.png"
+    },
+    "96": {
+      "nameJa": "司馬懿",
+      "portraitAsset": "assets/changan-continuation/89d66d4a4aa515dc326cf63f44da80c5912a5c27eeebc00062355d8eade3431d.png"
+    },
+    "114": {
+      "nameJa": "郭淮",
+      "portraitAsset": "assets/qishan/portrait-8d8bca82c503edbce7d4.png"
+    },
+    "489": {
+      "nameJa": "武官",
+      "portraitAsset": "assets/baxi-field/portraits/face-278.png"
+    }
+  },
+  "sourcePins": {
+    "publicCommit": "baefa48c6a6171cecc7b703a7efe2a457fdf6fdf",
+    "romSha256": "acf307942c7dc645cbf66ae13127437de146a2c3ce89d68a55003509f2e97511",
+    "layout9Sha256": "e786c98e3d8cc786b8e96a36cf76db250c4d9d7741b50800625a3cce66d0c456"
+  }
+}
