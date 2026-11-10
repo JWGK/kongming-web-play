@@ -7,14 +7,25 @@
   <meta name="description" content="依日文 GBA 原作資料重製的繁體中文瀏覽器戰棋遊戲。保留劇情路線與手動存檔，內容持續更新。">
   <title>三國志孔明傳 — 繁體中文網頁版</title>
   <link rel="stylesheet" href="./style.css?v=0.72.0-kongming-jianning1">
-  <script type="module" src="./site.bundle.mjs?v=0.72.0-kongming-jianning1"></script>
+  <script type="module">
+/** Exact two data URLs only; no global interception or running-page reload. */
+async function startTulongDataRelease({fetcher,digest,load,onFailure}){
+ const targets=[['./map17-battle-stats-rules.json','346c17c59ad059191bc983a1f6abc8019d672694fa1a09a35023410bb1508245'],['./map18-battle-stats-rules.json','48ab3773d88dba626667c3d0d9bb0d78adb17d0d623019cefdde4a24ae94fbb3']];
+ try{
+  await Promise.all(targets.map(async([url,expected])=>{const response=await fetcher(url,{cache:'reload'});if(!response.ok)throw Error('Required shop data unavailable');const bytes=await response.arrayBuffer();if(bytes.byteLength>65536)throw Error('Shop data size');const actual=[...new Uint8Array(await digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');if(actual!==expected)throw Error('Shop data release not yet available');}));
+  await load('./site.bundle.mjs?v=0.72.1-tulong-stock1');return true;
+ }catch(error){onFailure(error);return false;}
+}
+
+await startTulongDataRelease({fetcher:(...args)=>fetch(...args),digest:(...args)=>crypto.subtle.digest(...args),load:url=>import(url),onFailure:error=>{const gate=document.getElementById('entry-begin'),status=document.getElementById('entry-loading-status');if(gate){gate.disabled=true;gate.textContent='載入失敗';}if(status)status.textContent='道具資料更新尚未載入，遊戲尚未開始。已儲存的記錄沒有變更。';const node=document.getElementById('app-error');if(node){node.hidden=false;node.textContent='無法核對禿龍洞道具資料，請稍後重新開啟。已儲存的記錄沒有變更。';}console.error('Shop data release initialization failed',error);}});
+</script>
 <style>.save-transfer{margin:1rem 0;padding:1rem;border:1px solid #7d725a;border-radius:.5rem}.save-transfer summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.save-transfer button,.save-transfer select,.save-transfer input[type=file]{min-height:44px;max-width:100%;margin:.35rem}.save-transfer p{white-space:pre-wrap;overflow-wrap:anywhere}.save-transfer section{padding:1rem;border:1px solid #7d725a}.save-transfer label{display:block}.save-transfer input[type=checkbox]{width:24px;height:24px;vertical-align:middle}</style>
 </head>
 <body>
   <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
     <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
-    <span class="version">開發版 <strong>0.72.0</strong></span>
+    <span class="version">開發版 <strong>0.72.1</strong></span>
   </header>
   <main>
     <section class="intro" aria-labelledby="page-title">
