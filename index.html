@@ -13,7 +13,7 @@ async function startTulongDataRelease({fetcher,digest,load,onFailure}){
  const targets=[['./map17-battle-stats-rules.json','346c17c59ad059191bc983a1f6abc8019d672694fa1a09a35023410bb1508245'],['./map18-battle-stats-rules.json','48ab3773d88dba626667c3d0d9bb0d78adb17d0d623019cefdde4a24ae94fbb3']];
  try{
   await Promise.all(targets.map(async([url,expected])=>{const response=await fetcher(url,{cache:'reload'});if(!response.ok)throw Error('Required shop data unavailable');const bytes=await response.arrayBuffer();if(bytes.byteLength>65536)throw Error('Shop data size');const actual=[...new Uint8Array(await digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');if(actual!==expected)throw Error('Shop data release not yet available');}));
-  await load('./site.bundle.mjs?v=0.72.1-tulong-stock1');return true;
+  await load('./site.bundle.mjs?v=0.72.3-item-mapping1');return true;
  }catch(error){onFailure(error);return false;}
 }
 
@@ -25,7 +25,7 @@ await startTulongDataRelease({fetcher:(...args)=>fetch(...args),digest:(...args)
   <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
     <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
-    <span class="version">開發版 <strong>0.72.1</strong></span>
+    <span class="version">開發版 <strong>0.72.3</strong></span>
   </header>
   <main>
     <section class="intro" aria-labelledby="page-title">
