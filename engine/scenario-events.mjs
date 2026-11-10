@@ -159,7 +159,7 @@ export function createScenarioEventInterpreter(inventory){
     if(vm.status==='awaiting_effect'){
       const c=script.commands[vm.commandIndex];
       guard(c&&vm.pendingEffect?.id===`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,'scenario_pending_effect');
-      if(['3:2:3','3:2:4','3:2:7','3:2:8','3:2:12','3:2:14','3:3:4','3:3:5','3:3:9','3:3:10','4:0:3','4:0:4','4:1:4','4:1:5','4:1:8','4:3:4','4:3:5','4:3:8','4:3:9','4:3:13','4:3:16','5:0:2','5:0:3','5:0:6','5:0:7','5:0:12','5:0:17','5:1:7'].includes(data.contextId))guard(same(vm.pendingEffect,{id:`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,kind:c.operation,opcode:c.opcode,...evidence(c),arguments:clone(c.decoded),requiresHostImplementation:true}),'qishan_source_pending_effect');
+      if(['3:2:3','3:2:4','3:2:7','3:2:8','3:2:12','3:2:14','3:3:4','3:3:5','3:3:9','3:3:10','4:0:3','4:0:4','4:1:4','4:1:5','4:1:8','4:3:4','4:3:5','4:3:8','4:3:9','4:3:13','4:3:16','5:0:2','5:0:3','5:0:6','5:0:7','5:0:12','5:0:17','5:1:7','5:1:3','5:1:4'].includes(data.contextId))guard(same(vm.pendingEffect,{id:`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,kind:c.operation,opcode:c.opcode,...evidence(c),arguments:clone(c.decoded),requiresHostImplementation:true}),'qishan_source_pending_effect');
     }
     return {record,script,group:groups.get(vm.groupStart)};
   }
