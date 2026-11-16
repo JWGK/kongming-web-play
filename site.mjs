@@ -1,1 +1,1 @@
-import "./site.bundle.mjs?v=0.72.0-kongming-jianning1";
+import "./site.bundle.mjs?v=0.73.0-jiangling1";
