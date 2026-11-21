@@ -1,3 +1,10 @@
+
+let __b5StockWnN22=null,__b5ColdWnN22=null;
+const __b5WnActionN22=new WeakMap(),__b5WnRawByOwnerN22=new WeakMap();
+import {configureImperialB5Battle as configureImperialB5BattleN22} from "./imperial-yangping/battle.mjs";
+import {TRIAL as __imperialYangpingTrialN22} from "./imperial-yangping/story.mjs";
+const __b5SessionTicketsN22=new WeakMap(),__b5VictoryPortsN22=new WeakMap();
+import {createImperialYangpingStoryPort as createImperialYangpingStoryPortN22,createImperialAftermathAppWithYangping as createImperialAftermathWithYangpingN22,PALACE as __imperialYangpingPalaceN22} from "./imperial-yangping/story.mjs";
 import {createImperialSuspendRetirement as createImperialSuspendRetirementN21} from "./imperial-chengdu/runtime.mjs";
 let imperialRetirementN21=null;
 const __imperialPreludeColdRawTicketsN21=new WeakMap();
@@ -28627,7 +28634,7 @@ const __kmHanguStorageW33=(()=>{
  const message=phase=>phase==="admitted"?"找到華山之戰中斷記錄，可以繼續遊戲。":phase==="malformed"?"無法讀取華山之戰中斷記錄。原有記錄未有更改。":"正在核對華山之戰中斷記錄…";
  return Object.freeze({get,message,bindings});
 })();
-function zZe({imperialAppBootN21=null,map46PrivateHost: __map46HostW31 = null, slotMetadataChannel: e = null, document: t, translate: r = n(Pe => Pe, "translate"), translateDialogue: a, resolveRecordLabel: o = n(Pe => Pe, "resolveRecordLabel"), resolveScreen: i = n(Pe => Pe, "resolveScreen"), data: s, outroData: c, prologueData: d, freeRoamData: l, itemServices: f, itemDescriptions: p, resolveItemDescriptions: m = null, storyPortraits: y, resolveStoryCharacter: h = null, activateStoryLocale: g = null, game: u, storage: b, audio: _, canStartRoute: v = n(() => !1, "canStartRoute"), storyFactory: w = null, startBattleRoute: z = null, restoreBattle: N = null, validateStoryBattle: J = null, preparePresentation: M = null, resolveSourcePreludeResources: U = null, createQishanRoot4CampUI: B = null, createQishanRoot4DepartureUI: E = null, createQishanDisputeSourceUI: R = null, createChapter5JianningSourceUI: P = null, createChapter5JianningRouteSourceUI: S = null, createChapter5JianningReturnSourceUI: K = null, createChapter5BaxiSourceUI: V = null, createChapter5ChengduDefenseSourceUI: I = null, createChapter5BaxiReturnSourceUI: O = null, createBaidiMap42ReturnSourceUI: Q = null, createChapter5ChengduDefenseReturnSourceUI: F = null, createChapter5ChanganSiegeSourceUI: L = null, createChapter5KongmingReturnSourceUI: de = null, createChapter5ChanganReturnSourceUI: G = null, createChapter5WugongSelectionSourceUI: Y = null, createChapter5WugongAftermathSourceUI: ee = null, createChapter5WugongSourceUI: Z = null, createChapter5ChanganSourceUI: ne = null, createChapter4WuzhangSourceUI: oe = null, createChapter4HuluguSourceUI: te = null, createChapter4PostQishanSourceUI: ae = null, createQishanMap33SourceUI: xe = null, preludeScheduler: ye = null, imageLoader: fe = null, setTimer: re = setTimeout, clearTimer: ce = clearTimeout}) {
+function zZe({imperialB5BattleBootN22=null,imperialAppBootN21=null,map46PrivateHost: __map46HostW31 = null, slotMetadataChannel: e = null, document: t, translate: r = n(Pe => Pe, "translate"), translateDialogue: a, resolveRecordLabel: o = n(Pe => Pe, "resolveRecordLabel"), resolveScreen: i = n(Pe => Pe, "resolveScreen"), data: s, outroData: c, prologueData: d, freeRoamData: l, itemServices: f, itemDescriptions: p, resolveItemDescriptions: m = null, storyPortraits: y, resolveStoryCharacter: h = null, activateStoryLocale: g = null, game: u, storage: b, audio: _, canStartRoute: v = n(() => !1, "canStartRoute"), storyFactory: w = null, startBattleRoute: z = null, restoreBattle: N = null, validateStoryBattle: J = null, preparePresentation: M = null, resolveSourcePreludeResources: U = null, createQishanRoot4CampUI: B = null, createQishanRoot4DepartureUI: E = null, createQishanDisputeSourceUI: R = null, createChapter5JianningSourceUI: P = null, createChapter5JianningRouteSourceUI: S = null, createChapter5JianningReturnSourceUI: K = null, createChapter5BaxiSourceUI: V = null, createChapter5ChengduDefenseSourceUI: I = null, createChapter5BaxiReturnSourceUI: O = null, createBaidiMap42ReturnSourceUI: Q = null, createChapter5ChengduDefenseReturnSourceUI: F = null, createChapter5ChanganSiegeSourceUI: L = null, createChapter5KongmingReturnSourceUI: de = null, createChapter5ChanganReturnSourceUI: G = null, createChapter5WugongSelectionSourceUI: Y = null, createChapter5WugongAftermathSourceUI: ee = null, createChapter5WugongSourceUI: Z = null, createChapter5ChanganSourceUI: ne = null, createChapter4WuzhangSourceUI: oe = null, createChapter4HuluguSourceUI: te = null, createChapter4PostQishanSourceUI: ae = null, createQishanMap33SourceUI: xe = null, preludeScheduler: ye = null, imageLoader: fe = null, setTimer: re = setTimeout, clearTimer: ce = clearTimeout}) {
   let Pe = V8t({
     resolveStoryCharacter: h,
     resolveFallbackCharacter: n(x => u.characterPresentation?.(x), "resolveFallbackCharacter")
@@ -37997,6 +38004,257 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       throw new RangeError("Exact Imperial aftermath stock renderer and title capabilities");
     __imperialAftermathN21=port;return true;
   }
+
+  let __imperialYangpingStoryN22=null;
+  const __readImperialYangpingMountedN22=a=>u.session===a.session&&a.session.sessionIdentity===a.identity&&
+    a.session.epoch===a.epoch&&a.session.state===null&&A===a.router&&A.revision===a.routerRevision&&
+    A.ownershipEpoch===a.routerOwner&&(!a.owner||a.session.chapter4ImperialHost===a.owner||a.session.chapter4ImperialB5Post?.owner===a.owner)&&!Le&&!ot;
+
+  let __b5LiveTransferN22=null;
+  async function launchImperialYangpingN22(runtime,{token,readHandoff,checkpoint,anchor,isCurrent}){
+    const session=u.session,identity=session.sessionIdentity,epoch=session.epoch,entry=j("entry-shell"),screen=Se;
+    const source=()=>seam()&&session.state===null&&session.epoch===epoch&&!__b5LiveTransferN22&&isCurrent()===true;
+    const seam=()=>u.session===session&&session.sessionIdentity===identity&&anchor?.session===session&&
+      A===anchor.router&&A.revision===anchor.routerRevision&&A.ownershipEpoch===anchor.routerOwner&&Se===screen&&!Le&&!ot&&!Ce&&!un;
+    if(!runtime?.field||!source())return false;
+    await runtime.field.prepare();
+    if(!source()||runtime.field.ready()!==true)return false;
+    const h=readHandoff(token);
+    if(!h||h.isCurrent()!==true||!source())return false;
+    const frontier=runtime.frontierFromB4Handoff(h),engine=runtime.createEngine(frontier);
+    const council=runtime.packB5CouncilAnchor({checkpoint,frontier});
+    const state=engine.construct(),view=runtime.field.resolve(state),old=[ue,$e,Ne,entry.hidden],ticket=Object.freeze({});
+    const predecessor=session.chapter4ImperialHost??null,mode=predecessor?"warm":"ordinary";
+    if((predecessor!==null&&anchor.owner!==predecessor)||!source())return false;
+    const run={session,identity,frontier,council,owner:null,settings:h.settings,turns:h.turns};
+    let mounted=false;
+    let ordinaryBrand={};
+    if(mode==="ordinary"&&typeof anchor.b5OrdinaryRaw==="string"){
+     const selectedManualRaw=anchor.b5OrdinaryRaw,start=qr(selectedManualRaw);
+     if(!start.wrapped||start.channel!=="manual"||start.turns!==h.turns)return false;
+     const displayReceipt=Object.freeze({anchor,entryContext:"4:2:5",prefix:frontier.sourceCursor});
+     const displayRecord=uS(selectedManualRaw,{expectedChannel:"manual",admitInner(inner){
+      if(inner!==start.innerText)throw new RangeError("Only actual selected source ordinary bytes");
+      return Object.freeze({valid:true,receipt:displayReceipt});
+     }});
+     ordinaryBrand={selectedManualRaw,displayReceipt,displayRecord};
+    }
+    __b5SessionTicketsN22.set(ticket,Object.freeze({identity,epoch,mode,predecessor,isCurrent:source,engine,settings:h.settings,turns:h.turns,...ordinaryBrand}));
+    try{
+     const installed=u.mountImperialB5N22(ticket,view,{
+      mount(owner,next){
+       if(mounted||!source()||next?.rulesVersion!=="chapter4-imperial-yangping-private-1")return false;
+       run.owner=owner;mounted=true;ue=false;$e=false;Ne=null;entry.hidden=true;
+       __b5LiveTransferN22=run;
+       __b5VictoryPortsN22.set(owner,request=>openImperialB5VictoryN22(runtime,run,request));
+       return true;
+      },
+
+      verify(owner,next){
+       const live=()=>u.session===session&&session.sessionIdentity===identity&&session.chapter4ImperialB5Host===owner&&
+        __b5LiveTransferN22===run&&!session.chapter4ImperialB5NeedsRecovery;
+       if(!mounted||!live()||run.owner!==owner||owner.readMounted()?.state!==next||!entry.hidden||!__b5StockWnN22)return false;
+       run.lease=__b5StockWnN22.adoptWarm({owner,acceptedAnchor:council,frontier,readMounted:owner.readMounted,isCurrent:live});
+       return !!run.lease;
+      },
+      rollback(){
+       run.lease?.release();
+       if(run.owner)__b5VictoryPortsN22.delete(run.owner);
+       if(__b5LiveTransferN22===run)__b5LiveTransferN22=null;
+       if(mounted){mounted=false;[ue,$e,Ne,entry.hidden]=old;}
+      },
+      restored:()=>!mounted&&!__b5LiveTransferN22&&ue===old[0]&&$e===old[1]&&Ne===old[2]&&entry.hidden===old[3]
+     });
+     return installed===true&&mounted&&session.chapter4ImperialB5Host===run.owner;
+    }finally{__b5SessionTicketsN22.delete(ticket);}
+  }
+  async function openImperialB5VictoryN22(runtime,run,{session,identity,epoch,state,owner}){
+    const port=__imperialYangpingStoryN22,root=A,screen=Se,slot=j("entry-shell"),old=[ue,$e,slot.hidden];
+    const c=()=>__b5LiveTransferN22===run&&run.owner===owner&&u.session===session&&session.sessionIdentity===identity&&
+      session.chapter4ImperialB5Host===owner&&session.epoch===epoch&&session.state===state&&A===root&&
+      root.revision===anchor.routerRevision&&root.ownershipEpoch===anchor.routerOwner&&screen===Se&&!Ce&&!Le&&!ot&&!un;
+    const anchor=Object.freeze({session,identity,epoch:epoch+1,owner,router:root,routerRevision:root.revision,routerOwner:root.ownershipEpoch});
+    if(!port||!c()||await port.prepare(__imperialYangpingTrialN22)!==true||!c())return false;
+    const ticket=Object.freeze({});let p=null;
+    __b5SessionTicketsN22.set(ticket,Object.freeze({session,identity,epoch,state,owner,mode:"victory",isCurrent:c}));
+    try{
+     const done=session.publishImperialB5VictoryN22(ticket,{
+      publishStory(receipt,frame){
+       if(!c()||frame?.owner!==owner)return false;
+       p=port.mountFromBattle({readCurrent:()=>receipt,anchor,isCurrent:c,meta:()=>({settings:frame.settings,turns:frame.turns})});
+       if(!p||p.publish()!==true||p.verify()!==true)return false;
+       ue=true;$e=true;return true;
+      },
+      verifyStory(){return p?.verify()===true&&__readImperialYangpingMountedN22(anchor)&&slot.hidden===false;},
+      rollbackPresentation(){p?.rollback();[ue,$e,slot.hidden]=old;},
+      checkPresentationRollback(){return !port.isActive()&&ue===old[0]&&$e===old[1]&&slot.hidden===old[2];}
+     });
+     if(done!==true||p?.start()!==true)return false;
+     return true;
+    }finally{__b5SessionTicketsN22.delete(ticket);}
+  }
+
+  let b5TitleBusyN22=false,b5TitleRawN22=null,b5TitleRevisionN22=0;
+  const b5TitleRowsN22=new WeakMap();
+  function b5SelectedWnN22(view){
+    if(!__b5StockWnN22||view?.standaloneTitle!==true||view.stage!=="menu"||Ce||Le||ot||un||__map46MountingW31||
+      __map46EntryW31?.isActive()||__imperialAftermathN21?.isActive()||__imperialYangpingStoryN22?.isActive())return null;
+    try{const raw=b.getItem(Wn);return __b5StockWnN22.claimsPhysical(raw)?raw:null;}catch{return null;}
+  }
+  async function continueB5TitleN22(view,raw){
+    const host=__b5StockWnN22,runtime=imperialB5BattleBootN22,session=u.session,root=A,screen=Se;
+    if(!host||!runtime||b5TitleBusyN22||raw!==b5SelectedWnN22(view))return;
+    const identity=session.sessionIdentity,epoch=session.epoch,ownerEpoch=root.ownershipEpoch,revision=root.revision;
+    const publishScope={owner:null,published:false};
+    const base=()=>host===__b5StockWnN22&&u.session===session&&session.sessionIdentity===identity&&A===root&&
+       root.ownershipEpoch===ownerEpoch&&root.revision===revision&&screen===Se&&root.view.stage==="menu"&&!Ce&&!Le&&!ot&&!un&&b.getItem(Wn)===raw;
+    const current=()=>base()&&(session.epoch===epoch&&session.state===null||publishScope.owner&&
+      session.chapter4ImperialB5Host===publishScope.owner&&session.epoch===epoch+1);
+    const witness=Object.freeze({session,identity,epoch,root,screen,expectedRaw:raw,current,publishScope});
+    const t=Object.freeze({});b5TitleBusyN22=true;
+    try{
+      if(!current())return;
+      await host.prepareCold(Object.freeze({session,root,expectedRaw:raw,isCurrent:current,witness}));
+      if(!current())return;
+      b5TitleRowsN22.set(t,Object.freeze({kind:"stock-title-continue",session,root,expectedRaw:raw,isCurrent:current}));
+      if(host.continueSelected(t,k=>b5TitleRowsN22.get(k))!==true)throw new RangeError("Exact stock paired B5 Continue");
+    }catch(e){
+      if(current()){j("entry-error").hidden=false;j("entry-error").textContent="未能讀取陽平關之戰的中斷記錄。原有記錄沒有更改。";}
+      console.warn("Scoped B5 title Continue refused",e);
+    }finally{b5TitleBusyN22=false;b5TitleRowsN22.delete(t);__b5ColdWnN22=null;}
+  }
+  async function prepareB5WnColdN22(runtime,info){
+    __b5ColdWnN22=null;
+    const w=info.witness;
+    if(info.isCurrent()!==true||w.session!==u.session||w.root!==A)throw new RangeError("Exact fresh title B5 media");
+    await runtime.field.prepare();
+    if(!runtime.field.ready()||info.isCurrent()!==true)throw new RangeError("Same B5 title after field media");
+    __b5ColdWnN22=w;
+  }
+  function prepareB5WnPublicationN22(runtime,resumed,proof){
+    const w=__b5ColdWnN22,entry=j("entry-shell"),old=[ue,$e,Ne,entry.hidden];
+    __b5ColdWnN22=null;
+    if(!w?.current()||!proof.isCurrent()||!proof.readSelected()||!proof.displayRecord||__b5LiveTransferN22)
+      throw new RangeError("Exact fresh selected same-stock B5 title");
+    const {session,identity,epoch,publishScope}=w;
+    let attempted=false,installed=false;
+    const run={session,identity,frontier:resumed.frontier,council:resumed.acceptedAnchor,owner:null,settings:resumed.settings,turns:resumed.turns};
+    const valid=()=>installed&&run.owner&&session===u.session&&session.sessionIdentity===identity&&session.chapter4ImperialB5Host===run.owner&&
+       __b5LiveTransferN22===run&&!session.chapter4ImperialB5NeedsRecovery;
+    const holding=()=>run.owner&&session===u.session&&session.sessionIdentity===identity&&session.chapter4ImperialB5Host===run.owner&&
+       __b5LiveTransferN22===run&&!session.chapter4ImperialB5NeedsRecovery;
+    function restore(){
+      if(run.owner){__b5VictoryPortsN22.delete(run.owner);__b5WnRawByOwnerN22.delete(run.owner);}
+      if(__b5LiveTransferN22===run)__b5LiveTransferN22=null;
+      installed=false;publishScope.owner=null;run.owner=null;
+      [ue,$e,Ne,entry.hidden]=old;return true;
+    }
+    const restored=()=>!installed&&!__b5LiveTransferN22&&ue===old[0]&&$e===old[1]&&Ne===old[2]&&entry.hidden===old[3]&&session.state===null&&session.epoch===epoch;
+    return Object.freeze({
+      publish(check){
+       if(attempted||!w.current()||!proof.isCurrent())throw new RangeError("One actual scoped title Continue");
+       attempted=true;
+       const lease=proof.claimResume(proof.resumeToken);
+       if(lease.payload!==resumed.payload||lease.frontier!==resumed.frontier||lease.isCurrent()!==true)
+        throw new RangeError("Admitted B5 cold body");
+       const engine=runtime.createEngine(lease.frontier),draw=runtime.field.resolve(engine.restore(lease.payload)),ticket=Object.freeze({});
+       __b5SessionTicketsN22.set(ticket,Object.freeze({identity,epoch,mode:"resume",predecessor:null,
+        isCurrent:w.current,engine,settings:resumed.settings,turns:resumed.turns,payload:lease.payload,displayRecord:proof.displayRecord}));
+       try{
+        return u.mountImperialB5N22(ticket,draw,{
+         mount(owner,state){
+          if(!w.current()||run.owner||engine.serialize(state)!==resumed.payload)return false;
+          run.owner=owner;publishScope.owner=owner;__b5LiveTransferN22=run;
+          ue=false;$e=false;Ne=null;entry.hidden=true;
+          __b5VictoryPortsN22.set(owner,request=>openImperialB5VictoryN22(runtime,run,request));return true;
+         },
+         verify(owner,state){
+          if(!w.current()||!holding()||!entry.hidden||owner!==run.owner||owner.readMounted()?.state!==state)return false;
+          installed=true;__b5WnRawByOwnerN22.set(owner,w.expectedRaw);
+          return check()===true;
+         },
+         rollback:restore,restored
+        })===true;
+       }finally{__b5SessionTicketsN22.delete(ticket);}
+      },
+      verify:()=>valid()&&entry.hidden&&run.owner.readMounted()?.turns===resumed.turns,
+      rollback:()=>restored(),
+      mounted:()=>valid()?Object.freeze({owner:run.owner,readMounted:run.owner.readMounted,isCurrent:valid}):null
+    });
+  }
+  function retireB5WnAfterSaveN22(result,anchor,view){
+    const owner=anchor?.owner,session=u.session,key=result?.key,raw=owner&&__b5WnRawByOwnerN22.get(owner);
+    if(!raw||view?.sourceCursor?.join(":")!=="4:2:7:0:29"||session!==anchor.session||
+      session.chapter4ImperialB5Post?.owner!==owner||!__readImperialYangpingMountedN22(anchor))return;
+    if(result?.written!==true||!/^kongming-first-battle[.]slot[.]v1[.][1-5]$/.test(key)||
+      b.getItem(key)!==result.physical||b.getItem(Wn)!==raw||!__b5StockWnN22?.claimsPhysical(raw))return;
+    __b5WnRawByOwnerN22.delete(owner);b.removeItem(Wn);
+    if(b.getItem(Wn)!==null)throw new RangeError("Durable official save; B5 Wn retirement unverified");
+    imperialWnInvalidateN20?.();
+  }
+  function enrollImperialYangpingStoryN22(stock){
+    if(__imperialYangpingStoryN22)return false;
+    // Stock prep, battle, Wn and source validator are not manufactured by this story hook.
+    if(!stock||!["validateCampaign","validateSettings","performBattleHandoff"].every(k=>typeof stock[k]==="function"))return false;
+    const port=createImperialYangpingStoryPortN22({
+      physical:b,primitives:__kmLuoyangStockW34.primitives,slotKey:ga,readMounted:__readImperialYangpingMountedN22,
+      dom:{
+        document:globalThis.document,requestFrame:fn=>globalThis.requestAnimationFrame(fn),runBgm:id=>_?.selectBgm?.(id),
+        actorName:id=>r(u.characterPresentation?.(id)?.nameJa??String(id)),
+        portrait:id=>{const q=Pe(id,A.view),alias=y?.objectAliases?.[id]??id,def=y?.definitions?.[alias],f=def&&y.portraits?.[def.portrait];
+          const asset=q?.portraitAsset??(f?'assets/story-portraits/'+f.path:u.characterPresentation?.(id)?.portraitAsset??null);
+          return asset==="assets/story-portraits/portraits/face-4.png"?"assets/zhuge-portrait.png":asset;},
+        returnTitle(){if(__imperialYangpingStoryN22?.isActive()===true)Ri();}
+      },
+      async readBytes(path){if(typeof path!=="string"||!/^assets\/[\w/-]+[.]png$/.test(path))throw new RangeError("Only pinned original scene PNG");
+        const a=await fetch("./"+path);if(!a.ok)throw new RangeError("Missing original imperial story asset");return new Uint8Array(await a.arrayBuffer());},
+      digest:bytes=>crypto.subtle.digest("SHA-256",bytes),
+      async decodeImage(bytes,ref){
+        if(ref?.mimeType!=="image/png")throw new RangeError("Original PNG only");
+        const blob=new Blob([bytes],{type:ref.mimeType});
+        if(typeof globalThis.createImageBitmap==="function")return globalThis.createImageBitmap(blob);
+        const url=globalThis.URL.createObjectURL(blob);
+        try{const image=new Image();image.src=url;await image.decode();return image;}
+        finally{globalThis.URL.revokeObjectURL(url);}
+      },
+      stockCampaignOperations:{applyAuthorizedCampaignEntityOperation:wl,completeCampaignRecord:Yh,unlockCampaignRecordSlot:_3},
+      renderStockPreparation:jKe,resolveCharacter:id=>{const ch=u.characterPresentation?.(id);return ch?{...ch,nameJa:r(ch.nameJa)}:null;},
+      validateCampaign:stock.validateCampaign,validateSettings:stock.validateSettings,
+      performBattleHandoff:stock.performBattleHandoff,afterDurableSave:stock.afterStoryDurableSave,
+      reportError(e,status){const el=j("entry-error");el.hidden=false;el.textContent=status?.cleanupWarning?
+        "正式記錄已儲存，但尚未確認中斷記錄已清理。":status?.uncertain?
+        "未能確認這個槽的寫入結果。請返回標題核對，不會自動重試。":"未能接續陽平關之戰的流程，原有記錄沒有改動。";
+        console.warn("Scoped Imperial Yangping story action refused",e);}
+    });
+
+    if(!__b5StockWnN22&&typeof imperialB5BattleBootN22?.createSuspend==="function"){
+     const rt=imperialB5BattleBootN22;
+     __b5StockWnN22=rt.createSuspend({physical:b,primitives:Object.freeze({...__kmLuoyangStockW34.primitives,admitOuter:uS}),
+       prepareCold:info=>prepareB5WnColdN22(rt,info),preparePublication:(resumed,proof)=>prepareB5WnPublicationN22(rt,resumed,proof),
+       invalidateStockDisplay:()=>imperialWnInvalidateN20?.()===true});
+    }
+    __imperialYangpingStoryN22=port;
+    void port.prepare(__imperialYangpingPalaceN22).catch(e=>console.warn("Original Imperial palace resources not admitted",e));
+    return true;
+  }
+  async function openImperialYangpingStoryTitleN22(slot,raw){
+    const port=__imperialYangpingStoryN22,session=u.session,root=A,screen=Se;
+    if(!port||__map46MountingW31||port.isActive()||__imperialAftermathN21?.isActive())return;
+    const stamp=port.metadata(raw);
+    const anchor=Object.freeze({session,identity:session.sessionIdentity,epoch:session.epoch,router:root,
+      routerOwner:root.ownershipEpoch,routerRevision:root.revision});
+    const current=()=>__readImperialYangpingMountedN22(anchor)&&Se===screen&&root.view.stage==="loadSlots"&&
+      !Ce&&!un&&b.getItem(ga(slot))===raw;
+    __map46MountingW31=true;
+    try{
+      if(!current())return;
+      if(!stamp)throw new RangeError("Exact original Imperial Yangping ordinary frame required");
+      await port.openCold({chapterId:stamp.chapterId,slot,expectedRaw:raw,isCurrent:current,anchor:Object.freeze({...anchor,b5OrdinaryRaw:raw})});
+    }catch(e){
+      if(current()){j("entry-error").hidden=false;j("entry-error").textContent="未能讀取這個陽平關相關記錄。原有記錄沒有更改。";}
+      console.warn("Original Imperial Yangping ordinary read refused",e);
+    }finally{__map46MountingW31=false;}
+  }
   function configureImperialAftermathN21({validateCampaign,validateSettings,afterDurableSave}){
     if(__imperialAftermathN21||!b?.getItem||!b?.setItem||typeof validateCampaign!=="function"||typeof validateSettings!=="function")return false;
     const doc=globalThis.document;
@@ -38019,7 +38277,8 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
         return asset==="assets/story-portraits/portraits/face-4.png"?"assets/zhuge-portrait.png":asset;},
       returnTitle(){if(__imperialAftermathN21?.isActive()===true)Ri();}
     });
-    const port=createImperialAftermathAppN21({physical:b,slotKey:ga,primitives:__kmLuoyangStockW34.primitives,media,
+    const port=(__imperialYangpingStoryN22?createImperialAftermathWithYangpingN22:createImperialAftermathAppN21)({physical:b,slotKey:ga,primitives:__kmLuoyangStockW34.primitives,media,
+      continuation:__imperialYangpingStoryN22?.continuation??null,
       readMounted(a){return u.session===a.session&&a.session.sessionIdentity===a.identity&&a.session.epoch===a.epoch&&a.session.state===null&&
         A===a.router&&A.revision===a.routerRevision&&A.ownershipEpoch===a.routerOwner&&(!a.owner||a.session.chapter4ImperialHost===a.owner)&&!Le&&!ot;},
       showError(e,status){const el=j("entry-error");el.hidden=false;el.textContent=status?.cleanupWarning?
@@ -38079,7 +38338,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     __map46MountingW31=true;__imperialAftermathTransitionN21=true;
     try{
       if(!current())return;
-      await post.openCold({slot,expectedRaw:raw,isCurrent:current,anchor});
+      await post.openCold({slot,expectedRaw:raw,isCurrent:current,anchor:Object.freeze({...anchor,b5OrdinaryRaw:raw})});
     }catch(e){
       if(current()){j("entry-error").hidden=false;j("entry-error").textContent="未能讀取成都防衛戰戰後記錄。原有記錄沒有更改。";}
       console.warn("Imperial original palace title read refused",e);
@@ -38169,7 +38428,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   }
   function __map46ManualRawW32(slot){
     if(!Number.isInteger(slot)||slot<1||slot>5||!b?.getItem)return null;
-    try{const raw=b.getItem(ga(slot));return typeof raw==="string"&&(readImperialPreludeColdN21(raw)!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
+    try{const raw=b.getItem(ga(slot));return typeof raw==="string"&&(readImperialPreludeColdN21(raw)!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
   }
   function __map46MetadataW32(kind,slot,origin){
     if(!["title-presence","title-records"].includes(origin))return null;
@@ -38186,6 +38445,14 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     if(kind==="slot"){
      const raw=__map46ManualRawW32(slot);if(!raw){__map46ManualLabelsW32.delete(slot);return null;}
      const cached=__map46ManualLabelsW32.get(slot);if(cached?.raw===raw)return cached.meta;
+
+     if(__imperialYangpingStoryN22?.claims(raw)===true){
+      const row=__imperialYangpingStoryN22.metadata(raw);
+      const m=Object.freeze({exists:true,pending:!!row,valid:false,labelJa:row?
+       (row.chapterId===__imperialYangpingPalaceN22?'第四章・稱帝線　成都':'第四章・陽平關之戰（戰後）')+'　累計回合：'+(row.turns===null?'未記錄':row.turns):
+       '第四章・稱帝線（記錄待核對）'});
+      __map46ManualLabelsW32.set(slot,{raw,meta:m});return m;
+     }
      const imperialPost=__imperialAftermathN21?.metadata(raw);if(imperialPost){__map46ManualLabelsW32.set(slot,{raw,meta:imperialPost});return imperialPost;}
      const imperialPrelude=readImperialPreludeColdN21(raw);if(imperialPrelude){__map46ManualLabelsW32.set(slot,{raw,meta:imperialPrelude.meta});return imperialPrelude.meta;}
      const historical=__kmHistoricalTitleN20.get(A)?.metadata(raw);
@@ -38258,6 +38525,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   async function __openMap46ManualW32(slot){
     if(__map46MountingW31||__map46EntryW31?.isActive()||A.view.stage!=="loadSlots")return;
     const raw=__map46ManualRawW32(slot);if(!raw)return;
+    if(__imperialYangpingStoryN22?.claims(raw)===true)return openImperialYangpingStoryTitleN22(slot,raw);
     if(__imperialAftermathN21?.claims(raw)===true)return openImperialAftermathTitleN21(slot,raw);
     if(readImperialPreludeColdN21(raw))return openImperialPreludeColdN21(slot,raw);
     const historical=__kmHistoricalTitleN20.get(A);
@@ -38448,7 +38716,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     }finally{__map46MountingW31=false;}
   }
   function Cn() {
-    if(__imperialAftermathTransitionN21||__imperialAftermathN21?.isActive())return;
+    if(__imperialAftermathTransitionN21||__imperialAftermathN21?.isActive()||__imperialYangpingStoryN22?.isActive())return;
     enrollHistoricalN20();
     if(imperialAppBootN21&&!__imperialBootDataN20){
      try{
@@ -38466,6 +38734,11 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
        imperialRetirementN21=createImperialSuspendRetirementN21({physical:b,primitives:__kmLuoyangStockW34.primitives,
         invalidateStockDisplay:()=>imperialWnInvalidateN20?.()===true});
       }
+
+      if(imperialB5BattleBootN22)enrollImperialYangpingStoryN22({
+       validateCampaign:imperialB5BattleBootN22.validateCampaign,validateSettings:ln,
+       performBattleHandoff:request=>launchImperialYangpingN22(imperialB5BattleBootN22,request),afterStoryDurableSave:retireB5WnAfterSaveN22
+      });
       if(typeof configureImperialAftermathN21==="function")configureImperialAftermathN21({
        afterDurableSave:retireImperialWnAfterManualN21,
        validateCampaign:campaign=>imperialAppBootN21.validateCampaignAssets({campaign}),validateSettings:ln
@@ -38611,12 +38884,17 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       for (let xt of et.values()) Ge.get(xt).signature = ea;
     }
     if(__map46TitleW32(Kt))ea+=":huashan:"+__map46TitleW32(Kt).status.phase;
+
+    const b5TitleRaw=b5SelectedWnN22(Kt);
+    if(b5TitleRaw!==b5TitleRawN22){b5TitleRawN22=b5TitleRaw;b5TitleRevisionN22++;}
+    if(b5TitleRaw)ea+=":imperial-yangping-wn:"+b5TitleRevisionN22;
     const imperialTitleRawN20=imperialSelectedWnN20(Kt);if(imperialTitleRawN20!==imperialWnTitleRawN20){imperialWnTitleRawN20=imperialTitleRawN20;imperialWnDisplayRevisionN20++;}if(imperialTitleRawN20)ea+=":imperial-wn:"+imperialWnDisplayRevisionN20;
     if(checkImperialManualWarmN21(Kt))ea+=":imperial-ordinary-manual";
     if (ea !== be) {
       (be = ea, et.clear(), j("entry-options").replaceChildren());
       for (let xt of Kt.menuOptions) {
-        if(xt.id==="resume"&&imperialTitleRawN20)xt={...xt,enabled:true,reason:null};
+        if(xt.id==="resume"&&b5TitleRaw)xt={...xt,enabled:true,reason:null};
+        else if(xt.id==="resume"&&imperialTitleRawN20)xt={...xt,enabled:true,reason:null};
         else if(xt.id==="resume"){const x=__map46TitleW32(Kt);if(x)xt={...xt,enabled:x.status.phase==="admitted",reason:null};}
         let eo = $("div"), qt = $("button", hr && Number.isInteger(xt.slot) ? `${xt.slot}\uFF1A\u8A18\u9304\u6E05\u55AE\u66AB\u6642\u7121\u6CD5\u6838\u5C0D\uFF0C\u8ACB\u91CD\u8A66` : ["chapter5-section2-town", "chapter5-second-changan-return", "chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source", "chapter5-jianning-return", "chapter5-jiangling-return", "chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-jianning", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-baxi", "qishan-root4-departure", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-chengdu-defense-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-chengdu-defense-return", "chapter5-changan-return", "chapter5-chengdu-defense", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) && typeof xt.selected == "boolean" ? Xye({
           ...xt,
@@ -38630,6 +38908,8 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
         };
         (Ge.set(qt, zn), qt.addEventListener("click", () => {
           if (!(Le || et.get(xt.id) !== qt || be !== zn.signature || hr || qt.disabled)) {
+
+            if(xt.id==="resume"&&b5TitleRaw){if(b5TitleRaw===b5SelectedWnN22(Kt))void continueB5TitleN22(Kt,b5TitleRaw);else Cn();return;}
             if(xt.id==="resume"&&imperialTitleRawN20){if(imperialTitleRawN20===imperialSelectedWnN20(Kt))void imperialTitleContinueN20(Kt,imperialTitleRawN20);else Cn();return;}
             if(xt.id==="resume"&&__map46TitleW32(Kt)) { void __openMap46GenericW32(Kt); return; }
             if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__map46ManualRawW32(xt.slot)) {void __openMap46ManualW32(xt.slot);return;}
@@ -39263,6 +39543,11 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   n(ik, "begin");
   let __pendingBaidiWnRefreshW19=null;
   function Ri() {
+
+    __b5LiveTransferN22?.lease?.release();
+    if(__b5LiveTransferN22?.owner)__b5VictoryPortsN22.delete(__b5LiveTransferN22.owner);
+    __b5LiveTransferN22=null;
+    __imperialYangpingStoryN22?.retire();
     __imperialAftermathN21?.retire();
     __kmHistoricalBrowserW41.get(A)?.retire();
     const __refreshBaidiWn=__kmBaidiNativeW24(u.session.state);
@@ -40041,7 +40326,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   }), j("save-slots-close").addEventListener("click", Y1), j("save-slots-delete").addEventListener("click", () => X1("delete")));
   let Zi = null;
   function Pv(x) {
-    if(x?.rulesVersion==="chapter4-imperial-chengdu-opening-1")return kL(x);
+    if(["chapter4-imperial-chengdu-opening-1","chapter4-imperial-yangping-private-1"].includes(x?.rulesVersion))return kL(x);
     if ((x === null && u.session.state === null && un?.nativeNotification && (un = null, $r++, sa || jr()), x === null || !M)) return kL(x);
     let D = u.session, Ae = D.sessionIdentity, ie = D.epoch, pe = Se, Ve = tt, at = A.ownershipEpoch, mt = A.revision, _t = n(() => !Le && u.session === D && D.sessionIdentity === Ae && D.state === x && D.epoch === ie && Se === pe && tt === Ve && A.ownershipEpoch === at && A.revision === mt, "current");
     queueMicrotask(() => {
@@ -40162,6 +40447,18 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   }
   n(SL, "completePursuitBattle");
   function kL(x) {
+    if(x?.rulesVersion==="chapter4-imperial-yangping-private-1"){
+      const s=u.session,owner=s.chapter4ImperialB5Host,port=owner&&__b5VictoryPortsN22.get(owner);
+      if(port&&!s.chapter4ImperialB5NeedsRecovery&&x.phase==="settled"&&x.terminal==="victory"&&!x.pendingEffects.length&&!x.tasks.length&&!_e&&!s.paused){
+        const epoch=s.epoch,identity=s.sessionIdentity;
+        _e=true;queueMicrotask(()=>{
+          _e=false;
+          if(u.session===s&&s.sessionIdentity===identity&&s.epoch===epoch&&s.state===x&&s.chapter4ImperialB5Host===owner)
+            void Promise.resolve().then(()=>port({session:s,identity,epoch,state:x,owner})).catch(e=>console.warn("Scoped B5 victory publication refused",e));
+        });
+      }
+      return;
+    }
     if(x?.rulesVersion==="chapter4-imperial-chengdu-opening-1"){
       const s=u.session;
       if(s.chapter4ImperialSessionActive&&!s.chapter4ImperialNeedsPublicationRecovery&&x.phase==="settled"&&x.terminal==="victory"&&
@@ -41305,6 +41602,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     }
   }, "notify"), vg = n(W => _et(W, le => e.restore(le)), "webEntryState"), yl = n(W => typeof e.rulesVersionForState == "function" ? e.rulesVersionForState(W) : t, "versionFor");
   function hf({nativeSuspend: W = !1, includeStoryContinuation: le = !0} = {}) {
+    if(b5LiveN22||b5PostN22)throw new RangeError("No generic B5 storage role");
     if(imperialActiveN20)throw new RangeError("No direct tactical Imperial storage role");
     if (Xn || ht?.rulesVersion === "chapter5-baxi-engine-1") throw new RangeError("Wugong suspend/manual save is not supported");
     if (so || ht?.rulesVersion === "chapter5-chengdu-defense-engine-1") throw new RangeError("Wugong suspend/manual save is not supported");
@@ -45186,6 +45484,137 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   let imperialRawN20=null,imperialActiveN20=false,imperialActivationN20=0,imperialPendingN20=null,imperialFaultN20=false;
   const imperialDraftsN20=new WeakMap();
   function assertImperialN20(ok,message){if(!ok)throw new RangeError(message);}
+
+  let b5LiveN22=null,b5PostN22=null,b5FaultN22=false;
+  const b5DraftsN22=new WeakMap();
+  const b5RuleN22="chapter4-imperial-yangping-private-1";
+  function b5NeedN22(ok,why){if(!ok)throw new RangeError(why);}
+  function b5StateN22(s){return s?.rulesVersion===b5RuleN22&&s.currentMapIndex===10&&s.scenarioBlock===5&&s.board?.width===30&&s.board?.height===24;}
+  function b5ReadN22(owner){
+    const line=b5LiveN22;
+    if(!line||line.owner!==owner||b5FaultN22||!b5StateN22(ht)||_n.display().uncertain)return null;
+    if(line.frame?.state===ht&&line.frame?.epoch===dn)return line.frame;
+    const state=ht,epoch=dn,settings=Wt,turns=_n.display().total;
+    return line.frame=Object.freeze({owner,state,epoch,settings,turns,paused:Vn,sessionIdentity:line.row.identity,
+      isCurrent:()=>b5LiveN22===line&&!b5FaultN22&&ht===state&&dn===epoch&&Wt===settings&&_n.display().total===turns&&!_n.display().uncertain});
+  }
+  function b5NewLineN22(row){
+    const engine=row.engine,line={engine,row,frame:null,owner:null};
+    line.owner=Object.freeze({serialize(s){
+      b5NeedN22(b5ReadN22(line.owner)?.state===s,"Exact active B5 owner revision");return lr(()=>engine.serialize(s));
+    },readMounted(){return b5ReadN22(line.owner);}});
+    return line;
+  }
+  function b5PrepareN22(ticket,facadeIdentity){
+    Vt();
+    const row=__b5SessionTicketsN22.get(ticket);__b5SessionTicketsN22.delete(ticket);
+    b5NeedN22(row&&Object.isFrozen(row)&&facadeIdentity&&row.identity===facadeIdentity&&row.epoch===dn&&ht===null&&!b5LiveN22&&!b5PostN22&&!b5FaultN22&&!Wi&&!Ho&&!gr&&
+      ["warm","ordinary","resume"].includes(row.mode)&&lr(row.isCurrent)===true,
+      "One exact current lexical B5 admission");
+    b5NeedN22(row.mode==="warm"?
+      imperialActiveN20&&row.predecessor===imperialRawN20?.owner&&!imperialFaultN20&&row.predecessor!==null:
+      !imperialActiveN20&&!imperialRawN20&&row.predecessor===null,"Exact Map43 aftermath or fresh stock title predecessor");
+    b5NeedN22([row.engine?.construct,row.engine?.restore,row.engine?.reduce,row.engine?.choices,row.engine?.serialize,row.engine?.complete,row.acknowledge,row.verifyMount].every(f=>typeof f==="function"),
+      "Exact installed B5 engine and stock renderer hooks");
+    const before=vo(),resume=row.mode==="resume",ordinaryRecord=row.mode==="ordinary"&&row.displayRecord!=null;
+    const record=resume||ordinaryRecord?qa(row.displayRecord):null;
+    b5NeedN22(!_n.display().uncertain,"Certain predecessor B5 display owner");
+    if(resume)b5NeedN22(record===row.displayRecord&&record.wrapped&&record.channel==="suspend"&&record.turns===row.turns&&typeof row.payload==="string",
+      "Exact already-admitted B5 Wn record and carried turn value");
+    else if(ordinaryRecord)b5NeedN22(record===row.displayRecord&&record.wrapped&&record.channel==="manual"&&record.turns===row.turns&&
+      record.innerAdmission?.receipt===row.displayReceipt&&record.outerText===row.selectedManualRaw&&typeof row.selectedManualRaw==="string",
+      "Exact authenticated cold ordinary B4 frame and same full stock turn value");
+    else b5NeedN22(row.turns===_n.display().total,"Exact stock carried turn pair before B5 deployment");
+    const state=lr(()=>resume?row.engine.restore(row.payload):row.engine.construct()),settings=ln(row.settings);
+    b5NeedN22(b5StateN22(state)&&tr(before)&&lr(row.isCurrent)===true,"B5 installed state, unchanged source");
+    const line=b5NewLineN22(row),draft=Object.freeze({operation:resume?"restore":"constructor",state,settings,previousState:null}),token=Object.freeze({});
+    b5DraftsN22.set(token,{row,before,record,line,draft,predecessor:imperialRawN20});
+    return token;
+  }
+  function b5InspectN22(token){
+    Vt();
+    const x=b5DraftsN22.get(token);
+    b5NeedN22(x&&tr(x.before)&&!b5LiveN22&&!b5PostN22&&!b5FaultN22&&imperialRawN20===x.predecessor&&lr(x.row.isCurrent)===true,"Unchanged exact B5 prepublication pair");
+    return x.draft;
+  }
+  function b5PublishN22({next,settings,operation,command=null,record=null,line,post=null,verify=()=>true,
+    beforeNotify=()=>{},rollbackPresentation=()=>{},checkPresentationRollback=()=>true}){
+    const raw=vo(),last=Hn,oldLive=b5LiveN22,oldPost=b5PostN22,oldImperial=imperialActiveN20,oldMo=Mo,cached=c0,lastChoices=Ws;
+    let errorBox=null,applied=false,rolled=false;
+    const run=()=>bo(()=>{
+      const paired=(count,undo)=>{
+        On=true;Jt=false;
+        try{
+          lr(()=>beforeNotify(next,line?.owner??null));
+          b5NeedN22(!Jt,"Nonreentrant exact B5 presentation");
+          ht=next;Wt=settings;Vn=operation==="command"?raw.paused:false;En=undefined;Hn=command;dn=raw.epoch+1;c0=null;Ws=null;
+          if(operation==="constructor"||operation==="restore"){imperialActiveN20=false;Mo++;}
+          b5LiveN22=line;b5PostN22=post;
+          count();applied=true;Ni(true);
+          b5NeedN22(!Jt&&lr(()=>verify(line?.owner??null,next))===true,"Verified stock B5 paired successor");
+          return ht;
+        }catch(error){
+          Jt=false;
+          try{
+            if(applied)undo();
+            ht=raw.state;Wt=raw.settings;Vn=raw.paused;En=raw.continuation;dn=raw.epoch;Hn=last;c0=cached;Ws=lastChoices;
+            Mo=oldMo;imperialActiveN20=oldImperial;b5LiveN22=oldLive;b5PostN22=oldPost;
+            lr(()=>rollbackPresentation(error));
+            b5NeedN22(lr(checkPresentationRollback)===true&&!Jt&&tr(raw),"Verified restored stock B5 publication");
+            rolled=true;const marker=Object.freeze({});errorBox={marker,error};throw marker;
+          }catch(undoError){
+            if(errorBox?.marker===undoError)throw undoError;
+            b5FaultN22=true;throw new AggregateError([error,undoError],"Uncertain B5 raw/presentation rollback");
+          }
+        }finally{On=false;Jt=false;}
+      };
+      return operation==="story"?paired(()=>{},()=>{}):_n.run({next,operation,command,record},paired);
+    });
+    try{return operation==="constructor"||operation==="restore"?_n.withHandoff(run):run();}
+    catch(error){
+      if(errorBox?.marker===error&&rolled&&tr(raw)&&!On&&!gr&&!_n.display().uncertain)throw errorBox.error;
+      if(applied||!tr(raw))b5FaultN22=true;throw error;
+    }
+  }
+  function b5CommitN22(token,options={}){
+    const draft=b5InspectN22(token),x=b5DraftsN22.get(token);
+    b5DraftsN22.delete(token);
+    return b5PublishN22({...options,next:draft.state,settings:draft.settings,operation:x.record?"restore":draft.operation,record:x.record,line:x.line,
+      verify:(owner,state)=>b5ReadN22(owner)?.state===state&&_n.display().total===x.row.turns&&lr(()=>x.row.verifyMount(owner,state))===true});
+  }
+  function b5DispatchN22(cmd,revision){
+    const x=b5LiveN22;
+    b5NeedN22(!Vn&&b5ReadN22(x?.owner)&&revision===ht.revision&&cmd&&typeof cmd.type==="string","Current unpaused B5 tactical command");
+    if(cmd.type==="acknowledge")b5NeedN22(ht.pendingEffects?.[0]?.id===cmd.effectId&&lr(()=>x.row.acknowledge(cmd,ht,dn))===true,
+      "Exact currently-rendered B5 effect confirmation");
+    const command={...cmd,expectedRevision:revision},next=lr(()=>x.engine.reduce(ht,command));
+    b5NeedN22(b5StateN22(next),"Exact B5 successor only");
+    return b5PublishN22({next,settings:Wt,operation:"command",command,line:x,verify:(owner,s)=>b5ReadN22(owner)?.state===s});
+  }
+  function b5SettingsN22(settings){
+    const x=b5LiveN22;
+    b5NeedN22(b5ReadN22(x?.owner),"Current B5 settings owner");
+    b5PublishN22({next:ht,settings:ln(settings),operation:"command",command:{type:"settings"},line:x,verify:(owner,s)=>b5ReadN22(owner)?.state===s});
+    return Wt;
+  }
+  function b5VictoryN22(ticket,options={},facadeIdentity){
+    Vt();
+    const row=__b5SessionTicketsN22.get(ticket);__b5SessionTicketsN22.delete(ticket);
+    const x=b5LiveN22,state=ht,read=b5ReadN22(x?.owner);
+    b5NeedN22(read&&!Vn&&row&&Object.isFrozen(row)&&row.mode==="victory"&&facadeIdentity&&row.identity===facadeIdentity&&row.epoch===dn&&row.state===state&&
+      row.owner===x.owner&&state.phase==="settled"&&state.terminal==="victory"&&!state.pendingEffects.length&&!state.tasks.length&&lr(row.isCurrent)===true,
+      "Exact mounted, fully drained B5 victory");
+    const receipt=lr(()=>x.engine.complete(state));
+    b5NeedN22(receipt?.outcome==="victory"&&JSON.stringify(receipt.sourceCursor)==="[4,2,5,10,9]"&&typeof options.publishStory==="function"&&
+      typeof options.verifyStory==="function"&&typeof options.rollbackPresentation==="function"&&typeof options.checkPresentationRollback==="function",
+      "Exact B5 r10c9 paired story handoff only");
+    const post=Object.freeze({sourceCursor:receipt.sourceCursor,owner:x.owner});
+    b5PublishN22({next:null,settings:Wt,operation:"story",line:null,post,
+      beforeNotify(){b5NeedN22(lr(()=>options.publishStory(receipt,read))===true,"Publish exact originating B5 story");},
+      verify:()=>b5PostN22===post&&dn===read.epoch+1&&_n.display().total===read.turns&&lr(()=>options.verifyStory(receipt,post))===true,
+      rollbackPresentation:options.rollbackPresentation,checkPresentationRollback:options.checkPresentationRollback});
+    return true;
+  }
   function setupImperialN20(c,cold=null){
     Vt();
     if(!cold){ax(E,No);
@@ -48197,6 +48626,15 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     discardChapter4Imperial:imperialDiscardN20,
     retireChapter4ImperialSession:retireImperialN20,
     get chapter4ImperialHost(){return imperialRawN20?.owner??null;},
+
+    prepareImperialB5N22:b5PrepareN22,
+    inspectImperialB5N22:b5InspectN22,
+    commitImperialB5N22:b5CommitN22,
+    discardImperialB5N22(token){Vt();return b5DraftsN22.delete(token);},
+    publishImperialB5VictoryN22:b5VictoryN22,
+    get chapter4ImperialB5Host(){return b5LiveN22?.owner??null;},
+    get chapter4ImperialB5NeedsRecovery(){return b5FaultN22;},
+    get chapter4ImperialB5Post(){return b5PostN22;},
     get chapter4ImperialSessionActive(){return imperialActiveN20;},
     get chapter4ImperialNeedsPublicationRecovery(){return imperialFaultN20||imperialRawN20?.owner.needsPublicationRecovery===true;},
     prepareChapter4Wuzhang: kv,
@@ -48753,6 +49191,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       return Wt;
     },
     setBattleSettings(W) {
+      if((Vt(),b5LiveN22))return b5SettingsN22(W);
       if((Vt(),imperialActiveN20))return (imperialCommitN20(imperialPrepareN20("settings",W)),Wt);
       if ((Vt(), Xn || ht?.rulesVersion === "chapter5-baxi-engine-1")) return (Ev(G0("settings", W)), Wt);
       if (ma || ["chapter5-jianning-engine-1", "chapter5-jiangling-engine-1"].includes(ht?.rulesVersion)) return (Yl(Ma("settings", W)), Wt);
@@ -48899,6 +49338,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     },
     choices() {
       if (!ht) return null;
+      if(b5LiveN22)return b5FaultN22?null:b5LiveN22.engine.choices(ht);
       if(imperialActiveN20)return imperialPendingN20?.draft.state===ht?imperialRawN20.c.readPendingChoices(ht):imperialRawN20.owner.choices();
       if (Object.isFrozen(ht) && ht === c0) return Ws;
       let W = ["chapter5-baxi-engine-1", "chapter5-baidi-engine-1"].includes(ht.rulesVersion) || Xn && ["chapter5-jiangling-engine-1", "chapter5-second-changan-engine-1"].includes(ht.rulesVersion) ? O.engine.choices(ht) : ["chapter5-jianning-engine-1", "chapter5-jiangling-engine-1", "chapter5-second-changan-engine-1"].includes(ht.rulesVersion) ? F.engine.choices(ht) : ht.rulesVersion === "chapter5-chengdu-defense-engine-1" ? Q.engine.choices(ht) : ht.rulesVersion === "chapter5-changan-siege-engine-1" ? I.engine.choices(ht) : ht.rulesVersion === "chapter5-wugong-engine-1" ? V.engine.choices(ht) : ht.rulesVersion === "chapter5-changan-engine-1" ? K.engine.choices(ht) : ht.rulesVersion === "chapter4-wuzhang-engine-1" ? S.engine.choices(ht) : ht.rulesVersion === "chapter4-hulugu-engine-1" ? P.engine.choices(ht) : ht.rulesVersion === "chapter4-post-qishan-engine-1" ? R.engine.choices(ht) : ht.rulesVersion === "qishan-map33-engine-1" ? E.engine.choices(ht) : ht.rulesVersion === "qishan-dispute-engine-1" ? B.engine.choices(ht) : ht.rulesVersion === "qishan-pursuit-engine-1" ? U.engine.choices(ht) : Uo ? N.engine.choices(ht) : e.choices(ht);
@@ -49228,6 +49668,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     prepareQishanCurrentBattleRecord: zo,
     assertQishanWriteFrontier: dd,
     dispatch(W, le = ht?.revision) {
+      if((Vt(),b5LiveN22))return b5DispatchN22(W,le);
       if((Vt(),imperialActiveN20))return imperialDispatchN20(W,le);
       if ((Vt(), Xn || ht?.rulesVersion === "chapter5-baxi-engine-1")) {
         if ((m3(O, Lr), Vn)) throw new RangeError("Game is paused");
@@ -49556,6 +49997,13 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     typeof le.value == "function" ? Object.defineProperty(Mr, W, {
       enumerable: le.enumerable,
       value: n((...ke) => {
+        if(["prepareImperialB5N22","inspectImperialB5N22","commitImperialB5N22","discardImperialB5N22","publishImperialB5VictoryN22"].includes(W))return le.value(...ke);
+        if(b5LiveN22||b5PostN22){
+          if(b5FaultN22&&!["choices","inspectSave","inspectSlots","subscribe"].includes(W))throw (Vt(),new RangeError("Uncertain B5 publication requires a fresh session"));
+          if(!(b5LiveN22?["dispatch","pause","subscribe","choices","setBattleSettings","inspectSave","inspectSlots","discardPresentationRestoreCandidate"]:
+            ["subscribe","choices","inspectSave","inspectSlots","discardPresentationRestoreCandidate"]).includes(W))throw (Vt(),new RangeError("Scoped B5 operation only: "+W));
+          return le.value(...ke);
+        }
         if(imperialActiveN20&& !["dispatch","pause","subscribe","choices","setBattleSettings","prepareChapter4Imperial","inspectPreparedChapter4Imperial","commitChapter4Imperial","discardChapter4Imperial","retireChapter4ImperialSession","inspectSave","inspectSlots","discardPresentationRestoreCandidate"].includes(W))throw (Vt(),new RangeError("Imperial scoped operation only: "+W));
         if (Xn || ht?.rulesVersion === "chapter5-baxi-engine-1") {
           if (W === "recoverJichengCapacity") return (Vt(), !1);
@@ -49682,7 +50130,9 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   }
   n(j, "checkedCallbacks");
   function $(be, et) {
-    if ((fe.has(be) || ce(be), !((/^(prepare|commit)/).test(be) || ["dispatch", "setBattleSettings", "restoreSerialized", "newGame", "load", "loadSlot"].includes(be)))) return ye(t, be, () => t[be](...et));
+    if(be==="prepareImperialB5N22")et=[et[0],r];
+    if(be==="publishImperialB5VictoryN22")et=[et[0],et[1],r];
+    if ((fe.has(be) || ce(be), !((/^(prepare|commit)/).test(be) || ["dispatch", "setBattleSettings", "restoreSerialized", "newGame", "load", "loadSlot", "publishImperialB5VictoryN22"].includes(be)))) return ye(t, be, () => t[be](...et));
     (c = !0, d = !1);
     try {
       if ((["commitChapter5Jianning", "commitChapter5Baxi", "commitChapter5ChengduDefense", "commitPrepared", "commitChencang", "commitHighChencang", "commitSecondChencang", "commitQishanRoot4Camp", "commitQishanRoot4Departure", "commitQishanPursuit", "commitQishanDispute", "commitQishanMap33", "commitChapter4PostQishan", "commitChapter4Hulugu", "commitChapter4Imperial", "commitChapter4Wuzhang", "commitChapter5Changan", "commitChapter5ChanganSiege", "commitChapter5Wugong"].includes(be) && (et = [et[0], j(et[1])]), ["commitDisplayCampaignStart", "commitDisplaySourceLoad"].includes(be))) {
@@ -51191,6 +51641,58 @@ ${Ke.itemReceipt.acquired?y.system.item:y.system.itemFull}`:null),runs:dt?.runs?
   }
   n(pu, "startGame");
 
+
+  let mountedB5UiN22=null;
+  function mountImperialB5N22(ticket,presentation,pair){
+    const row=__b5SessionTicketsN22.get(ticket);
+    __b5SessionTicketsN22.delete(ticket);
+    if(!row||row.identity!==pt.sessionIdentity||row.epoch!==pt.epoch||pt.state!==null||mountedB5UiN22||st||Ct||cn||nr||
+       ![pair?.mount,pair?.rollback,pair?.restored,pair?.verify].every(f=>typeof f==="function")||row.isCurrent()!==true)
+      throw new RangeError("Exact stock B5 canvas and owner preflight");
+    const rawTicket=Object.freeze({}),slot={identity:pt.sessionIdentity,receipt:null};
+    __b5SessionTicketsN22.set(rawTicket,Object.freeze({...row,
+      acknowledge(cmd,state,epoch){
+        const a=slot.receipt;
+        return !!a&&a.state===state&&a.epoch===epoch&&a.effect.id===cmd.effectId&&a.current();
+      },
+      verifyMount(owner,state){
+        return mountedB5UiN22===slot&&pt.chapter4ImperialB5Host===owner&&pt.state===state&&fe===presentation.pack&&
+          nt===state.rulesVersion&&!$t&&!st&&!cn&&!Ct&&!nr&&pair.verify(owner,state)===true;
+      }
+    }));
+    let draftToken=null;
+    try{
+      draftToken=pt.prepareImperialB5N22(rawTicket);
+      const draft=pt.inspectImperialB5N22(draftToken);
+      return Bo(draft,presentation,options=>pt.commitImperialB5N22(draftToken,{
+        beforeNotify(state,owner){
+          options.beforeNotify(state,owner);
+          mountedB5UiN22=slot;
+          if(pair.mount(owner,state)!==true)throw new RangeError("Exact app B5 display/source handoff");
+          Pe?.setActive(true);
+        },
+        rollbackPresentation(error){
+          mountedB5UiN22=null;
+          try{pair.rollback(error);}finally{options.rollbackPresentation(error);}
+        },
+        checkPresentationRollback:()=>!mountedB5UiN22&&pair.restored()===true&&options.checkPresentationRollback()
+      }),true);
+    }finally{
+      __b5SessionTicketsN22.delete(rawTicket);
+      if(draftToken)pt.discardImperialB5N22(draftToken);
+    }
+  }
+  async function presentB5OrImperialN22(effect,scope){
+    const owner=pt.chapter4ImperialB5Host;
+    if(!owner)return presentImperialStockN21(effect,scope);
+    const slot=mountedB5UiN22,state=pt.state,epoch=pt.epoch,identity=pt.sessionIdentity,
+      current=()=>scope.isCurrent()&&pt.chapter4ImperialB5Host===owner&&pt.state===state&&pt.epoch===epoch&&
+        pt.sessionIdentity===identity&&slot===mountedB5UiN22;
+    if(slot?.identity!==identity||state?.pendingEffects?.[0]!==effect||!current())return false;
+    if(await mu(effect,scope)!==true||!current())return false;
+    slot.receipt=Object.freeze({state,epoch,effect,current});
+    return true;
+  }
   let imperialMountUiN20=null,imperialFieldResolverN20=null;
   function configureImperialFieldN21(resolver){
     if(imperialFieldResolverN20)throw new RangeError("One scoped Imperial field resolver only");
@@ -52914,7 +53416,7 @@ ${Jn}`
   n(mu, "present");
   let gr = vet({
     session: pt,
-    present: presentImperialStockN21,
+    present: presentB5OrImperialN22,
     schedule: we,
     onError: fu
   });
@@ -53313,8 +53815,9 @@ ${Jn}`
     (me("game-settings").setAttribute("aria-expanded", Ot), me("game-settings").disabled = Lr() !== null || Ot || !dc() && ($t || !We?.boardVisible || Ze?.phase !== "player" || Ze?.selection !== null || !!Ze?.pendingEffect || !!Ze?.canAdvance || !!Ze?.sourceChoice || !!Ze?.sourceConfirmation || pt.paused || cn || !!st || Nn), jd(Ze), Hu(Ze), Hi(Ze));
     let At = Ns(Ze);
     const imperialSuspendActiveN20=pt.chapter4ImperialSessionActive===true,imperialSuspendReadyN20=imperialSuspendActiveN20&&imperialWnCanAskN20(Ze);
-    me("game-suspend").disabled = imperialSuspendActiveN20?!imperialSuspendReadyN20:!At.suspend.ready;
-    const imperialSuspendReasonN20=imperialSuspendActiveN20?(imperialSuspendReadyN20?null:"須在演出完畢且沒有選取部隊的我方回合保存。"):At.suspend.reason;
+    const b5WnReadyN22=pt.chapter4ImperialB5Host?b5WnCanAskN22(Ze):null;
+    me("game-suspend").disabled = b5WnReadyN22!==null?!b5WnReadyN22:imperialSuspendActiveN20?!imperialSuspendReadyN20:!At.suspend.ready;
+    const imperialSuspendReasonN20=b5WnReadyN22!==null?(b5WnReadyN22?null:"須在演出完畢且沒有選取部隊的我方回合保存。"):imperialSuspendActiveN20?(imperialSuspendReadyN20?null:"須在演出完畢且沒有選取部隊的我方回合保存。"):At.suspend.reason;
     for (let yr of ["game-suspend", "map-suspend"]) (me(yr).setAttribute("title", imperialSuspendReasonN20 ?? "\u4FDD\u5B58\u4E2D\u65B7\u8A18\u9304"), me(yr).setAttribute("aria-label", imperialSuspendReasonN20 ? "\u4E2D\u65B7\uFF1A" + imperialSuspendReasonN20 : "\u4E2D\u65B7"));
     let rn = pt.inspectSave();
     (me("game-load").disabled = Le ? !0 : !rn.valid, me("game-new").disabled = Ct || Lr() !== null, me("game-save").disabled = Le ? !0 : !We, me("game-pause").disabled = !We || $t || cn || Lr() !== null, me("game-pause").textContent = pt.paused ? "\u518D\u958B" : "\u4E00\u6642\u505C\u6B62", me("game-lobby").hidden = !!We || !!Le, me("battle-workspace").hidden = $t || !We?.boardVisible, me("game-result").hidden = $t || !We?.settlement);
@@ -53606,7 +54109,38 @@ ${Jn}`
     },oo);
     return true;
   }
+
+  function b5WnCanAskN22(v=pt.choices()){
+    const owner=pt.chapter4ImperialB5Host,state=pt.state;
+    return !!owner&&!pt.chapter4ImperialB5NeedsRecovery&&!pt.paused&&!nr&&!cn&&!Ct&&!$t&&!Ot&&!st&&!Nn&&
+      state?.rulesVersion==="chapter4-imperial-yangping-private-1"&&state.currentMapIndex===10&&state.boardVisible===true&&
+      state.selection===null&&state.transaction===null&&state.terminal===null&&!state.pendingEffects.length&&!state.tasks.length&&
+      v?.phase==="player"&&v.selection===null&&!v.pendingEffect&&!v.canAdvance&&__b5StockWnN22?.warmReady(owner)===true;
+  }
+  function askB5WnN22(){
+    if(!b5WnCanAskN22())return false;
+    const owner=pt.chapter4ImperialB5Host,frame=owner.readMounted(),host=__b5StockWnN22,initial=Ur,get=j?.getItem;
+    let raw;try{raw=get.call(j,Wn);}catch{Vr("未能讀取中斷記錄，沒有保存。");return false;}
+    const current=()=>host===__b5StockWnN22&&owner===pt.chapter4ImperialB5Host&&owner.readMounted()===frame&&
+      frame?.isCurrent()===true&&j?.getItem===get&&Ur===initial+2&&b5WnCanAskN22();
+    Yn(raw===null?"要保存中斷記錄嗎？":"已有中斷記錄。要覆蓋嗎？",()=>{
+      if(!current())return;
+      const t=Object.freeze({});
+      try{
+       if(get.call(j,Wn)!==raw)return;
+       __b5WnActionN22.set(t,Object.freeze({kind:"stock-suspend-confirmed",owner,expectedRaw:raw,overwriteConfirmed:raw!==null,isCurrent:current}));
+       const saved=host.save(t,k=>__b5WnActionN22.get(k)??null);
+       if(saved?.saved!==true||get.call(j,Wn)!==saved.physicalText)throw new RangeError("Verified stock B5 Wn write");
+       __b5WnRawByOwnerN22.set(owner,saved.physicalText);
+       Nn=true;me("game-suspend-notice").hidden=false;me("game-suspend-ack").focus();
+       Vr("中斷記錄已保存。通常記錄 1–5 沒有變更。");ir();
+      }catch(e){Vr("未能確認保存中斷記錄。不會自動重試。");console.warn("Scoped B5 stock interruption refused",e);}
+      finally{__b5WnActionN22.delete(t);}
+    },oo);
+    return true;
+  }
   function s0() {
+    if(pt.chapter4ImperialB5Host){askB5WnN22();return;}
     if(pt.chapter4ImperialSessionActive===true){imperialAskWnN20();return;}
     let We = Ns();
     if (!We.suspend.ready) {
@@ -53963,6 +54497,7 @@ ${Jn}`
     },
     configureImperialFieldN21,
     mountImperialWnUiN20,
+    mountImperialB5N22,
     startChapter4ImperialBattle: startImperialBattleUiN20,
     session: pt,
     pump: gr,
@@ -56417,7 +56952,7 @@ ${Jn}`
       postChencangBundle: $
     }), Ur = Ju && !ra ? EB(Ju) : null;
 
-    let imperialAppBootN21=null;
+    let imperialAppBootN21=null,imperialB5BattleBootN22=null;
     if(typeof verifyImperialPreludeReceiptN21==="function"&&be&&he&&ot&&K?.inheritedOptions)try{
       const inherited=K.inheritedOptions;
       const materialize=(family,persistentState)=>family.engine.townDataFor(persistentState);
@@ -56452,6 +56987,18 @@ ${Jn}`
         readAsset:read,decodeImage,
         stockDrawUnit:be.drawUnit,stockTimeline:be.movementTimeline,stockEffects:be.offPlanner,systemDialogue:o
        }})),validateSuspendMap33Carry,validateCampaignAssets:validateImperialCampaignStockAssets});
+
+      try{
+       imperialB5BattleBootN22=await configureImperialB5BattleN22({read,validatePalaceCampaign:campaign=>validateImperialCampaignStockAssets({campaign}),
+        priorMap43Assets:assets.aftermathData({entityTemplates:[],statsRules:assets.statsRules,movementProfiles:assets.movementProfiles},{entries:[]}),
+        presentation:{
+         inheritedPresentation:{pack:be.pack,describeHeldItem:ot.itemDescriptions.battle,
+          itemName:id=>assets.statsRules.itemDefinitions.find(r=>r.definitionId===id)?.nameJa,
+          activateLocale(){const old=xh();Qc(_.get("qishan-map33"));return ()=>Qc(old);}},
+         prepareInherited:()=>Ji.prepare("qishan-map33"),decodeImage,
+         stockDrawUnit:be.drawUnit,stockTimeline:be.movementTimeline,stockEffects:be.offPlanner,systemDialogue:o
+        }});
+      }catch(e){console.warn("Scoped B5 tactical stock initialization refused",e);}
       setImperialPreludeFramesN21(frames);
       if(!activateImperialPreludeBootN21())throw new RangeError("Exact original source and renderer did not enroll");
     }catch(error){imperialAppBootN21=null;console.warn("Scoped Imperial stock boot refused",error);}
@@ -56528,7 +57075,7 @@ ${Jn}`
         };
       }, "continuationFromSave")
     }, Wi = zZe({
-      imperialAppBootN21,
+      imperialB5BattleBootN22,imperialAppBootN21,
       map46PrivateHost: Object.freeze({
         media:()=>({
           readBytes:async path=>{const response=await __map45FetchW15("./"+path);if(!response.ok)throw new RangeError("Exact Map46 data unavailable: "+path);return new Uint8Array(await response.arrayBuffer());},
