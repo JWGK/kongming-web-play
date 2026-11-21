@@ -1,4 +1,4 @@
-import {configureImperialB6Battle as configureImperialB6BattleN23} from "./imperial-baidi/battle.mjs?v=0.73.15-imperial-baidi";
+import {configureImperialB6Battle as configureImperialB6BattleN23} from "./imperial-baidi/battle.mjs?v=0.73.16-facing-fix";
 import {WEI as __imperialBaidiTrialN23} from "./imperial-yangping/story.mjs?v=0.73.15-shared-branches";
 let __b6StockWnN23=null,__b6ColdWnN23=null;
 const __b6WnActionN23=new WeakMap(),__b6WnRawByOwnerN23=new WeakMap();
