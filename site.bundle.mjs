@@ -38621,9 +38621,79 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       __map46MountingW31=false;
     }
   }
-  function __map46ManualRawW32(slot){
+/** Read-only presentation memo: not a persistence or verification API. */
+function makeTitleDisplayMemoR21() {
+ const rows=new Map();let frontier=null;const same=(a,b)=>a.length===b.length&&a.every((v,i)=>v===b[i]);
+ const slotOk=i=>Number.isInteger(i)&&i>=1&&i<=5;
+ const frozen=Object.freeze, empty=null;
+ function follow(identity){
+  if(!Array.isArray(identity)||identity.length===0){rows.clear();frontier=null;return;}
+  if(frontier&&same(frontier,identity))return;
+  rows.clear();frontier=frozen([...identity]);
+ }
+ function forget(slot){if(slotOk(slot)) rows.delete(slot);}
+ function read({slot,raw,identity,isCurrent,inspect}){
+  if(!slotOk(slot)||typeof raw!=='string'||raw.length>2_000_533||
+      !Array.isArray(identity)||identity.length===0||typeof isCurrent!=='function'||
+      typeof inspect!=='function'||isCurrent()!==true){forget(slot);return empty;}
+  follow(identity);
+  const last=rows.get(slot);
+  if(last?.raw===raw&&same(last.identity,identity))return last.value;
+  forget(slot);
+  const trial=inspect();
+  if(isCurrent()!==true)return empty;
+  // Project labels and display state only, no engine/source/codec receipt.
+  const value=trial?.exists===true&&trial.pending===true&&trial.valid===false&&
+    typeof trial.labelJa==='string'&&trial.labelJa.length<=192?
+    frozen({exists:true,pending:true,valid:false,labelJa:trial.labelJa}):empty;
+  rows.set(slot,frozen({raw,identity:frozen([...identity]),value}));
+  return value;
+ }
+ return frozen({read,forget,retire:()=>follow(null)});
+}
+// Header slicing is a narrow allowlist only, never an actual save admission.
+function isScopedTitleMemoEnvelopeR21(raw) {
+ const outer='KONGMING-DISPLAY-STATS/1\n';
+ if(typeof raw!=='string'||raw.length>2_000_533||!raw.startsWith(outer))return false;
+ const sep=raw.indexOf('\n',outer.length);
+ if(sep<outer.length+1||sep>outer.length+3)return false;
+ const digits=raw.slice(outer.length,sep);
+ if(!/^[1-9][0-9]{0,2}$/.test(digits))return false;
+ const n=Number(digits),at=sep+1+n;
+ if(n>512||at>=raw.length)return false;
+ return [
+  'KONGMING-CH4-SHARED-PRECHOICE-NATIVE-MANUAL/1\n',
+  'KONGMING-CH4-IMPERIAL-PRELUDE-ENTRANCE-MANUAL/1\n',
+  'KONGMING-CH4-IMPERIAL-PRELUDE-PALACE-MANUAL/1\n'
+ ].some(head=>raw.startsWith(head,at));
+}
+
+  const __kmTitleDisplayMemoR21=makeTitleDisplayMemoR21();
+  function __kmReadImperialTitleDisplayR21(slot,raw){
+    if(!isScopedTitleMemoEnvelopeR21(raw)){
+      __kmTitleDisplayMemoR21.forget(slot);
+      return readImperialPreludeColdN21(raw)?.meta??null;
+    }
+    if(!imperialPreludeColdBankN21||!Number.isInteger(slot)||slot<1||slot>5)return null;
+    try{
+      const physical=b,get=physical.getItem,root=A,session=u.session,owner=session.sessionIdentity,
+       epoch=session.epoch,host=session.qishanMap33Host,source=host?.imperialManualSourceN21,
+       hostEpoch=host?.ownershipEpoch,bank=source&&imperialPreludeColdBankN21(host,source),title=bank?.title,
+       issuer=imperialPreludeColdBankN21;
+      if(typeof get!=="function"||typeof title!=="function"){__kmTitleDisplayMemoR21.forget(slot);return null;}
+      const key=ga(slot);
+      const isCurrent=()=>A===root&&u.session===session&&session.sessionIdentity===owner&&session.epoch===epoch&&
+       session.qishanMap33Host===host&&host.ownershipEpoch===hostEpoch&&host.imperialManualSourceN21===source&&
+       imperialPreludeColdBankN21===issuer&&issuer(host,source)===bank&&bank.title===title&&b===physical&&
+       physical.getItem===get&&get.call(physical,key)===raw;
+      const identity=[root,physical,get,session,owner,epoch,host,hostEpoch,source,issuer,bank,title,qr];
+      return __kmTitleDisplayMemoR21.read({slot,raw,identity,isCurrent,
+       inspect:()=>readImperialPreludeColdN21(raw)?.meta??null});
+    }catch{__kmTitleDisplayMemoR21.forget(slot);return null;}
+  }
+  function __map46ManualRawW32(slot,display=false){
     if(!Number.isInteger(slot)||slot<1||slot>5||!b?.getItem)return null;
-    try{const raw=b.getItem(ga(slot));return typeof raw==="string"&&(readImperialPreludeColdN21(raw)!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
+    try{const raw=b.getItem(ga(slot));if(display&&typeof raw!=="string")__kmTitleDisplayMemoR21.forget(slot);return typeof raw==="string"&&((display?__kmReadImperialTitleDisplayR21(slot,raw):readImperialPreludeColdN21(raw))!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
   }
   function __map46MetadataW32(kind,slot,origin){
     if(!["title-presence","title-records"].includes(origin))return null;
@@ -38638,7 +38708,8 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
      if(status)return Object.freeze({exists:true,pending:status.phase==="pending",valid:status.phase==="admitted",labelJa:"華山之戰"});
     }
     if(kind==="slot"){
-     const raw=__map46ManualRawW32(slot);if(!raw){__map46ManualLabelsW32.delete(slot);return null;}
+     const raw=__map46ManualRawW32(slot,true);if(!raw){__map46ManualLabelsW32.delete(slot);return null;}
+     const __confirmedScopedTitleR21=isScopedTitleMemoEnvelopeR21(raw)?__kmReadImperialTitleDisplayR21(slot,raw):null;if(__confirmedScopedTitleR21)return __confirmedScopedTitleR21;
      const cached=__map46ManualLabelsW32.get(slot);if(cached?.raw===raw)return cached.meta;
 
      if(__imperialYangpingStoryN22?.claims(raw)===true){
@@ -38649,7 +38720,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       __map46ManualLabelsW32.set(slot,{raw,meta:m});return m;
      }
      const imperialPost=__imperialAftermathN21?.metadata(raw);if(imperialPost){__map46ManualLabelsW32.set(slot,{raw,meta:imperialPost});return imperialPost;}
-     const imperialPrelude=readImperialPreludeColdN21(raw);if(imperialPrelude){__map46ManualLabelsW32.set(slot,{raw,meta:imperialPrelude.meta});return imperialPrelude.meta;}
+     const imperialPrelude=__kmReadImperialTitleDisplayR21(slot,raw);if(imperialPrelude)return imperialPrelude;
      const historical=__kmHistoricalTitleN20.get(A)?.metadata(raw);
      if(historical){__map46ManualLabelsW32.set(slot,{raw,meta:historical});return historical;}
      if(__kmLuoyangTwoStockW35.hint(raw)==="manual"){
@@ -38958,6 +39029,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     let x = A.chapterId === "chapter5-changan" && A.view.stage === "held-block4", D = x && u.session.canContinueChapter5ChanganSource === !0, Ae = x ? A.chapter5WugongContinuationNotice : null, ie = A.chapterId === "chapter4-wuzhang" && A.view.stage === "held-block14", pe = ie && u.session.canContinueChapter4WuzhangSource === !0, Ve = ie ? A.chapter5ChanganContinuationNotice : null, at = A.chapterId === "chapter4-hulugu" && A.view.stage === "held-block10", mt = at && u.session.canContinueChapter4HuluguSource === !0, _t = at ? A.chapter4WuzhangContinuationNotice : null, Gt = A.chapterId === "chapter4-post-qishan" && A.view.stage === "held-block6", gn = Gt && u.session.canContinueChapter4PostQishanSource === !0, Ut = A.chapterId === "qishan-map33" && A.view.stage === "held-next-section", yn = Ut && u.session.canContinueQishanMap33Source === !0, In = Ut ? A.chapter4PostQishanContinuationNotice : null, sn = qe;
     (qe = !1, sn && Te !== null && Wh(se), Zn?.current() || Qr());
     let Kt = A.view, pn = fL(), hr = !1;
+    if(Kt.standaloneTitle!==true||!["menu","loadSlots","deleteSlots"].includes(Kt.stage))__kmTitleDisplayMemoR21.retire();
     if (Bt) {
       let xt = !1;
       try {
@@ -39112,8 +39184,8 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
           labelJa: ((["chapter5-section2-town", "chapter5-second-changan-return", "chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source", "chapter5-jianning-return", "chapter5-jiangling-return", "chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-jianning", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-baxi", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-chengdu-defense-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-chengdu-defense-return", "chapter5-changan-return", "chapter5-chengdu-defense", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) ? Pe(xt.definitionIndex, Kt) : null)?.nameJa ?? u.characterPresentation?.(xt.definitionIndex)?.nameJa) ?? xt.labelJa
         }) : Xye(xt));
         (qt.type = "button", typeof xt.selected == "boolean" && (qt.className = "entry-deployment-choice"), qt.disabled = Ce || (!xt.enabled&&!(xt.id==="yes"&&checkImperialManualWarmN21(Kt))) || hr || xt.id==="resume" && !!__pendingBaidiWnRefreshW19 || (__baidiTownCurrentW24() || __baidiPostCurrentW24()&&!__baidiPostBankReadyW19()) && Kt.stage==="manual-prompt" && xt.id==="yes", qt.setAttribute("aria-pressed", Kye(xt, Kt.selection)));
-        if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&readImperialPreludeColdN21(__map46ManualRawW32(xt.slot)))qt.disabled=Ce||hr||imperialPreludeColdReadN21!==null;
-        if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__map46ManualRawW32(xt.slot)){qt.classList.add("record-metadata-label");qt.textContent=xt.slot+"："+__map46MetadataW32("slot",xt.slot,"title-records").labelJa;}
+        if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__kmReadImperialTitleDisplayR21(xt.slot,__map46ManualRawW32(xt.slot,true)))qt.disabled=Ce||hr||imperialPreludeColdReadN21!==null;
+        if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__map46ManualRawW32(xt.slot,true)){qt.classList.add("record-metadata-label");qt.textContent=xt.slot+"："+__map46MetadataW32("slot",xt.slot,"title-records").labelJa;}
         let zn = {
           signature: ea
         };
