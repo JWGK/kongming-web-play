@@ -38691,9 +38691,29 @@ function isScopedTitleMemoEnvelopeR21(raw) {
        inspect:()=>readImperialPreludeColdN21(raw)?.meta??null});
     }catch{__kmTitleDisplayMemoR21.forget(slot);return null;}
   }
+function __kmPlainStockManualDisplayR22(raw){
+    // Presence routing only. Never yields metadata or a Load/admission witness.
+    if(typeof raw!=="string"||!raw.startsWith(ac)||raw.length>2000512+ac.length+4)return false;
+    const split=raw.slice(ac.length,ac.length+4).indexOf("\n");
+    if(split<1)return false;
+    const digits=raw.slice(ac.length,ac.length+split);
+    if(!/^[1-9][0-9]{0,2}$/.test(digits))return false;
+    const n=Number(digits),hs=ac.length+split+1,at=hs+n;
+    if(n>512||at>=raw.length||raw.length-at>2e6)return false;
+    let h;
+    const header=raw.slice(hs,at);
+    try{h=JSON.parse(header);}catch{return false;}
+    if(!h||Object.keys(h).join(",")!=="version,innerCodeUnits,channel,turns,checksum"||
+       h.version!==1||h.innerCodeUnits!==raw.length-at||h.channel!=="manual"||
+       !(h.turns===null||Number.isInteger(h.turns)&&h.turns>=0&&h.turns<=65535)||
+       typeof h.checksum!=="string"||!/^[0-9a-f]{8}$/.test(h.checksum)||JSON.stringify(h)!==header)return false;
+    if(raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n"))return false;
+    return raw.startsWith('{"version":1,"kind":"entry","battleSettings":',at)||
+           raw.startsWith('{"version":1,"kind":"battle","rulesVersion":',at);
+  }
   function __map46ManualRawW32(slot,display=false){
     if(!Number.isInteger(slot)||slot<1||slot>5||!b?.getItem)return null;
-    try{const raw=b.getItem(ga(slot));if(display&&typeof raw!=="string")__kmTitleDisplayMemoR21.forget(slot);return typeof raw==="string"&&((display?__kmReadImperialTitleDisplayR21(slot,raw):readImperialPreludeColdN21(raw))!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
+    try{const raw=b.getItem(ga(slot));if(display&&(typeof raw!=="string"||__kmPlainStockManualDisplayR22(raw))){__kmTitleDisplayMemoR21.forget(slot);return null;}return typeof raw==="string"&&((display?__kmReadImperialTitleDisplayR21(slot,raw):readImperialPreludeColdN21(raw))!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
   }
   function __map46MetadataW32(kind,slot,origin){
     if(!["title-presence","title-records"].includes(origin))return null;
