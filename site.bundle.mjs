@@ -26827,6 +26827,12 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
       consume: !0
     });
     lt(ge || Sc(Fe), "Authenticated detached source checkpoint required");
+    // Prime the exact detached Chengdu-to-Fengming holder before the display-load
+    // commit publishes it. That publication may read its already-proved view.
+    if (ge === !0 && Fe.phase === "story" && Fe.descriptor.id === "chengdu-interlude") {
+      let pending = Fe.controller.view.pendingNextContext;
+      if (pending && _2(pending) === "3:1:0" && se.get("3:1:0")?.descriptor.id === "fengming") mn(Fe);
+    }
     let Be = he, Pt = Re, Lt = nt, gt = !1, It = !1, zt, Qt;
     return a4(() => {
       lt(!It && (gt ? he === Fe && Re === zt && nt === Qt : he === Be && Re === Pt && nt === Lt), "Stale source restore");
