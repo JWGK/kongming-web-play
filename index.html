@@ -7,14 +7,14 @@
   <meta name="description" content="依日文 GBA 原作資料重製的繁體中文瀏覽器戰棋遊戲。保留劇情路線與手動存檔，內容持續更新。">
   <title>三國志孔明傳 — 繁體中文網頁版</title>
   <link rel="stylesheet" href="./style.css?v=0.73.23-town-item-display">
-  <script type="module" src="./site.bundle.mjs?v=0.73.23-town-item-display"></script>
+  <script type="module" src="./site.bundle.mjs?v=0.73.25-fengming-aftermath-load"></script>
 <style>.save-transfer{margin:1rem 0;padding:1rem;border:1px solid #7d725a;border-radius:.5rem}.save-transfer summary{cursor:pointer;min-height:44px;display:flex;align-items:center}.save-transfer button,.save-transfer select,.save-transfer input[type=file]{min-height:44px;max-width:100%;margin:.35rem}.save-transfer p{white-space:pre-wrap;overflow-wrap:anywhere}.save-transfer section{padding:1rem;border:1px solid #7d725a}.save-transfer label{display:block}.save-transfer input[type=checkbox]{width:24px;height:24px;vertical-align:middle}</style>
 </head>
 <body>
   <a class="skip-link" href="#battle-view">前往遊戲畫面</a>
   <header class="site-header">
     <div class="brand"><span class="seal" aria-hidden="true">孔明</span><span>三國志孔明傳<small>瀏覽器版・開發試作</small></span></div>
-    <span class="version">開發版 <strong>0.73.24</strong></span>
+    <span class="version">開發版 <strong>0.73.25</strong></span>
   </header>
   <main>
     <details class="battle-scope" id="original-item-notes" style="font-size:.875rem;margin:0 0 1rem" aria-label="原作道具補充說明"><summary>原作道具補充說明</summary><p>以下只供查閱原作資料，沒有新增這四件道具的取得途徑或遊戲效果。</p><dl><dt><strong>連弩</strong></dt><dd>弩類武器。原作攻擊力＋15。</dd><dt><strong>方士服</strong></dt><dd>布衣類防具。原作防禦力＋20。</dd><dt><strong>大山嵐之書</strong></dt><dd>原作的戰場消耗品，以岩石攻擊範圍內多支敵軍部隊。每次使用消耗一本。</dd><dt><strong>大洪水之書</strong></dt><dd>原作的戰場消耗品，以激流攻擊範圍內多支敵軍部隊。每次使用消耗一本。</dd></dl></details>
@@ -61,7 +61,7 @@
       </div>
       <details class="battle-scope"><summary>關於此瀏覽器版</summary><p>本版保留既有主線、分支、設定及記錄。建寧兩條路線均經白帝城軍營、軍議、原作出征確認與武將編成進入江陵。江陵勝利後接續原作劇情，第一次手動記錄後可繼續吳蜀軍議、辭別、出發及司馬懿政變。終章巴西之戰Ⅱ戰後可接續白帝城軍議與建業宮廷，經原作手動記錄後，兩條戰法均可繼續白帝城之戰的出征確認、武將編成與戰場。白帝城支援我軍回合中斷及標題續玩；勝利後可從原作手動記錄繼續江陵軍議，經白帝城軍營與武將編成，與建寧路線匯合至同一場江陵之戰。兩條主線均保留各自的部隊、道具與劇情狀態，支援江陵戰中中斷及標題續玩，勝利後可由原作第一次手動記錄繼續吳蜀軍議、辭別與出發段落，再接司馬懿政變，停於政變後第一個原作手動記錄；沒有自動存檔。入蜀巴西之戰與終章巴西之戰Ⅱ為不同戰役。除原作提示的手動記錄外，可在支援的戰場中斷，並從標題繼續。五格手動記錄與中斷記錄互相獨立；不會自動儲存遊戲進度。返回標題或重新載入可能失去未保存進度。</p><p id="game-fidelity">使用原作的地形、部隊、頭像、對話與已製作的音樂。街亭、與司馬懿決戰及渭水戰場所需的原作第3號背景音樂尚待製作，相關場景不以其他音樂替代，音效仍可播放。繁體中文對話已加入，原作部分文字強調與色彩尚未完整重現。演出時間及亂數消耗並非逐幀重現原作。開始遊戲時由瀏覽器產生亂數種子，並隨明確儲存的記錄保留。音效使用原作音源樣本，但音量、殘響等混音處理並不完全相同。記錄只儲存在此裝置的瀏覽器內。</p><button id="game-delete-save" type="button" hidden class="text-button">刪除中斷記錄</button></details>
     </section>
-    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・0.73.24・新增4件原作道具補充說明</p></footer>
+    <footer class="site-footer"><p class="footer-note">非官方瀏覽器重製版・0.73.25・修正鳳鳴山戰後祁山存檔讀取</p></footer>
   </main>
 </body>
 </html>
