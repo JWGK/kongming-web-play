@@ -3,12 +3,10 @@ import {applyFamily26RankPromotion} from './rank-promotion.mjs';
 import {applyFamily27ClassChange} from './class-change.mjs';
 import {drawOriginalRandom,calculateHealingExperience,applyExperience} from './combat.mjs';
 import {UnsupportedRuleError} from './abilities.mjs';
-import {calculateTroopHealing,strategyTargets,resolveStrategyAction} from './strategies.mjs';
+import {calculateTroopHealing,strategyTargets,resolveStrategyAction,itemStrategies} from './strategies.mjs?v=0.73.29-item-rules';
 import {enumerateTargets} from './targeting.mjs';
 import {captureActionPresentation} from './action-presentation.mjs';
 function int(v,min,max,label){if(!Number.isSafeInteger(v)||v<min||v>max)throw new RangeError(label);return v;}
-const ITEM_STRATEGIES=Object.freeze({128:0,129:1,130:2,131:3,134:6,135:7,136:8,137:9,138:10,140:12,141:13,142:14,143:15,144:16,146:18,147:19,148:23,149:24,150:25,151:26,152:27,153:28,154:29,155:30,156:31,157:32,158:33,159:34,160:35,161:36,162:37,164:41,165:43,166:44,167:45,168:46,169:47,170:48,171:49,173:51});
-const itemStrategies=physicalProfile=>['jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile)?{...ITEM_STRATEGIES,132:4,133:5,163:38,174:52}:['fengming','nanan-tianshui','jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile)?{...ITEM_STRATEGIES,132:4,133:5,174:52}:physicalProfile==='panshegu'?{...ITEM_STRATEGIES,132:4,133:5}:physicalProfile==='taohuashui'?{...ITEM_STRATEGIES,132:4}:ITEM_STRATEGIES;
 export function implementedConsumableDefinitionIds({physicalProfile=null}={}){return Object.freeze([...Object.keys(itemStrategies(physicalProfile)).map(Number),...(['jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile)?[177,179]:physicalProfile==='nanan-tianshui'?[179]:[]),175,176,178,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194].sort((a,b)=>a-b));}
 export function consumableTargets({actor,units,width,height,inventoryIndex,rules,physicalProfile=null}){
  const dispatch=itemStrategies(physicalProfile);
