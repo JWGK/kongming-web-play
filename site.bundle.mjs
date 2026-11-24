@@ -29197,7 +29197,7 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
       }
       return !0;
     }, "sameMethods");
-    return () => Ve() && ie.getItem.call(b, Ae) === pe && Ve();
+    return Object.assign(() => Ve() && ie.getItem.call(b, Ae) === pe && Ve(), {occupied: pe !== null});
   }
   n(so, "physicalSlotOwner");
   function Cc({slots: x = !1, sourceCheckpoint: D = !0} = {}) {
@@ -30531,8 +30531,8 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
         const slot = v.request.slot, check = Cc({
           sourceCheckpoint: true
         }), row = T.displaySlots().find(r => r.slot === slot);
-        const write = () => mo(slot, check, !!row?.meta);
-        row?.meta ? Ja('記錄 ' + slot + ' 已有資料，要覆寫嗎？', write) : write();
+        const write = confirmed => mo(slot, check, confirmed);
+        confirmSlotMutation(slot, !!row?.meta, '記錄 ' + slot + ' 已有資料，要覆寫嗎？', write);
       }
       return ok;
     })() : A.chapterId === "chapter5-second-changan-return" ? Ds("choose", x, D => A.choose(x, D)) : Ds("confirm", x, D => A.confirm(x, D)) : !1, {
@@ -37436,7 +37436,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
         }
       }, "write");
       Ve ? Ja(`\u8A18\u9332 ${pe} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, at) : at();
-    } else Ae === "delete" && Ja(`\u8A18\u9332 ${pe} \u3092\u524A\u9664\u3057\u307E\u3059\u3002\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002`, () => {
+    } else Ae === "delete" && confirmSlotMutation(pe, true, `\u8A18\u9332 ${pe} \u3092\u524A\u9664\u3057\u307E\u3059\u3002\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002`, () => {
       if (D()) try {
         (T.remove(pe), fr(), A.refresh(), u.render());
       } catch (at) {
@@ -40579,6 +40579,31 @@ function __kmPlainStockManualDisplayR22(raw){
     }
   }
   n(X1, "openSlots");
+  function confirmSlotMutation(slot, occupied, prompt, operation, clearsSuspend = false) {
+    try {
+      const sameSlot = so("slot", slot);
+      const sameSuspend = clearsSuspend ? so("quick") : null;
+      const run = () => {
+        try {
+          if (!sameSlot() || (occupied && !sameSlot.occupied) || (sameSuspend && !sameSuspend())) {
+            const message = "記錄已變更。請重新選擇記錄槽，再確認操作。";
+            if (Te !== null) Wh();
+            else A.refresh();
+            u.storageMessage(message);
+            j("entry-error").hidden = false;
+            j("entry-error").textContent = message;
+            return;
+          }
+          return operation(sameSlot.occupied);
+        } catch (error) {
+          ma(error);
+        }
+      };
+      return sameSlot.occupied ? Ja(prompt, run) : run();
+    } catch (error) {
+      ma(error);
+    }
+  }
   function Wh(x = null) {
     let D = Cc({
       slots: !0,
@@ -40601,29 +40626,29 @@ function __kmPlainStockManualDisplayR22(raw){
           }, "run");
           u.session.state ? Ja("\u3053\u306E\u8A18\u9332\u3092\u8AAD\u307F\u8FBC\u307F\u307E\u3059\u3002\u672A\u4FDD\u5B58\u306E\u9032\u884C\u306F\u5931\u308F\u308C\u307E\u3059\u3002", at) : at();
         } else if (Te === "save" && A.chapterId === "chapter5-wugong-selection") {
-          let at = n(() => Eg(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => Eg(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && A.chapterId === "chapter5-kongming-return") {
-          let at = n(() => Ho(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => Ho(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && A.chapterId === "chapter5-jianning-route") {
-          let at = n(() => i0(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => i0(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && w5(A.chapterId)&&!__baidiPostCurrentW24()) {
-          let at = n(() => mo(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => mo(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && (dg(A.chapterId)||__baidiPostCurrentW24())) {
-          let at = n(() => wp(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => wp(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && A.chapterId === "chapter5-chengdu-defense-return") {
-          let at = n(() => Py(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => Py(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && A.chapterId === "chapter5-changan-return") {
-          let at = n(() => vp(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => vp(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save" && A.chapterId === "chapter5-wugong-aftermath") {
-          let at = n(() => g0(ie, D, !!pe), "write");
-          pe ? Ja(`\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at) : at();
+          let at = n(confirmed => g0(ie, D, confirmed), "write");
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9304 ${ie} \u5DF2\u6709\u8CC7\u6599\uFF0C\u8981\u8986\u5BEB\u55CE\uFF1F`, at);
         } else if (Te === "save") {
           let at = n(() => {
             if (D()) try {
@@ -40637,8 +40662,8 @@ function __kmPlainStockManualDisplayR22(raw){
               ma(mt);
             }
           }, "write");
-          pe ? Ja(`\u8A18\u9332 ${ie} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, at) : at();
-        } else Ja(`\u8A18\u9332 ${ie} \u3092\u524A\u9664\u3057\u307E\u3059\u3002\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002`, () => {
+          confirmSlotMutation(ie, !!pe, `\u8A18\u9332 ${ie} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, at, true);
+        } else confirmSlotMutation(ie, !!pe, `\u8A18\u9332 ${ie} \u3092\u524A\u9664\u3057\u307E\u3059\u3002\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002`, () => {
           if (D()) try {
             (T.remove(ie), fr(), ["jieting", "hanzhong-retreat", "hanzhong-retreat-camp", "hanzhong-retreat-judgment", "chapter4-intro", "chapter4-high-intro", "chapter4-high-education", "high-post-chencang", "post-chencang", "chapter4-high-camp", "chapter4-education", "chapter4-camp", "chencang", "high-chencang", "second-chencang"].includes(A.chapterId) || ["jieting-engine-1", "hanzhong-retreat-engine-1"].includes(u.session.state?.rulesVersion) ? (A.refresh(), Wh(), u.render()) : (Wh(), u.render(), A.refresh()));
           } catch (at) {
