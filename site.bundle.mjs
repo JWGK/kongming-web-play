@@ -40395,9 +40395,11 @@ function __kmPlainStockManualDisplayR22(raw){
     let Kt = dse(), pn = Kt?.current ?? Cc(), hr = n(() => {
       pn() && Ri();
     }, "reset");
-    u.session.state || u.session.inspectSave().exists ? Ja("\u30BF\u30A4\u30C8\u30EB\u306B\u623B\u308A\u307E\u3059\u3002\u672A\u4FDD\u5B58\u306E\u9032\u884C\u306F\u5931\u308F\u308C\u307E\u3059\u3002\u4FDD\u5B58\u6E08\u307F\u306E\u8A18\u9332\u306F\u5909\u66F4\u3057\u307E\u305B\u3093\u3002", hr, Kt ? {
-      onNo: Kt.cancel
-    } : {}) : hr();
+    const hasEntryProgress = ue && $e && A.view.standaloneTitle !== true;
+    hasEntryProgress || u.session.state || u.session.inspectSave().exists ? Ja("\u30BF\u30A4\u30C8\u30EB\u306B\u623B\u308A\u307E\u3059\u3002\u672A\u4FDD\u5B58\u306E\u9032\u884C\u306F\u5931\u308F\u308C\u307E\u3059\u3002\u4FDD\u5B58\u6E08\u307F\u306E\u8A18\u9332\u306F\u5909\u66F4\u3057\u307E\u305B\u3093\u3002", hr, {
+      defaultNo: hasEntryProgress,
+      onNo: Kt?.cancel
+    }) : hr();
   }
   n(CL, "restart");
   function tA() {
