@@ -13,6 +13,21 @@ const SHA='acf307942c7dc645cbf66ae13127437de146a2c3ce89d68a55003509f2e97511';
 function int(v,min,max,label){if(!Number.isSafeInteger(v)||v<min||v>max)throw new RangeError(label);return v;}
 function rulesOf(r){if(r?.purpose!=='private_static_strategy_rules'||r.sourceSha256!==SHA||r.strategies?.length!==56)throw new TypeError('Validated strategy rules required');return r;}
 function strategy(r,index){rulesOf(r);return r.strategies[int(index,0,55,'strategyIndex')];}
+const ITEM_STRATEGIES = Object.freeze({
+ 128:0, 129:1, 130:2, 131:3, 134:6, 135:7, 136:8, 137:9, 138:10, 139:11,
+ 140:12, 141:13, 142:14, 143:15, 144:16, 145:17, 146:18, 147:19,
+ 148:23, 149:24, 150:25, 151:26, 152:27, 153:28, 154:29, 155:30, 156:31, 157:32, 158:33,
+ 159:34, 160:35, 161:36, 162:37, 164:41, 165:43, 166:44, 167:45, 168:46, 169:47, 170:48, 171:49, 173:51
+});
+export function itemStrategies(physicalProfile) {
+ if (['jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile))
+  return {...ITEM_STRATEGIES,132:4,133:5,163:38,174:52};
+ if (physicalProfile === 'fengming' || physicalProfile === 'nanan-tianshui')
+  return {...ITEM_STRATEGIES,132:4,133:5,174:52};
+ if (physicalProfile === 'panshegu') return {...ITEM_STRATEGIES,132:4,133:5};
+ if (physicalProfile === 'taohuashui') return {...ITEM_STRATEGIES,132:4};
+ return ITEM_STRATEGIES;
+}
 export function learnedStrategies({unit,rules}){
  const c=int(unit.classIndex,0,39,'classIndex'),lv=int(unit.level,0,255,'Lv'),sp=int(unit.strategyPoints,0,0x7fffffff,'策略値');
  return Object.freeze(rulesOf(rules).strategies.filter(s=>s.requiredLevelByClass[c]>0&&s.requiredLevelByClass[c]<=lv).map(s=>Object.freeze({strategyIndex:s.strategyIndex,nameJa:s.nameJa,spCost:s.spCost,rangeCode:s.rangeCode,usable:(unit.status26&4)===0&&sp>=s.spCost})));
@@ -102,8 +117,7 @@ export function resolveStrategyAction({units,actorSlot,targetSlot,strategyIndex,
  for(const u of [actor,target])if(!u||u.state15!==2||!u.position||u.troops<=0)throw new RangeError('Actor and target must be alive and on-grid');
  const itemMode=itemUse!==null;let s;
  if(itemMode){
-  const map={128:0,129:1,130:2,131:3,134:6,135:7,136:8,137:9,138:10,140:12,141:13,142:14,143:15,144:16,146:18,147:19,148:23,149:24,150:25,151:26,152:27,153:28,154:29,155:30,156:31,157:32,158:33,159:34,160:35,161:36,162:37,164:41,165:43,166:44,167:45,168:46,169:47,170:48,171:49,173:51};
-  if(['taohuashui','panshegu','fengming','nanan-tianshui','jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile))map[132]=4;if(['panshegu','fengming','nanan-tianshui','jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile))map[133]=5;if(['fengming','nanan-tianshui','jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile))map[174]=52;if(['jicheng','qishan','xiping','jieting','hanzhong-retreat','chencang','second-chencang'].includes(physicalProfile))map[163]=38;
+  const map=itemStrategies(physicalProfile);
   const index=int(itemUse.inventoryIndex,3,12,'item inventory index'),slot=actor.itemSlots?.[index];
   const instance=actor.statsSource?.itemInstances?.find(x=>x.slotId===slot);
   if(!instance||instance.definitionId!==itemUse.definitionId||map[itemUse.definitionId]!==strategyIndex)throw new TypeError('Verified carried item dispatch required');
