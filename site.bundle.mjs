@@ -57345,7 +57345,7 @@ ${Jn}`
       }) : null,
       bundle: Te
     }), __baidiLiveW18 = await __kmMap45BaidiAppReadinessW18({
-      bundle: $e, inheritedOptions: K.inheritedOptions, nativeDefinitionCatalog: h, fetch: __map45FetchW15,
+      bundle: $e, inheritedOptions: K?.inheritedOptions, nativeDefinitionCatalog: h, fetch: __map45FetchW15,
       getSession: () => Xn.session,
       // The router has no Baidi Map45 publication protocol yet. Keep both
       // capabilities sealed; boot does not load town media or expose Continue.
