@@ -39054,6 +39054,22 @@ function __kmPlainStockManualDisplayR22(raw){
       console.warn("Map46 exact title read refused",e);
     }finally{__map46MountingW31=false;}
   }
+  let renderedEntryStage = null;
+  function availableEntryButton(button) {
+    return button?.isConnected && !button.disabled && !button.closest("[hidden], [inert]");
+  }
+  function focusEntryAfterRender(previousButton, preferredOption) {
+    if (!previousButton || availableEntryButton(previousButton)) return;
+    const buttons = [preferredOption, ...et.values(), j("entry-next"), j("entry-skip"), j("entry-back")];
+    const target = buttons.find(availableEntryButton);
+    if (!target) return;
+    // Focusing an option can change the selection. Let the current game action finish first.
+    queueMicrotask(() => {
+      if (t.activeElement?.tagName !== "BODY" && t.activeElement !== previousButton) return;
+      if (Ce || Te || un || !j("game-confirmation").hidden || !j("game-settings-panel").hidden) return;
+      if (availableEntryButton(target) && !availableEntryButton(previousButton)) target.focus();
+    });
+  }
   function Cn() {
     if(__imperialAftermathTransitionN21||__imperialAftermathN21?.isActive()||__imperialYangpingStoryN22?.isActive())return;
     enrollHistoricalN20();
@@ -39101,7 +39117,12 @@ function __kmPlainStockManualDisplayR22(raw){
     if (ot || Le) return;
     let x = A.chapterId === "chapter5-changan" && A.view.stage === "held-block4", D = x && u.session.canContinueChapter5ChanganSource === !0, Ae = x ? A.chapter5WugongContinuationNotice : null, ie = A.chapterId === "chapter4-wuzhang" && A.view.stage === "held-block14", pe = ie && u.session.canContinueChapter4WuzhangSource === !0, Ve = ie ? A.chapter5ChanganContinuationNotice : null, at = A.chapterId === "chapter4-hulugu" && A.view.stage === "held-block10", mt = at && u.session.canContinueChapter4HuluguSource === !0, _t = at ? A.chapter4WuzhangContinuationNotice : null, Gt = A.chapterId === "chapter4-post-qishan" && A.view.stage === "held-block6", gn = Gt && u.session.canContinueChapter4PostQishanSource === !0, Ut = A.chapterId === "qishan-map33" && A.view.stage === "held-next-section", yn = Ut && u.session.canContinueQishanMap33Source === !0, In = Ut ? A.chapter4PostQishanContinuationNotice : null, sn = qe;
     (qe = !1, sn && Te !== null && Wh(se), Zn?.current() || Qr());
+    const activeButton = t.activeElement;
+    const entryButton = activeButton?.matches?.("button") && j("entry-content").contains(activeButton) ? activeButton : null;
     let Kt = A.view, pn = fL(), hr = !1;
+    const stageChanged = renderedEntryStage !== Kt.stage;
+    renderedEntryStage = Kt.stage;
+    const previousOption = !stageChanged && entryButton ? [...et].find(([, button]) => button === entryButton)?.[0] : undefined;
     if(Kt.standaloneTitle!==true||!["menu","loadSlots","deleteSlots"].includes(Kt.stage))__kmTitleDisplayMemoR21.retire();
     if (Bt) {
       let xt = !1;
@@ -39846,10 +39867,15 @@ function __kmPlainStockManualDisplayR22(raw){
       (j("entry-next").disabled = !0, j("entry-resume").hidden = ud.status !== "saved", on.hidden = ud.status !== "unknown");
     }
     (u.render(), $c(Kt), na(Kt));
+    if (stageChanged) focusEntryAfterRender(entryButton, et.get(Kt.selection));
+    else if (previousOption !== undefined && availableEntryButton(et.get(previousOption))) {
+      focusEntryAfterRender(entryButton, et.get(previousOption));
+    }
   }
   n(Cn, "render");
   function ik() {
     if (Le || Nn) return;
+    const gateButton = t.activeElement === j("entry-begin") ? t.activeElement : null;
     (_?.unlock?.(), Ot = !1, fr(), dt = null);
     let x = ++Ke, D = n(() => !Le && x === Ke, "current"), Ae = n((mt, _t = null) => {
       dt = Object.freeze({
@@ -39863,7 +39889,11 @@ function __kmPlainStockManualDisplayR22(raw){
       if (D()) {
         (Nn = !1, j("entry-begin").disabled = !1, j("entry-begin").textContent = "\u30BF\u30C3\u30D7\u3057\u3066\u958B\u59CB", $e = !0, Ot = !1, fr());
         try {
-          (Cn(), D() && Ae("ready"));
+          Cn();
+          if (D()) {
+            Ae("ready");
+            focusEntryAfterRender(gateButton, et.get(A.view.selection));
+          }
         } catch {
           ie("render");
         }
