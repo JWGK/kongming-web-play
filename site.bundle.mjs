@@ -19199,7 +19199,7 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
     if (C.serialize?.() !== H && !(q === "entry" && C.serializeForSave?.() === H)) throw new RangeError("Exact current inner save required for cumulative display metadata");
   }
   n(rk, "currentLegacyPayload");
-  function ak(q, {kind: H, payload: C}, {overwriteConfirmed: ve = !1} = {}) {
+  function ak(q, {kind: H, payload: C}, {overwriteConfirmed: ve = !1, slotUnchanged, suspendUnchanged} = {}) {
     if ((f(), t.chapter5JianningSessionActive)) throw new RangeError("Jianning requires exact staged writer");
     if (t.chapter5BaxiSessionActive) throw new RangeError("Late Baxi requires exact staged writer");
     if (t.chapter5ChengduDefenseSessionActive) throw new RangeError("Chengdu defense requires exact staged writer");
@@ -19272,6 +19272,7 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
     }
     try {
       let je = ga(q), ze = e?.getItem(je) ?? null;
+      const previousSuspend = suspendUnchanged ? null : e?.getItem(Wn) ?? null;
       if (ze && !ve) throw new Qi("\u3053\u306E\u8A18\u9332\u306E\u4E0A\u66F8\u304D\u306B\u306F\u78BA\u8A8D\u304C\u5FC5\u8981\u3067\u3059\u3002");
       rk(H, C);
       let Qe = r.ownershipEpoch, St = t.epoch, wt = H === "entry" ? JSON.stringify({
@@ -19283,6 +19284,11 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
       if ((rk(H, C), Qe !== r.ownershipEpoch || St !== t.epoch)) throw new RangeError("Changed current save owner during inner admission");
       if (!e) throw new Error("Storage unavailable");
       if ((e.getItem(je) ?? null) !== ze) throw new RangeError("Changed save target during inner admission");
+      if ((slotUnchanged && !slotUnchanged()) || (suspendUnchanged && !suspendUnchanged())) {
+        const error = new Error("The selected manual slot or suspend record changed while awaiting confirmation");
+        error.code = "ordinary-manual-target-changed";
+        throw error;
+      }
       let vr = ce({
         key: je,
         text: wt,
@@ -19297,9 +19303,11 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
         }
       });
       (et(), $(vr));
-      let Ma = !0;
+      let Ma = !0, suspendChanged = !1;
       try {
-        Pe(Ne("removeItem", {
+        Ma = suspendUnchanged ? suspendUnchanged() : (e.getItem(Wn) ?? null) === previousSuspend;
+        suspendChanged = !Ma;
+        if (Ma) Pe(Ne("removeItem", {
           required: !0
         }), Wn);
       } catch {
@@ -19315,7 +19323,7 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
         }),
         saved: !0,
         suspendCleared: Ma,
-        warning: Ma ? null : "suspend_cleanup_failed"
+        warning: suspendChanged ? "suspend_changed" : Ma ? null : "suspend_cleanup_failed"
       };
     } catch (je) {
       throw (r.discardPreparedSave?.(), je);
@@ -29201,6 +29209,7 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
   }
   n(Cc, "actionScope");
   let Dn = Object.freeze({
+    "ordinary-manual-target-changed": "所選記錄或中斷進度已變更。請重新選擇記錄槽，再確認儲存。",
     "native-write-reconciliation-required": "\u8ACB\u5148\u91CD\u65B0\u6838\u5C0D\u9019\u6B21\u4FDD\u5B58\u7D50\u679C\uFF0C\u518D\u8F09\u5165\u5176\u4ED6\u8A18\u9304\u3002",
     "second-chencang-write-outcome-unknown": "\u7121\u6CD5\u78BA\u8A8D\u9019\u6B21\u8A18\u9304\u662F\u5426\u5DF2\u5BEB\u5165\u3002\u8ACB\u5148\u91CD\u65B0\u6838\u5C0D\uFF1B\u4E0D\u6703\u81EA\u52D5\u91CD\u8A66\u3002",
     "second-chencang-write-not-applied": "\u9019\u6B21\u672A\u80FD\u4FDD\u5B58\uFF0C\u73FE\u6709\u9032\u5EA6\u8207\u820A\u8A18\u9304\u4ECD\u4FDD\u7559\u3002",
@@ -37403,15 +37412,25 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
         Ve ? Ja(`\u8A18\u9332 ${pe} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, Ut) : Ut();
         return;
       }
+      let slotUnchanged, suspendUnchanged;
+      if (Ve) try {
+        slotUnchanged = so("slot", pe);
+        suspendUnchanged = so("quick");
+      } catch (error) {
+        ma(error);
+        return;
+      }
       let at = n(() => {
         if (D()) try {
           let mt = T.write(pe, {
             kind: "entry",
             payload: A.serializeForSave()
           }, {
-            overwriteConfirmed: !0
+            overwriteConfirmed: !0,
+            slotUnchanged,
+            suspendUnchanged
           });
-          (fr(), u.storageMessage(mt.warning ? `\u8A18\u9332 ${pe} \u306F\u4FDD\u5B58\u3055\u308C\u307E\u3057\u305F\u304C\u3001\u4E2D\u65AD\u8A18\u9332\u306E\u524A\u9664\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u4E2D\u65AD\u8A18\u9332\u306F\u6B8B\u3063\u3066\u3044\u307E\u3059\u3002` : `\u8A18\u9332 ${pe} \u306B\u7269\u8A9E\u306E\u9032\u884C\u3092\u4FDD\u5B58\u3057\u307E\u3057\u305F\u3002`), A.completeSave(), u.render());
+          (fr(), u.storageMessage(mt.warning === "suspend_changed" ? `已存入記錄 ${pe}。中斷進度已更新，亦已保留。` : mt.warning ? `\u8A18\u9332 ${pe} \u306F\u4FDD\u5B58\u3055\u308C\u307E\u3057\u305F\u304C\u3001\u4E2D\u65AD\u8A18\u9332\u306E\u524A\u9664\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u4E2D\u65AD\u8A18\u9332\u306F\u6B8B\u3063\u3066\u3044\u307E\u3059\u3002` : `\u8A18\u9332 ${pe} \u306B\u7269\u8A9E\u306E\u9032\u884C\u3092\u4FDD\u5B58\u3057\u307E\u3057\u305F\u3002`), A.completeSave(), u.render());
         } catch (mt) {
           ma(mt);
         }
