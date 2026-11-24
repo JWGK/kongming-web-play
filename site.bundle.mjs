@@ -37413,9 +37413,9 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
         return;
       }
       let slotUnchanged, suspendUnchanged;
-      if (Ve) try {
+      try {
         slotUnchanged = so("slot", pe);
-        suspendUnchanged = so("quick");
+        if (slotUnchanged.occupied) suspendUnchanged = so("quick");
       } catch (error) {
         ma(error);
         return;
@@ -37426,7 +37426,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
             kind: "entry",
             payload: A.serializeForSave()
           }, {
-            overwriteConfirmed: !0,
+            overwriteConfirmed: slotUnchanged.occupied,
             slotUnchanged,
             suspendUnchanged
           });
@@ -37435,7 +37435,7 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
           ma(mt);
         }
       }, "write");
-      Ve ? Ja(`\u8A18\u9332 ${pe} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, at) : at();
+      slotUnchanged.occupied ? Ja(`\u8A18\u9332 ${pe} \u3092\u4E0A\u66F8\u304D\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F`, at) : at();
     } else Ae === "delete" && confirmSlotMutation(pe, true, `\u8A18\u9332 ${pe} \u3092\u524A\u9664\u3057\u307E\u3059\u3002\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002`, () => {
       if (D()) try {
         (T.remove(pe), fr(), A.refresh(), u.render());
