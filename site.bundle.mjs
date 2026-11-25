@@ -39875,6 +39875,10 @@ function __kmPlainStockManualDisplayR22(raw){
     if(checkImperialManualWarmN21(Kt))ea+=":imperial-ordinary-manual";
     if (ea !== be) {
       (be = ea, et.clear(), j("entry-options").replaceChildren());
+      let townSlotRows=null;
+      if(Kt.chapterId==='chapter5-section2-town'&&Kt.stage==='saveSlots'){
+       try{townSlotRows=T.displaySlots();}catch{townSlotRows=[];}
+      }
       for (let xt of Kt.menuOptions) {
         if(xt.id==="resume"&&ordinaryRaw)xt={...xt,enabled:true,reason:null};
         else if(xt.id==="resume"&&b6TitleRaw)xt={...xt,enabled:true,reason:null};
@@ -39886,6 +39890,11 @@ function __kmPlainStockManualDisplayR22(raw){
           labelJa: ((["chapter5-section2-town", "chapter5-second-changan-return", "chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source", "chapter5-jianning-return", "chapter5-jiangling-return", "chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-jianning", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-baxi", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-chengdu-defense-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-chengdu-defense-return", "chapter5-changan-return", "chapter5-chengdu-defense", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) ? Pe(xt.definitionIndex, Kt) : null)?.nameJa ?? u.characterPresentation?.(xt.definitionIndex)?.nameJa) ?? xt.labelJa
         }) : Xye(xt));
         (qt.type = "button", typeof xt.selected == "boolean" && (qt.className = "entry-deployment-choice"), qt.disabled = Ce || (!xt.enabled&&!(xt.id==="yes"&&checkImperialManualWarmN21(Kt))) || hr || xt.id==="resume" && !!__pendingBaidiWnRefreshW19 || (baidiMap45Bank()&&!__baidiPostBankReadyW19()) && Kt.stage==="manual-prompt" && xt.id==="yes", qt.setAttribute("aria-pressed", Kye(xt, Kt.selection)));
+        if(townSlotRows&&/^slot:[1-5]$/.test(xt.id)){
+         const slot=Number(xt.id.slice(5)),row=townSlotRows.find(item=>item.slot===slot);
+         if(row?.meta){qt.textContent=slot+'：'+(row.meta.labelJa||'已有記錄');qt.classList.add('record-metadata-label');}
+         if(!row){qt.textContent=slot+'：暫時無法讀取記錄';qt.disabled=true;}
+        }
         if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&storyManualHint(__map46ManualRawW32(xt.slot,true)))qt.disabled=Ce||hr||!__map46MetadataW32("slot",xt.slot,"title-records").valid;
         if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__kmReadImperialTitleDisplayR21(xt.slot,__map46ManualRawW32(xt.slot,true)))qt.disabled=Ce||hr||imperialPreludeColdReadN21!==null;
         if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__map46ManualRawW32(xt.slot,true)){qt.classList.add("record-metadata-label");qt.textContent=xt.slot+"："+__map46MetadataW32("slot",xt.slot,"title-records").labelJa;}
