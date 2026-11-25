@@ -21148,7 +21148,11 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
     let ge = X.controller.getBattleSave?.();
     if (typeof ge != "string") return !1;
     let Fe = JSON.parse(ge), Be = X.controller.view;
-    return Fe.rulesVersion === "nanan-tianshui-engine-1" && Fe.state?.phase === "settled" && Fe.state.terminal === "victory" && Fe.state.pendingEffects?.length === 0 && Be.screen?.activeBattleField !== !0;
+    const settledHere = Fe.rulesVersion === "nanan-tianshui-engine-1";
+    const councilAfterFengming = Be.phaseId === "nanan-council" && Fe.rulesVersion === "fengming-engine-1" &&
+      ["3:1:3", "3:1:4"].includes(Fe.state?.campaignContextId);
+    return (settledHere || councilAfterFengming) && Fe.state?.phase === "settled" && Fe.state.terminal === "victory" &&
+      Fe.state.pendingEffects?.length === 0 && Be.screen?.activeBattleField !== !0;
   }
   n(Sc, "sourceOnlyCandidate");
   let Ms = null;
@@ -28954,10 +28958,12 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
           completed: !0
         });
         let Be = ge.controller.getBattleSave?.();
-        return Be ? {
+        if (!Be) return null;
+        const continuation = ge.controller.getStoryContinuation?.();
+        return {
           battleSave: Be,
-          ...ge.controller.getStoryContinuation?.() === void 0 ? {} : {
-            storyContinuation: ge.controller.getStoryContinuation()
+          ...continuation === void 0 ? {} : {
+            storyContinuation: continuation
           },
           kind: Fe.kind,
           chapterId: ge.descriptor.id,
@@ -28965,7 +28971,7 @@ ${O.label}`,m.replaceChildren();let Q=i("option","\u8ACB\u660E\u78BA\u9078\u64C7
             sourceOnly: !0
           } : {},
           completed: Fe.kind === "outro" || ge.phase === "aftermath" || Je.has(ge.descriptor) || ge.descriptor.compositeAftermath === !0
-        } : null;
+        };
       } catch (ge) {
         throw (Ft(), ge);
       }
@@ -56998,11 +57004,20 @@ ${Jn}`
         throw (Qc(wr), Xn.render(), Ka);
       }
     }, Ed = function (Xe) {
+      let prepared;
       try {
-        return Ho(Xn.session.prepareRestore(Xe));
-      } catch (Et) {
-        if (Et instanceof AggregateError || Et?.rollbackError || Et?.code === "display-stat-rollback-uncertain") throw Et;
-        return (console.error("Private restoreBattle failed:", Et.name, Et.message, Et.stack), Xn.storageMessage("\u7121\u6CD5\u8F09\u5165\u6B64\u6230\u5834\u3002\u73FE\u6709\u9032\u5EA6\u8207\u8A18\u9304\u6C92\u6709\u8B8A\u66F4\uFF0C\u8ACB\u78BA\u8A8D\u7AE0\u7BC0\u8CC7\u6599\u5DF2\u5B8C\u6574\u8F09\u5165\u3002"), !1);
+        prepared = Xn.session.prepareRestore(Xe);
+        return Ho(prepared);
+      } catch (error) {
+        if (error instanceof AggregateError || error?.rollbackError || error?.code === "display-stat-rollback-uncertain") throw error;
+        const diagnostic = vgt(error, {state: prepared?.state});
+        const unavailable = prepared && (error?.message === "Reviewed chapter presentation is not ready" || error?.message === "Chapter not ready");
+        const reason = unavailable ? "章節畫面資料尚未就緒。" :
+          prepared ? "套用戰場記錄時未能完成。" : "還原戰場記錄時未能完成。";
+        const context = diagnostic.context ? `（${diagnostic.context}）` : "";
+        console.error("Private restoreBattle failed:", error?.name, error?.message, error?.stack);
+        Xn.storageMessage(`無法載入此戰場。${reason}診斷代碼 ${diagnostic.code}${context}。現有進度與記錄已保留。`);
+        return false;
       }
     }, No = function ({view: Xe, record: Et, state: Dt, refreshBaidiWn=null} = {}) {
       if(typeof refreshBaidiWn==="function")return __mountColdBaidiWnW19(refreshBaidiWn);
