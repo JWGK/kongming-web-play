@@ -39708,20 +39708,32 @@ function __kmPlainStockManualDisplayR22(raw){
    const row=(map49?__kmLuoyangTwoStockW35:__kmLuoyangStockW34).get(session,b);if(!row)return;
    const reservation=manual?null:probe?.take();if(!manual&&!reservation)return;
    let candidate=null,entry=null,published=false;
-   const isStockCurrent=()=>u.session===session&&session.sessionIdentity===identity&&A.view.stage===stage&&!Ce&&!Le&&!ot&&!un;
+   // Checking the active stage must not rebuild five slot labels for every replayed command.
+   // The controller increments revision on change and ownershipEpoch on replacement.
+   let stageOwner, stageRevision, sameStage;
+   function checkStage(refresh = false) {
+     const revision = A.revision, owner = A.ownershipEpoch;
+     if (refresh || revision !== stageRevision || owner !== stageOwner || sameStage === undefined) {
+       sameStage = A.view.stage === stage;
+       stageRevision = revision;
+       stageOwner = owner;
+     }
+     return sameStage;
+   }
+   const isStockCurrent=()=>u.session===session&&session.sessionIdentity===identity&&!Ce&&!Le&&!ot&&!un&&checkStage();
    const isCurrent=()=>isStockCurrent()&&(published||(manual?b.getItem(ga(slot))===raw:reservation.isCurrent()));
    const claim=manual?Object.freeze({session,raw,channel:'manual',readCurrent:isCurrent}):null;
    __map46MountingW31=true;
    try {
     if(!isCurrent())throw new RangeError('Exact current Map48 stock admission');
     if(manual)candidate=await row.layer.admit(claim);
-    if(!isCurrent())throw new RangeError('Exact current Map48 stock admission after decode');
+    if(!checkStage(true)||!isCurrent())throw new RangeError('Exact current Map48 stock admission after decode');
     const prepared=manual?row.layer.borrow(candidate,claim):reservation;
     const localLuoyangName=value=>value==='宮仕え'?'宮人':r(value);
     const actorName=(id,fallback)=>{const c=u.characterPresentation?.(id);return localLuoyangName(c?.nameJa??fallback??String(id));};
     const claimCanvas=canvas=>{if(canvas!==globalThis.document.getElementById('game-canvas')||__map47CanvasLease.has(canvas))throw new RangeError('Exact exclusively owned game canvas');const token=Object.freeze({});__map47CanvasLease.set(canvas,token);return ()=>{if(__map47CanvasLease.get(canvas)===token)__map47CanvasLease.delete(canvas);};};
     entry=await row.openCold({prepared,isCurrent,mode:manual?'manual':'suspend',document:t,repaintOld:()=>Cn(),host:__map46HostW31,readSession:()=>u.session,luoyang:__map48WarmBridgeW34,actorName,translate:localLuoyangName,redPalette:bytes=>egt(bytes,31),returnToTitle:__map46ReturnTitleW32,claimCanvas,playBgm:id=>_?.selectBgm?.(id),playCue:id=>_?.playCue?.(id)});
-    if(!entry?.isActive?.()||!isCurrent())throw new RangeError('Exact paired native Map48 stock publication');
+    if(!entry?.isActive?.()||!checkStage(true)||!isCurrent())throw new RangeError('Exact paired native Map48 stock publication');
     if(manual)row.layer.consume(candidate,claim);else reservation.consume();
     published=true;__map46EntryW31=entry;adoptDetachedSaveCycle(session,prepared.expectedPhysical);void entry.drain?.();
    } catch(err) {
