@@ -1,3 +1,4 @@
+import { previewClearSlot } from "./ng-plus/clear-slot.mjs";
 import {replayDescriptionRules as ngItemDescriptionRules} from "./ng-plus/benefits.mjs";
 import {resolveBookRecovery as ngBookRecovery, usesReplayOpening as ngReplayOpening} from "./ng-plus/recovery.mjs";
 import {observedStatRules as ngObservedItemRules} from "./ng-plus/carried-stats.mjs";
@@ -39479,7 +39480,7 @@ function __kmPlainStockManualDisplayR22(raw){
   }
   function __map46ManualRawW32(slot,display=false){
     if(!Number.isInteger(slot)||slot<1||slot>5||!b?.getItem)return null;
-    try{const raw=b.getItem(ga(slot));if(display&&(typeof raw!=="string"||__kmPlainStockManualDisplayR22(raw))){__kmTitleDisplayMemoR21.forget(slot);return null;}return typeof raw==="string"&&(storyManualHint(raw)||(display?__kmReadImperialTitleDisplayR21(slot,raw):readImperialPreludeColdN21(raw))!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
+    try{const raw=b.getItem(ga(slot));if(previewClearSlot(raw))return raw;if(display&&(typeof raw!=="string"||__kmPlainStockManualDisplayR22(raw))){__kmTitleDisplayMemoR21.forget(slot);return null;}return typeof raw==="string"&&(storyManualHint(raw)||(display?__kmReadImperialTitleDisplayR21(slot,raw):readImperialPreludeColdN21(raw))!==null||raw.slice(0,320).includes("KONGMING-HUASHAN-POST-MANUAL/1\n")||raw.slice(0,320).includes("KONGMING-HANGU-POST-MANUAL/1\n")||__imperialYangpingStoryN22?.claims(raw)===true||__imperialAftermathN21?.claims(raw)===true||__kmHistoricalTitleN20.get(A)?.claims(raw)===true||__kmLuoyangTwoStockW35.hint(raw)==="manual"||__kmLuoyangStockW34.get(u.session,b)?.layer.hint(raw)==="manual")?raw:null;}catch{return null;}
   }
   function __map46MetadataW32(kind,slot,origin){
     if(!["title-presence","title-records"].includes(origin))return null;
@@ -39494,7 +39495,10 @@ function __kmPlainStockManualDisplayR22(raw){
      if(status)return Object.freeze({exists:true,pending:status.phase==="pending",valid:status.phase==="admitted",labelJa:"華山之戰"});
     }
     if(kind==="slot"){
-     const raw=__map46ManualRawW32(slot,true);if(!raw){__map46ManualLabelsW32.delete(slot);return null;}
+     const raw=__map46ManualRawW32(slot,true);
+     const clearPreview=previewClearSlot(raw);
+     if(clearPreview)return clearPreview;
+     if(!raw){__map46ManualLabelsW32.delete(slot);return null;}
      if(storyManualHint(raw)){
        const cached=__map46ManualLabelsW32.get(slot);if(cached?.raw===raw)return cached.meta;
        let meta;try{meta=storyManualMetadata(storyManualRead(raw).record);}catch{meta={exists:true,valid:false,labelJa:"劇情記錄無法讀取"};}
@@ -39582,6 +39586,7 @@ function __kmPlainStockManualDisplayR22(raw){
   async function __openMap46ManualW32(slot){
     if(__map46MountingW31||__map46EntryW31?.isActive()||A.view.stage!=="loadSlots")return;
     const raw=__map46ManualRawW32(slot);if(!raw)return;
+    if(previewClearSlot(raw))return __openMap48ScopedW34({slot,raw,map49:true});
     if(storyManualHint(raw))return loadStorySlot(slot,raw);
     if(__imperialYangpingStoryN22?.claims(raw)===true)return openImperialYangpingStoryTitleN22(slot,raw);
     if(__imperialAftermathN21?.claims(raw)===true)return openImperialAftermathTitleN21(slot,raw);
