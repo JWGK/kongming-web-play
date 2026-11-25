@@ -5870,6 +5870,7 @@ get engine(){return f},get view(){return v(),U()},get carry(){return v(),M()},ge
           reset() { m=null; y=0; }
         });
 return fWe.add(de),Object.freeze(de)}var RW,fWe,ul,xm,Xhe,ci,pWe,bw,Jf,ete,jW=Me(()=>{OW();OW();Br();RW=new WeakMap;n(gWe,"readChapter4WuzhangSourceTransfer");fWe=new WeakSet,ul=structuredClone,xm=n((e,t)=>JSON.stringify(e)===JSON.stringify(t),"same"),Xhe=n(()=>Object.freeze(Object.create(null)),"opaque"),ci=n((e,t)=>{if(!e)throw new RangeError(t)},"need"),pWe=n(e=>e===null||Number.isSafeInteger(e)&&!Object.is(e,-0)&&e>=0&&e<=4294967295,"uint"),bw=n(e=>(e&&typeof e=="object"&&(Object.values(e).forEach(bw),Object.freeze(e)),e),"freeze"),Jf=n(e=>{if(e&&typeof e.then=="function")throw Promise.resolve(e).catch(()=>{}),new TypeError("Synchronous hulugu publication required");return e},"sync"),ete=n(e=>fWe.has(e),"isChapter4HuluguOwnedController");n(mWe,"createChapter4HuluguOwnedController")});function bWe(e,{configuration:t}={}){let r=AW.get(e);if(!r||r.configuration!==t||!r.current())throw new RangeError("Actual current Changan source transfer");return r.value}import {
+  claimsHistoricalTitle, historicalTitleMetadata,
   createHistoricalJournal as __kmHistoryJournalN20,
   prepareHistoricalWorldMedia as __kmHistoricalMediaN20,
   createHistoricalStockPostComposition as __kmHistoricalComposeN20,
@@ -5877,7 +5878,7 @@ return fWe.add(de),Object.freeze(de)}var RW,fWe,ul,xm,Xhe,ci,pWe,bw,Jf,ete,jW=Me
   createHistoricalTitlePort as __kmHistoricalTitlePortN20,
   createHistoricalCommonBonusRenderer as __kmHistoricalBonusRendererN20,
   captureHistoricalTitlePresentation as __kmHistoricalTitleCaptureN20
- } from "./wuzhang-historical/runtime.mjs?v=0.73.33";
+ } from "./wuzhang-historical/runtime.mjs?v=0.73.39-on-demand";
  const __kmHistoricalPacketN20=new WeakMap();
  const __kmHistoryFactoryN20=new WeakMap();
  const __kmHistoricalRouterW41=new WeakMap();
@@ -35663,17 +35664,18 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
     return [u.session.sessionIdentity, x, x?.ownershipEpoch, u.session.state, u.session.epoch, u.session.campaignDisplayStats.total, A.ownershipEpoch, A.revision, Se, me, Te, Ce, u.inspect().confirmationRevision];
   }
   n(E4, "wuzhangCompletionTuple");
-  function W0(x, D, Ae) {
+  function W0(x, D, Ae, preparationFailed=false) {
     if (u.session.chapter4WuzhangNeedsPublicationRecovery || Le || ot || ue || Ce || Te !== null || u.inspect().confirmationOpen || u.session.sessionIdentity !== D || u.session.state !== x || u.session.epoch !== Ae || u.session.paused) return;
-    if (x?.campaignContextId === "4:3:16") {
+    if (!preparationFailed && x?.campaignContextId === "4:3:16") {
       enrollHistoricalN20();
-      const pending=historicalEnrollmentN20?.ready;
+      const pending = __kmHistoricalBrowserW41.has(A) ? null : historicalEnrollmentN20?.ensure();
       if (pending) {
         if (!pendingHistoricalVictories.has(x)) {
           pendingHistoricalVictories.add(x);
-          pending.then(()=>{
+          pending.then(ready=>{
             pendingHistoricalVictories.delete(x);
-            if (u.session.sessionIdentity===D && u.session.state===x && u.session.epoch===Ae) W0(x,D,Ae);
+            if (u.session.sessionIdentity!==D || u.session.state!==x || u.session.epoch!==Ae) return;
+            W0(x,D,Ae, !ready);
           });
         }
         return;
@@ -35686,7 +35688,6 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
       if(x?.campaignContextId==="4:3:16"){
         if (!historicalDriver) {
           // A retry at the existing completion button may prepare the resources afresh.
-          historicalEnrollmentN20=null;
           throw new Error("Historical epilogue resources unavailable");
         }
         historicalStart=historicalDriver.captureBefore({state:x,isCurrent:historicalBefore});
@@ -38838,24 +38839,47 @@ async function loadStorySlot(slot,raw){
       makeScratch(w,h){const c=doc.createElement('canvas');c.width=w;c.height=h;return c;}
     });
     const playBgm=id=>_?.selectBgm?.(id),onError=e=>console.warn("Historical Wuzhang scoped presentation refused",e);
-    token.ready=__kmHistoricalMediaN20({media,pathFor:__kmHistoricalAssetN20,subtle,isCurrent:current}).then(worldMedia=>{
-      if(!current())return;
-      const composition=__kmHistoricalComposeN20({document:doc,window,media,subtle,worldMedia,physical:b,primitives:__kmLuoyangStockW34.forSession(u.session),
-        createEngine:packet.createEngine,readStockMediaConfiguration:()=>packet.mediaConfiguration,
-        readChapter4WuzhangMediaConfiguration:zR,readPreparedChapter4WuzhangMedia:Y5e,readRetainedBgm:()=>null,playBgm,onError,
-        actorName:id=>r(u.characterPresentation?.(id)?.nameJa??String(id)),
-        portrait:id=>{
-          const q=Pe(id,A.view),alias=y?.objectAliases?.[id]??id,def=y?.definitions?.[alias],f=def&&y.portraits?.[def.portrait];
-          return q?.portraitAsset??(f?'assets/story-portraits/'+f.path:u.characterPresentation?.(id)?.portraitAsset??null);
-        }});
-      const titlePort=__kmHistoricalTitlePortN20({codec:composition.codec,bonus:composition.bonus,physical:b,decodeOuter:qr,
-        document:doc,playBgm,onError,
-        prepareRenderer:({isCurrent})=>__kmHistoricalBonusRendererN20({media,canvas:doc.getElementById('entry-field-canvas'),isCurrent}),
-        captureStock:({isCurrent})=>__kmHistoricalTitleCaptureN20({document:doc,isCurrent})});
-      if(!current())return;
-      __kmHistoricalBrowserW41.set(A,composition.driver);__kmHistoricalTitleN20.set(A,titlePort);
-      if(A.view.standaloneTitle===true){A.refresh();Cn();}
-    }).catch(e=>{if(current())onError(e);}).finally(()=>{token.ready=null;});
+    let nativeTitle = null;
+    async function prepare() {
+      return __kmHistoricalMediaN20({media,pathFor:__kmHistoricalAssetN20,subtle,isCurrent:current}).then(worldMedia=>{
+        if(!current())return;
+        const composition=__kmHistoricalComposeN20({document:doc,window,media,subtle,worldMedia,physical:b,primitives:__kmLuoyangStockW34.forSession(u.session),
+          createEngine:packet.createEngine,readStockMediaConfiguration:()=>packet.mediaConfiguration,
+          readChapter4WuzhangMediaConfiguration:zR,readPreparedChapter4WuzhangMedia:Y5e,readRetainedBgm:()=>null,playBgm,onError,
+          actorName:id=>r(u.characterPresentation?.(id)?.nameJa??String(id)),
+          portrait:id=>{
+            const q=Pe(id,A.view),alias=y?.objectAliases?.[id]??id,def=y?.definitions?.[alias],f=def&&y.portraits?.[def.portrait];
+            return q?.portraitAsset??(f?'assets/story-portraits/'+f.path:u.characterPresentation?.(id)?.portraitAsset??null);
+          }});
+        const titlePort=__kmHistoricalTitlePortN20({codec:composition.codec,bonus:composition.bonus,physical:b,decodeOuter:qr,
+          document:doc,playBgm,onError,
+          prepareRenderer:({isCurrent})=>__kmHistoricalBonusRendererN20({media,canvas:doc.getElementById('entry-field-canvas'),isCurrent}),
+          captureStock:({isCurrent})=>__kmHistoricalTitleCaptureN20({document:doc,isCurrent})});
+        if(!current())return;
+        __kmHistoricalBrowserW41.set(A,composition.driver);
+        return titlePort;
+      });
+    }
+    token.ensure = () => {
+      if (!current()) return Promise.resolve(null);
+      if (nativeTitle) return Promise.resolve(nativeTitle);
+      token.ready ??= prepare().then(port => nativeTitle = port ?? null)
+        .catch(error => { if (current()) onError(error); return null; })
+        .finally(() => { token.ready = null; });
+      return token.ready;
+    };
+    const lazyTitle = Object.freeze({
+      claims: claimsHistoricalTitle,
+      metadata: raw => historicalTitleMetadata(qr,raw),
+      async open(options) {
+        const live = () => current() && options.isCurrent() && b.getItem(ga(options.slot)) === options.raw;
+        if (!live()) throw new RangeError("Selected historical title slot changed");
+        const port = await token.ensure();
+        if (!port || !live()) throw new RangeError("Historical title resources or record changed");
+        return port.open(options);
+      }
+    });
+    __kmHistoricalTitleN20.set(A,lazyTitle);
   }
   function __map46ReturnTitleW32(){
    const entry=__map46EntryW31;
@@ -42212,10 +42236,13 @@ function __kmPlainStockManualDisplayR22(raw){
       if (status?.phase === "pending") {
         const revision = A.revision;
         try { await status.settled; } catch {}
-        if (Le || !ue || A.view.stage !== "menu" || A.revision !== revision) return false;
+        if (Le || !ue || A.view.stage !== "menu") return false;
+        if (!selectionCurrent()) return unavailable();
+        if (A.revision !== revision) return false;
         Cn();
       }
-      return selectionCurrent() && select("resume") || unavailable();
+      if (!selectionCurrent() || !select("resume")) return unavailable();
+      return true;
     }
     if (action.kind === "new" || action.kind === "prologue") {
       if (!select("new") || A.view.stage !== "newGame") return false;
@@ -42226,14 +42253,11 @@ function __kmPlainStockManualDisplayR22(raw){
     }
     const deleting = action.kind === "delete";
     if (!select(deleting ? "delete" : "records") || A.view.stage !== (deleting ? "deleteSlots" : "loadSlots")) return unavailable();
-    return selectionCurrent() && select("slot:" + action.slot) || unavailable();
+    if (!selectionCurrent() || !select("slot:" + action.slot)) return unavailable();
+    return true;
   }
   let EL = Object.freeze({
     controller: A,
-    // Enrollment refreshes title options and advances the revision used by save validation.
-    prepareTitleAction(action) {
-      return ["resume", "load", "delete"].includes(action.kind) ? historicalEnrollmentN20?.ready : undefined;
-    },
     openTitleAction,
     bank: T,
     applyChapter5JianningSourceSettings(x) {
@@ -68492,11 +68516,6 @@ export function startFromTitle(action, commit, audio, onProgress) {
     throw error;
   });
   titleActivation = campaignLoading.then(async app => {
-    const pending = app.entryHost.prepareTitleAction(intent);
-    if (pending) {
-      onProgress?.(intent.kind === "delete" ? "正在準備所選記錄…" : "正在準備讀取所選記錄…");
-      await pending;
-    }
     const soundEnabled = audio?.enabled === true;
     commit?.();
     app.ui.setAudioEnabled(soundEnabled).catch(error => console.warn("Audio unavailable", error));

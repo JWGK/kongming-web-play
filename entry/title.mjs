@@ -224,6 +224,15 @@ export async function mountTitle({data, launch, readSlot, readSuspend, sound}) {
   }
   async function start(action) {
     if (disposed || pending) return;
+    if (Object.hasOwn(action, 'expectedRaw')) {
+      const current = action.kind === 'resume' ? readSuspend() : readSlot(action.slot);
+      if (current.unavailable || current.raw !== action.expectedRaw) {
+        render(true);
+        error.textContent = current.unavailable ? '無法讀取儲存空間。請再試一次。' : '這格記錄已變更，請重新選擇。';
+        error.hidden = false;
+        return;
+      }
+    }
     pending = true;
     cancelFrame();
     error.hidden = true;
