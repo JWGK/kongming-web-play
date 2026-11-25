@@ -29653,8 +29653,8 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
     x && !x.handled && x.outcome && u["finish" + (x.family ?? "QishanPursuit") + "Load"](x.outcome);
   }
   n(pt, "finishPursuitLoadRun");
-  function ur(x, D, {current: Ae = n(() => !0, "current"), retry: ie = n(() => ur(x, D, {
-    current: Ae
+  function ur(x, D, {current: Ae = n(() => !0, "current"), prepare = M, retry: ie = n(() => ur(x, D, {
+    current: Ae, prepare
   }), "retry")} = {}) {
     let pe = vi.get(D), Ve = n(() => {
       try {
@@ -29664,7 +29664,7 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
         throw Gt;
       }
     }, "invokeRun");
-    if (!M) try {
+    if (!prepare) try {
       let Gt = Ve();
       return (pt(pe), Gt);
     } catch (Gt) {
@@ -29689,7 +29689,7 @@ function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperial
     let _t;
     try {
       try {
-        (gs(), _t = M(x));
+        (gs(), _t = prepare(x));
       } finally {
         mt.invoking = !1;
       }
@@ -36458,9 +36458,12 @@ async function loadStorySlot(slot,raw){
   }
   function Cv(x) {
     if(x==="yes"&&checkImperialManualWarmN21(A.view))return openImperialManualWarmN21();
+    const imperialOffer = x === "choice:0" && A.view.imperialOfferAuthorized === true &&
+      A.view.sourceCursor?.join(":") === "4:2:1:1:0" && !imperialPreludeFrameBankN21;
     return x === "post-qishan:start" ? j4() : p3() ? ur({
       view: A.view
     }, () => p3() ? I7("choose", x, D => A.choose(x, D)) : !1, {
+      prepare: imperialOffer ? input => Promise.all([M?.(input), imperialAppBootN21.preparePreludeFrames()]) : M,
       retry: n(() => Cv(x), "retry")
     }) : !1;
   }
@@ -39526,7 +39529,7 @@ async function loadStorySlot(slot,raw){
       },label=titles[row.role];
       if(!label)return null;
       const turns=row.turns===null?"未記錄":String(row.turns);
-      return Object.freeze({host,source,bank,meta:Object.freeze({exists:true,pending:true,valid:false,labelJa:label+"　累計回合："+turns+"（待核對）"})});
+      return Object.freeze({host,source,bank,role:row.role,meta:Object.freeze({exists:true,pending:true,valid:false,labelJa:label+"　累計回合："+turns+"（待核對）"})});
     }catch{return null;}
   }
   async function openImperialPreludeColdN21(slot,raw){
@@ -39557,6 +39560,10 @@ async function loadStorySlot(slot,raw){
        acknowledged=notice;
       }
       if(!itsTitle())return;
+      if (q.role !== "chapter4-post-qishan-before-imperial-choice" && !imperialPreludeFrameBankN21) {
+        await imperialAppBootN21.preparePreludeFrames();
+        if (!itsTitle()) return;
+      }
       bank.publishCold(token,{
        acknowledgeNotice:n=>n===acknowledged&&itsTitle(),
        preparePublication(model,pair){
@@ -58866,7 +58873,16 @@ ${Jn}`
       const nativeBytes=await read("imperial-chengdu/scoped-chengdu.json");
       const localeBytes=await read("imperial-chengdu/locale.tc.json");
       const decodeImage=bytes=>createImageBitmap(new Blob([bytes],{type:"image/png"}));
-      const frames=await loadImperialPreludeFrameBankN21({readBytes:read,decodeImage,translate:ire});
+      let framesInFlight = null;
+      function preparePreludeFrames() {
+        if (imperialPreludeFrameBankN21) return;
+        if (!framesInFlight) {
+          framesInFlight = loadImperialPreludeFrameBankN21({readBytes:read,decodeImage,translate:ire})
+            .then(setImperialPreludeFramesN21)
+            .finally(() => { framesInFlight = null; });
+        }
+        return framesInFlight;
+      }
       function validateImperialCampaignStockAssets({campaign}){
         const from=campaign.sourceContext,to=campaign.targetContext,p=campaign.persistentState;
         const aftermath=from?.root===4&&from.section===2&&from.block===3&&to?.root===4&&to.section===2&&to.block===4;
@@ -58887,7 +58903,7 @@ ${Jn}`
          activateLocale(){const old=xh();Qc(_.get("qishan-map33"));return ()=>Qc(old);}},
         readAsset:read,decodeImage,
         stockDrawUnit:be.drawUnit,stockTimeline:be.movementTimeline,stockEffects:be.offPlanner,systemDialogue:o
-       }})),validateSuspendMap33Carry,validateCampaignAssets:validateImperialCampaignStockAssets});
+       }})),preparePreludeFrames,validateSuspendMap33Carry,validateCampaignAssets:validateImperialCampaignStockAssets});
 
       try{
        imperialB5BattleBootN22=await configureImperialB5BattleN22({read,validatePalaceCampaign:campaign=>validateImperialCampaignStockAssets({campaign}),
@@ -58912,7 +58928,6 @@ ${Jn}`
          stockDrawUnit:be.drawUnit,stockTimeline:be.movementTimeline,stockEffects:be.offPlanner,stockClass32Timeline:LTe,stockClass32Effects:XTe,systemDialogue:o
         }});
       }catch(e){console.warn("Scoped B6 tactical stock initialization refused",e);}
-      setImperialPreludeFramesN21(frames);
       if(!activateImperialPreludeBootN21())throw new RangeError("Exact original source and renderer did not enroll");
     }catch(error){imperialAppBootN21=null;console.warn("Scoped Imperial stock boot refused",error);}
     Xn = Rgt({
