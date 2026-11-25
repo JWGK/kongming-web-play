@@ -13,7 +13,7 @@ export function createCampaignBattleRecords({ wrap, unwrap, compress, expand }) 
     return Number.isInteger(length) && length > 0 && length <= 512 && raw.startsWith(prefix, end + 1 + length);
   }
 
-  function encode(record) {
+  function encode(record, runCycle=1) {
     const json = JSON.stringify(record);
     if (json.length > maxChunks * chunkSize) throw new RangeError("Campaign battle exceeds the save size limit");
     const chunks = [];
@@ -22,7 +22,7 @@ export function createCampaignBattleRecords({ wrap, unwrap, compress, expand }) 
       const packed = compress(part);
       chunks.push(packed === null ? { plain: part } : { compressed: packed });
     }
-    return wrap({ innerText: prefix + JSON.stringify(chunks), channel: "suspend", total: record.turns }).text;
+    return wrap({ innerText: prefix + JSON.stringify(chunks), channel: "suspend", total: record.turns, runCycle }).text;
   }
 
   function decode(raw) {
