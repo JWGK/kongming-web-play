@@ -101,3 +101,24 @@ img.entry-image-label{object-fit:contain;image-rendering:pixelated}
 
 /* Reserve title-only record rows while authoritative metadata arrives. Never clip long labels. */
 .entry-options.title-record-list button{white-space:pre-line;line-height:1.5;min-block-size:calc(7.5em + 1.2rem + 2px);padding-block:.6rem;overflow-wrap:anywhere}
+
+/* Local Free Mode battle view; shares the original Map 1 art and mobile map chrome. */
+#free-xinye-battle{max-width:64rem;margin:0 auto;padding:.65rem;min-width:0;color:#fff4cf}
+#free-xinye-battle > header{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+#free-xinye-battle h2,#free-xinye-battle p{margin:.35rem 0}
+#free-xinye-battle button{touch-action:manipulation}
+#free-xinye-battle header button,#free-xinye-battle .free-xinye-controls button,#free-xinye-battle .free-xinye-message button{min-height:44px}
+#free-xinye-battle .free-xinye-controls{display:flex;flex-wrap:wrap;gap:.35rem}
+#free-xinye-battle .free-xinye-message{border:1px solid #9b8658;padding:.5rem .75rem;background:#26251c}
+#free-xinye-battle .free-xinye-message[hidden]{display:none}
+#free-xinye-battle .free-xinye-scroll{overflow:auto;max-height:min(54vh,32rem);max-width:100%;margin-top:.5rem;overscroll-behavior:contain}
+#free-xinye-battle .free-xinye-grid{display:grid;grid-template-columns:repeat(var(--free-cols),36px);width:max-content;background-size:100% 100%;image-rendering:pixelated}
+#free-xinye-battle .free-xinye-grid button{width:36px;height:36px;min-width:0;min-height:0;border-radius:0;margin:0;padding:0;color:white;text-shadow:1px 1px #100;font-weight:bold;background:transparent;border:1px solid #0002}
+#free-xinye-battle .free-xinye-grid button[data-side=ally]{background:#165b95cf;border-color:#a7d9ff}
+#free-xinye-battle .free-xinye-grid button[data-side=enemy]{background:#8c2119cf;border-color:#ffc0b0}
+#free-xinye-battle .free-xinye-grid button.range{box-shadow:inset 0 0 0 2px #71d6ffb0}
+#free-xinye-battle .free-xinye-grid button:is(.selected,.preview,.aim){box-shadow:inset 0 0 0 3px #ffe080}
+body.free-xinye-active #save-transfer,body.free-xinye-active #game-new,body.free-xinye-active #entry-shell{display:none}
+/* Optional exact original sprite atlas. Unmatched units keep their readable marker. */
+#free-xinye-battle .free-xinye-grid button.has-sprite{position:relative}
+#free-xinye-battle .free-xinye-grid button.has-sprite::before{content:"";position:absolute;pointer-events:none;width:42px;height:42px;left:-4px;bottom:0;background-image:var(--unit-sprite);background-repeat:no-repeat;background-size:126px 126px;background-position:-42px calc(var(--unit-row) * -42px);transform:scaleX(var(--unit-flip));image-rendering:pixelated}
