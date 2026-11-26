@@ -1,4 +1,4 @@
-import {mountTitle} from './title.mjs';
+import {mountTitle} from './title.mjs?v=0.73.41-free-xinye';
 import {createTitleAudio} from './title-audio.mjs';
 import {createTitleRecords} from './title-records.mjs';
 
@@ -7,7 +7,7 @@ const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.40-jicheng-result', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.41-free-xinye', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
@@ -36,7 +36,8 @@ async function prepareTitle() {
     const data = await response.json();
     const records = createTitleRecords(window);
     sound = createTitleAudio(document);
-    await mountTitle({data, ...records, sound, async launch(action, releaseTitle) {
+    const freeInspect = async raw => (await loadRuntime()).inspectFreeXinyeSlot07340(raw);
+    await mountTitle({data, ...records, sound, freeInspect, async launch(action, releaseTitle) {
       const description = {
         resume: '正在從中斷處繼續',
         load: '正在讀取第 ' + action.slot + ' 格記錄',

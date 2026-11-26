@@ -1,3 +1,4 @@
+import {createXinyeFreeScenarioInventory} from '../free-mode/xinye-scenario.mjs';
 import {validateChapter5ChanganSiegeReloadSite} from './chapter5-changan-siege-source.mjs';
 import {validateNananTianshuiReloadSite} from './nanan-tianshui-source.mjs';
 /** Strict first-battle scenario VM. Executes confirmed flag/control instructions.
@@ -112,6 +113,8 @@ export function normalizeScenarioInventory(inventory){
 export function createScenarioEventInterpreter(inventory){
   const campaign=inventory?.purpose==='normalized_campaign_battle_scenario',normalized=campaign||inventory?.purpose==='normalized_first_battle_scenario',profile=campaign?REVIEWED_CAMPAIGN_SCENARIOS[inventory.contextId]:BOWANG_BLOCKS[inventory?.block_index];
   if(campaign)guard(profile?.blockIndex===inventory.block_index,'campaign_scenario_context');
+  const freeXinye=campaign&&inventory.contextId==='6:0:0';
+  if(freeXinye)guard(same(inventory,createXinyeFreeScenarioInventory()),'free_xinye_source_inventory');
   guard((normalized||inventory?.purpose==='private_first_battle_scenario_bytecode')&&inventory.schema_version==='1.0.0'&&
     inventory.source_rom?.sha256===ROM&&profile&&inventory.block_sha256===profile.hash&&
     (normalized||(inventory.block_start===profile.start&&inventory.block_end===profile.end)),'scenario_inventory');
@@ -154,12 +157,14 @@ export function createScenarioEventInterpreter(inventory){
     const script=scripts.get(record.script_pc);
     integer(vm.commandIndex,0,script.commands.length,'command index');flags(vm.flags);
     guard(groups.has(vm.groupStart),'scenario_state_group');integer(vm.sceneMode,0,65535,'scene mode');
+    if(freeXinye){const g=groups.get(vm.groupStart);guard(vm.recordIndex>0&&(vm.status==='complete'||
+      (vm.recordIndex>=g.start_record&&vm.recordIndex<g.start_record+g.record_count)),'free_xinye_scenario_cursor');}
     guard(['running','awaiting_effect','complete','blocked'].includes(vm.status),'scenario_state_status');
     if(vm.status==='running')guard(vm.commandIndex<script.commands.length,'scenario_pc_after_end');
     if(vm.status==='awaiting_effect'){
       const c=script.commands[vm.commandIndex];
       guard(c&&vm.pendingEffect?.id===`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,'scenario_pending_effect');
-      if(['3:2:3','3:2:4','3:2:7','3:2:8','3:2:12','3:2:14','3:3:4','3:3:5','3:3:9','3:3:10','4:0:3','4:0:4','4:1:4','4:1:5','4:1:8','4:3:4','4:3:5','4:3:8','4:3:9','4:3:13','4:3:16','5:0:2','5:0:3','5:0:6','5:0:7','5:0:12','5:0:17','5:1:7','5:1:3','5:1:4'].includes(data.contextId))guard(same(vm.pendingEffect,{id:`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,kind:c.operation,opcode:c.opcode,...evidence(c),arguments:clone(c.decoded),requiresHostImplementation:true}),'qishan_source_pending_effect');
+      if(freeXinye||['3:2:3','3:2:4','3:2:7','3:2:8','3:2:12','3:2:14','3:3:4','3:3:5','3:3:9','3:3:10','4:0:3','4:0:4','4:1:4','4:1:5','4:1:8','4:3:4','4:3:5','4:3:8','4:3:9','4:3:13','4:3:16','5:0:2','5:0:3','5:0:6','5:0:7','5:0:12','5:0:17','5:1:7','5:1:3','5:1:4'].includes(data.contextId))guard(same(vm.pendingEffect,{id:`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,kind:c.operation,opcode:c.opcode,...evidence(c),arguments:clone(c.decoded),requiresHostImplementation:true}),'qishan_source_pending_effect');
     }
     return {record,script,group:groups.get(vm.groupStart)};
   }
@@ -220,7 +225,7 @@ export function createScenarioEventInterpreter(inventory){
       }else if(c.opcode===0xff){
         if(!group.repeat_on_end)advanceGroup(vm,group);
         vm.commandIndex++;vm.returnCode=(vm.sceneMode&0xf000)===0x1000?0:1;vm.status='complete';
-      }else if(c.support==='host_effect_required'&&EFFECT_OPCODES.has(c.opcode)){
+      }else if(c.support==='host_effect_required'&&(EFFECT_OPCODES.has(c.opcode)||(freeXinye&&c.opcode===0x29))){
         // Tactical effects cannot be silently acknowledged by this VM.
         if(c.opcode===0x1c&&(campaign?(vm.sceneMode&0xf000)!==0x3000:vm.sceneMode!==0x3000)){vm.status='blocked';vm.transition={reason:'unit_order_requires_battle_scene_mode',...evidence(c)};return freeze(vm);}
         vm.status='awaiting_effect';vm.pendingEffect={id:`${vm.recordIndex}:${vm.commandIndex}:${c.id}`,
@@ -241,6 +246,7 @@ export function createScenarioEventInterpreter(inventory){
     if(c.opcode===0x09||c.opcode===0x11)vm.sceneMode=c.decoded.value_u16;
     vm.commandIndex++;vm.executedCommands++;vm.pendingEffect=null;vm.status='running';
     if(c.opcode===0x12){vm.transition={kind:'advance_root',root:4,section:0,blockIndex:0,groupStart:0};vm.status='complete';vm.returnCode=1;}
+    else if(c.opcode===0x29&&freeXinye){vm.transition={kind:'free_mode_return'};vm.status='complete';vm.returnCode=7;}
     else if(c.opcode===0x0f){vm.transition={kind:'set_block',blockIndex:c.decoded.value_u8,groupStart:0};vm.status='complete';vm.returnCode=(vm.sceneMode&0xf000)===0x1000?0:1;}
     else if(c.opcode===0x09){vm.status='complete';vm.returnCode=2;vm.transition={kind:'scene_mode_yield',resumeCommandIndex:vm.commandIndex};}
     else if(c.opcode===0x05){vm.status='complete';vm.returnCode=0;vm.transition={kind:'scene_yield',resumeCommandIndex:vm.commandIndex};}
