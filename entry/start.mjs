@@ -1,4 +1,4 @@
-import {mountTitle} from './title.mjs?v=0.73.43-qishan-promotion-confirm';
+import {mountTitle} from './title.mjs?v=0.73.45-town-party-info';
 import {createTitleAudio} from './title-audio.mjs';
 import {createTitleRecords} from './title-records.mjs';
 
@@ -7,7 +7,7 @@ const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.43-qishan-promotion-confirm', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.45-town-party-info', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
