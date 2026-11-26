@@ -41,7 +41,7 @@ export function createTitleAudio(document) {
           tracks = (await manifest.json()).tracks;
         }
         const track = tracks?.[id];
-        if (track?.logicalId !== id || track.path !== `bgm-${id}.flac` ||
+        if (track?.logicalId !== id || track.path !== (id === 13 ? "bgm-13-intro-loop.flac" : `bgm-${id}.flac`) ||
             !(track.loopEndSeconds > track.loopStartSeconds && track.loopStartSeconds >= 0)) {
           throw new Error("Missing title music cue");
         }
@@ -85,8 +85,8 @@ export function createTitleAudio(document) {
       return true;
     } catch { return false; }
   }
-  function selectBgm(id) {
-    if (released || id === selected || (id !== 0 && id !== 7 && id !== null)) return;
+  function selectKnownBgm(id) {
+    if (released || id === selected) return;
     stop();
     offset = 0;
     selected = id;
@@ -122,7 +122,9 @@ export function createTitleAudio(document) {
   document.addEventListener("visibilitychange", visibility);
   showButton();
   return {
-    unlock, selectBgm, release,
+    unlock, release,
+    selectBgm(id) { if ([0,7,null].includes(id)) selectKnownBgm(id); },
+    selectFreeBgm(id) { if ([4,13,14,null].includes(id)) selectKnownBgm(id); },
     peekDecodedTrack() {
       return enabled && cachedTrack?.id === selected ? {id: selected, buffer: cachedTrack.buffer} : null;
     },
