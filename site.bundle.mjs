@@ -57276,6 +57276,17 @@ ${Jn}`
         }
       }
       if (Xe) {
+        // A cold aftermath record owns the battle's last caption, not its
+        // successor's verified images. Prepare the matching successor only at
+        // the original story boundary, before attempting the source handoff.
+        const chencangNext = Xe.pendingStoryCursor;
+        if (Xe.stage === "boundary" && Xe.hasRegisteredSuccessor === true &&
+            chencangNext?.root === 3 && chencangNext.section === 3 &&
+            chencangNext.block === 6 && chencangNext.record === 0 &&
+            chencangNext.commandIndex === 14) {
+          if (Xe.chapterId === "high-chencang" && Ue) Rn("high-post-chencang");
+          if (Xe.chapterId === "chencang" && $) Rn("post-chencang");
+        }
         if ((Rn(["chapter5-section2-town", "chapter5-second-changan-source", "chapter5-second-changan-return"].includes(Xe.chapterId) ? null : Xe.chapterId), Nn && Xe.chapterId === "chapter5-jiangling-aftermath" && Xe.coreStage === "held-before-next-story" && Xe.hasRegisteredSuccessor === !0 && Rn("chapter5-wei-coup"), $t && Xe.chapterId === "chapter5-jiangling-return" && Xe.coreStage === "held-after-manual" && Xe.hasRegisteredSuccessor === !0 && Rn("chapter5-jiangling-aftermath"), Xe.chapterId === "chapter5-baidi-return" && Xe.sourceChapterId === "chapter5-baidi-jiangling-return")) {
           if (!Nt) throw new TypeError("Native Baidi return graphics unavailable");
           Rn("chapter5-baidi-jiangling-return");
@@ -68630,8 +68641,8 @@ function upgradeLegacyTitleDocument() {
   if (!modules.some(script => script.src === import.meta.url) ||
       modules.some(script => new URL(script.src).pathname.endsWith("/entry/start.mjs"))) return;
   const page = new URL(window.location.href);
-  if (page.searchParams.get("title-version") !== "0.73.50") {
-    page.searchParams.set("title-version", "0.73.50");
+  if (page.searchParams.get("title-version") !== "0.73.51") {
+    page.searchParams.set("title-version", "0.73.51");
     window.location.replace(page.href);
     return;
   }
