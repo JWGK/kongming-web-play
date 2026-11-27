@@ -1,27 +1,37 @@
 import {createDetachedTownSession} from './settled-town-session.mjs?v=0.73.90-wei-river-towns';
 import {changanRoadStocks,loadChanganRoadTownData} from './changan-road-exterior.mjs?v=0.73.93-changan-road-towns';
 
-const chapter='chapter5-wugong-source', context=Object.freeze({root:5,section:0,block:5});
+const chapter='chapter5-wugong-source', selection='chapter5-wugong-selection', aftermath='chapter5-changan-return';
+const contexts=Object.freeze({
+  [chapter]:Object.freeze({root:5,section:0,block:5}),
+  [selection]:Object.freeze({root:5,section:0,block:11}),
+  [aftermath]:Object.freeze({root:5,section:0,block:13}),
+});
 const mask=Object.freeze([0,0,0x43,0,0,0,0,0]), cities=Object.freeze([17,22,23]);
+// 0x1cad37 also enables the story landmark 武功 (52). Original world
+// A-confirm at 0x26b6c rejects targets above city 25 even with that bit set.
+const afterMask=Object.freeze([0,0,0x43,0,0,0,8,0]);
+const maskFor=id=>id===aftermath?afterMask:mask;
 const scope=new WeakSet(),dataOwner=new WeakSet(),profileOwner=new WeakSet();
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const uint=(x,limit)=>Number.isSafeInteger(x)&&!Object.is(x,-0)&&x>=0&&x<=limit;
-function site(cursor){
+function site(cursor,chapterId=chapter){
   return Array.isArray(cursor)&&cursor.length===5&&cursor.every(n=>uint(n,63))&&
-    (cursor.join(':')==='5:0:5:1:0'?'outdoor':cursor.join(':')==='5:0:5:2:0'?'council':null);
+    (chapterId===chapter?(cursor.join(':')==='5:0:5:1:0'?'outdoor':cursor.join(':')==='5:0:5:2:0'?'council':null):
+     chapterId===selection&&cursor.join(':')==='5:0:11:1:0'||chapterId===aftermath&&cursor.join(':')==='5:0:13:2:0'?'council':null);
 }
 export function wugongRoadOrigin({chapterId,cursor,stage,room,campaign}={}){
-  const at=site(cursor);
+  const at=site(cursor,chapterId);
   // Native city gate 0x1c8de5, input release 0x1c8e36 and 0x1c8f12.
-  if(chapterId!==chapter||!at||stage!=='hub'||room?.currentCity!==23||room.sceneMode!==(at==='outdoor'?23:8192)||
-     room.inputEnabled!==true||!uint(room.bgmId,255)||!same(campaign?.persistentState?.cityAvailabilityBytes,mask))return null;
-  const value=Object.freeze({site:at,city:23,bgmId:room.bgmId});
+  if(!at||stage!=='hub'||room?.currentCity!==23||room.sceneMode!==(at==='outdoor'?23:8192)||
+     room.inputEnabled!==true||!uint(room.bgmId,255)||!same(campaign?.persistentState?.cityAvailabilityBytes,maskFor(chapterId)))return null;
+  const value=Object.freeze({site:at,city:23,bgmId:room.bgmId,chapterId});
   scope.add(value);
   return value;
 }
 export const isWugongRoadTownProfile=p=>profileOwner.has(p);
 export function isWugongRoadVisit(value,chapterId,cursor){
-  return chapterId===chapter&&!!site(cursor)&&typeof value==='string'&&/^(town|world):(17|22|23)$/.test(value);
+  return !!site(cursor,chapterId)&&typeof value==='string'&&/^(town|world):(17|22|23)$/.test(value);
 }
 export function wugongRoadVisitLabel(value){
   const m=typeof value==='string'&&/^(town|world):(17|22|23)$/.exec(value);
@@ -92,14 +102,15 @@ export async function loadWugongRoadTownData({fetch=globalThis.fetch,subtle=glob
   return freeze({townData,pageTranslations:freeze(pageTranslations),npcLabels:freeze(npcLabels)});
 }
 function open({origin,campaign,townData,sharedFactory,itemServicesFactory,readSave,request,route,observeOperation}={}){
-  if(!scope.has(origin)||!dataOwner.has(townData)||!same(campaign?.persistentState?.cityAvailabilityBytes,mask))
+  if(!scope.has(origin)||!dataOwner.has(townData)||!same(campaign?.persistentState?.cityAvailabilityBytes,maskFor(origin.chapterId)))
     throw new RangeError('Only original Map38 city mask and issued shared profile allowed');
   const shops=cities.flatMap(city=>Object.keys(wugongRoadStocks[city]).map(kind=>{
     const weapons=kind==='weapons';
     return freeze({city,kind,facility:weapons?3:4,stockKey:'city'+city+'-'+kind,sceneKey:'shop-city'+city+'-'+kind,
       speakerDefinition:null,speakerNameJa:weapons?'武器屋':'道具屋',nativeActorDefinition:weapons?1021:1022});
   }));
-  const profile=freeze({id:'wugong-road-exterior',context,cityIds:cities,initialCity:23,bgmId:origin.bgmId,
+  const context=contexts[origin.chapterId];
+  const profile=freeze({id:origin.chapterId===aftermath?'changan-return-exterior':origin.chapterId===selection?'changan-siege-exterior':'wugong-road-exterior',context,cityIds:cities,initialCity:23,bgmId:origin.bgmId,
     hintsJa:freeze(['郿城']),facilityRoutes:freeze([freeze({city:23,facility:0,event:origin.site==='outdoor'?'exit:1':'origin'})]),shops:freeze(shops)});
   profileOwner.add(profile);
   const carry=structuredClone({targetContext:context,initialSeed:campaign.initialSeed,rngState:campaign.rngState,
@@ -121,7 +132,7 @@ export const createWugongRoadTownSession=options=>createDetachedTownSession(open
 export function checkWugongRoadTrade(entry,chapterId){
   const a=entry?.action, keys=a&&Object.keys(a).sort().join(',');
   const owner=n=>n===null||uint(n,511);
-  let valid=chapter===chapterId&&!!site(entry?.cursor)&&uint(a?.itemSlotId,254);
+  let valid=!!site(entry?.cursor,chapterId)&&uint(a?.itemSlotId,254);
   if(a?.type==='buy')valid=valid&&keys==='cityId,itemSlotId,shop,targetDefinitionIndex,type'&&cities.includes(a.cityId)&&
     ['weapons','tools'].includes(a.shop)&&wugongRoadStocks[a.cityId][a.shop]?.includes(a.itemSlotId)===true&&owner(a.targetDefinitionIndex);
   else if(a?.type==='sell')valid=valid&&keys==='inventoryIndex,itemSlotId,ownerDefinitionIndex,type'&&
@@ -130,9 +141,9 @@ export function checkWugongRoadTrade(entry,chapterId){
   if(!valid)throw new RangeError('Invalid native Map38 trade journal entry');
   return a;
 }
-export function replayWugongRoadTrade(entry,campaign,itemServicesFactory){
-  const action=checkWugongRoadTrade(entry,chapter);
-  if(!same(campaign?.persistentState?.cityAvailabilityBytes,mask))throw new RangeError('Only native three-city travel scope');
+export function replayWugongRoadTrade(entry,campaign,itemServicesFactory,chapterId=chapter){
+  const action=checkWugongRoadTrade(entry,chapterId);
+  if(!same(campaign?.persistentState?.cityAvailabilityBytes,maskFor(chapterId)))throw new RangeError('Only native three-city travel scope');
   const service=itemServicesFactory(campaign);
   const result=service.operate({persistentState:structuredClone(campaign.persistentState),action:structuredClone(action),rngState:campaign.rngState});
   if(result?.applied!==true||!result.persistentState||service.validatePersistentState(result.persistentState)===false||

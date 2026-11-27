@@ -20,6 +20,9 @@ const suspendLabels = new Map([
 ]);
 const manualLabels = new Map([
   ['KONGMING-WUGONG-AFTERMATH-MANUAL/1', '武功之戰・戰後'],
+  ['KONGMING-WUGONG-SELECTION-MANUAL/1', '郿城・長安出陣前'],
+  ['KONGMING-CHANGAN-RETURN-MANUAL/1', '長安攻城戰Ⅰ・戰後'],
+  ['KONGMING-CHAPTER5-RETURN-MANUAL/1', '孔明歸還'],
   ['KONGMING-QISHAN-ROOT4-CAMP-MANUAL/1', '祁山　蜀軍營帳'],
   ['KONGMING-WUZHANG-HISTORICAL-POST-MANUAL/1', '第四章・第三幕 五丈原之戰Ⅱ（史實戰後）'],
   ['KONGMING-HANGU-POST-MANUAL/1', '終章・第四幕 洛陽（函谷關之戰戰後）'],
@@ -32,7 +35,9 @@ const storySites = new Map([
   ['chapter4-hulugu-source', '葫蘆谷出陣前'],
   ['chapter4-wuzhang-source', '五丈原出陣前'],
   ['chapter5-changan-source', '郿城整備'],
-  ['chapter5-wugong-source', '武功出陣前']
+  ['chapter5-wugong-source', '武功出陣前'],
+  ['chapter5-wugong-selection', '郿城・長安出陣前'],
+  ['chapter5-changan-return', '郿城・長安攻城戰後']
 ]);
 const councilSites = new Map([
   ['nanan-council', '祁山　蜀軍營帳'],
@@ -99,7 +104,9 @@ function exteriorStoryLocation(chapter,cursor,visit) {
     const m=typeof visit==='string' && /^(town|world):(17|22)$/.exec(visit);
     return m?(m[2]==='17'?'祁山':'五丈原')+(m[1]==='world'?'城外大地圖':''):null;
   }
-  if (chapter==='chapter5-wugong-source' && /^5,0,5,[12],0$/.test(cursor)){
+  if (chapter==='chapter5-wugong-source' && /^5,0,5,[12],0$/.test(cursor) ||
+      chapter==='chapter5-wugong-selection' && cursor==='5,0,11,1,0' ||
+      chapter==='chapter5-changan-return' && cursor==='5,0,13,2,0'){
     const m=typeof visit==='string' && /^(town|world):(17|22|23)$/.exec(visit);
     return m?({17:'祁山',22:'五丈原',23:'郿城'})[m[2]]+(m[1]==='world'?'城外大地圖':''):null;
   }
@@ -125,8 +132,8 @@ function storyLocation(payload) {
   if (!text.length || text.length > 196608 || (chunks.length > 1 && text.length !== 196608)) return null;
   // The native story writer always places chapter first. Large saves need just the first chunk.
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
-  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source'].includes(chapter?.[1])) {
-    const header = /^(\d,\d,\d,\d+,\d+)\],(?:"townVisit":"([^"]{1,12})",)?/.exec(text.slice(chapter[0].length,chapter[0].length+44));
+  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return'].includes(chapter?.[1])) {
+    const header = /^(\d{1,2},\d{1,2},\d{1,2},\d{1,2},\d{1,2})\],(?:"townVisit":"([^"]{1,12})",)?/.exec(text.slice(chapter[0].length,chapter[0].length+44));
     if (header) {
       // Older one-chunk exterior saves append the visit after their carry.
       // Never expand later chunks at the title just to find a label.
