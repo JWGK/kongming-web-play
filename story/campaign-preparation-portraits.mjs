@@ -46,6 +46,8 @@ const CAMPAIGN_PREPARATION_PORTRAITS = Object.freeze({
   57: "assets/baxi-field/portraits/face-19.png", // 周倉
   58: "assets/baxi-field/portraits/face-21.png", // 厳顔
   59: "assets/map10-field/portraits/face-25.png", // 王甫
+  118: "assets/baxi-field/portraits/face-204.png", // 陳到
+  216: "assets/map10-field/portraits/face-254.png", // 高定
 });
 
 export function campaignPreparationPortrait(definitionIndex) {
