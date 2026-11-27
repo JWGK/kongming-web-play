@@ -11,6 +11,11 @@ export function chencangStoryStill(section,recipe,current){
     if(recipe.skippableByInput)return recipe.frames.at(-1);
     return recipe.completionFrame;
   }
+  if(section==='camp'&&recipe.nativeRequestProjection&&!recipe.webControlBoundary){
+    if(recipe.id.startsWith('camp:interaction:'))return current;
+    if(recipe.skippableByInput)return recipe.frames.at(-1); // include localized caption
+    return recipe.completionFrame;
+  }
   return current;
 }
 
@@ -104,11 +109,22 @@ export function earlyStoryCaption(recipe){
   const key=recipe.frames.at(-1)?.overlays.find(x=>Object.hasOwn(captionIds,x.assetId))?.assetId;
   return key?captionIds[key]:null;
 }
+// Only the source-authenticated camp title migrates out of the canvas.
+export function campLocationCaption(recipe) {
+  if (recipe?.skippableByInput !== true || !recipe.nativeRequestProjection) return null;
+  const text=recipe.frames?.at(-1)?.localizedCaption?.text;
+  return text==='祁山　蜀軍營帳'?text:null;
+}
 export function chencangLocationDialogue(view){
-  if(view?.chapterId!=='second-chencang'||!view.presentation?.pending||view.dialogue)return null;
+  if(!view?.presentation?.pending||view.dialogue)return null;
   const recipe=view.presentation.recipe;
-  if(recipe?.policyVersion!=='web-changan-continuation-display/1'&&
-     recipe?.policyVersion!=='web-second-chencang-aftermath-display/1')return null;
+  if(view.chapterId==='qishan-root4-camp'){
+    const text=campLocationCaption(recipe);
+    return text?{textJa:text,speakerDefinition:null}:null;
+  }
+  if(view.chapterId!=='second-chencang' || (
+     recipe?.policyVersion!=='web-changan-continuation-display/1' &&
+     recipe?.policyVersion!=='web-second-chencang-aftermath-display/1'))return null;
   const text=earlyStoryCaption(recipe);
   return text?{textJa:text,speakerDefinition:null}:null;
 }
