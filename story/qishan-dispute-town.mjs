@@ -1,4 +1,5 @@
-import {checkQishanDisputeTrade,isQishanDisputeTrade} from "./qishan-dispute-exterior.mjs";
+import {checkQishanDecisiveTrade} from "./qishan-decisive-exterior.mjs";
+import {checkQishanDisputeTrade,isQishanDisputeTrade} from "./qishan-dispute-exterior.mjs?v=0.73.89-qishan-city17";
 
 // Original opcode 23/0 precedes each settled hub. Script performers and
 // dialogue also use these backgrounds, so the scene number alone is not enough.
@@ -47,7 +48,10 @@ export function checkDisputeTownJournal(record,validateActions) {
   }
   const ordinary=[];
   for(const entry of entries){
-    if(isQishanDisputeTrade(entry.action))checkQishanDisputeTrade(entry,record.chapter);
+    if(isQishanDisputeTrade(entry.action)){
+      const check=record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:checkQishanDisputeTrade;
+      check(entry,record.chapter);
+    }
     else ordinary.push(entry.action);
   }
   validateActions(ordinary);
