@@ -2,6 +2,8 @@ import {createDetachedTownSession} from './settled-town-session.mjs?v=0.73.90-we
 import {qishanDecisiveStocks} from './qishan-decisive-exterior.mjs?v=0.73.90-wei-river-towns';
 
 const chapter='chapter4-post-qishan-source';
+const hulugu='chapter4-hulugu-source';
+const chapterFor=cursor=>cursor?.[2]===7?hulugu:chapter;
 const early=Object.freeze([7,8]), camp=Object.freeze([17]);
 const scopes=new Map([
   ['4:3:0:1:0',[7,8197,early,5,6,'exit:8']],
@@ -11,6 +13,9 @@ const scopes=new Map([
   ['4:3:1:13:0',[7,8198,early,6,0,'exit:16']],
   ['4:3:2:7:0',[7,8198,early,6,0,'exit:9']],
   ['4:3:3:6:0',[17,8200,camp,8,null,null]],
+  // The new camp after the Wei River aftermath has its own exact
+  // release at 0x1beba4 and city17-only command at 0x1bea30.
+  ['4:3:7:1:0',[17,8200,camp,8,null,null]],
 ]);
 const scopesFor=cursor=>Array.isArray(cursor)&&cursor.length===5&&
   cursor.every(v=>Number.isSafeInteger(v)&&!Object.is(v,-0))?scopes.get(cursor.join(':')):null;
@@ -19,7 +24,7 @@ const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const exactMask=cities=>Array.from({length:8},(_,i)=>cities.reduce((mask,n)=>mask|(n>>3===i?128>>(n&7):0),0));
 export function qishanPostBattleExteriorOrigin({chapterId,cursor,stage,room,campaign}={}){
   const t=scopesFor(cursor);
-  if(chapterId!==chapter||!t||stage!=='hub'||room?.inputEnabled!==true||room.currentCity!==t[0]||
+  if(chapterId!==chapterFor(cursor)||!t||stage!=='hub'||room?.inputEnabled!==true||room.currentCity!==t[0]||
      room.sceneMode!==t[1]||!Number.isInteger(room.bgmId)||room.bgmId<0||room.bgmId>255||
      !same(campaign?.persistentState?.cityAvailabilityBytes,exactMask(t[2])))return null;
   const origin=Object.freeze({city:t[0],cities:t[2],returnFacility:t[3],hookFacility:t[4],hook:t[5],
@@ -27,7 +32,7 @@ export function qishanPostBattleExteriorOrigin({chapterId,cursor,stage,room,camp
   owned.add(origin);return origin;
 }
 export function isQishanPostBattleVisit(visit,chapterId,cursor){
-  if(chapterId!==chapter||typeof visit!=='string')return false;
+  if(chapterId!==chapterFor(cursor)||typeof visit!=='string')return false;
   const m=/^(town|world):(7|8|17)$/.exec(visit);
   return !!m&&scopesFor(cursor)?.[2].includes(Number(m[2]))===true;
 }
@@ -134,7 +139,7 @@ export function checkQishanPostBattleTrade(entry,chapterId){
   const a=entry?.action,keys=a&&Object.keys(a).sort().join(','),scope=scopesFor(entry?.cursor);
   const uint=(v,max)=>Number.isSafeInteger(v)&&!Object.is(v,-0)&&v>=0&&v<=max;
   const owner=v=>v===null||uint(v,511);
-  let valid=chapterId===chapter&&!!scope&&uint(a?.itemSlotId,254);
+  let valid=chapterId===chapterFor(entry?.cursor)&&!!scope&&uint(a?.itemSlotId,254);
   if(a?.type==='buy')valid=valid&&keys==='cityId,itemSlotId,shop,targetDefinitionIndex,type'&&scope[2].includes(a.cityId)&&
     ['weapons','tools'].includes(a.shop)&&qishanPostBattleStocks[a.cityId][a.shop].includes(a.itemSlotId)&&owner(a.targetDefinitionIndex);
   else if(a?.type==='sell')valid=valid&&keys==='inventoryIndex,itemSlotId,ownerDefinitionIndex,type'&&
@@ -143,8 +148,8 @@ export function checkQishanPostBattleTrade(entry,chapterId){
   if(!valid)throw new RangeError('Invalid native Chengdu/Hanzhong/Qishan trade journal');
   return a;
 }
-export function replayQishanPostBattleTrade(entry,campaign,itemServicesFactory){
-  const action=checkQishanPostBattleTrade(entry,chapter);
+export function replayQishanPostBattleTrade(entry,campaign,itemServicesFactory,chapterId=chapter){
+  const action=checkQishanPostBattleTrade(entry,chapterId);
   if(!same(campaign?.persistentState?.cityAvailabilityBytes,exactMask(scopesFor(entry.cursor)[2])))
     throw new RangeError('Only current original city scope is allowed');
   const service=itemServicesFactory(campaign);

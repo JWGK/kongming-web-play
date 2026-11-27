@@ -93,6 +93,7 @@ function exteriorStoryLocation(chapter,cursor,visit) {
     return visit === 'town' ? '成都' : visit === 'world' ? '成都城外大地圖' : null;
   if (chapter === 'qishan-map33-source' && cursor === '4,1,7,1,0')
     return visit === 'town' ? '祁山' : visit === 'world' ? '祁山城外大地圖' : null;
+  if (chapter === 'chapter4-hulugu-source' && cursor === '4,3,7,1,0') return visit === 'town:17' ? '祁山' : visit === 'world:17' ? '祁山城外大地圖' : null;
   if (chapter !== 'chapter4-post-qishan-source') return null;
   const m = typeof visit === 'string' && /^(town|world):(7|8|17)$/.exec(visit);
   if (!m || !(cursor === '4,3,3,6,0' ? m[2] === '17' :
@@ -115,7 +116,7 @@ function storyLocation(payload) {
   if (!text.length || text.length > 196608 || (chunks.length > 1 && text.length !== 196608)) return null;
   // The native story writer always places chapter first. Large saves need just the first chunk.
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
-  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source'].includes(chapter?.[1])) {
+  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source'].includes(chapter?.[1])) {
     const header = /^(\d,\d,\d,\d+,\d+)\],(?:"townVisit":"([^"]{1,12})",)?/.exec(text.slice(chapter[0].length,chapter[0].length+44));
     if (header) {
       // Older one-chunk exterior saves append the visit after their carry.

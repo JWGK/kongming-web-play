@@ -1,4 +1,4 @@
-import {checkQishanPostBattleTrade} from "./qishan-postbattle-exterior.mjs";
+import {checkQishanPostBattleTrade} from "./qishan-postbattle-exterior.mjs?v=0.73.91-hulu-valley-town";
 import {checkQishanDecisiveTrade} from "./qishan-decisive-exterior.mjs?v=0.73.90-wei-river-towns";
 import {checkQishanDisputeTrade,isQishanDisputeTrade} from "./qishan-dispute-exterior.mjs?v=0.73.90-wei-river-towns";
 
@@ -51,7 +51,7 @@ export function checkDisputeTownJournal(record,validateActions) {
   for(const entry of entries){
     if(isQishanDisputeTrade(entry.action)){
       const check=record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:
-        record.chapter==='chapter4-post-qishan-source'?checkQishanPostBattleTrade:checkQishanDisputeTrade;
+        ['chapter4-post-qishan-source','chapter4-hulugu-source'].includes(record.chapter)?checkQishanPostBattleTrade:checkQishanDisputeTrade;
       check(entry,record.chapter);
     }
     else ordinary.push(entry.action);
