@@ -354,7 +354,19 @@ s.bonusExperience=0;s.boardVisible=true;delete s.aiOrder;delete s.aiPriorityResc
   case 'query_set':{let selected=null;for(const query of t.queries){selected=vm.selectEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},query);if(selected)break;}
    if(selected){s.scenario.adjacencyDefinitions=selected.adjacencyDefinitions;beginEvent(s,selected.recordIndex,t);}
    else if(t.onMissing==='defeat'){s.gameOver=true;terminal(s,'defeat','defeat_definition_removed');}break;}
-  case 'generic':{if(map33){const selected=vm.selectEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},{kind:'generic'});if(selected){guard(selected.commandIndex===0||(s.scenario.groupStart===16&&selected.recordIndex===16&&selected.commandIndex===1&&s.scenario.flags[8]===true),'map33_exact_consumed_generic_condition');s.scenario.vm=vm.begin({recordIndex:selected.recordIndex,commandIndex:selected.commandIndex,groupStart:s.scenario.groupStart,flags:s.scenario.flags,sceneMode:s.scenario.sceneMode});s.scenario.returnTask=t;}break;}const record=vm.findEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},{kind:'generic'});if(record!==null)beginEvent(s,record,t);break;}
+  case 'generic':{
+   // 4:3:9 repeat group 2 looks up records 2–6 using the leading 0x21.
+   // The lookup consumes that condition and returns its reviewed command-1 cursor.
+   if(hulugu&&s.campaignContextId==='4:3:9'){
+    const selected=vm.selectEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},{kind:'generic'});
+    if(selected){
+     guard(selected.commandIndex===0||(s.scenario.groupStart===2&&selected.commandIndex===1&&selected.recordIndex>=2&&selected.recordIndex<=6&&s.scenario.flags[10-selected.recordIndex]===true),'hulugu_exact_consumed_generic_condition');
+     s.scenario.vm=vm.begin({recordIndex:selected.recordIndex,commandIndex:selected.commandIndex,groupStart:s.scenario.groupStart,flags:s.scenario.flags,sceneMode:s.scenario.sceneMode});
+     s.scenario.returnTask=t;
+    }
+    break;
+   }
+   if(map33){const selected=vm.selectEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},{kind:'generic'});if(selected){guard(selected.commandIndex===0||(s.scenario.groupStart===16&&selected.recordIndex===16&&selected.commandIndex===1&&s.scenario.flags[8]===true),'map33_exact_consumed_generic_condition');s.scenario.vm=vm.begin({recordIndex:selected.recordIndex,commandIndex:selected.commandIndex,groupStart:s.scenario.groupStart,flags:s.scenario.flags,sceneMode:s.scenario.sceneMode});s.scenario.returnTask=t;}break;}const record=vm.findEvent({groupStart:s.scenario.groupStart,flags:s.scenario.flags},{kind:'generic'});if(record!==null)beginEvent(s,record,t);break;}
   case 'round_start':{
    if(freeXinye&&s.rawTurn>=s.turnLimit){
     const u=s.units[0];guard(u?.definitionIndex===0&&u.state15===2,'free_xinye_timeout_protagonist');

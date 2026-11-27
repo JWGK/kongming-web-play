@@ -2661,6 +2661,15 @@ function O9e({rules:e,itemSlotId:t,itemInstances:r,classIndex:a=null,sourceField
         }
       case "generic":
         {
+          if(T.campaignContextId==="4:3:9"){
+            const selected=j.selectEvent({groupStart:T.scenario.groupStart,flags:T.scenario.flags},{kind:"generic"});
+            if(selected){
+              Rt(selected.commandIndex===0||(T.scenario.groupStart===2&&selected.commandIndex===1&&selected.recordIndex>=2&&selected.recordIndex<=6&&T.scenario.flags[10-selected.recordIndex]===true),"hulugu_exact_consumed_generic_condition");
+              T.scenario.vm=j.begin({recordIndex:selected.recordIndex,commandIndex:selected.commandIndex,groupStart:T.scenario.groupStart,flags:T.scenario.flags,sceneMode:T.scenario.sceneMode});
+              T.scenario.returnTask=$e;
+            }
+            break;
+          }
           if (S) {
             let Ce = j.selectEvent({
               groupStart: T.scenario.groupStart,
