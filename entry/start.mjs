@@ -1,13 +1,13 @@
 import {mountTitle} from './title.mjs?v=0.73.57-qishan-camp';
 import {createTitleAudio} from './title-audio.mjs';
-import {createTitleRecords} from './title-records.mjs?v=0.73.93-changan-road-towns';
+import {createTitleRecords} from './title-records.mjs?v=0.73.94-wugong-parity';
 
 const handoff = document.getElementById('title-handoff');
 const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.93-changan-road-towns', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.94-wugong-parity', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
