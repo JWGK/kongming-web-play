@@ -88,6 +88,18 @@ function jsonLocation(body) {
   }
 }
 
+function exteriorStoryLocation(chapter,cursor,visit) {
+  if (chapter === 'qishan-dispute-source' && ['4,1,0,3,0','4,1,1,1,0','4,1,1,9,0'].includes(cursor))
+    return visit === 'town' ? '成都' : visit === 'world' ? '成都城外大地圖' : null;
+  if (chapter === 'qishan-map33-source' && cursor === '4,1,7,1,0')
+    return visit === 'town' ? '祁山' : visit === 'world' ? '祁山城外大地圖' : null;
+  if (chapter !== 'chapter4-post-qishan-source') return null;
+  const m = typeof visit === 'string' && /^(town|world):(7|8|17)$/.exec(visit);
+  if (!m || !(cursor === '4,3,3,6,0' ? m[2] === '17' :
+    m[2] !== '17' && ['4,3,0,1,0','4,3,1,1,0','4,3,1,3,0','4,3,1,5,0','4,3,1,13,0','4,3,2,7,0'].includes(cursor))) return null;
+  return ({7:'成都',8:'漢中',17:'祁山'})[m[2]] + (m[1] === 'world' ? '城外大地圖' : '');
+}
+
 function storyLocation(payload) {
   const chunks = JSON.parse(payload);
   if (!Array.isArray(chunks) || !chunks.length || chunks.length > 64) return null;
@@ -103,6 +115,16 @@ function storyLocation(payload) {
   if (!text.length || text.length > 196608 || (chunks.length > 1 && text.length !== 196608)) return null;
   // The native story writer always places chapter first. Large saves need just the first chunk.
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
+  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source'].includes(chapter?.[1])) {
+    const header = /^(\d,\d,\d,\d+,\d+)\],(?:"townVisit":"([^"]{1,12})",)?/.exec(text.slice(chapter[0].length,chapter[0].length+44));
+    if (header) {
+      // Older one-chunk exterior saves append the visit after their carry.
+      // Never expand later chunks at the title just to find a label.
+      const visit = header[2] ?? (chunks.length === 1 && text.includes(',"townVisit":') ? JSON.parse(text).townVisit : null);
+      const label = exteriorStoryLocation(chapter[1],header[1],visit);
+      if (label) return label;
+    }
+  }
   if (chapter?.[1] === 'qishan-map33-source' && text.startsWith('4,1,7,1,0],', chapter[0].length)) return '祁山蜀軍營帳';
   if (chapter?.[1] === 'chapter4-hulugu-source' && text.startsWith('4,3,7,1,0],', chapter[0].length)) return '祁山蜀軍營帳';
   if (chapter?.[1] === 'chapter5-changan-source' && text.startsWith('5,0,1,2,0],', chapter[0].length)) return '五丈原蜀軍營帳';

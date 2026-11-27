@@ -1,4 +1,4 @@
-import {createDetachedTownSession} from "./settled-town-session.mjs";
+import {createDetachedTownSession} from "./settled-town-session.mjs?v=0.73.90-wei-river-towns";
 
 // Original 4:1:0/1, Chengdu city 7. Source: ROM town hotspot table
 // 0x873c0 + city*40 and room table 0x884e0 + city*27. 0x2cd46

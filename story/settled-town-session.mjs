@@ -3,8 +3,15 @@
 // existing view, source room, or carried inventory.
 const savedVisits=Object.freeze(['town','world']);
 export function createDetachedTownSession(open, options, city) {
-  if(typeof open!=='function'||!Number.isSafeInteger(city)||city<0||city>63)
-    throw new TypeError('Owned town factory and native city required');
+  const multi=Array.isArray(city),cities=multi?[...city]:[city];
+  if(typeof open!=='function'||!cities.length||new Set(cities).size!==cities.length||
+     cities.some(id=>!Number.isSafeInteger(id)||Object.is(id,-0)||id<0||id>63))
+    throw new TypeError('Owned town factory and native cities required');
+  const parse=visit=>{
+    if(!multi)return savedVisits.includes(visit)?{stage:visit,city:cities[0]}:null;
+    const match=typeof visit==='string'&&/^(town|world):(0|[1-9][0-9]?)$/.exec(visit);
+    return match&&cities.includes(Number(match[2]))?{stage:match[1],city:Number(match[2])}:null;
+  };
   const issued=new WeakMap();
   const publish=(serialized, view, carry)=>{
     const token=Object.freeze({});
@@ -39,17 +46,22 @@ export function createDetachedTownSession(open, options, city) {
     start,
     saveLocation(token) {
       const {engine}=fork(read(token)), state=engine.getTownState();
-      if(state.stage!=='saveSlots'||state.city!==city||state.facility!==null||
+      if(state.stage!=='saveSlots'||!cities.includes(state.city)||state.facility!==null||
          state.transaction!==null||!savedVisits.includes(state.returnStage))
-        throw new RangeError('Exact settled native Chengdu save bank required');
-      return state.returnStage;
+        throw new RangeError('Exact settled native town save bank required');
+      return multi?`${state.returnStage}:${state.city}`:state.returnStage;
     },
     restoreLocation(visit) {
-      if(!savedVisits.includes(visit))throw new RangeError('Invalid native Chengdu visit');
-      if(visit==='town')return start;
+      const target=parse(visit);
+      if(!target)throw new RangeError('Invalid native town visit');
       const {engine}=fork();
-      engine.choose('world');
-      if(engine.view.stage!==visit)throw new RangeError('Missing original Chengdu world exit');
+      if(engine.getTownState().city!==target.city){
+        engine.choose('world');
+        engine.choose('city:'+target.city);
+      }
+      if(target.stage==='world')engine.choose('world');
+      if(engine.view.stage!==target.stage||engine.getTownState().city!==target.city)
+        throw new RangeError('Missing original town travel route');
       return finish(engine);
     },
     apply(token, action) {
