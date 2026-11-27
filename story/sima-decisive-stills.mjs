@@ -9,7 +9,6 @@ const locations=new Map([
   ['7:0:3',[0x1b0f2b,12536,'祁山','祁山']],
   ['7:0:21',[0x1b0f94,12541,'祁山　蜀軍幕舎','祁山　蜀軍營帳']],
 ]);
-const marches=new Set(['6:0:2','6:0:3','6:4:3']);
 export const decisivePreludeCursor=cursor=>Array.isArray(cursor)&&cursor.length===5&&cursor[0]===4&&cursor[1]===1&&[6,7].includes(cursor[2]);
 export function decisivePreludeCaption(recipe){
   const cursor=recipe?.sourceCursor;
@@ -23,6 +22,5 @@ export function decisivePreludeDialogue(view){
   return text?{textJa:text,speakerDefinition:null}:null;
 }
 export function decisivePreludeWorldStill(room,cursor){
-  return decisivePreludeCursor(cursor)&&room?.sceneMode===4096&&room.inputEnabled===false&&
-    (marches.has(cursor.slice(2).join(':'))||room.march!=null);
+  return decisivePreludeCursor(cursor)&&room?.sceneMode===4096&&room.inputEnabled===false;
 }
