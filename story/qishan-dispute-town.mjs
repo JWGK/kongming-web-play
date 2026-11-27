@@ -1,3 +1,4 @@
+import {checkChanganRoadTrade} from "./changan-road-exterior.mjs?v=0.73.93-changan-road-towns";
 import {checkQishanPostBattleTrade} from "./qishan-postbattle-exterior.mjs?v=0.73.91-hulu-valley-town";
 import {checkQishanDecisiveTrade} from "./qishan-decisive-exterior.mjs?v=0.73.90-wei-river-towns";
 import {checkQishanDisputeTrade,isQishanDisputeTrade} from "./qishan-dispute-exterior.mjs?v=0.73.90-wei-river-towns";
@@ -18,6 +19,7 @@ const hubs = new Map([
   ['4:3:2:7:0',['chapter4-post-qishan-source',7,8198]],
   ['4:3:3:6:0',['chapter4-post-qishan-source',17,8200]],
   ['4:3:7:1:0',['chapter4-hulugu-source',17,8200]],
+  ['5:0:1:1:0',['chapter5-changan-source',22,22]],
   ['5:0:1:2:0',['chapter5-changan-source',22,8200]],
 ]);
 function townScope(cursor){
@@ -50,7 +52,7 @@ export function checkDisputeTownJournal(record,validateActions) {
   const ordinary=[];
   for(const entry of entries){
     if(isQishanDisputeTrade(entry.action)){
-      const check=record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:
+      const check=record.chapter==='chapter5-changan-source'?checkChanganRoadTrade:record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:
         ['chapter4-post-qishan-source','chapter4-hulugu-source'].includes(record.chapter)?checkQishanPostBattleTrade:checkQishanDisputeTrade;
       check(entry,record.chapter);
     }
