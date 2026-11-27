@@ -1,5 +1,5 @@
 import {wuzhangFrames as frames} from './wuzhang-still-frames.mjs?v=0.73.77';
-const decoded = new Map();
+import {prepareNativeStillFiles} from "./native-still-surface.mjs?v=0.73.80";
 
 export function wuzhangPicture(view) {
   const cursor = view?.sourceCursor, room = view?.room, recipe = view?.presentation;
@@ -13,18 +13,5 @@ export function wuzhangPicture(view) {
 }
 
 export function prepareWuzhangPictures() {
-  if (typeof Image !== 'function') return Promise.resolve();
-  return Promise.all([...new Set(Object.values(frames))].map(path => {
-    if (!decoded.has(path)) {
-      const image = new Image();
-      image.src = new URL('../' + path, import.meta.url).href;
-      decoded.set(path, image.decode().then(() => {
-        if (image.naturalWidth !== 240 || image.naturalHeight !== 160) {
-          throw new RangeError('Invalid Wuzhang still dimensions');
-        }
-        return image;
-      }).catch(error => { decoded.delete(path); throw error; }));
-    }
-    return decoded.get(path);
-  }));
+  return prepareNativeStillFiles(Object.values(frames));
 }
