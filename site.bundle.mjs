@@ -57791,7 +57791,9 @@ ${Jn}`
         let wr = Xe.pendingNextContext ?? (Xe.kind === "outro" && Xe.sequence === "bowangpo-outro" ? l.nextContext : null);
         if (wr) for (let Ka of [...b, ...w]) for (let Kc of Ka.story.entryContexts ?? []) Kc.root === wr.root && Kc.section === wr.section && Kc.block === wr.block && (Kc.battleStageId ?? null) === ((wr.battleStageId ?? Xe.nextBattleStageId) ?? null) && Rn(Ka.id);
       }
-      (Dt && Nt && Dt.rulesVersion === "chapter5-jiangling-engine-1" && Dt.campaignState?.initialConfirmedPreparation?.originFamily === "baidi" && Rn("chapter5-baidi-jiangling-return"), Dt && Rn(Dt.rulesVersion === "chapter5-jiangling-engine-1" ? "chapter5-jiangling" : Dt.rulesVersion === "chapter5-baidi-engine-1" ? "chapter5-baidi" : Dt.rulesVersion === "chapter5-jianning-engine-1" ? "chapter5-jianning" : Dt.rulesVersion === "chapter5-baxi-engine-1" ? "chapter5-baxi" : Dt.rulesVersion === "chapter5-chengdu-defense-engine-1" ? "chapter5-chengdu-defense" : Dt.rulesVersion === "chapter5-changan-siege-engine-1" ? "chapter5-changan-siege" : Dt.rulesVersion === "chapter5-wugong-engine-1" ? "chapter5-wugong" : Dt.rulesVersion === "chapter5-changan-engine-1" ? "chapter5-changan" : Dt.rulesVersion === "chapter4-wuzhang-engine-1" ? "chapter4-wuzhang" : Dt.rulesVersion === "chapter4-hulugu-engine-1" ? "chapter4-hulugu" : Dt.rulesVersion === "chapter4-post-qishan-engine-1" ? "chapter4-post-qishan" : Dt.rulesVersion === "qishan-map33-engine-1" ? "qishan-map33" : Dt.rulesVersion === "qishan-dispute-engine-1" ? "qishan-dispute" : Dt.rulesVersion === "qishan-pursuit-engine-1" ? "qishan-pursuit" : Dt.rulesVersion === "chapter5-second-changan-engine-1" ? null : na.chapterForState(Dt)));
+      (Dt && Nt && Dt.rulesVersion === "chapter5-jiangling-engine-1" && Dt.campaignState?.initialConfirmedPreparation?.originFamily === "baidi" && Rn("chapter5-baidi-jiangling-return"), Dt && Rn(Dt.rulesVersion === "chapter5-jiangling-engine-1" ? "chapter5-jiangling" : Dt.rulesVersion === "chapter5-baidi-engine-1" ? "chapter5-baidi" : Dt.rulesVersion === "chapter5-jianning-engine-1" ? "chapter5-jianning" : Dt.rulesVersion === "chapter5-baxi-engine-1" ? "chapter5-baxi" : Dt.rulesVersion === "chapter5-chengdu-defense-engine-1" ? "chapter5-chengdu-defense" : Dt.rulesVersion === "chapter5-changan-siege-engine-1" ? "chapter5-changan-siege" : Dt.rulesVersion === "chapter5-wugong-engine-1" ? "chapter5-wugong" : Dt.rulesVersion === "chapter5-changan-engine-1" ? "chapter5-changan" : Dt.rulesVersion === "chapter4-wuzhang-engine-1" ? "chapter4-wuzhang" : Dt.rulesVersion === "chapter4-hulugu-engine-1" ? "chapter4-hulugu" : Dt.rulesVersion === "chapter4-post-qishan-engine-1" ? "chapter4-post-qishan" : Dt.rulesVersion === "qishan-map33-engine-1" ? "qishan-map33" : Dt.rulesVersion === "qishan-dispute-engine-1" ? "qishan-dispute" : Dt.rulesVersion === "qishan-pursuit-engine-1" ? "qishan-pursuit" : Dt.rulesVersion === "chapter5-second-changan-engine-1" ? null :
+        Dt.rulesVersion === "chencang-engine-1" && Xn.session.highChencangSessionActive ? "high-chencang" :
+        na.chapterForState(Dt)));
       let Wr = [...qn].filter(wr => !Ji.isReady(wr));
       if (Wr.length || __townLoadW15 || __map45LoadW15 || __map45PostLoadW16) return (async () => {
         for (let wr of Wr) await Ji.prepare(wr);
@@ -58533,78 +58535,65 @@ ${Jn}`
       console.error("Chapter4 camp unavailable:", Xe);
     }
     Hr.completeGroup(fe);
-    let ce = !1;
+    // Like the Jicheng stage, the battle and its immediate story use one
+    // chapter loader, one readiness state, and the same demand/restore gate.
+    // Media stays lazy until that stage is opened; the title never starts it.
+    async function loadChencangStage({loadBattle,loadAftermath,alias,battleMedia,label}) {
+      let aftermath = null;
+      const [battle] = await r0(async media => {
+        const current = await loadBattle(media);
+        // Buffer jobs until the optional source has passed configuration checks.
+        // An unavailable story-source bundle must not disable the battle itself.
+        const jobs = [];
+        try {
+          aftermath = await loadAftermath({
+            previous: current, json: go, fetch: C2, deferMedia: job => jobs.push(job)
+          });
+        } catch (error) {
+          console.error(label + " aftermath unavailable:", error);
+          return [current];
+        }
+        for (const job of jobs) media.deferMedia(job);
+        return [...new Map([current, aftermath, {id: alias}].map(bundle=>[bundle.id,bundle])).values()];
+      }, battleMedia);
+      if (aftermath) {
+        const locale = createChapterLocaleScope([aftermath.locale]);
+        _.set(aftermath.id, locale);
+        _.set(alias, locale);
+      }
+      return [battle, aftermath];
+    }
+    let Pe = null, $ = null;
     Hr.beginGroup("\u9673\u5009\u6230\u5F79");
-    let Pe = null;
     if (re && Q) try {
-      (Pe = await r0(Xe => jit({
-        previous: Q,
-        localePrevious: re,
-        inheritedOptions: K.inheritedOptions,
-        baseCatalog: Q.catalog,
-        baseStats: Q.statsRules,
-        json: go,
-        ...Xe
-      }), hj), b.push(Pe), _.set(Pe.id, createChapterLocaleScope([Pe.locale])), ce = !0);
-    } catch (Xe) {
-      console.error("Chencang unavailable:", Xe);
-    }
-    Hr.completeGroup(ce);
-    let j = !1;
-    Hr.beginGroup("\u9673\u5009\u6230\u5F8C\u8CC7\u6599");
-    let $ = null;
-    if (Pe) try {
-      let Xe = Ji.group();
-      $ = await Bot({
-        deferMedia: Xe.deferMedia,
-        previous: Pe,
-        json: go,
-        fetch: C2
+      [Pe, $] = await loadChencangStage({
+        loadBattle: media => jit({
+          previous: Q,localePrevious: re,inheritedOptions: K.inheritedOptions,
+          baseCatalog: Q.catalog,baseStats: Q.statsRules,json: go,...media
+        }),
+        loadAftermath: Bot, alias: "post-chencang", battleMedia: hj, label: "Chencang"
       });
-      let Et = createChapterLocaleScope([$.locale]);
-      (_.set($.id, Et), _.set("post-chencang", Et), Xe.register([$, {
-        id: "post-chencang"
-      }]), j = !0);
-    } catch (Xe) {
-      console.error("Normal post-Chencang unavailable:", Xe);
+      b.push(Pe);
+      _.set(Pe.id, createChapterLocaleScope([Pe.locale]));
+    } catch (error) {
+      console.error("Chencang unavailable:", error);
     }
-    Hr.completeGroup(j);
-    let we = !1;
+    Hr.completeGroup(Pe !== null);
+    let k = null, Ue = null;
     Hr.beginGroup("\u53E6\u4E00\u5206\u652F\u9673\u5009\u6230\u5F79");
-    let k = null;
     if (ae && Q) try {
-      (k = await r0(Xe => oit({
-        previous: Q,
-        localePrevious: ae,
-        inheritedOptions: K.inheritedOptions,
-        baseCatalog: Q.catalog,
-        baseStats: Q.statsRules,
-        json: go,
-        ...Xe
-      }), hj), _.set(k.id, createChapterLocaleScope([k.locale])), we = !0);
-    } catch (Xe) {
-      console.error("HighChencang unavailable:", Xe);
-    }
-    Hr.completeGroup(we);
-    let Ie = !1;
-    Hr.beginGroup("\u53E6\u4E00\u5206\u652F\u9673\u5009\u6230\u5F8C\u8CC7\u6599");
-    let Ue = null;
-    if (k) try {
-      let Xe = Ji.group();
-      Ue = await Aot({
-        deferMedia: Xe.deferMedia,
-        previous: k,
-        json: go,
-        fetch: C2
+      [k, Ue] = await loadChencangStage({
+        loadBattle: media => oit({
+          previous: Q,localePrevious: ae,inheritedOptions: K.inheritedOptions,
+          baseCatalog: Q.catalog,baseStats: Q.statsRules,json: go,...media
+        }),
+        loadAftermath: Aot, alias: "high-post-chencang", battleMedia: hj, label: "HighChencang"
       });
-      let Et = createChapterLocaleScope([Ue.locale]);
-      (_.set(Ue.id, Et), _.set("high-post-chencang", Et), Xe.register([Ue, {
-        id: "high-post-chencang"
-      }]), Ie = !0);
-    } catch (Xe) {
-      console.error("High post-Chencang unavailable:", Xe);
+      _.set(k.id, createChapterLocaleScope([k.locale]));
+    } catch (error) {
+      console.error("HighChencang unavailable:", error);
     }
-    Hr.completeGroup(Ie);
+    Hr.completeGroup(k !== null);
     let Ne = !1;
     Hr.beginGroup("\u518D\u6230\u9673\u5009");
     let _e = null;
