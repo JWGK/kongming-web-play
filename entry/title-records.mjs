@@ -103,8 +103,17 @@ function storyLocation(payload) {
   if (!text.length || text.length > 196608 || (chunks.length > 1 && text.length !== 196608)) return null;
   // The native story writer always places chapter first. Large saves need just the first chunk.
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
-  if (chapter?.[1] === 'qishan-dispute-source' &&
-      text.slice(chapter[0].length).startsWith('4,0,5,1,21],')) return '祁山追擊戰後';
+  if (chapter?.[1] === 'qishan-dispute-source') {
+    const cursor = /^(\d,\d,\d,\d,0|4,0,5,1,21)\],/.exec(text.slice(chapter[0].length, chapter[0].length + 18))?.[1];
+    const location = ({
+      '4,0,5,1,21': '祁山追擊戰後',
+      '4,1,0,3,0': '成都宮殿',
+      '4,1,1,1,0': '成都邸宅',
+      '4,1,1,9,0': '成都邸宅',
+      '4,1,3,5,0': '鳳鳴山蜀軍營帳',
+    })[cursor];
+    if (location) return location;
+  }
   return chapter && storySites.get(chapter[1]);
 }
 
