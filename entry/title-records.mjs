@@ -23,6 +23,7 @@ const manualLabels = new Map([
   ['KONGMING-WUGONG-SELECTION-MANUAL/1', '郿城・長安出陣前'],
   ['KONGMING-CHANGAN-RETURN-MANUAL/1', '長安攻城戰Ⅰ・戰後'],
   ['KONGMING-CHAPTER5-RETURN-MANUAL/1', '孔明歸還'],
+  ['KONGMING-CHENGDU-DEFENSE-RETURN-MANUAL/1', '成都防衛戰・戰後'],
   ['KONGMING-QISHAN-ROOT4-CAMP-MANUAL/1', '祁山　蜀軍營帳'],
   ['KONGMING-WUZHANG-HISTORICAL-POST-MANUAL/1', '第四章・第三幕 五丈原之戰Ⅱ（史實戰後）'],
   ['KONGMING-HANGU-POST-MANUAL/1', '終章・第四幕 洛陽（函谷關之戰戰後）'],

@@ -1,13 +1,13 @@
 import {mountTitle} from './title.mjs?v=0.73.57-qishan-camp';
 import {createTitleAudio} from './title-audio.mjs';
-import {createTitleRecords} from './title-records.mjs?v=0.73.95-changan-siege';
+import {createTitleRecords} from './title-records.mjs?v=0.73.96-chengdu-defense';
 
 const handoff = document.getElementById('title-handoff');
 const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.95-changan-siege', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.96-chengdu-defense', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
