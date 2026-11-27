@@ -39,7 +39,8 @@ const storySites = new Map([
   ['chapter5-wugong-source', '武功出陣前'],
   ['chapter5-wugong-selection', '郿城・長安出陣前'],
   ['chapter5-changan-return', '郿城・長安攻城戰後'],
-  ['chapter5-kongming-return', '成都宮殿・巴西出陣前']
+  ['chapter5-kongming-return', '成都宮殿・巴西出陣前'],
+  ['chapter5-baxi-return','巴西・白帝城出陣前']
 ]);
 const councilSites = new Map([
   ['nanan-council', '祁山　蜀軍營帳'],
@@ -114,6 +115,10 @@ function exteriorStoryLocation(chapter,cursor,visit) {
   }
   if (chapter === 'chapter5-kongming-return' && cursor === '5,1,6,3,0')
     return visit === 'town' ? '成都' : visit === 'world' ? '成都城外大地圖' : null;
+  if(chapter==='chapter5-baxi-return'&&/^5,1,9,[12],0$/.test(cursor)){
+    const match=typeof visit==='string'&&/^(town|world):(7|25)$/.exec(visit);
+    return match?(match[2]==='7'?'成都':'巴西')+(match[1]==='world'?'城外大地圖':''):null;
+  }
   if (chapter !== 'chapter4-post-qishan-source') return null;
   const m = typeof visit === 'string' && /^(town|world):(7|8|17)$/.exec(visit);
   if (!m || !(cursor === '4,3,3,6,0' ? m[2] === '17' :
@@ -136,7 +141,7 @@ function storyLocation(payload) {
   if (!text.length || text.length > 196608 || (chunks.length > 1 && text.length !== 196608)) return null;
   // The native story writer always places chapter first. Large saves need just the first chunk.
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
-  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return','chapter5-kongming-return'].includes(chapter?.[1])) {
+  if (['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return','chapter5-kongming-return','chapter5-baxi-return'].includes(chapter?.[1])) {
     const header = /^(\d{1,2},\d{1,2},\d{1,2},\d{1,2},\d{1,2})\],(?:"townVisit":"([^"]{1,12})",)?/.exec(text.slice(chapter[0].length,chapter[0].length+44));
     if (header) {
       // Older one-chunk exterior saves append the visit after their carry.
