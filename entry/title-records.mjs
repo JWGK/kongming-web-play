@@ -105,6 +105,7 @@ function storyLocation(payload) {
   const chapter = /^\{"chapter":"([a-z0-9-]+)","cursor":\[/.exec(text.slice(0, 100));
   if (chapter?.[1] === 'qishan-map33-source' && text.startsWith('4,1,7,1,0],', chapter[0].length)) return '祁山蜀軍營帳';
   if (chapter?.[1] === 'chapter4-hulugu-source' && text.startsWith('4,3,7,1,0],', chapter[0].length)) return '祁山蜀軍營帳';
+  if (chapter?.[1] === 'chapter5-changan-source' && text.startsWith('5,0,1,2,0],', chapter[0].length)) return '五丈原蜀軍營帳';
   if (chapter?.[1] === 'chapter4-post-qishan-source') {
     const cursor = /^(4,3,\d,\d+,0)\],/.exec(text.slice(chapter[0].length, chapter[0].length + 18))?.[1];
     const location = ({'4,3,0,1,0':'成都宮殿','4,3,1,1,0':'成都邸宅','4,3,1,3,0':'成都邸宅','4,3,1,5,0':'成都邸宅','4,3,1,13,0':'成都邸宅',
