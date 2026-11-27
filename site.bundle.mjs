@@ -1,4 +1,4 @@
-import {campaignPreparationPortrait} from "./story/campaign-preparation-portraits.mjs?v=0.73.82";
+import {campaignPreparationPortrait} from "./story/campaign-preparation-portraits.mjs?v=0.73.85-pursuit-roster";
 import {renderNativeStillFile} from "./story/native-still-surface.mjs?v=0.73.80";
 import {weiRiverCursor,weiRiverCaption,weiRiverDialogue,weiRiverWorldStill} from "./story/wei-river-stills.mjs?v=0.73.75";
 import {huluguPicture,prepareHuluguPictures} from "./story/hulugu-still-display.mjs?v=0.73.76";
@@ -40745,7 +40745,7 @@ function __kmPlainStockManualDisplayR22(raw){
       typeof u.confirmDeployment==="function" ? Kt.preparation : null;
     const sourcePrepCharacter=(id)=>Pe(id,Kt)??u.characterPresentation?.(id);
     const sourcePrepPortrait=(id,character)=>{
-      const asset=character?.portraitAsset??campaignPreparationPortrait(id);
+      const asset=campaignPreparationPortrait(id)??character?.portraitAsset;
       return asset?qd(`./${asset}`):null;
     };
     const sourcePrepWrapper=j("entry-preparation");
