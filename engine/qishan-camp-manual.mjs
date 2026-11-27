@@ -37,7 +37,9 @@ export function createQishanCampManualCodec({createBudget,source,validateSetting
   need([createBudget,validateSettings,validateSource].every(fn=>typeof fn==='function')&&source,
     'Fixed camp source, settings validator, exact semantic validator and common budget required');
   function admit(payload){
-    need(exact(payload,'anchor,inventoryOperations,saveCursor,settings,source,topics,turns,version')&&payload.version===VERSION,
+    const ordinary=exact(payload,'anchor,inventoryOperations,saveCursor,settings,source,topics,turns,version');
+    const atTactic=exact(payload,'anchor,inventoryOperations,pursuitReady,saveCursor,settings,source,topics,turns,version')&&payload.pursuitReady===1;
+    need((ordinary||atTactic)&&payload.version===VERSION,
       'Exact Root4 camp manual envelope');
     const anchor=payload.anchor;
     need(exact(anchor,'battle,continuation')&&typeof anchor.battle==='string'&&anchor.battle.length<=RECORD_LIMIT&&
@@ -182,4 +184,19 @@ export function sameQishanCampVisualActors(derived,actual) {
     // Ongoing ambient rendering is the only unsaved input to this counter.
     return keys.split(',').every(key=>key==='drawCounter'||row[key]===derived[i][key]);
   });
+}
+
+// The readiness decision is a fixed follow-on to a proven settled camp,
+// not an opaque or caller-supplied departure model.
+export function isQishanPursuitTacticCheckpoint(text) {
+  if(typeof text!=='string'||!text.startsWith(QISHAN_CAMP_MANUAL_PREFIX)||text.length>RECORD_LIMIT)return false;
+  try{return JSON.parse(text.slice(QISHAN_CAMP_MANUAL_PREFIX.length))?.pursuitReady===1}catch{return false}
+}
+export function markQishanPursuitTacticCheckpoint(text) {
+  need(typeof text==='string'&&text.startsWith(QISHAN_CAMP_MANUAL_PREFIX)&&text.length<=RECORD_LIMIT,
+       'Exact bounded ordinary camp checkpoint');
+  const record=JSON.parse(text.slice(QISHAN_CAMP_MANUAL_PREFIX.length));
+  need(exact(record,'anchor,inventoryOperations,saveCursor,settings,source,topics,turns,version')&&record.version===VERSION,
+       'Validated settled camp anchor only');
+  return QISHAN_CAMP_MANUAL_PREFIX+JSON.stringify({...record,pursuitReady:1});
 }

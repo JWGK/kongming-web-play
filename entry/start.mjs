@@ -1,13 +1,13 @@
 import {mountTitle} from './title.mjs?v=0.73.57-qishan-camp';
 import {createTitleAudio} from './title-audio.mjs';
-import {createTitleRecords} from './title-records.mjs?v=0.73.64-qishan-camp';
+import {createTitleRecords} from './title-records.mjs?v=0.73.70-pursuit-save';
 
 const handoff = document.getElementById('title-handoff');
 const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.69-aftermath-stills', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.70-pursuit-save', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
