@@ -29546,7 +29546,7 @@ const __kmHanguStorageW33=(()=>{
  const message=phase=>phase==="admitted"?"找到華山之戰中斷記錄，可以繼續遊戲。":phase==="malformed"?"無法讀取華山之戰中斷記錄。原有記錄未有更改。":"正在核對華山之戰中斷記錄…";
  return Object.freeze({get,message,bindings,retry:session=>bySession.delete(session)});
 })();
-function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperialAppBootN21=null,map46PrivateHost: __map46HostW31 = null, slotMetadataChannel: e = null, document: t, translate: r = n(Pe => Pe, "translate"), translateDialogue: a, resolveRecordLabel: o = n(Pe => Pe, "resolveRecordLabel"), resolveScreen: i = n(Pe => Pe, "resolveScreen"), data: s, outroData: c, prologueData: d, freeRoamData: l, itemServices: f, itemDescriptions: p, resolveItemDescriptions: m = null, storyPortraits: y, resolveStoryCharacter: h = null, activateStoryLocale: g = null, game: u, storage: b, audio: _, canStartRoute: v = n(() => !1, "canStartRoute"), storyFactory: w = null, startBattleRoute: z = null, restoreBattle: N = null, validateStoryBattle: J = null, preparePresentation: M = null, resolveSourcePreludeResources: U = null, createQishanRoot4CampUI: B = null, createQishanRoot4DepartureUI: E = null, createQishanDisputeSourceUI: R = null, createChapter5JianningSourceUI: P = null, createChapter5JianningRouteSourceUI: S = null, createChapter5JianningReturnSourceUI: K = null, createChapter5BaxiSourceUI: V = null, createChapter5ChengduDefenseSourceUI: I = null, createChapter5BaxiReturnSourceUI: O = null, createBaidiMap42ReturnSourceUI: Q = null, createChapter5ChengduDefenseReturnSourceUI: F = null, createChapter5ChanganSiegeSourceUI: L = null, createChapter5KongmingReturnSourceUI: de = null, createChapter5ChanganReturnSourceUI: G = null, createChapter5WugongSelectionSourceUI: Y = null, createChapter5WugongAftermathSourceUI: ee = null, createChapter5WugongSourceUI: Z = null, createChapter5ChanganSourceUI: ne = null, createChapter4WuzhangSourceUI: oe = null, createChapter4HuluguSourceUI: te = null, createChapter4PostQishanSourceUI: ae = null, createQishanMap33SourceUI: xe = null, preludeScheduler: ye = null, imageLoader: fe = null, setTimer: re = setTimeout, clearTimer: ce = clearTimeout}) {
+function zZe({imperialB6BattleBootN23=null,imperialB5BattleBootN22=null,imperialAppBootN21=null,map46PrivateHost: __map46HostW31 = null, slotMetadataChannel: e = null, document: t, translate: r = n(Pe => Pe, "translate"), translateDialogue: a, resolveRecordLabel: o = n(Pe => Pe, "resolveRecordLabel"), resolveScreen: i = n(Pe => Pe, "resolveScreen"), data: s, outroData: c, prologueData: d, freeRoamData: l, itemServices: f, itemDescriptions: p, resolveItemDescriptions: m = null, storyPortraits: y, resolveStoryCharacter: h = null, activateStoryLocale: g = null, game: u, storage: b, audio: _, canStartRoute: v = n(() => !1, "canStartRoute"), storyFactory: w = null, startBattleRoute: z = null, restoreBattle: N = null, validateStoryBattle: J = null, preparePresentation: M = null, warmStoryMedia = null, resolveSourcePreludeResources: U = null, createQishanRoot4CampUI: B = null, createQishanRoot4DepartureUI: E = null, createQishanDisputeSourceUI: R = null, createChapter5JianningSourceUI: P = null, createChapter5JianningRouteSourceUI: S = null, createChapter5JianningReturnSourceUI: K = null, createChapter5BaxiSourceUI: V = null, createChapter5ChengduDefenseSourceUI: I = null, createChapter5BaxiReturnSourceUI: O = null, createBaidiMap42ReturnSourceUI: Q = null, createChapter5ChengduDefenseReturnSourceUI: F = null, createChapter5ChanganSiegeSourceUI: L = null, createChapter5KongmingReturnSourceUI: de = null, createChapter5ChanganReturnSourceUI: G = null, createChapter5WugongSelectionSourceUI: Y = null, createChapter5WugongAftermathSourceUI: ee = null, createChapter5WugongSourceUI: Z = null, createChapter5ChanganSourceUI: ne = null, createChapter4WuzhangSourceUI: oe = null, createChapter4HuluguSourceUI: te = null, createChapter4PostQishanSourceUI: ae = null, createQishanMap33SourceUI: xe = null, preludeScheduler: ye = null, imageLoader: fe = null, setTimer: re = setTimeout, clearTimer: ce = clearTimeout}) {
   let Pe = V8t({
     resolveStoryCharacter: h,
     resolveFallbackCharacter: n(x => u.characterPresentation?.(x), "resolveFallbackCharacter")
@@ -40351,6 +40351,8 @@ function __kmPlainStockManualDisplayR22(raw){
     const activeButton = t.activeElement;
     const entryButton = activeButton?.matches?.("button") && j("entry-content").contains(activeButton) ? activeButton : null;
     let Kt = A.view, pn = fL(), hr = !1;
+    if(ue&&$e&&!Ce&&!un&&(!pn.active||pn.canvasActive)&&!A.sourcePublicationPending&&typeof warmStoryMedia==="function")
+      warmStoryMedia(Kt,()=>ue&&$e&&!Ce&&!Le&&A.chapterId===Kt.chapterId&&t.visibilityState!=="hidden");
     const stageChanged = renderedEntryStage !== Kt.stage;
     renderedEntryStage = Kt.stage;
     const previousOption = !stageChanged && entryButton ? [...et].find(([, button]) => button === entryButton)?.[0] : undefined;
@@ -57800,7 +57802,38 @@ ${Jn}`
           _.set(bundle.id, createChapterLocaleScope([bundle.locale]));
         }
       })();
-    }, Od = function (Xe, Et) {
+    };
+    // Next-pack preparation is intentionally independent of campaign mutation.
+    // No title or save slot may start it. The ordinary transition still gates
+    // on Ji and reuses or retries the exact same reviewed resource jobs.
+    const attemptedStoryWarmups=new Set();
+    let scheduledStoryWarmup=null;
+    function warmStoryMedia(Xe,isCurrent){
+      const route=qe&&Xe.chapterId==="second-chencang"&&Xe.chapterMode==="changan-continuation"?
+          ["qishan-root4-camp",...(Oe?["qishan-root4-departure"]:[])]:
+        Oe&&Xe.chapterId==="qishan-root4-camp"?["qishan-root4-departure"]:
+        Ge&&Xe.chapterId==="qishan-root4-departure"?["qishan-pursuit"]:[];
+      const next=route.find(id=>!Ji.isReady(id)&&!attemptedStoryWarmups.has(id));
+      if(!next||scheduledStoryWarmup)return;
+      attemptedStoryWarmups.add(next);
+      scheduledStoryWarmup=next;
+      const start=()=>{
+        if(scheduledStoryWarmup!==next)return;
+        if(!isCurrent()){
+          scheduledStoryWarmup=null;
+          attemptedStoryWarmups.delete(next);
+          return;
+        }
+        // Failed lookahead must not show an error or strand the player;
+        // the presenting transition owns its own cancel/retry flow.
+        Promise.resolve().then(()=>Ji.prepare(next)).catch(()=>{}).finally(()=>{
+          if(scheduledStoryWarmup===next)scheduledStoryWarmup=null;
+        });
+      };
+      if(typeof globalThis.requestIdleCallback==="function")globalThis.requestIdleCallback(start,{timeout:950});
+      else globalThis.setTimeout(start,0);
+    }
+    let Od = function (Xe, Et) {
       let Dt, qn = BE(), Rn = new Map(), Wr;
       for (let ki of ["nanan-tianshui", "jicheng", "qishan", "xiping"]) {
         let Xa = b.find(ic => ic.id === ki);
@@ -59548,6 +59581,7 @@ ${Jn}`
         return ["chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-chengdu-defense-source", "chapter5-chengdu-defense-return", "chapter5-wugong-aftermath", "chapter5-wugong-selection", "chapter5-changan-siege-source", "chapter5-changan-return", "chapter5-kongming-return"].includes(Xe?.chapterId) && (!Et || !Ji.isReady(Et.id)) ? null : (Xe?.sourceChapterId === "chapter5-baidi-jiangling-continuation" ? Et?.continuationMediaConfiguration : Xe?.chapterMode === "changan-continuation" ? Et?.continuationResources : Et?.preludeResources) ?? null;
       }, "resolveSourcePreludeResources"),
       preparePresentation: No,
+      warmStoryMedia,
       slotMetadataChannel: vi,
       document: uT,
       translate: ire,
