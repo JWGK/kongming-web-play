@@ -1,4 +1,4 @@
-import {pursuitIngressFrames as frames} from './pursuit-ingress-still-frames.mjs?v=0.73.68';
+import {pursuitIngressFrames as frames} from './pursuit-ingress-still-frames.mjs?v=0.73.78';
 const cache=new Map();
 export function pursuitIngressPicture(view){
   const chapter=view?.chapterId, cursor=view?.sourceCursor, room=view?.room, p=view?.presentation;
@@ -24,6 +24,21 @@ export function pursuitIngressPicture(view){
     file=exact([chapter,sibling,...keys.slice(2)]);
   }
   return file?{asset:file,sceneAsset:file,cleanScene:true,nativeWidth:240,nativeHeight:160}:null;
+}
+// Original OP11: 0x1aba55 (reference 4551) and 0x1abe17 (8075).
+// Both change perspective to Sima Yi's camp. The projected completion
+// frame has no title; only the current, skippable title recipe gets narration.
+export function pursuitIngressDialogue(view){
+  const cursor=view?.sourceCursor, p=view?.presentation, room=view?.room;
+  if(view?.chapterId!=='qishan-root4-departure'||view.coreStage!=='presentation'||view.dialogue||
+    !Array.isArray(cursor)||cursor.length!==5||cursor[0]!==4||cursor[1]!==0||
+    ![1,2].includes(cursor[2])||cursor[3]!==20||cursor[4]!==15||
+    room?.currentCity!==17||room?.sceneMode!==8202||
+    p?.version!=='web-qishan-root4-departure-display/1')return null;
+  const id='departure:'+cursor.join(':')+':b', recipe=p.recipe;
+  if(p.pending?.id!==id||recipe?.id!==id||recipe.skippableByInput!==true)return null;
+  const text=recipe.frames?.at(-1)?.localizedCaption?.text;
+  return text==='祁山　魏軍營帳'?{textJa:text,speakerDefinition:null}:null;
 }
 export function preparePursuitIngressPictures(){
   if(typeof Image!=='function')return Promise.resolve();

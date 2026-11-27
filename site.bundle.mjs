@@ -8,7 +8,7 @@ import {qishanMap33Picture,prepareQishanMap33Pictures} from "./story/qishan-map3
 import {storyManualPromptText,storyManualBankOptions,storyManualBankAction} from "./entry/story-manual-bank.mjs?v=0.73.73";
 import {qishanDisputePicture,prepareQishanDisputePictures} from "./story/qishan-dispute-still-display.mjs?v=0.73.72";
 import {pursuitAftermathPicture,preparePursuitAftermathPictures} from "./story/pursuit-aftermath-still-display.mjs?v=0.73.69";
-import {pursuitIngressPicture,preparePursuitIngressPictures} from "./story/pursuit-ingress-still-display.mjs?v=0.73.70-pursuit-save";
+import {pursuitIngressPicture,preparePursuitIngressPictures,pursuitIngressDialogue} from "./story/pursuit-ingress-still-display.mjs?v=0.73.78";
 import {chencangDeparturePicture} from "./story/chencang-departure-stills.mjs?v=0.73.67";
 import {chencangStaticPicture,prepareChencangStaticPictures} from "./story/chencang-static-display.mjs?v=0.73.66";
 import {qishanCampStill,prepareQishanCampStills} from "./story/qishan-camp-still-display.mjs?v=0.73.65";
@@ -29443,7 +29443,20 @@ ${e.nameJa?i(e.nameJa)+"\uFF1A":""}\u672A\u7522\u751F\u6548\u679C\u3002${s.actio
 \u4ECD\u53EF\u9078\u64C7\u884C\u52D5\u3002`:""}`);if(s.kind==="reactivation")return m("\u884C\u52D5\u6062\u5FA9",`${d}
 \u53EF\u518D\u6B21\u884C\u52D5\u3002`,"status");if(s.kind==="status"){let y=[];for(let h of s.removed)y.push(`${h.label}${h.kind==="buff"?"\u6548\u679C\u7D50\u675F\u3002":"\u5DF2\u89E3\u9664\u3002"}`);for(let h of s.added)y.push(`${h.label}\uFF1A${h.description}`);for(let h of s.changed)y.push(`${h.label}\u7A0B\u5EA6\u6539\u8B8A\uFF1A${h.description}`);return s.returnedToNormal&&["status24","status25"].includes(s.field)&&y.push(`${s.field==="status24"?"\u653B\u64CA":"\u9632\u79A6"}\u6062\u5FA9\u6B63\u5E38\u3002`),y.length?m(s.returnedToNormal?"\u72C0\u614B\u6062\u5FA9":"\u72C0\u614B\u8B8A\u5316",`${d}
 ${y.join(`
-`)}`):null}return null}var OKe,RKe,$ye=Me(()=>{tue();rue();OKe={confusion:"\u4E82",poison:"\u6BD2",strategy_sealed:"\u5C01",movement_down:"\u7DE9",speed_down:"\u9072",attack_down:"\u653B\u2193",defense_down:"\u9632\u2193",attack_up:"\u653B\u2191",defense_up:"\u9632\u2191",strategy_resistance:"\u6297",movement_up:"\u75BE"},RKe=Object.keys(OKe);n(Gye,"displayedUnitStatuses");n(Qye,"statusSummary");n(ure,"battleNotice")});function jKe({document:e,node:t,preparation:r,resolveCharacter:a=n(()=>null,"resolveCharacter"),hint:o=null}){let i=n((l,f)=>{let p=e.createElement(l);return f!==void 0&&(p.textContent=f),p},"make");if(t.replaceChildren(),t.hidden=!r,!r)return;let s=r,c=s.selectedSlots.filter(l=>l!==null);t.append(i("h3","\u51FA\u9663\u6E96\u5099"),i("p",`\u51FA\u9663\u4EBA\u6578\uFF1A${s.requiredDefinitions.length+c.length} / ${s.maxParticipants}`));let d=i("div");d.className="entry-required-units";for(let l of s.requiredDefinitions){let f=a(l),p=i("div");if(f?.portraitAsset){let m=i("img");m.src=qd(`./${f.portraitAsset}`),m.alt="",m.width=40,m.height=40,p.append(m)}p.append(i("span",`\u5FC5\u9808\u51FA\u9663\uFF1A${f?.nameJa??"\u672A\u8FA8\u8B58\u6B66\u5C07"}`)),d.append(p)}t.append(d,i("p",typeof o=="string"?o:"\u4E0B\u65B9\u52FE\u9078\u53EF\u9078\u6B66\u5C07\uFF0C\u518D\u6309\u300C\u6C7A\u5B9A\u300D\u3002\u672A\u9078\u6EFF\u6642\u4ECD\u53EF\u4F9D\u539F\u4F5C\u898F\u5247\u51FA\u9663\u3002"))}var Kye,Xye,AKe=Me(()=>{e5();n(jKe,"renderStoryPreparation");Kye=n((e,t)=>typeof e?.selected=="boolean"?e.selected:t===e?.id,"storyOptionPressed"),Xye=n(e=>typeof e.selected=="boolean"?`${e.selected?"\u2713":"\u25CB"} ${e.labelJa}`:e.slot&&e.occupied?`${e.slot}\uFF1A${e.labelJa}`:e.labelJa,"storyOptionLabel")});function PKe({document:e,translate:t=n(s=>s,"translate"),translateDialogue:r,resolveCharacter:a=n(()=>null,"resolveCharacter"),setTimer:o=setTimeout,clearTimer:i=clearTimeout}){let s=n(w=>e.getElementById(w),"$"),c=null,d="",l=0,f=null,p=!1,m=!1,y=!1,h=n(()=>{f!==null&&i(f),f=null},"stop");function g(){o4(s("entry-dialogue-text"),Array.from(d).slice(0,l).join(""))}n(g,"paint");function u(){f=null,!(y||m||!p)&&(l=Math.min(Array.from(d).length,l+2),g(),l<Array.from(d).length&&(f=o(u,24)))}n(u,"tick");function b(w,z,{pause:N=!1}={}){m=!!N;let J=!!w&&typeof w.textJa=="string";if(s("entry-dialogue").hidden=!J,p=J,!p){h(),c=null,d="",l=0;return}let M=JSON.stringify([z,w.speakerDefinition,w.textJa]);if(c!==M){h(),c=M,d=r?r(w).textJa:t(w.textJa),l=0;let U=a(w.speakerDefinition),B=w.speakerNameJa??U?.nameJa??"",E=w.portraitAsset??U?.portraitAsset??null;s("entry-dialogue-speaker").textContent=B,s("entry-dialogue-portrait").hidden=!E,E&&(s("entry-dialogue-portrait").src=qd(E.startsWith("./")?E:`./${E}`),s("entry-dialogue-portrait").alt=B),o4(s("entry-announcement"),d),g()}m?h():f===null&&l<Array.from(d).length&&u()}n(b,"update");function _(){return!p||l>=Array.from(d).length?!1:(h(),l=Array.from(d).length,g(),!0)}n(_,"reveal");function v(){let w={currentKey:c,text:d,count:l,visible:p,paused:m};return()=>{h(),{currentKey:c,text:d,count:l,visible:p,paused:m}=w,s("entry-dialogue").hidden=!p,g(),!m&&p&&l<Array.from(d).length&&(f=o(u,24))}}return n(v,"capturePresentation"),Object.freeze({update:b,reveal:_,capturePresentation:v,pause(w=!0){m=!!w,m?h():f===null&&p&&l<Array.from(d).length&&u()},destroy(){y=!0,h()},inspect:n(()=>({visible:p,paused:m,revealed:l,text:d,complete:l>=Array.from(d).length}),"inspect")})}var BKe=Me(()=>{e5();GN();n(PKe,"createStoryDialogue")});function KN({data:e,onBattle:t=n(()=>{},"onBattle"),onCampaignStart:r=n(({adopt:s})=>s(),"onCampaignStart"),onRequest:a=n(()=>{},"onRequest"),onChange:o=n(()=>{},"onChange"),getSave:i=n(()=>null,"getSave")}={}){if(!e||e.schemaVersion!=="1.0.0"||!e.sequences||!Array.isArray(e.routes))throw new TypeError("Verified entry data required");let s=100,c={version:$N,stage:"boot",index:0,sequence:null,seal:null,strategy:null,revision:0,selection:null},d=new Set([o]),l=n((w,z)=>{try{return i(w,z,void 0,c.stage==="menu"?"title-presence":["loadSlots","deleteSlots"].includes(c.stage)?"title-records":void 0)||null}catch{return null}},"saveMeta");
+`)}`):null}return null}var OKe,RKe,$ye=Me(()=>{tue();rue();OKe={confusion:"\u4E82",poison:"\u6BD2",strategy_sealed:"\u5C01",movement_down:"\u7DE9",speed_down:"\u9072",attack_down:"\u653B\u2193",defense_down:"\u9632\u2193",attack_up:"\u653B\u2191",defense_up:"\u9632\u2191",strategy_resistance:"\u6297",movement_up:"\u75BE"},RKe=Object.keys(OKe);n(Gye,"displayedUnitStatuses");n(Qye,"statusSummary");n(ure,"battleNotice")});// Both source and ordinary battle preparation present the same portrait card.
+function renderDeploymentCard(document, button, {name, required=false, selected=false, portraitUrl=null, paintPortrait=null}) {
+  const row=document.createElement("div"),portrait=document.createElement("img");
+  row.className="preparation-unit";
+  portrait.width=64;portrait.height=64;portrait.alt="";
+  if(paintPortrait)paintPortrait(portrait);else if(portraitUrl)portrait.src=portraitUrl;
+  button.type="button";
+  button.setAttribute("aria-pressed",String(required||selected));
+  o4(button,`${name}　${required?"必須":selected?"已選擇":"未選擇"}`);
+  if(required)button.disabled=true;
+  row.append(portrait,button);
+  return row;
+}
+function jKe({document:e,node:t,preparation:r,resolveCharacter:a=n(()=>null,"resolveCharacter"),hint:o=null}){let i=n((l,f)=>{let p=e.createElement(l);return f!==void 0&&(p.textContent=f),p},"make");if(t.replaceChildren(),t.hidden=!r,!r)return;let s=r,c=s.selectedSlots.filter(l=>l!==null);t.append(i("h3","\u51FA\u9663\u6E96\u5099"),i("p",`\u51FA\u9663\u4EBA\u6578\uFF1A${s.requiredDefinitions.length+c.length} / ${s.maxParticipants}`));let d=i("div");d.className="entry-required-units";for(let l of s.requiredDefinitions){let f=a(l),p=i("div");if(f?.portraitAsset){let m=i("img");m.src=qd(`./${f.portraitAsset}`),m.alt="",m.width=40,m.height=40,p.append(m)}p.append(i("span",`\u5FC5\u9808\u51FA\u9663\uFF1A${f?.nameJa??"\u672A\u8FA8\u8B58\u6B66\u5C07"}`)),d.append(p)}t.append(d,i("p",typeof o=="string"?o:"\u4E0B\u65B9\u52FE\u9078\u53EF\u9078\u6B66\u5C07\uFF0C\u518D\u6309\u300C\u6C7A\u5B9A\u300D\u3002\u672A\u9078\u6EFF\u6642\u4ECD\u53EF\u4F9D\u539F\u4F5C\u898F\u5247\u51FA\u9663\u3002"))}var Kye,Xye,AKe=Me(()=>{e5();n(jKe,"renderStoryPreparation");Kye=n((e,t)=>typeof e?.selected=="boolean"?e.selected:t===e?.id,"storyOptionPressed"),Xye=n(e=>typeof e.selected=="boolean"?`${e.selected?"\u2713":"\u25CB"} ${e.labelJa}`:e.slot&&e.occupied?`${e.slot}\uFF1A${e.labelJa}`:e.labelJa,"storyOptionLabel")});function PKe({document:e,translate:t=n(s=>s,"translate"),translateDialogue:r,resolveCharacter:a=n(()=>null,"resolveCharacter"),setTimer:o=setTimeout,clearTimer:i=clearTimeout}){let s=n(w=>e.getElementById(w),"$"),c=null,d="",l=0,f=null,p=!1,m=!1,y=!1,h=n(()=>{f!==null&&i(f),f=null},"stop");function g(){o4(s("entry-dialogue-text"),Array.from(d).slice(0,l).join(""))}n(g,"paint");function u(){f=null,!(y||m||!p)&&(l=Math.min(Array.from(d).length,l+2),g(),l<Array.from(d).length&&(f=o(u,24)))}n(u,"tick");function b(w,z,{pause:N=!1}={}){m=!!N;let J=!!w&&typeof w.textJa=="string";if(s("entry-dialogue").hidden=!J,p=J,!p){h(),c=null,d="",l=0;return}let M=JSON.stringify([z,w.speakerDefinition,w.textJa]);if(c!==M){h(),c=M,d=r?r(w).textJa:t(w.textJa),l=0;let U=a(w.speakerDefinition),B=w.speakerNameJa??U?.nameJa??"",E=w.portraitAsset??U?.portraitAsset??null;s("entry-dialogue-speaker").textContent=B,s("entry-dialogue-portrait").hidden=!E,E&&(s("entry-dialogue-portrait").src=qd(E.startsWith("./")?E:`./${E}`),s("entry-dialogue-portrait").alt=B),o4(s("entry-announcement"),d),g()}m?h():f===null&&l<Array.from(d).length&&u()}n(b,"update");function _(){return!p||l>=Array.from(d).length?!1:(h(),l=Array.from(d).length,g(),!0)}n(_,"reveal");function v(){let w={currentKey:c,text:d,count:l,visible:p,paused:m};return()=>{h(),{currentKey:c,text:d,count:l,visible:p,paused:m}=w,s("entry-dialogue").hidden=!p,g(),!m&&p&&l<Array.from(d).length&&(f=o(u,24))}}return n(v,"capturePresentation"),Object.freeze({update:b,reveal:_,capturePresentation:v,pause(w=!0){m=!!w,m?h():f===null&&p&&l<Array.from(d).length&&u()},destroy(){y=!0,h()},inspect:n(()=>({visible:p,paused:m,revealed:l,text:d,complete:l>=Array.from(d).length}),"inspect")})}var BKe=Me(()=>{e5();GN();n(PKe,"createStoryDialogue")});function KN({data:e,onBattle:t=n(()=>{},"onBattle"),onCampaignStart:r=n(({adopt:s})=>s(),"onCampaignStart"),onRequest:a=n(()=>{},"onRequest"),onChange:o=n(()=>{},"onChange"),getSave:i=n(()=>null,"getSave")}={}){if(!e||e.schemaVersion!=="1.0.0"||!e.sequences||!Array.isArray(e.routes))throw new TypeError("Verified entry data required");let s=100,c={version:$N,stage:"boot",index:0,sequence:null,seal:null,strategy:null,revision:0,selection:null},d=new Set([o]),l=n((w,z)=>{try{return i(w,z,void 0,c.stage==="menu"?"title-presence":["loadSlots","deleteSlots"].includes(c.stage)?"title-records":void 0)||null}catch{return null}},"saveMeta");
 function availableRecord(metadata) {
   return !!metadata && (["menu", "loadSlots", "deleteSlots"].includes(c.stage) && metadata.pending === true || metadata.valid !== false);
 }
@@ -40571,7 +40584,7 @@ function __kmPlainStockManualDisplayR22(raw){
       speakerDefinition: le.definition,
       speakerNameJa: le.heading,
       textJa: le.text
-    } : Kt.dialogue, locationDialogue=chencangLocationDialogue(Kt)??pursuitAftermathDialogue(Kt)??disputePreludeDialogue(Kt)??decisivePreludeDialogue(Kt)??weiRiverDialogue(Kt)??huluguDialogue(Kt)??wuzhangDialogue(Kt), He = ((((D ? "\u901A\u5F80\u9577\u5B89\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : pe ? "\u4E94\u4E08\u539F\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : mt ? "\u846B\u8606\u8C37\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : gn ? "\u6E2D\u6C34\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : yn ? "\u53F8\u99AC\u61FF\u6C7A\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : null) ?? ke?.textJa) ?? (["chapter5-section2-town", "chapter5-second-changan-return", "chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source", "chapter5-jianning-return", "chapter5-jiangling-return", "chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-jianning", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-baxi", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-chengdu-defense-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-chengdu-defense-return", "chapter5-changan-return", "chapter5-chengdu-defense", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) ? Kt.systemText?.textJa : null)) ?? Kt.textJa) ?? "";
+    } : Kt.dialogue, locationDialogue=chencangLocationDialogue(Kt)??pursuitIngressDialogue(Kt)??pursuitAftermathDialogue(Kt)??disputePreludeDialogue(Kt)??decisivePreludeDialogue(Kt)??weiRiverDialogue(Kt)??huluguDialogue(Kt)??wuzhangDialogue(Kt), He = ((((D ? "\u901A\u5F80\u9577\u5B89\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : pe ? "\u4E94\u4E08\u539F\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : mt ? "\u846B\u8606\u8C37\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : gn ? "\u6E2D\u6C34\u4E4B\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : yn ? "\u53F8\u99AC\u61FF\u6C7A\u6230\u5DF2\u5B8C\u6210\u3002\u53EF\u7E7C\u7E8C\u4E0B\u4E00\u6BB5\u5287\u60C5\u3002" : null) ?? ke?.textJa) ?? (["chapter5-section2-town", "chapter5-second-changan-return", "chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source", "chapter5-jianning-return", "chapter5-jiangling-return", "chapter5-jiangling-aftermath", "chapter5-wei-coup", "chapter5-jianning", "chapter5-baxi-source", "chapter5-baxi-return", "chapter5-baidi-return", "chapter5-baxi", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-chengdu-defense-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-chengdu-defense-return", "chapter5-changan-return", "chapter5-chengdu-defense", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) ? Kt.systemText?.textJa : null)) ?? Kt.textJa) ?? "";
     (j("entry-shell").hidden = !ue, j("entry-gate").hidden = $e, j("entry-content").hidden = !$e, j("entry-resume").hidden = !Ce && !Sn, j("entry-next").disabled = Ce || un !== null || x_(Kt), j("entry-back").disabled = Ce || un !== null, j("entry-skip").disabled = Ce || un !== null);
     let rt = Cne(Kt.chapterHeadingJa) ?? pS({
       chapterId: Kt.chapterId
@@ -40632,12 +40645,22 @@ function __kmPlainStockManualDisplayR22(raw){
     Ar.replaceChildren();
     let qo = Mr?.transaction?.itemSlotId;
     const currentItemTooltipN22 = Number.isInteger(qo) && qo !== 255 ? (typeof Dr.townOptional === "function" ? Dr.townOptional(Mr.persistentState, Mr.transaction.owner, qo) : Dr.town(Mr.persistentState, Mr.transaction.owner, qo)) : null;
+    const sourcePreparation=Kt.preparation?.confirmed!==true&&Kt.preparation?.selectedSlots&&
+      Array.isArray(Kt.preparation.requiredDefinitions)&&Kt.menuOptions.some(option=>option.id==="confirm")&&
+      Kt.menuOptions.every(option=>option.id==="confirm"||
+        (Number.isInteger(option.definitionIndex)&&typeof option.selected==="boolean"))&&
+      typeof u.confirmDeployment==="function" ? Kt.preparation : null;
+    const sourcePrepCharacter=(id)=>Pe(id,Kt)??u.characterPresentation?.(id);
+    const sourcePrepPortrait=(character)=>character?.portraitAsset?qd(`./${character.portraitAsset}`):null;
+    const sourcePrepWrapper=j("entry-preparation");
+    sourcePrepWrapper.classList.toggle("source-deployment-summary",!!sourcePreparation);
+    j("entry-options").classList.toggle("source-deployment-options",!!sourcePreparation);
     (Ar.hidden = currentItemTooltipN22 === null, currentItemTooltipN22 !== null && Ar.append(lP(t, currentItemTooltipN22, {
       context: "town"
     })), jKe({
       document: t,
       node: j("entry-preparation"),
-      preparation: ["chapter5-jianning-source", "chapter5-second-changan-source"].includes(Kt.chapterId) ? hHe(Kt) : Kt.preparation,
+      preparation: sourcePreparation ? null : ["chapter5-jianning-source", "chapter5-second-changan-source"].includes(Kt.chapterId) ? hHe(Kt) : Kt.preparation,
       ...Kt.sourceChapterId === "chapter5-baidi-map42-preparation" ? {
         hint: "\u9078\u64C7\u6700\u591A\u5341\u56DB\u4F4D\u53EF\u9078\u6B66\u5C07\uFF0C\u5B54\u660E\u5FC5\u9808\u51FA\u9663\u3002\u78BA\u8A8D\u540D\u55AE\u5F8C\u518D\u958B\u59CB\u6C5F\u9675\u4E4B\u6230\uFF1B\u9019\u88E1\u4E0D\u6703\u81EA\u52D5\u4FDD\u5B58\u3002"
       } : Kt.chapterId === "chapter5-jianning-source" ? {
@@ -40661,6 +40684,14 @@ function __kmPlainStockManualDisplayR22(raw){
       } : {},
       resolveCharacter: n(xt => (["chapter5-second-changan-source", "chapter5-jianning-source", "qishan-root4-departure", "qishan-dispute-source", "qishan-map33-source", "chapter4-post-qishan-source", "chapter4-hulugu-source", "chapter4-wuzhang-source", "chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-changan-return", "chapter5-changan-siege", "chapter5-wugong-selection", "chapter5-wugong-aftermath", "chapter5-wugong-source", "chapter5-changan-source"].includes(Kt.chapterId) ? Pe(xt, Kt) : null) ?? u.characterPresentation?.(xt), "resolveCharacter")
     }), j("entry-menu").hidden = !Kt.canOpenMenu, j("entry-menu").disabled = Ce || !Kt.canOpenMenu);
+    if(sourcePreparation){
+      sourcePrepWrapper.hidden=false;
+      const count=sourcePreparation.requiredDefinitions.length+sourcePreparation.selectedSlots.filter(id=>id!==null).length;
+      const status=$("p",`出陣する武将：${count} / ${sourcePreparation.maxParticipants}`);
+      status.setAttribute("role","status");
+      sourcePrepWrapper.append($("h3","選擇出陣武將"),status);
+      j("entry-prompt").hidden=true;
+    }
     let pr = j("entry-information");
     if ((pr.replaceChildren(), pr.hidden = !Array.isArray(Kt.party) && !Array.isArray(Kt.inventory), Array.isArray(Kt.party))) {
       appendTownPartyInfo(pr,Kt.party,t,{className:id=>u.className?.(id)??"兵種未解讀"});
@@ -40717,6 +40748,14 @@ function __kmPlainStockManualDisplayR22(raw){
     if(checkImperialManualWarmN21(Kt))ea+=":imperial-ordinary-manual";
     if (ea !== be) {
       (be = ea, et.clear(), j("entry-options").replaceChildren());
+      if(sourcePreparation){
+        for(const id of sourcePreparation.requiredDefinitions){
+          const person=sourcePrepCharacter(id);
+          j("entry-options").append(renderDeploymentCard(t,$("button"),{
+            name:r(person?.nameJa??"未辨識武將"),required:true,portraitUrl:sourcePrepPortrait(person)
+          }));
+        }
+      }
       for (let xt of Kt.menuOptions) {
         if(xt.id==="resume"&&ordinaryRaw)xt={...xt,enabled:true,reason:null};
         else if(xt.id==="resume"&&b6TitleRaw)xt={...xt,enabled:true,reason:null};
@@ -40744,8 +40783,13 @@ function __kmPlainStockManualDisplayR22(raw){
           signature: ea
         };
         Ge.set(qt, zn);
-        zn.activate = () => {
-          if (!(Le || et.get(xt.id) !== qt || be !== zn.signature || hr || qt.disabled)) {
+        zn.activate = (approved=false) => {
+          if (!(Le || et.get(xt.id) !== qt || be !== zn.signature || hr || qt.disabled || u.deploymentConfirmationPending?.())) {
+            if(sourcePreparation&&xt.id==="confirm"&&approved!==true){
+              const owner=A,revision=A.revision;
+              u.confirmDeployment(()=>{if(A===owner&&A.revision===revision)zn.activate(true);});
+              return;
+            }
 
 
             if(xt.id==="resume"&&ordinaryRaw){
@@ -40852,10 +40896,24 @@ function __kmPlainStockManualDisplayR22(raw){
             });
           }
         };
+        if(sourcePreparation&&xt.id==="confirm"){
+          o4(qt,"出陣");
+          qt.classList.add("source-deployment-confirm");
+          eo.append($("p","必須出陣的武將不能取消。選擇規則及出陣資格均由原作資料處理。"));
+          eo.firstElementChild.className="field-note";
+        } else if(sourcePreparation){
+          const person=sourcePrepCharacter(xt.definitionIndex);
+          qt.classList.remove("entry-deployment-choice");
+          const card=renderDeploymentCard(t,qt,{
+            name:r(xt.labelJa),selected:xt.selected,portraitUrl:sourcePrepPortrait(person)
+          });
+          eo.className=card.className;
+          eo.append(...card.childNodes);
+        }
         qt.addEventListener("click", zn.activate);
         let deploymentTouch = false;
         for (let Gr of ["focus", "pointerenter"]) qt.addEventListener(Gr, event => {
-          if(exactPursuitManual(Kt)||exactMap33Manual(Kt))return;
+          if(sourcePreparation||exactPursuitManual(Kt)||exactMap33Manual(Kt)||u.deploymentConfirmationPending?.())return;
           if (typeof xt.selected === "boolean" || Kt.chapterId==="qishan-dispute-source") {
             if (event.type === "pointerenter") deploymentTouch = event.pointerType === "touch";
             if (deploymentTouch && (event.type === "pointerenter" || !qt.matches(":focus-visible"))) return;
@@ -40875,7 +40933,8 @@ function __kmPlainStockManualDisplayR22(raw){
     }
     for (let [xt, eo] of et) {
       let qt = Kt.menuOptions.find(zn => zn.id === xt);
-      eo.setAttribute("aria-pressed", Kye(qt, Kt.selection));
+      if(sourcePreparation&&qt?.id==="confirm")eo.removeAttribute("aria-pressed");
+      else eo.setAttribute("aria-pressed", Kye(qt, Kt.selection));
     }
     if (pn.active) {
       for (let xt of ["entry-next", "entry-back", "entry-skip", "entry-options", "entry-dialogue", "entry-text", "entry-announcement", "entry-text-details", "entry-prompt"]) {
@@ -53998,6 +54057,9 @@ async function F(ae){if(P===ae.logicalId)return S;if(K.has(ae.logicalId))return 
     Ct || (Fi(), na = null, Ln = !1, Zn = !1, Ad(!1), T = e.activeElement, st = Ze, Ee = At.onNo ?? null, Ke = At.retryState ?? null, me("game-confirm-yes").disabled = At.yesDisabled === !0, me("game-confirmation-message").textContent = We, me("game-confirmation").hidden = !1, me("game-confirm-yes").textContent = At.yesLabel ?? "\u5B9F\u884C", me("game-confirm-no").textContent = At.noLabel ?? "\u623B\u308B", me(At.defaultNo ? "game-confirm-no" : "game-confirm-yes").focus(), ir());
   }
   n(Yn, "requestConfirmation");
+  function confirmDeployment(action) {
+    if(!st)Yn("選んだ武将で出陣します。よろしいですか？",action);
+  }
   function Ii() {
     (Fi(), st = null, Ee = null, Ke = null, me("game-confirmation").hidden = !0, me("game-confirm-yes").disabled = !1, ir(), T?.focus?.());
   }
@@ -56099,15 +56161,14 @@ ${Jn}`
     for (let Jn of Ze.units) {
       let Fn = Ze.requiredDefinitions.includes(Jn.definitionIndex);
       if (!Fn && !Ze.optionalDefinitions.includes(Jn.definitionIndex)) continue;
-      let er = Se("div", "preparation-unit"), dr = Se("button", "", `${fr(Jn)}\u3000${Fn ? "\u5FC5\u9808" : rn.has(Jn.definitionIndex) ? "\u9078\u629E\u4E2D" : "\u672A\u9078\u629E"}`);
-      (dr.type = "button", dr.disabled = Fn || kt && !rn.has(Jn.definitionIndex) || pt.paused || cn || !!We.pendingEffect || !!st, dr.setAttribute("aria-pressed", Fn || rn.has(Jn.definitionIndex)), dr.addEventListener("click", () => {
-        pt.epoch !== bn || pt.state?.revision !== tn || ra({
-          type: "toggle_deployment",
-          definitionIndex: Jn.definitionIndex
-        }, tn);
+      const dr=Se("button");
+      dr.disabled=kt&&!rn.has(Jn.definitionIndex)||pt.paused||cn||!!We.pendingEffect||!!st;
+      dr.addEventListener("click",()=>{
+        if(pt.epoch===bn&&pt.state?.revision===tn)ra({type:"toggle_deployment",definitionIndex:Jn.definitionIndex},tn);
+      });
+      me("preparation-units").append(renderDeploymentCard(e,dr,{
+        name:fr(Jn),required:Fn,selected:rn.has(Jn.definitionIndex),paintPortrait:image=>Mc(image,Jn.definitionIndex)
       }));
-      let kr = Se("img");
-      (kr.width = 64, kr.height = 64, Mc(kr, Jn.definitionIndex), er.append(kr, dr), me("preparation-units").append(er));
     }
     me("preparation-confirm").disabled = !Ze.canConfirm || pt.paused || cn || !!st || !!We.pendingEffect;
   }
@@ -56820,7 +56881,7 @@ ${Jn}`
     cn || (Te = !pt.paused, kd(), pt.pause(Te), $?.pause?.(Te), !Te && ut && $?.unlock?.(), Pe?.setActive(!Te), Te || gr.start());
   }), Rr("game-delete-save", () => Yn("\u3053\u306E\u30D6\u30E9\u30A6\u30B6\u306B\u4FDD\u5B58\u3057\u305F\u6226\u95D8\u30C7\u30FC\u30BF\u3092\u524A\u9664\u3057\u307E\u3059\u3002\u73FE\u5728\u306E\u6226\u95D8\u306F\u7D9A\u3051\u3089\u308C\u307E\u3059\u3002", () => {
     (Vr(pt.deleteSave() ? "\u4E2D\u65AD\u8A18\u9332\u3092\u524A\u9664\u3057\u307E\u3057\u305F\u3002\u8A18\u93321\u301C5\u306F\u5909\u66F4\u3057\u307E\u305B\u3093\u3002" : pt.storageError), ir());
-  })), Rr("game-audio", () => setAudioEnabled(!ut)), Rr("preparation-confirm", () => Yn("\u9078\u3093\u3060\u6B66\u5C06\u3067\u51FA\u9663\u3057\u307E\u3059\u3002\u3088\u308D\u3057\u3044\u3067\u3059\u304B\uFF1F", () => ra({
+  })), Rr("game-audio", () => setAudioEnabled(!ut)), Rr("preparation-confirm", () => confirmDeployment(() => ra({
     type: "confirm_deployment",
     confirmed: !0
   }))), Rr("action-stay", () => {
@@ -57020,6 +57081,8 @@ ${Jn}`
     session: pt,
     pump: gr,
     render: ir,
+    confirmDeployment,
+    deploymentConfirmationPending:()=>!!st,
     hasUnresolvedNativeWrite: n(() => Lr() !== null, "hasUnresolvedNativeWrite"),
     quarantine: fu,
     recoverJichengCapacity: Za,
