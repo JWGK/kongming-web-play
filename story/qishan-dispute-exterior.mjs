@@ -1,3 +1,5 @@
+import {createDetachedTownSession} from "./settled-town-session.mjs";
+
 // Original 4:1:0/1, Chengdu city 7. Source: ROM town hotspot table
 // 0x873c0 + city*40 and room table 0x884e0 + city*27. 0x2cd46
 // (finished room exit) falls back to the same city's exterior for
@@ -171,68 +173,9 @@ export function openQishanDisputeTown({
   return engine;
 }
 
-// An exterior action is evaluated on a detached copy. The story owner can
-// reject a stale action or a failed native handoff without changing the
-// existing view, source room, or carried inventory.
+// Retain the same local source scope and controller view for Map32.
 export function createQishanDisputeTownSession(options) {
-  const issued=new WeakMap();
-  const publish=(serialized, view, carry)=>{
-    const token=Object.freeze({});
-    issued.set(token,serialized);
-    return Object.freeze({token,view,carry});
-  };
-  function fork(serialized=null) {
-    const operations=[], requests=[], routes=[];
-    const engine=openQishanDisputeTown({...options,
-      observeOperation:action=>operations.push(action),
-      request:request=>requests.push(structuredClone(request)),
-      route:(event,carry)=>{routes.push({event,carry:structuredClone(carry)});return true;},
-    });
-    if(serialized!==null)engine.restore(serialized);
-    return {engine,operations,requests,routes};
-  }
-  function finish(engine) {
-    const view=engine.view, carry=engine.carry;
-    // Preserve only the item context that the existing UI uses, never insert
-    // the controller's serialized checkpoint into a physical save.
-    const checkpoint=publish(engine.serialize(),view,carry);
-    return Object.freeze({...checkpoint,inventory:view.transaction?
-      {transaction:view.transaction,persistentState:carry.persistentState}:null});
-
-  }
-  function read(token) {
-    if(!issued.has(token))throw new RangeError('Town checkpoint does not belong to this origin');
-    return issued.get(token);
-  }
-  const start=finish(fork().engine);
-  return Object.freeze({
-    start,
-    saveLocation(token) {
-      const {engine}=fork(read(token)), state=engine.getTownState();
-      if(state.stage!=='saveSlots'||state.city!==7||state.facility!==null||
-         state.transaction!==null||!savedVisits.includes(state.returnStage))
-        throw new RangeError('Exact settled native Chengdu save bank required');
-      return state.returnStage;
-    },
-    restoreLocation(visit) {
-      if(!savedVisits.includes(visit))throw new RangeError('Invalid native Chengdu visit');
-      if(visit==='town')return start;
-      const {engine}=fork();
-      engine.choose('world');
-      if(engine.view.stage!==visit)throw new RangeError('Missing original Chengdu world exit');
-      return finish(engine);
-    },
-    apply(token, action) {
-      const {engine,operations,requests,routes}=fork(read(token));
-      if(!action || typeof action!=='object')throw new TypeError('Town action required');
-      const fields=Object.keys(action).sort().join(',');
-      if(action.type==='choose'&&fields==='id,type'&&typeof action.id==='string')engine.choose(action.id);
-      else if(fields==='type'&&['advance','back','openMenu','completeSave'].includes(action.type))engine[action.type]();
-      else throw new RangeError('Unknown town action');
-      if(routes.length+requests.length>1||operations.length>1)throw new RangeError('Town action produced multiple outcomes');
-      return Object.freeze({checkpoint:finish(engine),operations,request:requests[0]??null,route:routes[0]??null});
-    },
-  });
+  return createDetachedTownSession(openQishanDisputeTown,options,7);
 }
 
 // Stage-local loader: these are the original Chapter 3 production inputs,
