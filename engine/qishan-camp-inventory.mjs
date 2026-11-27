@@ -40,7 +40,6 @@ export function createCampInventoryView({persistentState, inspectItem, validateP
     if(!campItemMenuStages.includes(menu.stage))return null;
     const menuOptions=mutable||menu.stage==='owners'?townItemOptions({...menu,persistentState},option,{inspect,inventory}):[];
     const options=(menuOptions??[]).filter(row=>!(
-      (menu.stage==='inventoryView'&&menu.transaction.owner!==WAREHOUSE&&row.inventoryIndex<3) ||
       (menu.stage==='exchangeOwners'&&row.id==='owner:warehouse'&&menu.transaction.owner===WAREHOUSE)
     )).map(row=>{
       if(menu.stage==='equipmentOwners'&&!inspect(menu.transaction.itemSlotId,Number(row.id.slice(6))).eligible)

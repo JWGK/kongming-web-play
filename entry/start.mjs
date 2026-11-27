@@ -1,13 +1,13 @@
 import {mountTitle} from './title.mjs?v=0.73.57-qishan-camp';
 import {createTitleAudio} from './title-audio.mjs';
-import {createTitleRecords} from './title-records.mjs?v=0.73.59-qishan-dispute';
+import {createTitleRecords} from './title-records.mjs?v=0.73.60-shared-items';
 
 const handoff = document.getElementById('title-handoff');
 const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.59-qishan-dispute', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.60-shared-items', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
