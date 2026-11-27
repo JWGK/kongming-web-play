@@ -1,3 +1,4 @@
+import {checkFinaleBaxiPalaceTrade} from "./finale-baxi-palace.mjs?v=0.73.97-finale-baxi";
 import {checkWugongRoadTrade} from "./wugong-road-exterior.mjs?v=0.73.95-changan-siege";
 import {checkChanganRoadTrade} from "./changan-road-exterior.mjs?v=0.73.93-changan-road-towns";
 import {checkQishanPostBattleTrade} from "./qishan-postbattle-exterior.mjs?v=0.73.91-hulu-valley-town";
@@ -26,6 +27,7 @@ const hubs = new Map([
   ['5:0:5:2:0',['chapter5-wugong-source',23,8192]],
   ['5:0:11:1:0',['chapter5-wugong-selection',23,8192]],
   ['5:0:13:2:0',['chapter5-changan-return',23,8192]],
+  ['5:1:6:3:0',['chapter5-kongming-return',7,8197]],
 ]);
 function townScope(cursor){
   return Array.isArray(cursor)&&cursor.length===5&&cursor.every(n=>Number.isSafeInteger(n)&&!Object.is(n,-0))?
@@ -45,7 +47,7 @@ export function checkDisputeTownJournal(record,validateActions) {
   const entries=record.townOperations;
   if(kind===undefined&&entries===undefined)return [];
   const need=(pass)=>{if(!pass)throw new RangeError('Invalid Qishan town operation journal');};
-  need(['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return'].includes(record.chapter)&&(kind===undefined||kind===1&&isDisputeTownCursor(record.cursor,record.chapter)));
+  need(['qishan-dispute-source','qishan-map33-source','chapter4-post-qishan-source','chapter4-hulugu-source','chapter5-changan-source','chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return','chapter5-kongming-return'].includes(record.chapter)&&(kind===undefined||kind===1&&isDisputeTownCursor(record.cursor,record.chapter)));
   need(Array.isArray(entries)&&entries.length<=512&&Array.isArray(record.choices));
   let previous=0;
   for(const entry of entries){
@@ -57,7 +59,7 @@ export function checkDisputeTownJournal(record,validateActions) {
   const ordinary=[];
   for(const entry of entries){
     if(isQishanDisputeTrade(entry.action)){
-      const check=['chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return'].includes(record.chapter)?checkWugongRoadTrade:record.chapter==='chapter5-changan-source'?checkChanganRoadTrade:record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:
+      const check=record.chapter==='chapter5-kongming-return'?checkFinaleBaxiPalaceTrade:['chapter5-wugong-source','chapter5-wugong-selection','chapter5-changan-return'].includes(record.chapter)?checkWugongRoadTrade:record.chapter==='chapter5-changan-source'?checkChanganRoadTrade:record.chapter==='qishan-map33-source'?checkQishanDecisiveTrade:
         ['chapter4-post-qishan-source','chapter4-hulugu-source'].includes(record.chapter)?checkQishanPostBattleTrade:checkQishanDisputeTrade;
       check(entry,record.chapter);
     }
