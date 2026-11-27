@@ -91,6 +91,30 @@ export function extendReplayStats(rules, persistentState) {
   return extendStatsForItems(rules, carriedDefinitions(persistentState));
 }
 
+// Store listings identify instances by the native slot, not by item ID.
+// Resolve verified stock before purchase as well as currently carried items.
+// This changes neither the authored stock lists nor replay qualifications.
+export function extendReviewedTownStats(rules, persistentState) {
+  const rows = new Map(carriedDefinitions(persistentState).map(row => [row.definitionId, row]));
+  const already = new Set(rules.itemDefinitions.map(row => row.definitionId));
+  for (const shops of Object.values(rules.townScope?.reviewedCityStocks ?? {})) {
+    for (const slots of Object.values(shops)) {
+      for (const slot of slots) {
+        const instance = persistentState.itemInstances[slot];
+        if (!Number.isSafeInteger(slot) || slot < 0 || slot >= warehouseSize || instance?.slotId !== slot ||
+            instance.bytes?.[0] !== instance.definitionId) {
+          throw new RangeError('Invalid reviewed shop item instance');
+        }
+        if (already.has(instance.definitionId) || rows.has(instance.definitionId)) continue;
+        const definition = replayItemDefinition(instance.definitionId);
+        if (!definition) throw new RangeError('Reviewed shop item definition missing from original table');
+        rows.set(instance.definitionId, definition);
+      }
+    }
+  }
+  return extendStatsForItems(rules, [...rows.values()].sort((a, b) => a.definitionId - b.definitionId));
+}
+
 function extendStatsForItems(rules, carried) {
   const ids = new Set(rules.itemDefinitions.map(item => item.definitionId));
   const extra = carried.filter(row => !ids.has(row.definitionId));
