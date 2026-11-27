@@ -122,3 +122,9 @@ body.free-xinye-active #save-transfer,body.free-xinye-active #game-new,body.free
 /* Optional exact original sprite atlas. Unmatched units keep their readable marker. */
 #free-xinye-battle .free-xinye-grid button.has-sprite{position:relative}
 #free-xinye-battle .free-xinye-grid button.has-sprite::before{content:"";position:absolute;pointer-events:none;width:42px;height:42px;left:-4px;bottom:0;background-image:var(--unit-sprite);background-repeat:no-repeat;background-size:126px 126px;background-position:-42px calc(var(--unit-row) * -42px);transform:scaleX(var(--unit-flip));image-rendering:pixelated}
+
+/* Same portrait row and button sizing as ordinary deployment. */
+.entry-preparation.source-deployment-summary{border:0;padding:0;background:none}
+.entry-options.source-deployment-options>div.preparation-unit{display:flex;gap:.6rem;align-items:center}
+.entry-options.source-deployment-options>div.preparation-unit button{width:auto}
+.entry-options.source-deployment-options .source-deployment-confirm{width:auto;justify-self:start}
