@@ -1,3 +1,4 @@
+import {chencangDeparturePicture} from "./story/chencang-departure-stills.mjs?v=0.73.67";
 import {chencangStaticPicture,prepareChencangStaticPictures} from "./story/chencang-static-display.mjs?v=0.73.66";
 import {qishanCampStill,prepareQishanCampStills} from "./story/qishan-camp-still-display.mjs?v=0.73.65";
 import {decisivePreludeCaption,decisivePreludeDialogue,decisivePreludeCursor,decisivePreludeWorldStill} from "./story/sima-decisive-stills.mjs?v=0.73.60";
@@ -40402,7 +40403,7 @@ function __kmPlainStockManualDisplayR22(raw){
       sn && u.render();
       return;
     }
-    const staticScene=qishanCampStill(Kt)??chencangStaticPicture(Kt), showSourceCanvas=pn.canvasActive&&!staticScene;
+    const staticScene=qishanCampStill(Kt)??chencangStaticPicture(Kt)??chencangDeparturePicture(Kt), showSourceCanvas=pn.canvasActive&&!staticScene;
     let Tt = staticScene ?? i(Kt.screen, Kt), Ye = Tt?.activeBattleField === !0;
     (j("entry-field-canvas").hidden = !Ye && !showSourceCanvas, j("entry-image").hidden = Ye || showSourceCanvas, showSourceCanvas && nt !== null && (ce(nt), nt = null), Ye && (nt !== null && ce(nt), nt = null, he = null, u.paintStoryField(j("entry-field-canvas"), A.getBattleSave())));
     let bt = j("entry-image-overlay");
