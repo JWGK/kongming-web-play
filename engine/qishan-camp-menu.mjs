@@ -1,6 +1,6 @@
 // Root4 camp menu projection. The actual owner publishes every selection.
 // Inventory and persistence adapters must be bound before those entries admit actions.
-import {campItemMenuStages} from './qishan-camp-inventory.mjs?v=0.73.57-qishan-camp';
+import {campItemMenuStages} from './qishan-camp-inventory.mjs?v=0.73.60-shared-items';
 import {openTownMenu, chooseTownMenuOption, backWithinTownMenu, townMenuOptions, nativeTownMenuOrder} from './town-menu-core.mjs?v=0.73.57-qishan-camp';
 
 // Read the single source hint currently selected by camp opcode 0x30.
@@ -72,6 +72,9 @@ export function campMenuView(current, campaign, hint=null, inventory=null,slotsB
     stage:current.stage,menuOptions,canBack:true,canAdvance:false,canOpenMenu:false,
     ...(current.stage==='partyInfo'?{party:structuredClone(party)}:{}),
     ...(current.stage==='hint'?{promptJa:hint}:{}),
+    ...(itemView?{townItemContext:Object.freeze({
+      persistentState:campaign.persistentState,transaction:current.transaction
+    })}:{}),
     ...(itemView?.inventory?{inventory:itemView.inventory}:{}),
     ...(itemView?.promptJa||current.notice?{promptJa:itemView?.promptJa??current.notice}:{})
   };
