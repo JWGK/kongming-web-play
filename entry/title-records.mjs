@@ -19,6 +19,7 @@ const suspendLabels = new Map([
   ['KONGMING-HANGU-FIXED-SUSPEND/2', '函谷關之戰']
 ]);
 const manualLabels = new Map([
+  ['KONGMING-QISHAN-ROOT4-CAMP-MANUAL/1', '祁山　蜀軍營帳'],
   ['KONGMING-WUZHANG-HISTORICAL-POST-MANUAL/1', '第四章・第三幕 五丈原之戰Ⅱ（史實戰後）'],
   ['KONGMING-HANGU-POST-MANUAL/1', '終章・第四幕 洛陽（函谷關之戰戰後）'],
   ['KONGMING-HUASHAN-POST-MANUAL/1', '終章・第三幕 長安（華山之戰戰後）']

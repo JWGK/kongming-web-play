@@ -207,3 +207,43 @@ export function chooseTownTradeOption(state, option, go) {
   } else return false;
   return true;
 }
+
+// Shared no-shop equipment and trade choices. A caller supplies the currently
+// enabled row and its own transactional, validated operation service.
+export function chooseTownInventoryOption(state, row, go, operate) {
+  const {id}=row, tx=state.transaction;
+  if(tx?.type!=='manage')return false;
+  const backTo=stage=>{state.transaction={type:'manage',owner:tx.owner};go(stage);};
+  const ownerFromId=()=>id==='owner:warehouse'?'warehouse':Number(id.slice(6));
+  const endpoint=(owner,slot,index)=>owner==='warehouse'?{ownerDefinitionIndex:null,itemSlotId:slot}:
+    {ownerDefinitionIndex:owner,inventoryIndex:index};
+  if(state.stage==='inventoryView'){
+    if(id==='manage:equipment')backTo('equipmentSlots');
+    else {Object.assign(tx,{itemSlotId:row.itemSlotId,inventoryIndex:row.inventoryIndex??null});go('itemActions');}
+  }else if(state.stage==='itemActions'){
+    if(id==='item:use')go('useConfirm');
+    else if(id==='item:exchange')go('exchangeOwners');
+    else if(id==='item:equip')go(tx.owner==='warehouse'?'equipmentOwners':'equipmentSlots');
+    else return false;
+  }else if(state.stage==='equipmentSlots'){
+    tx.category=row.inventoryIndex;go('equipmentChoices');
+  }else if(state.stage==='equipmentChoices'){
+    const r=operate(id==='equip:none'?{type:'unequip',definitionIndex:tx.owner,inventoryIndex:tx.category}:
+      {type:'equip',definitionIndex:tx.owner,itemSlotId:row.itemSlotId});
+    if(!r.applied&&r.reason!=='empty_inventory_slot')throw new RangeError(r.reason);
+    backTo('equipmentSlots');
+  }else if(state.stage==='equipmentOwners'){
+    const r=operate({type:'equip',definitionIndex:ownerFromId(),itemSlotId:tx.itemSlotId});
+    if(!r.applied)throw new RangeError(r.reason);
+    backTo('inventoryView');
+  }else if(state.stage==='exchangeOwners'){
+    tx.targetOwner=ownerFromId();go('exchangeItems');
+  }else if(state.stage==='exchangeItems'){
+    const from=endpoint(tx.owner,tx.itemSlotId,tx.inventoryIndex);
+    const to=endpoint(tx.targetOwner,id==='exchange:empty'?255:row.itemSlotId,row.inventoryIndex);
+    const r=operate({type:'exchange',from,to});
+    if(!r.applied)throw new RangeError(r.reason);
+    backTo('inventoryView');
+  }else return false;
+  return true;
+}
