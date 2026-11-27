@@ -1,6 +1,7 @@
+import {renderNativeStillFile} from "./story/native-still-surface.mjs?v=0.73.80";
 import {weiRiverCursor,weiRiverCaption,weiRiverDialogue,weiRiverWorldStill} from "./story/wei-river-stills.mjs?v=0.73.75";
 import {huluguPicture,prepareHuluguPictures} from "./story/hulugu-still-display.mjs?v=0.73.76";
-import {wuzhangPicture,prepareWuzhangPictures} from "./story/wuzhang-still-display.mjs?v=0.73.77";
+import {wuzhangPicture,prepareWuzhangPictures} from "./story/wuzhang-still-display.mjs?v=0.73.80";
 import {changanPicture,prepareChanganPictures} from "./story/changan-still-display.mjs?v=0.73.79";
 import {changanCaption,changanDialogue,changanCursor,changanWorldStill} from "./story/changan-stills.mjs?v=0.73.79";
 import {wuzhangCaption,wuzhangDialogue,wuzhangCursor,wuzhangWorldStill} from "./story/wuzhang-stills.mjs?v=0.73.77";
@@ -6042,7 +6043,7 @@ return fWe.add(de),Object.freeze(de)}var RW,fWe,ul,xm,Xhe,ci,pWe,bw,Jf,ete,jW=Me
   createHistoricalTitlePort as __kmHistoricalTitlePortN20,
   createHistoricalCommonBonusRenderer as __kmHistoricalBonusRendererN20,
   captureHistoricalTitlePresentation as __kmHistoricalTitleCaptureN20
- } from "./wuzhang-historical/runtime.mjs?v=0.73.39-on-demand";
+ } from "./wuzhang-historical/runtime.mjs?v=0.73.80";
  const __kmHistoricalPacketN20=new WeakMap();
  const __kmHistoryFactoryN20=new WeakMap();
  const __kmHistoricalRouterW41=new WeakMap();
@@ -39329,6 +39330,10 @@ async function loadStorySlot(slot,raw){
           createEngine:packet.createEngine,readStockMediaConfiguration:()=>packet.mediaConfiguration,
           readChapter4WuzhangMediaConfiguration:zR,readPreparedChapter4WuzhangMedia:Y5e,readRetainedBgm:()=>null,playBgm,onError,
           actorName:id=>r(u.characterPresentation?.(id)?.nameJa??String(id)),
+          renderLocationDialogue:(text,cursor)=>{
+            Ln.update({textJa:text,speakerDefinition:null},`historical-location:${cursor.join(":")}`,{pause:false});
+            Ln.reveal();
+          },
           portrait:id=>{
             const q=Pe(id,A.view),alias=y?.objectAliases?.[id]??id,def=y?.definitions?.[alias],f=def&&y.portraits?.[def.portrait];
             return q?.portraitAsset??(f?'assets/story-portraits/'+f.path:u.characterPresentation?.(id)?.portraitAsset??null);
@@ -40626,7 +40631,7 @@ function __kmPlainStockManualDisplayR22(raw){
     }
     if (Tt && !Ye && !showSourceCanvas) {
       let xt = Tt.sceneAsset ?? Tt.asset, eo = Tt.sceneAnimationAsset ?? (Tt.cleanScene && Tt.animationAsset?.startsWith("assets/story-clean-motion/") ? Tt.animationAsset : Kt.dialogue ? null : Tt.animationAsset), qt = `${Kt.stage}:${Kt.sequence}:${Kt.index}:${Tt.asset}`;
-      (qt !== he && (nt !== null && ce(nt), nt = null, he = qt, Re = !1), eo && Kt.stage !== "outroComplete" && !Re && !Ce ? nt === null && (j("entry-image").src = um(`./${eo}`), nt = re(Zr, Tt.sceneAnimationDurationMs ?? Tt.animationDurationMs)) : j("entry-image").src = um(`./${xt}`), j("entry-image").alt = He || "\u4E09\u56FD\u5FD7\u5B54\u660E\u4F1D\u30FB\u539F\u4F5C\u753B\u9762");
+      (qt !== he && (nt !== null && ce(nt), nt = null, he = qt, Re = !1), eo && Kt.stage !== "outroComplete" && !Re && !Ce ? nt === null && (j("entry-image").src = um(`./${eo}`), nt = re(Zr, Tt.sceneAnimationDurationMs ?? Tt.animationDurationMs)) : renderNativeStillFile(j("entry-image"), um(`./${xt}`), He), j("entry-image").alt = He || "\u4E09\u56FD\u5FD7\u5B54\u660E\u4F1D\u30FB\u539F\u4F5C\u753B\u9762");
     } else j("entry-image").removeAttribute?.("src");
     if ((Ln.update(locationDialogue??(pn.active ? null : ke ?? null), `${Kt.stage}:${Kt.sequence}:${Kt.index}${locationDialogue?":"+locationDialogue.textJa:""}`, {
       pause: Ce
