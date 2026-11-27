@@ -7,7 +7,7 @@ const heading = document.getElementById('title-handoff-heading');
 const progress = document.getElementById('title-handoff-status');
 const gate = document.getElementById('entry-begin');
 const gateStatus = document.getElementById('entry-loading-status');
-const gameUrl = new URL('../site.bundle.mjs?v=0.73.87-hulugu-fixes', import.meta.url);
+const gameUrl = new URL('../site.bundle.mjs?v=0.73.88-chengdu-free-roam', import.meta.url);
 let failedImports = 0;
 
 async function loadRuntime() {
