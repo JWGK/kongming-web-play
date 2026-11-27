@@ -10,6 +10,12 @@ export function pursuitIngressPicture(view){
   const keys=[chapter,cursor,room.currentCity,room.sceneMode,p.pending?.id??null,p.completedRecipeId??null];
   const exact=stamp=>frames[JSON.stringify(stamp)];
   let file=exact(keys);
+  if(!file&&chapter==='qishan-root4-departure'&&view.coreStage==='manual-prompt'&&
+    view.nativeManualMarker===1&&[1,2].includes(cursor[2])&&cursor[3]===16&&cursor[4]===2&&
+    room.sceneMode===8200&&room.currentCity===17&&!p.pending){
+    // The original 61/0 prompt doesn't alter the settled readiness frame.
+    file=exact([chapter,[4,0,cursor[2],16,1],...keys.slice(2)]);
+  }
   // Both preparations use the same settled Wei room after command 20:29.
   if(!file&&chapter==='qishan-root4-departure'&&room.sceneMode===8202&&!p.pending&&
     ['preparation','held-pre-enemy'].includes(view.coreStage)&&[3,4].includes(cursor[2])&&

@@ -139,6 +139,8 @@ function preview(raw, key, channel) {
     const kind = end < 0 ? '' : body.slice(0, end);
     if (kind === 'KONGMING-STORY-MANUAL/1' && channel === 'manual') {
       label = storyLocation(body.slice(end + 1));
+    } else if (kind === 'KONGMING-QISHAN-ROOT4-CAMP-MANUAL/1' && channel === 'manual' && body.endsWith(',"pursuitReady":1}')) {
+      label = '祁山營帳・作戰前';
     } else {
       label = (channel === 'suspend' ? suspendLabels : manualLabels).get(kind);
     }
