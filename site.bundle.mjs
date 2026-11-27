@@ -38603,7 +38603,7 @@ async function loadStorySlot(slot,raw){
     if (A.chapterId === "chapter4-wuzhang-source") return x === "wuzhang:start" ? !1 : !D && P2() ? cp("focus", x, ie => A.focus(x, ie)) : !1;
     if (A.chapterId === "chapter4-hulugu-source") return x === "hulugu:start" ? !1 : !D && C7() ? zh("focus", x, ie => A.focus(x, ie)) : !1;
     if (A.chapterId === "chapter4-post-qishan-source") return x === "post-qishan:start" ? !1 : !D && p3() ? I7("focus", x, ie => A.focus(x, ie)) : !1;
-    if (A.chapterId === "qishan-map33-source") return x === "map33:start" || A.view.disputeTownMenu === true ? !1 : !D && L0() ? S7("focus", x, ie => A.focus(x, ie)) : !1;
+    if (A.chapterId === "qishan-map33-source") return x === "map33:start" || A.view.canOpenMenu === true || A.view.disputeTownMenu === true ? !1 : !D && L0() ? S7("focus", x, ie => A.focus(x, ie)) : !1;
     if (A.chapterId === "qishan-dispute-source") return x === "dispute:start" || A.view.disputeTownMenu === true ? !1 : !D && g3() ? N4("focus", x, ie => A.focus(x, ie)) : !1;
     if (!Av()) return A.focus(x);
     if (Je) return;
