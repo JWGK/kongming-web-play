@@ -40745,7 +40745,7 @@ function __kmPlainStockManualDisplayR22(raw){
       typeof u.confirmDeployment==="function" ? Kt.preparation : null;
     const sourcePrepCharacter=(id)=>Pe(id,Kt)??u.characterPresentation?.(id);
     const sourcePrepPortrait=(id,character)=>{
-      const asset=character?.portraitAsset??campaignPreparationPortrait(id);
+      const asset=campaignPreparationPortrait(id)??character?.portraitAsset;
       return asset?qd(`./${asset}`):null;
     };
     const sourcePrepWrapper=j("entry-preparation");
