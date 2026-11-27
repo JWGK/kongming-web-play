@@ -15,7 +15,6 @@ const locations = new Map([
   ['3:2:12', [0x1b0162, 6001, '陳倉　魏軍幕舎', '陳倉　魏軍營帳']],
   ['3:4:20', [0x1b0213, 7014, '鳳鳴山　蜀軍幕舎', '鳳鳴山　蜀軍營帳']],
 ]);
-const marches=new Set(['0:1:4','0:1:5','2:1:3','2:1:4','2:3:3','2:5:3','3:1:3','3:3:2','3:3:4','3:3:6']);
 export const disputePreludeCursor=cursor=>Array.isArray(cursor)&&cursor.length===5&&cursor[0]===4&&cursor[1]===1&&[0,1,2,3].includes(cursor[2]);
 export function disputePreludeCaption(recipe){
   const cursor=recipe?.sourceCursor;
@@ -32,6 +31,5 @@ export function disputePreludeDialogue(view){
 // A scripted world raster can persist between two events while field input is
 // locked. Never remove pins from a playable player-controlled world view.
 export function disputePreludeWorldStill(room,cursor){
-  return disputePreludeCursor(cursor)&&room?.sceneMode===4096&&room.inputEnabled===false&&
-    (marches.has(cursor.slice(2).join(':'))||room.march!=null);
+  return disputePreludeCursor(cursor)&&room?.sceneMode===4096&&room.inputEnabled===false;
 }
