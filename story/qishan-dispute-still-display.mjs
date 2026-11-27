@@ -1,4 +1,4 @@
-import {qishanDisputeFrames as frames} from './qishan-dispute-still-frames.mjs?v=0.73.71';
+import {qishanDisputeFrames as frames} from './qishan-dispute-still-frames.mjs?v=0.73.72';
 const decoded = new Map();
 
 export function qishanDisputePicture(view) {
