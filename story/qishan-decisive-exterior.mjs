@@ -1,4 +1,4 @@
-import {createDetachedTownSession} from './settled-town-session.mjs';
+import {createDetachedTownSession} from './settled-town-session.mjs?v=0.73.90-wei-river-towns';
 
 // The city17 camp immediately before Map33, not Map32's city42 camp.
 // Native 4:1:7 sets only city 17 (0x1b0ee1), then releases input at
