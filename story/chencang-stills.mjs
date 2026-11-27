@@ -71,3 +71,44 @@ export function firstChencangDepartureDecoder(stock, fetchAsset = globalThis.fet
     }
   });
 }
+
+// These IDs come from the reviewed source-image manifests. Do not apply
+// story-map cleanup to navigable world maps, battle maps or room sprites.
+const cleanWorld=Object.freeze({
+  aftermath:'aftermath-world-exit-background',
+  changan:'changan-24a1cc85b8c0195f3b9d800409bba8779e8beac2d9352bcb6abcb901afce4dc4'
+});
+const storyMaps=Object.freeze({
+  aftermath:new Set([cleanWorld.aftermath,'source-b57cc6bcdb4c182f7e9d283a69af14d72c821b5e325debb1317b495a03667117']),
+  changan:new Set([cleanWorld.changan,'changan-0ad3eca96b2eb8b7f12caad666bbf85f19a000e486d1c1059a227837514706ce',
+    'changan-06512f1eeccf17db7e24bca641d857d190cb69678bc0c55107be72d9853927a3'])
+});
+const captionIds=Object.freeze({
+  'aftermath-root4-title-overlay':'魏軍據點　長安',
+  'changan-caption-deea0cf85972fcb3e518f30cdd90c2ddd2a0d62ccaee51d66b7ba9612b66a114':'長安　議事廳',
+  'changan-caption-0847064dcaa99522c8d8391b733519884a44a32a48a8fbd58cbd8aec39794dbf':'魏國都城　洛陽',
+  'changan-caption-121836133eac1561bfe6781a2c50e774c170890e0569cd225542e7935ae63665':'洛陽　議事廳',
+  'changan-caption-f650add9f89301decb1b75a4b127accab81ad230a5f45be64936b762f88bc35e':'祁山'
+});
+export function earlyStoryPicture(section,frame){
+  if(storyMaps[section]?.has(frame.backgroundAssetId))
+    return {...frame,backgroundAssetId:cleanWorld[section],overlays:[]};
+  const overlays=frame.overlays.filter(x=>!Object.hasOwn(captionIds,x.assetId));
+  return overlays.length===frame.overlays.length?frame:{...frame,overlays};
+}
+export function earlyStoryImageIds(section,ids){
+  return ids.some(id=>storyMaps[section]?.has(id))?[...new Set([...ids,cleanWorld[section]])]:ids;
+}
+export function earlyStoryCaption(recipe){
+  if(!recipe?.skippableByInput)return null;
+  const key=recipe.frames.at(-1)?.overlays.find(x=>Object.hasOwn(captionIds,x.assetId))?.assetId;
+  return key?captionIds[key]:null;
+}
+export function chencangLocationDialogue(view){
+  if(view?.chapterId!=='second-chencang'||!view.presentation?.pending||view.dialogue)return null;
+  const recipe=view.presentation.recipe;
+  if(recipe?.policyVersion!=='web-changan-continuation-display/1'&&
+     recipe?.policyVersion!=='web-second-chencang-aftermath-display/1')return null;
+  const text=earlyStoryCaption(recipe);
+  return text?{textJa:text,speakerDefinition:null}:null;
+}
