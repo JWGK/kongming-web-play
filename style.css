@@ -128,3 +128,6 @@ body.free-xinye-active #save-transfer,body.free-xinye-active #game-new,body.free
 .entry-options.source-deployment-options>div.preparation-unit{display:flex;gap:.6rem;align-items:center}
 .entry-options.source-deployment-options>div.preparation-unit button{width:auto}
 .entry-options.source-deployment-options .source-deployment-confirm{width:auto;justify-self:start}
+
+/* Let the player keep their own page position while story UI changes. */
+html:has(#entry-content:not([hidden])){scroll-behavior:auto;overflow-anchor:none}
