@@ -1,0 +1,26 @@
+// Verified original Map45 aftermath source screenshots. Captions live in dialogue.
+export const map45PostFrames=Object.freeze({
+  "[[5,2,2,0,1],9,4096,null]": "assets/map45-post-native-stills/ed688e0e5f241b16dfd0d609.png",
+  "[[5,2,2,0,2],9,4096,\"march\"]": "assets/map45-post-native-stills/ed688e0e5f241b16dfd0d609.png",
+  "[[5,2,2,1,10],16,8192,\"spawn\"]": "assets/map45-post-native-stills/6c19e03fcbc8f403070c0e3d.png",
+  "[[5,2,2,1,11],16,8192,\"spawn\"]": "assets/map45-post-native-stills/550025002db029fd96134262.png",
+  "[[5,2,2,1,12],16,8192,\"spawn\"]": "assets/map45-post-native-stills/9f1daa1712fcf6f67c462eba.png",
+  "[[5,2,2,1,13],16,8192,\"spawn\"]": "assets/map45-post-native-stills/691c99d5840258f72cfa966b.png",
+  "[[5,2,2,1,14],16,8192,\"spawn\"]": "assets/map45-post-native-stills/e2a3fd9168f01009d84bfe8e.png",
+  "[[5,2,2,1,15],16,8192,\"spawn\"]": "assets/map45-post-native-stills/7bc2877594d5d5713e18911f.png",
+  "[[5,2,2,1,16],16,8192,\"spawn\"]": "assets/map45-post-native-stills/287a7c0c8cb91d8307b79a0e.png",
+  "[[5,2,2,1,17],16,8192,\"spawn\"]": "assets/map45-post-native-stills/e94bbba299dc7800f2f51cb8.png",
+  "[[5,2,2,1,18],16,8192,\"spawn\"]": "assets/map45-post-native-stills/cdf0f382df2b62bf3afbe42c.png",
+  "[[5,2,2,1,19],16,8192,\"fade-in\"]": "assets/map45-post-native-stills/cdf0f382df2b62bf3afbe42c.png",
+  "[[5,2,2,1,1],16,4096,\"scene\"]": "assets/map45-post-native-stills/cd9a2e7e48238390f2f5c35e.png",
+  "[[5,2,2,1,20],16,8192,null]": "assets/map45-post-native-stills/cdf0f382df2b62bf3afbe42c.png",
+  "[[5,2,2,1,21],16,8192,null]": "assets/map45-post-native-stills/cdf0f382df2b62bf3afbe42c.png",
+  "[[5,2,2,1,2],16,16,\"bgm\"]": "assets/map45-post-native-stills/cd9a2e7e48238390f2f5c35e.png",
+  "[[5,2,2,1,3],16,16,\"fade-in\"]": "assets/map45-post-native-stills/cd9a2e7e48238390f2f5c35e.png",
+  "[[5,2,2,1,4],16,16,\"caption\"]": "assets/map45-post-native-stills/cd9a2e7e48238390f2f5c35e.png",
+  "[[5,2,2,1,5],16,16,\"fade-out\"]": "assets/map45-post-native-stills/c34ed971901b9f210ab98dc5.png",
+  "[[5,2,2,1,6],16,16,\"scene\"]": "assets/map45-post-native-stills/90035a6656cb31a03be14565.png",
+  "[[5,2,2,1,7],16,8192,\"spawn\"]": "assets/map45-post-native-stills/d5eac5af87880e66ad842614.png",
+  "[[5,2,2,1,8],16,8192,\"spawn\"]": "assets/map45-post-native-stills/2db97d3763838ee812352931.png",
+  "[[5,2,2,1,9],16,8192,\"spawn\"]": "assets/map45-post-native-stills/476792d6b01cd5c6445aace9.png"
+});
