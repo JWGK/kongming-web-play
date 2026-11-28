@@ -37608,7 +37608,8 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   const storyManualRoutes={"qishan-dispute-source":{hostKey:"qishanPursuitHost",viewKey:"qishanDisputeSourceView",continue:()=>k7("no")},"qishan-map33-source":{hostKey:"qishanDisputeHost",viewKey:"qishanMap33SourceView",continue:()=>kv("no")},"chapter4-post-qishan-source":{hostKey:"qishanMap33Host",viewKey:"chapter4PostQishanSourceView",continue:()=>Cv("no")},"chapter4-hulugu-source":{hostKey:"chapter4PostQishanHost",viewKey:"chapter4HuluguSourceView",continue:()=>z2("no")},"chapter4-wuzhang-source":{hostKey:"chapter4HuluguHost",viewKey:"chapter4WuzhangSourceView",continue:()=>$j("no")},"chapter5-changan-source":{hostKey:"chapter4WuzhangHost",viewKey:"chapter5ChanganSourceView",continue:()=>nn("no")},"chapter5-wugong-source":{hostKey:"chapter5ChanganHost",viewKey:"chapter5WugongSourceView",continue:()=>Qt("no")},"chapter5-wugong-selection":{hostKey:"chapter5WugongHost",viewKey:"chapter5WugongSelectionSourceView",continue:()=>It("no")},"chapter5-changan-return":{hostKey:"chapter5ChanganSiegeHost",viewKey:"chapter5ChanganReturnSourceView",continue:()=>K6("no")}, "chapter5-kongming-return":{hostKey:"chapter5ChanganSiegeHost",viewKey:"chapter5KongmingReturnSourceView",continue:()=>Vl("no")},"chapter5-baxi-return":{hostKey:"chapter5BaxiHost",viewKey:"chapter5BaxiReturnSourceView",continue:()=>fv("no")}};
 const originalModeOneRoutes=Object.freeze({
   "qishan-dispute-source":Object.freeze({cursors:Object.freeze(["4:0:5:1:21","4:1:3:0:23"]),available:()=>g3()}),
-  "qishan-map33-source":Object.freeze({cursors:Object.freeze(["4:1:6:1:14"]),available:()=>L0()})
+  "qishan-map33-source":Object.freeze({cursors:Object.freeze(["4:1:6:1:14"]),available:()=>L0()}),
+  "chapter4-post-qishan-source":Object.freeze({cursors:Object.freeze(["4:2:0:1:13","4:2:0:4:21"]),available:()=>p3()})
 });
 let originalModeOnePanel=null;
 function exactOriginalModeOneBank(view=A.view){
