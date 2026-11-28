@@ -37606,6 +37606,55 @@ function __baidiPostCurrentW24(){return __kmBaidiPostW24(__baidiCurrentW24());}
   }
   n(vv, "continuePostQishanSource");
   const storyManualRoutes={"qishan-dispute-source":{hostKey:"qishanPursuitHost",viewKey:"qishanDisputeSourceView",continue:()=>k7("no")},"qishan-map33-source":{hostKey:"qishanDisputeHost",viewKey:"qishanMap33SourceView",continue:()=>kv("no")},"chapter4-post-qishan-source":{hostKey:"qishanMap33Host",viewKey:"chapter4PostQishanSourceView",continue:()=>Cv("no")},"chapter4-hulugu-source":{hostKey:"chapter4PostQishanHost",viewKey:"chapter4HuluguSourceView",continue:()=>z2("no")},"chapter4-wuzhang-source":{hostKey:"chapter4HuluguHost",viewKey:"chapter4WuzhangSourceView",continue:()=>$j("no")},"chapter5-changan-source":{hostKey:"chapter4WuzhangHost",viewKey:"chapter5ChanganSourceView",continue:()=>nn("no")},"chapter5-wugong-source":{hostKey:"chapter5ChanganHost",viewKey:"chapter5WugongSourceView",continue:()=>Qt("no")},"chapter5-wugong-selection":{hostKey:"chapter5WugongHost",viewKey:"chapter5WugongSelectionSourceView",continue:()=>It("no")},"chapter5-changan-return":{hostKey:"chapter5ChanganSiegeHost",viewKey:"chapter5ChanganReturnSourceView",continue:()=>K6("no")}, "chapter5-kongming-return":{hostKey:"chapter5ChanganSiegeHost",viewKey:"chapter5KongmingReturnSourceView",continue:()=>Vl("no")},"chapter5-baxi-return":{hostKey:"chapter5BaxiHost",viewKey:"chapter5BaxiReturnSourceView",continue:()=>fv("no")}};
+let pursuitAftermathBank=null;
+function exactPursuitAftermathBank(view=A.view){
+  return view?.chapterId==="qishan-dispute-source"&&view.sourceCursor?.join(":")==="4:0:5:1:21"&&
+    storyManualPrompt(view)&&!view.presentation?.pending;
+}
+function currentPursuitAftermathBank(panel){
+  return panel&&panel===pursuitAftermathBank&&exactPursuitAftermathBank()&&
+    g3()&&panel.session===u.session&&panel.identity===u.session.sessionIdentity&&
+    panel.host===u.session.qishanPursuitHost&&panel.host.ownershipEpoch===panel.epoch&&
+    panel.scope===A.qishanDisputeSourceView&&panel.revision===A.revision;
+}
+function choosePursuitAftermathBank(key){
+  if(!exactPursuitAftermathBank()||!g3())return;
+  let panel=currentPursuitAftermathBank(pursuitAftermathBank)?pursuitAftermathBank:null;
+  const phase=panel?.phase??"prompt",next=storyManualBankAction(phase,key);
+  if(next===phase)return;
+  if(next==="continue"){pursuitAftermathBank=null;return k7("no");}
+  try{
+    if(!panel){
+      const session=u.session,host=session.qishanPursuitHost,stats=session.campaignDisplayStats;
+      if(stats.uncertain)throw new RangeError("Current campaign turns cannot be confirmed");
+      const record=host.captureStoryManual(A.view,stats.total,false);
+      panel={session,host,epoch:host.ownershipEpoch,identity:session.sessionIdentity,
+        scope:A.qishanDisputeSourceView,revision:A.revision,record,runCycle:stats.runCycle,phase,
+        slots:null};
+      pursuitAftermathBank=panel;
+    }
+    if(!currentPursuitAftermathBank(panel))return;
+    if(next==="write"){
+      const slot=Number(key.slice(5)),raw=b.getItem(ga(slot));
+      return confirmSlotMutation(slot,raw!==null,"記錄 "+slot+" 已有資料，要覆寫嗎？",()=>{
+        if(!currentPursuitAftermathBank(panel)||panel.phase!=="slots")return;
+        let saved=false;
+        try{
+          const stats=u.session.campaignDisplayStats;
+          if(stats.uncertain||stats.total!==panel.record.turns||stats.runCycle!==panel.runCycle)
+            throw new RangeError("Current native aftermath counters have changed");
+          persistValidatedStorySlot(panel.record,panel.runCycle,slot,raw,
+            ()=>currentPursuitAftermathBank(panel)&&panel.phase==="slots");
+          saved=true;pursuitAftermathBank=null;fr();k7("no");
+          u.storageMessage("已保存到記錄 "+slot+"。");
+        }catch(error){saved?Zf(error,slot):ma(error);}
+      });
+    }
+    if(next==="slots")panel.slots=T.displaySlots();
+    if(next==="prompt")pursuitAftermathBank=null;else panel.phase=next;
+    Cn();
+  }catch(error){ma(error);}
+}
 let storySlotOwner=null;
 function storySlotCurrent(token){
   return !!token && token===storySlotOwner && A.chapterId===token.chapter && A[ token.viewKey ]===token.scope &&
@@ -41673,6 +41722,7 @@ function __kmPlainStockManualDisplayR22(raw){
     const entryButton = activeButton?.matches?.("button") && j("entry-content").contains(activeButton) ? activeButton : null;
     let Kt = A.view, pn = fL(), hr = !1;
     if(exactPursuitManual(Kt))Kt=pursuitManualBankView(Kt);
+    else if(exactPursuitAftermathBank(Kt))Kt=commonInlineManualView(Kt,currentPursuitAftermathBank(pursuitAftermathBank)?pursuitAftermathBank:null);
     else if(exactMap33Manual(Kt))Kt=commonInlineManualView(Kt,map33ManualPanelCurrent(map33ManualPanel)?map33ManualPanel:null);
     else if(exactWugongNativeBank(Kt))Kt=commonInlineManualView(Kt,wugongNativePanelCurrent(wugongNativeBankPanel)?wugongNativeBankPanel:null);
     if(Kt.disputeExterior&&["saveSlots","loadSlots"].includes(Kt.stage)){
@@ -41937,6 +41987,7 @@ function __kmPlainStockManualDisplayR22(raw){
             if(xt.id==="resume"&&__map46TitleW32(Kt)) { void __openMap46GenericW32(Kt); return; }
             if(Kt?.standaloneTitle===true&&Kt.stage==="loadSlots"&&__map46ManualRawW32(xt.slot)) {void __openMap46ManualW32(xt.slot);return;}
             if(exactPursuitManual(Kt)){choosePursuitManual(xt.id);return;}
+            if(exactPursuitAftermathBank(Kt)){choosePursuitAftermathBank(xt.id);return;}
             if(exactMap33Manual(Kt)){chooseMap33InlineManual(xt.id);return;}
             if(exactWugongNativeBank(Kt)){chooseWugongNativeBank(xt.id);return;}
             if(xt.id==="yes" && storyManualPrompt(Kt)){openStorySave();return;}
@@ -42064,7 +42115,7 @@ function __kmPlainStockManualDisplayR22(raw){
           // The common town host accepts a direct choice. A native focus
           // publication here can replace the very button being tapped.
           if((Kt.hosted===true||Kt.coreStage==="town-hub")&&(Kt.chapterId==="chapter5-section2-town"||__baidiTownCurrentW24()))return;
-          if(Kt.jianglingCampMenu||Kt.disputeExterior||Kt.chapterId==="chapter5-kongming-return"&&Kt.disputeTownMenu||Kt.chapterId==="chapter5-baxi-return"&&["hub","choice","readiness-confirm"].includes(Kt.coreStage)&&Kt.sourceCursor?.slice(0,3).join(":")==="5:1:9"||xt.id==="dispute-city:enter"||sourcePreparation||exactPursuitManual(Kt)||exactMap33Manual(Kt)||exactWugongNativeBank(Kt)||u.deploymentConfirmationPending?.()||Kt.stage==="hub"&&["chapter5-wugong-selection","chapter5-changan-return"].includes(Kt.chapterId))return;
+          if(Kt.jianglingCampMenu||Kt.disputeExterior||Kt.chapterId==="chapter5-kongming-return"&&Kt.disputeTownMenu||Kt.chapterId==="chapter5-baxi-return"&&["hub","choice","readiness-confirm"].includes(Kt.coreStage)&&Kt.sourceCursor?.slice(0,3).join(":")==="5:1:9"||xt.id==="dispute-city:enter"||sourcePreparation||exactPursuitManual(Kt)||exactPursuitAftermathBank(Kt)||exactMap33Manual(Kt)||exactWugongNativeBank(Kt)||u.deploymentConfirmationPending?.()||Kt.stage==="hub"&&["chapter5-wugong-selection","chapter5-changan-return"].includes(Kt.chapterId))return;
           if (typeof xt.selected === "boolean" || Kt.chapterId==="qishan-dispute-source") {
             if (event.type === "pointerenter") deploymentTouch = event.pointerType === "touch";
             if (deploymentTouch && (event.type === "pointerenter" || !qt.matches(":focus-visible"))) return;
@@ -43428,7 +43479,7 @@ function __kmPlainStockManualDisplayR22(raw){
     if (!(j("entry-next").hidden || j("entry-next").disabled || un)) return __baidiMayPrepareW24() ? __baidiPrepareW24() : A.chapterId === "chapter5-chengdu-defense-return" && A.view.stage === "held-after-manual" && A.canContinueChapter5Jianning ? Xa() : A.chapterId === "chapter5-kongming-return" && A.view.stage === "held-before-battle" && A.canContinueChapter5Baxi ? Pm() : A.chapterId === "chapter5-kongming-return" && A.view.stage === "held-before-battle" && A.canContinueChapter5ChengduDefense ? a3() : A.chapterId === "chapter5-wugong-selection" && A.view.stage === "held-before-departure" ? Nc() : A.chapterId === "chapter5-changan-return" && A.view.stage === "held-after-manual" ? Kc() : A.chapterId === "chapter5-jianning" && ["held-block5", "held-block14"].includes(A.view.stage) || (A.chapterId === "chapter5-jiangling-return" && A.view.stage === "held-after-manual" || A.chapterId === "chapter5-jiangling-aftermath" && A.view.stage === "held-before-next-story" || A.chapterId === "chapter5-wei-coup" && A.view.stage === "held-after-manual") && A.canContinueChapter5JianningSource ? Pa() : (__kmBaidiWeiW24(__baidiCurrentW24()) || A.chapterId === "chapter5-baxi" && ["held-block8", "held-block12", "held-block14"].includes(A.view.stage)) ? yf() : A.chapterId === "chapter5-chengdu-defense" && A.view.stage === "held-block18" ? $l() : A.chapterId === "chapter5-changan-siege" && A.view.stage === "held-block13" ? O5() : A.chapterId === "chapter5-wugong" && ["held-block8", "held-block12"].includes(A.view.stage) ? Pt() : A.chapterId === "chapter5-changan" && A.view.stage === "held-block4" ? Lt() : A.chapterId === "chapter4-wuzhang" && A.view.stage === "held-block14" ? gt() : A.chapterId === "chapter5-wugong-aftermath" && A.view.stage === "held-after-manual" ? Be() : (["chapter5-jianning-route", "chapter5-jianning-return"].includes(A.chapterId) && A.view.stage === "held-before-preparation" || A.chapterId === "chapter5-section2-town" && A.view.stage === "held-before-battle") && A.canPrepareChapter5Jianning ? ki() : ["chapter5-second-changan-source", "chapter5-jianning-route", "chapter5-jianning-source"].includes(A.chapterId) ? !Rl() || Ln.reveal() ? void 0 : qs("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-baxi-source" ? !bn() || Ln.reveal() ? void 0 : yl("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-chengdu-defense-source" ? !Jn() || Ln.reveal() ? void 0 : hf("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-changan-siege-source" ? !Fn() || Ln.reveal() ? void 0 : Pd("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-wugong-selection" ? !jh() || Ln.reveal() ? void 0 : Ag("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-kongming-return" ? !Xe() || Ln.reveal() ? void 0 : wr("advance", void 0, x => A.advance(x)) : w5(A.chapterId) && !__baidiTownCurrentW24() && !__baidiPostCurrentW24() ? !ep() || Ln.reveal() ? void 0 : Ds("advance", void 0, x => A.advance(x)) : dg(A.chapterId) || __baidiTownCurrentW24() || __baidiPostCurrentW24() ? !er() || Ln.reveal() ? void 0 : Bd("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-chengdu-defense-return" ? !dr() || Ln.reveal() ? void 0 : ld("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-changan-return" ? !kr() || Ln.reveal() ? void 0 : k5("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-wugong-aftermath" ? !ss() || Ln.reveal() ? void 0 : G1("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-wugong-source" ? !ip() || Ln.reveal() ? void 0 : Pg("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter5-changan-source" ? !jg() || Ln.reveal() ? void 0 : s3("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter4-hulugu" && A.view.stage === "held-block10" ? LS() : A.chapterId === "chapter4-wuzhang-source" ? !P2() || Ln.reveal() ? void 0 : cp("advance", void 0, x => A.advance(x)) : A.chapterId === "chapter4-post-qishan" && A.view.stage === "held-block6" ? Dm() : A.chapterId === "chapter4-hulugu-source" ? !C7() || Ln.reveal() ? void 0 : zh("advance", void 0, x => A.advance(x)) : A.chapterId === "qishan-map33" && A.view.stage === "held-next-section" ? vv() : A.chapterId === "chapter4-post-qishan-source" ? !p3() || Ln.reveal() ? void 0 : I7("advance", void 0, x => A.advance(x)) : A.chapterId === "qishan-dispute" && A.view.stage === "held-block6" ? KS() : A.chapterId === "qishan-map33-source" ? !L0() || Ln.reveal() ? void 0 : S7("advance", void 0, x => A.advance(x)) : A.chapterId === "qishan-pursuit" && ["held-block5", "held-block14"].includes(A.view.stage) ? h3() : A.chapterId === "qishan-dispute-source" ? !g3() || Ln.reveal() ? void 0 : N4("advance", void 0, x => A.advance(x)) : A.chapterId === "qishan-root4-departure" ? Ln.reveal() ? void 0 : Ll("advance", void 0, () => A.advance()) : Ic(() => {
       nt !== null ? (Zr(), Ln.reveal()) : Ln.reveal() || A.advance();
     });
-  }), j("entry-skip").addEventListener("click", () => Ic(() => A.skipBoot())), j("entry-back").addEventListener("click", () => exactPursuitManual()?choosePursuitManual("back"):exactMap33Manual()?chooseMap33InlineManual("back"):exactWugongNativeBank()?chooseWugongNativeBank("back"):A.view.jianglingCampMenu?(A.chapterId==="chapter5-jianning-return"?ep()&&sc("jiangling-camp:back"):er()&&fv("jiangling-camp:back")):A.view.disputeExterior?A.view.canBack&&currentQishanTownChoice("dispute-city:back"):isQishanTownChapter(A.chapterId)&&A.view.disputeTownMenu?currentQishanTownAvailable()&&A.view.canBack&&currentQishanTownChoice("dispute-town:back"):__baidiTownCurrentW24() ? er("back") && A.view.canBack ? Bd("back",void 0,x=>A.back(x)) : false : A.chapterId === "chapter5-section2-town" ? ep() && A.view.canBack ? Ds("back", void 0, x => A.back(x)) : false : Ic(() => A.back())), j("entry-resume").addEventListener("click", () => {
+  }), j("entry-skip").addEventListener("click", () => Ic(() => A.skipBoot())), j("entry-back").addEventListener("click", () => exactPursuitManual()?choosePursuitManual("back"):exactPursuitAftermathBank()?choosePursuitAftermathBank("back"):exactMap33Manual()?chooseMap33InlineManual("back"):exactWugongNativeBank()?chooseWugongNativeBank("back"):A.view.jianglingCampMenu?(A.chapterId==="chapter5-jianning-return"?ep()&&sc("jiangling-camp:back"):er()&&fv("jiangling-camp:back")):A.view.disputeExterior?A.view.canBack&&currentQishanTownChoice("dispute-city:back"):isQishanTownChapter(A.chapterId)&&A.view.disputeTownMenu?currentQishanTownAvailable()&&A.view.canBack&&currentQishanTownChoice("dispute-town:back"):__baidiTownCurrentW24() ? er("back") && A.view.canBack ? Bd("back",void 0,x=>A.back(x)) : false : A.chapterId === "chapter5-section2-town" ? ep() && A.view.canBack ? Ds("back", void 0, x => A.back(x)) : false : Ic(() => A.back())), j("entry-resume").addEventListener("click", () => {
     if (__map46EntryW31?.isActive()) return __map46EntryW31.resume();
     if (No && ["chapter5-changan-return", "chapter5-kongming-return"].includes(A.chapterId) && !qn() || ["chapter5-changan-siege-source", "chapter5-kongming-return", "chapter5-changan-return", "chapter5-changan-siege"].includes(A.chapterId) && (ot || u.session.chapter5ChanganSiegeNeedsPublicationRecovery || Qp || dc || dd)) return;
     if (Si?.status === "saved") return gf();
